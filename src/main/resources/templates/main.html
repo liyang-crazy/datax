@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>datax-web</title>
+    <link rel="stylesheet" type="text/css" href="/layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/Iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body class="">
+<div id="all" class="layui-layout layui-layout-admin">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;" class="context">
+        <!--新增按钮区域-->
+        <div class="context-add layui-inline">
+            <div class="con-select">
+                <form class="layui-form">
+                    <select name="city" lay-verify="" lay-filter="xl_list">
+                        <option value="1">Mysql</option>
+                        <option value="2">Oracle</option>
+                    </select>
+                </form>
+            </div>
+            <div class="con-add">
+                <button type="button" class="layui-btn add-btn">新增</button>
+            </div>
+            <!--<button type="button" class="layui-btn" id="test_btn">测试</button>-->
+        </div>
+        <!--数据列表区域-->
+        <div class="context-data">
+            <table class="layui-hide" id="con-data" lay-filter="con-data"></table>
+        </div>
+    </div>
+</div>
+<script src="/js/jquery-1.11.0.min.js"></script>
+<script src="/layui/layui.all.js"></script>
+<script src="/js/main.js"></script>
+<script id="bar" type="text/html">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <!--<a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="select">应用</a>-->
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+</body>
+<!--新增弹框区域-->
+<div id="add_info_mysql" class="layui-hide">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend id="add_title">新增mysql数据</legend>
+    </fieldset>
+    <form class="layui-form">
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label label-1">连接名</label>
+            <div class="layui-input-block m-left-9">
+                <input class="layui-input" id="add_db_name" type="text" placeholder="请输入标题" autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label" style="width: 7em;">主机名或IP地址</label>
+            <div class="layui-input-block m-left-10">
+                <input class="layui-input" id="add_db_ip" type="text" placeholder="localhost" autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label label-1">端口</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input" id="add_db_port" type="text" placeholder="3306" autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item width-25 layui-hide" id="oracle-contion">
+            <label class="layui-form-label label-1">服务名或SID</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input" id="add_db_sid" type="text" placeholder="ORCL" autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item width-25" id="mysql-zfj">
+            <label class="layui-form-label label-1">字符集</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input" id="add_db_zfj" type="text" value="serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8" autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label label-1">用户名</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input" id="add_db_username" type="text"  autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label label-1">密码</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input" id="add_db_password" type="password"  autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item m-left-11">
+            <div class="layui-input-block">
+                <button class="layui-btn" type="button" lay-filter="demo1" lay-submit="" id="sure">确定</button>
+                <button class="layui-btn layui-btn-primary" type="button" id="cancel">取消</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!--修改弹框区域-->
+<div id="update_info_mysql" class="layui-hide">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend id="update_title">编辑mysql数据</legend>
+    </fieldset>
+    <form class="layui-form">
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label label-1">连接名</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input" id="contion_name" type="text" placeholder="请输入标题">
+            </div>
+        </div>
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label" style="width:7em;">主机名或IP地址</label>
+            <div class="layui-input-block m-left-10">
+                <input  class="layui-input" id="contion_ip" type="text" placeholder="localhost" autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label label-1">端口</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input" id="contion_dk" type="text" placeholder="3306" autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item width-25 layui-hide" id="update_oracle-contion">
+            <label class="layui-form-label label-1">服务名或SID</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input" id="contion_sid" type="text" placeholder="ORCL" autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item width-25" id="update_mysql-zfj">
+            <label class="layui-form-label label-1">字符集</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input" id="update_db_zfj" type="text"  autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label label-1">用户名</label>
+            <div class="layui-input-block m-left-9">
+                <input name="title" class="layui-input" id="contion_username" type="text"  autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label label-1">密码</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input" id="contion_userpassword" type="password"  autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item m-left-11">
+            <div class="layui-input-block">
+                <button class="layui-btn" type="button" lay-filter="demo1" lay-submit="" id="update_sure">确定</button>
+                <button class="layui-btn layui-btn-primary" type="button" id="update_cancel">取消</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!--查看时候的显示-->
+<div id="show_info_mysql" class="layui-hide">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend id="show_title">编辑mysql数据</legend>
+    </fieldset>
+    <form class="layui-form">
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label label-1">连接名</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input layui-disabled" id="show_contion_name" type="text" placeholder="请输入标题"  autocomplete="off" lay-verify="title" disabled>
+            </div>
+        </div>
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label" style="width:7em;">主机名或IP地址</label>
+            <div class="layui-input-block m-left-10">
+                <input  class="layui-input layui-disabled" id="show_contion_ip" type="text" placeholder="localhost" autocomplete="off" lay-verify="title" disabled>
+            </div>
+        </div>
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label label-1">端口</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input layui-disabled" id="show_contion_dk" type="text" placeholder="3306" autocomplete="off" lay-verify="title" disabled>
+            </div>
+        </div>
+        <div class="layui-form-item width-25 layui-hide" id="show_oracle-contion">
+            <label class="layui-form-label label-1">服务名或SID</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input layui-disabled" id="show_contion_sid" type="text" placeholder="ORCL" autocomplete="off" lay-verify="title" disabled>
+            </div>
+        </div>
+        <div class="layui-form-item width-25" id="show_mysql-zfj">
+            <label class="layui-form-label label-1">字符集</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input layui-disabled" id="show_db_zfj" type="text"  autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label label-1">用户名</label>
+            <div class="layui-input-block m-left-9">
+                <input name="title" class="layui-input layui-disabled" id="show_contion_username" type="text"  autocomplete="off" lay-verify="title" disabled>
+            </div>
+        </div>
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label label-1">密码</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input layui-disabled" id="show_contion_userpassword" type="password"  autocomplete="off" lay-verify="title" disabled>
+            </div>
+        </div>
+        <div class="layui-form-item m-left-11">
+            <div class="layui-input-block">
+                <button class="layui-btn" type="button" lay-filter="demo1" lay-submit="" id="show_sure">确定</button>
+                <button class="layui-btn layui-btn-primary" type="button" id="show_cancel">取消</button>
+            </div>
+        </div>
+    </form>
+</div>
+</html>

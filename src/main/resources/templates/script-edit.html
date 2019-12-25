@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>datax-web</title>
+    <link rel="stylesheet" type="text/css" href="/layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/Iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="/css/script-edit.css">
+</head>
+<body class="">
+<div id="script-add" class="layui-layout layui-layout-admin">
+    <div style="padding: 15px;" class="scr-all">
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label label-1 label-a">脚本名<span class="col-red">(必填)</span></label>
+            <div class="layui-input-block m-left-9">
+                <input class="layui-input input-a" id="sc-edit-jb_name" type="text" placeholder="请输入脚本名称">
+            </div>
+        </div>
+        <form class="layui-form">
+            <div class="layui-inline" style="margin-bottom: 15px;">
+                <label class="layui-form-label" style="margin-left: 3em;">分组<span class="col-red">(必填)</span></label>
+                <div class="layui-input-inline" style="width:35em;">
+                    <select name="edit_jb_group" id="edit_jb_group"  lay-filter="edit_jb_group" lay-search="">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+        </form>
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend style="font-size: 13px">Reader参数</legend>
+        </fieldset>
+        <!--reader区域-->
+        <div class="reader">
+            <!--mysql和orcale区域-->
+            <div class="mysqlAndOracle layui-hide">
+                <!--<div class="layui-form-item width-25">
+                    <label class="layui-form-label label-a">数据库地址</label>
+                    <div class="layui-input-block m-left-10">
+                        <input class="layui-input input-a layui-disabled" id="sc-edit-db-url" type="text" placeholder="jdbc:mysql://localhost:3306">
+                    </div>
+                </div>-->
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">用户名</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="sc-edit-db-username" type="text" placeholder="root">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">密码</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="sc-edit-db-pasw" type="password" placeholder="123456">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25" id="sc-edit-col">
+                    <label class="layui-form-label label-1 label-a">同步列名<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="edit_r_column"  type="text" placeholder="id,name">
+                        <div class="layui-hide col-textarea teax-a">
+                            <textarea class="layui-textarea mar-1" id="r_col_texta" placeholder="请用英文逗号分隔，例如：id,name"></textarea>
+                            <div class="layui-inline mar-2">
+                                <button type="button" class="layui-btn layui-btn-xs" id="r_col-sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="r_col-cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25" id="sc-edit-tab">
+                    <label class="layui-form-label label-1 label-a">同步表名<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="edit_r_table"  type="text" placeholder="table1,table2">
+                        <div class="layui-hide tab-textarea teax-a">
+                            <textarea class="layui-textarea mar-1" id="r_tab_texta" placeholder="请用英文逗号分隔，例如：table1,table2"></textarea>
+                            <div class="layui-inline mar-2">
+                                <button type="button" class="layui-btn layui-btn-xs" id="r-tab-sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="r-tab-cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">连接地址<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <textarea class="layui-textarea mar-1" id="edit_r_contaion" style="width: 35em;"></textarea>
+                        <!--<input  class="layui-input input-a" id="edit_r_contaion" type="text" placeholder="jdbc:mysql://127.0.0.1:3306/database">
+                        <div class="layui-hide cont-textarea teax-a">
+                            <textarea class="layui-textarea mar-1" id="r_url_texta" placeholder="请用英文逗号分隔，例如：jdbc:mysql://127.0.0.1:3306/database"></textarea>
+                            <div class="layui-inline mar-2">
+                                <button type="button" class="layui-btn layui-btn-xs" id="r-cont-sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="r-cont-cancle">取消</button>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="layui-form-item width-25" id="sc-edit-split">
+                    <label class="layui-form-label label-1 label-a">数据分片</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="sc-edit-r-splitPk"  type="text" placeholder="推荐splitPk用户使用表主键">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25" id="sc-edit-sql">
+                    <label class="layui-form-label label-1 label-a">动态sql</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="edit_r_sql" type="text">
+                        <div class="layui-hide sql-textarea teax-a">
+                            <textarea class="layui-textarea mar-1" id="r_sql_texta" placeholder="例如：select db_id,on_line_flag from db_info where db_id < 10"></textarea>
+                            <div class="layui-inline mar-2">
+                                <button type="button" class="layui-btn layui-btn-xs" id="r-sql-sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="r-sql-cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--textFile区域-->
+            <div class="txtFile layui-hide">
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">路径地址<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="edit_path" type="text" placeholder="/home/***,多个路径地址时用英文逗号分隔">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">编码<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="edit_encoding" type="text" value="UTF-8">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">分隔符<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="edit_fgf" type="text" value=",">
+                    </div>
+                </div>
+                <form class="layui-form">
+                    <div class="layui-inline" style="margin-bottom: 1em;">
+                        <label class="layui-form-label" style="margin-left: 3em;">压缩方式</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="edit_ys" id="edit_ys"  lay-filter="edit_ys" lay-search="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline" style="margin-bottom: 1em;">
+                        <label class="layui-form-label" style="margin-left: 3em;">跳过csv文件</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="edit_csv" id="edit_csv"  lay-filter="edit_csv" lay-search="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <!--<div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">nullFormat</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_nullFor" type="text" value="\N">
+                    </div>
+                </div>-->
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">读取列</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="edit_txtFile_column" type="text" value="">
+                        <div class="edit_col_txt layui-hide">
+                            <form class="layui-form" style="margin-top: 0.5em;">
+                                <div class="layui-inline" style="margin-bottom: 1em;">
+                                    <label class="layui-form-label" style="margin-left: -4em;">key:</label>
+                                    <div class="layui-input-inline" style="width:7em;">
+                                        <select name="" id="edit_txtFile_column1"  lay-filter="" lay-search="">
+                                            <option value="index" selected>index</option>
+                                            <option value="value">value</option>
+                                        </select>
+                                    </div>
+                                    <label class="layui-form-label" style="margin-left: -4em;">value:</label>
+                                    <div class="layui-input-block m-left-9">
+                                        <input  class="layui-input" id="edit_txtFile_column2" type="text" value="0" style="margin: 0 0 0 7em;position: absolute;height: 30px;">
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="layui-form" style="margin-top: -0.9em;">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label" style="margin-left: -4em;">key:</label>
+                                    <div class="layui-input-inline" style="width:7em;">
+                                        <select name="" id="edit_txtFile_column3"  lay-filter="" lay-search="">
+                                            <option value="type" selected>type</option>
+                                        </select>
+                                    </div>
+                                    <label class="layui-form-label" style="margin-left: -4em;">value:</label>
+                                    <div class="layui-input-block m-left-9">
+                                        <input  class="layui-input" id="edit_txtFile_column4" type="text" value="long" style="margin: 0 0 0 7em;position: absolute;height: 30px;">
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="layui-inline mar-2-1">
+                                <button type="button" class="layui-btn layui-btn-xs" id="edit_txtFile_column_sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="edit_txtFile_column_cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--writer区域-->
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend style="font-size: 13px">Writer参数</legend>
+        </fieldset>
+        <div class="writer">
+            <!--mysql和oracle区域-->
+            <div class="w_mysqlAndOracle layui-hide">
+                <!--<div class="layui-form-item width-25">
+                <label class="layui-form-label label-a">数据库地址</label>
+                <div class="layui-input-block m-left-10">
+                    <input class="layui-input input-a layui-disabled" id="w-sc-edit-db-url" type="text" placeholder="jdbc:mysql://localhost:3306">
+                </div>
+                </div>-->
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">用户名</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w-sc-edit-db-username" type="text" placeholder="root">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">密码</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w-sc-edit-db-pasw" type="password" placeholder="123456">
+                    </div>
+                </div>
+                <form class="layui-form" id="w_edit_db_mode_all">
+                    <div class="layui-inline" style="margin-bottom: 15px;">
+                        <label class="layui-form-label" style="margin-left: 3em;">写入方式</label>
+                        <div class="layui-input-inline" style="width: 35em;">
+                            <select name="w_edit_db_mode" id="w_edit_db_mode"  lay-filter="w_edit_db_mode" lay-search="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25" id="w-sc-add-col">
+                    <label class="layui-form-label label-1 label-a">同步列名<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w-edit_column"  type="text" placeholder="id,name">
+                        <div class="layui-hide w-col-textarea teax-a">
+                            <textarea class="layui-textarea mar-1" id="w-col_texta" placeholder="请用英文逗号分隔，例如：id,name"></textarea>
+                            <div class="layui-inline mar-2">
+                                <button type="button" class="layui-btn layui-btn-xs" id="w-col-sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="w-col-cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25" id="w-sc-add-tab">
+                    <label class="layui-form-label label-1 label-a">同步表名<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w-edit_table"  type="text" placeholder="table1,table2">
+                        <div class="layui-hide w-tab-textarea teax-a">
+                            <textarea class="layui-textarea mar-1" id="w-tab_texta" placeholder="请用英文逗号分隔，例如：table1,table2"></textarea>
+                            <div class="layui-inline mar-2">
+                                <button type="button" class="layui-btn layui-btn-xs" id="w-tab-sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="w-tab-cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">连接地址<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w-edit_contaion" type="text" placeholder="jdbc:mysql://127.0.0.1:3306/database">
+                        <div class="layui-hide w-cont-textarea teax-a">
+                            <textarea class="layui-textarea mar-1" id="w-url_texta" placeholder="例如：jdbc:mysql://127.0.0.1:3306/database"></textarea>
+                            <div class="layui-inline mar-2">
+                                <button type="button" class="layui-btn layui-btn-xs" id="w-cont-sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="w-cont-cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25" id="w-sc-edit-session">
+                    <label class="layui-form-label label-1 label-a">session</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w-edit_session" type="text">
+                        <div class="layui-hide w-session-textarea teax-a">
+                            <textarea class="layui-textarea mar-1" id="w-session_texta" placeholder="DataX在获取Mysql连接时，执行session指定的SQL语句，修改当前connection session属性"></textarea>
+                            <div class="layui-inline mar-2">
+                                <button type="button" class="layui-btn layui-btn-xs" id="w-session-sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="w-session-cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25" id="w-sc-add-preSql">
+                    <label class="layui-form-label label-1 label-a">preSql</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w-edit_preSql" type="text">
+                        <div class="layui-hide w-presql-textarea teax-a">
+                            <textarea class="layui-textarea mar-1" id="w-preSql_texta" placeholder="写入数据到目的表前，会先执行这里的标准语句"></textarea>
+                            <div class="layui-inline mar-2">
+                                <button type="button" class="layui-btn layui-btn-xs" id="w-preSql-sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="w-preSql-cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--txtfile区域-->
+            <div class="w_txtFile layui-hide">
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">路径地址<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_edit_path" type="text" placeholder="/home/***">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">写入文件名<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_edit_fileName" type="text" placeholder="">
+                    </div>
+                </div>
+                <form class="layui-form">
+                    <div class="layui-inline" style="margin-bottom: 15px;">
+                        <label class="layui-form-label" style="margin-left: 3em;">处理模式</label>
+                        <div class="layui-input-inline" style="width: 35em;">
+                            <select name="w_edit_wmode" id="w_edit_wmode"  lay-filter="w_edit_wmode" lay-search="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline" style="margin-bottom: 1em;">
+                        <label class="layui-form-label" style="margin-left: 3em;">压缩方式</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="w_edit_ys" id="w_edit_ys"  lay-filter="w_edit_ys" lay-search="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">分隔符</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_edit_fgf" type="text" value=",">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">编码</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_edit_encoding" type="text" value="utf-8">
+                    </div>
+                </div>
+                <!--<div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">nullFormat</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_nullFor" type="text" value="\N">
+                    </div>
+                </div>-->
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">日期格式</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_edit_date" type="text" value="yyyy-MM-dd">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">文件写出格式</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_editadd_fileFormat" type="text" value="text">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">写出表头</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_edit_header" type="text" placeholder="id,name  多个时用英文逗号分隔">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item width-25">
+            <label class="layui-form-label label-1 label-a">脚本说明</label>
+            <div class="layui-input-block m-left-9">
+                <textarea class="layui-textarea teax-a" id="sc-edit-jb_bz" placeholder="请输入少于200字" maxlength="200"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/jquery-1.11.0.min.js"></script>
+<script src="/layui/layui.all.js"></script>
+<script src="/js/script-edit.js"></script>
+</body>
+</html>

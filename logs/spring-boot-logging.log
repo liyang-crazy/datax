@@ -1,0 +1,81 @@
+2019-12-25 10:05:16.592  INFO 11016 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 11016 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2019-12-25 10:05:16.670  INFO 11016 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2019-12-25 10:05:22.121  INFO 11016 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-25 10:05:22.136  INFO 11016 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-25 10:05:22.277  INFO 11016 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-25 10:05:22.918  INFO 11016 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-25 10:05:22.933  WARN 11016 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-12-25 10:05:23.324  INFO 11016 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-25 10:05:26.136  INFO 11016 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 12.041 seconds (JVM running for 25.181)
+2019-12-25 10:11:13.900  INFO 11016 --- [http-nio-8004-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-25 10:11:16.849 DEBUG 11016 --- [http-nio-8004-exec-4] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2019-12-25 10:11:16.849 DEBUG 11016 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2019-12-25 10:11:16.849 DEBUG 11016 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2019-12-25 10:11:17.021 DEBUG 11016 --- [http-nio-8004-exec-4] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2019-12-25 10:11:17.021 DEBUG 11016 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2019-12-25 10:11:17.021 DEBUG 11016 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2019-12-25 10:11:17.093 DEBUG 11016 --- [http-nio-8004-exec-4] c.c.d.d.D.queryAllType                   : <==      Total: 3
+2019-12-25 10:11:17.088 DEBUG 11016 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2019-12-25 10:11:17.102 DEBUG 11016 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2019-12-25 10:11:17.103 DEBUG 11016 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2019-12-25 10:11:17.104 DEBUG 11016 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2019-12-25 10:11:17.116 DEBUG 11016 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2019-12-25 10:17:32.931  INFO 11016 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-12-25 10:17:32.959  INFO 11016 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-12-25 10:17:33.657  INFO 11016 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 11016 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2019-12-25 10:17:33.657  INFO 11016 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2019-12-25 10:17:34.047  WARN 11016 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-12-25 10:17:34.101  INFO 11016 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-25 10:17:34.102  INFO 11016 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-25 10:17:34.119  INFO 11016 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-25 10:17:34.164  INFO 11016 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2019-12-25 10:17:34.164  WARN 11016 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-12-25 10:17:34.169  INFO 11016 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2019-12-25 10:17:34.499  INFO 11016 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 0.882 seconds (JVM running for 753.54)
+2019-12-25 10:37:39.186  INFO 11016 --- [http-nio-8004-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-25 10:37:39.479 DEBUG 11016 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2019-12-25 10:37:39.479 DEBUG 11016 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2019-12-25 10:37:39.480 DEBUG 11016 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2019-12-25 10:41:46.448 DEBUG 11016 --- [http-nio-8004-exec-21] c.cnct.datax.dao.JbInfoMapper.addJbInfo  : ==>  Preparing: INSERT INTO jb_info VALUES(DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW(),NOW(),?,?,DEFAULT) 
+2019-12-25 10:41:46.450 DEBUG 11016 --- [http-nio-8004-exec-21] c.cnct.datax.dao.JbInfoMapper.addJbInfo  : ==> Parameters: 3(String), 3(String), (String), (String), 1(String), 2(String), test(String), (String), (String), (String), (String), (String), (String), insert(String), (String), (String), (String), (String), (String), 备注(String), 2_272514d3f52e471ab3f0c04078742554(String), G:\ideal_project_test\datax\target\classes\json\2_272514d3f52e471ab3f0c04078742554.json(String)
+2019-12-25 10:41:46.492 DEBUG 11016 --- [http-nio-8004-exec-21] c.cnct.datax.dao.JbInfoMapper.addJbInfo  : <==    Updates: 1
+2019-12-25 10:41:46.494 DEBUG 11016 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.addTxtfileJbInfo  : ==>  Preparing: INSERT INTO jb_txtfile_info VALUES ( DEFAULT, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, DEFAULT) 
+2019-12-25 10:41:46.504 DEBUG 11016 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.addTxtfileJbInfo  : ==> Parameters: 32(String), /home/datax/abc(String), UTF-8(String), {"index":0,"type":"long"}&{"index":1,"type":"int"}&{"index":2,"type":"date","format":"yyyy.MM.dd"}(String), ,(String), zip(String), false(Boolean), null, /home/abc(String), test(String), truncate(String), ,(String), zip(String), utf-8(String), null, yyyy-MM-dd(String), text(String), id,name(String)
+2019-12-25 10:41:46.580 DEBUG 11016 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.addTxtfileJbInfo  : <==    Updates: 1
+2019-12-25 10:41:46.625 DEBUG 11016 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2019-12-25 10:41:46.626 DEBUG 11016 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2019-12-25 10:41:46.635 DEBUG 11016 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2019-12-25 10:41:46.636 DEBUG 11016 --- [http-nio-8004-exec-22] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2019-12-25 10:41:46.637 DEBUG 11016 --- [http-nio-8004-exec-22] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2019-12-25 10:41:46.639 DEBUG 11016 --- [http-nio-8004-exec-22] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2019-12-25 10:41:48.082  INFO 11016 --- [Thread-42] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2019-12-25 10:41:48.100  INFO 11016 --- [Thread-42] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2019-12-25 10:41:48.871  INFO 11016 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 11016 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2019-12-25 10:41:48.872  INFO 11016 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2019-12-25 10:41:49.290  WARN 11016 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-12-25 10:41:49.355  INFO 11016 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-25 10:41:49.355  INFO 11016 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-25 10:41:49.372  INFO 11016 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-25 10:41:49.412  INFO 11016 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2019-12-25 10:41:49.412  WARN 11016 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-12-25 10:41:49.416  INFO 11016 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2019-12-25 10:41:49.676  INFO 11016 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 0.858 seconds (JVM running for 2208.717)
+2019-12-25 10:42:55.895  INFO 11016 --- [http-nio-8004-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-25 10:42:55.907 DEBUG 11016 --- [http-nio-8004-exec-1] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2019-12-25 10:42:55.908 DEBUG 11016 --- [http-nio-8004-exec-1] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2019-12-25 10:42:55.910 DEBUG 11016 --- [http-nio-8004-exec-1] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 7
+2019-12-25 10:42:56.913 DEBUG 11016 --- [http-nio-8004-exec-2] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 10:42:56.913 DEBUG 11016 --- [http-nio-8004-exec-2] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 1(Integer)
+2019-12-25 10:42:56.914 DEBUG 11016 --- [http-nio-8004-exec-2] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2019-12-25 10:42:57.112 DEBUG 11016 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2019-12-25 10:42:57.113 DEBUG 11016 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2019-12-25 10:42:57.114 DEBUG 11016 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2019-12-25 10:43:16.709 DEBUG 11016 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2019-12-25 10:43:16.709 DEBUG 11016 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2019-12-25 10:43:16.711 DEBUG 11016 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2019-12-25 10:43:16.711 DEBUG 11016 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2019-12-25 10:43:16.712 DEBUG 11016 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 32(Integer)
+2019-12-25 10:43:16.715 DEBUG 11016 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2019-12-25 10:43:16.715 DEBUG 11016 --- [http-nio-8004-exec-24] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
+2019-12-25 10:43:16.715 DEBUG 11016 --- [http-nio-8004-exec-24] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 32(String)
+2019-12-25 10:43:16.717 DEBUG 11016 --- [http-nio-8004-exec-24] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1

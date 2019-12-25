@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cnct.datax.dao.DbContionInfoMapper">
+    <!--查询所有连接信息-->
+    <select id="queryAllDbInfo" resultType="com.cnct.datax.entity.DbContionInfo" parameterType="com.cnct.datax.entity.PageUtil">
+        SELECT
+            a.id,
+            b.db_type,
+            b.db_type_name,
+            a.db_name,
+            a.db_ip,
+            a.db_port,
+            a.db_sid,
+            a.db_zfj,
+            a.db_username,
+            a.db_password,
+            a.db_lrsj,
+	        a.db_xgsj
+        FROM
+            db_contion_info a,
+            db_info b
+        WHERE
+            a.db_type = b.db_type
+           AND  a.yxbz = 'Y'
+           ORDER BY a.id DESC
+           LIMIT #{pageNum},#{limit}
+    </select>
+    <!--查询所有连接信息的总条数-->
+    <select id="queryAllCount" resultType="int">
+        SELECT count(*) FROM db_contion_info WHERE yxbz = 'Y'
+    </select>
+    <!--新增连接信息-->
+    <insert id="addDbInfo"  parameterType="com.cnct.datax.entity.DbContionInfo">
+      INSERT INTO db_contion_info VALUES(DEFAULT,#{db_type},#{db_name},#{db_ip},#{db_port},#{db_sid},#{db_zfj},#{db_username},#{db_password},NOW(),NOW(),DEFAULT)
+    </insert>
+    <!--根据连接信息的id修改对应连接信息-->
+    <update id="updateDbInfoById" parameterType="com.cnct.datax.entity.DbContionInfo">
+        UPDATE
+          db_contion_info a
+        SET
+          a.db_name = #{db_name},
+          a.db_ip = #{db_ip},
+          a.db_port = #{db_port},
+        <if test="db_sid!='' and db_sid!=null">
+            a.db_sid = #{db_sid},
+        </if>
+        <if test="db_zfj!='' and db_zfj!=null">
+            a.db_zfj = #{db_zfj},
+        </if>
+          a.db_username = #{db_username},
+          a.db_password = #{db_password},
+          a.db_xgsj = NOW()
+        WHERE
+          a.id = #{id}
+        AND a.yxbz = 'Y'
+    </update>
+    <!--根据id删除对应的连接信息-->
+    <update id="deletDbInfoById" parameterType="com.cnct.datax.entity.DbContionInfo">
+        UPDATE db_contion_info a SET A.yxbz = 'N' WHERE a.id = #{id}
+    </update>
+    <!--删除之前判断对应的id存在不-->
+    <select id="isNullById" parameterType="com.cnct.datax.entity.DbContionInfo" resultType="int">
+        SELECT COUNT(*) FROM db_contion_info WHERE id = #{id}
+    </select>
+
+
+    <!--查询数据库连接类型list-->
+    <select id="queryAllType" resultType="com.cnct.datax.entity.DbContionInfo">
+        SELECT * FROM db_info
+    </select>
+    <!--根据数据库类型查询对应的连接名称list-->
+    <select id="queryAllContionNameByTypeId" parameterType="com.cnct.datax.entity.DbContionInfo" resultType="com.cnct.datax.entity.DbContionInfo">
+        SELECT
+            A.id,
+            A.db_type,
+            B.db_type_name,
+            A.db_name
+        FROM
+            db_contion_info A,
+            db_info B
+        WHERE
+            A.db_type = B.db_type
+        AND A.yxbz = 'Y'
+        AND A.db_type = #{db_type}
+    </select>
+
+    <!--根据id查询数据库连接信息-->
+    <select id="queryOneDbContionById" parameterType="com.cnct.datax.entity.DbContionInfo" resultType="com.cnct.datax.entity.DbContionInfo">
+        SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = #{id} AND yxbz = 'Y'
+    </select>
+
+</mapper>

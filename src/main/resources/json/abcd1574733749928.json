@@ -1,0 +1,65 @@
+{
+ "job":
+ {
+  "content":
+  [
+   {
+    "reader":
+    {
+     "parameter":
+     {
+      "password":"ssgl_123",
+      "column":
+      [
+       "id",
+       "name"
+      ],
+      "connection":
+      [
+       {
+        "jdbcUrl":
+        [
+         "jdbc:mysql://91.12.66.88:7001/abcd"
+        ],
+        "table":
+        [
+         "table"
+        ]
+
+       }
+
+      ],
+      "splitPk":"db_id",
+      "username":"ssgl"
+     },
+     "name":"mysqlreader"
+    },
+    "writer":
+    {
+     "parameter":
+     {
+      "print":true
+     },
+     "name":"streamwriter"
+    }
+
+   }
+
+  ],
+  "setting":
+  {
+   "errorLimit":
+   {
+    "record":0,
+    "percentage":0.02
+   },
+   "speed":
+   {
+    "channel":3
+   }
+
+  }
+
+ }
+
+}

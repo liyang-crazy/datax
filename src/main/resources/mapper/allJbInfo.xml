@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cnct.datax.dao.JbInfoMapper">
+    <!--查询所有的脚本的信息-->
+    <select id="queryAllJbInfo" resultType="com.cnct.datax.entity.JbInfo" parameterType="com.cnct.datax.entity.PageUtil">
+        SELECT
+            a.*
+        FROM
+            jb_info a
+        WHERE
+          a.jb_yxbz = 'Y'
+        ORDER BY a.id DESC
+        LIMIT #{pageNum},#{limit}
+    </select>
+    <!--查询所有脚本的总数，用于分页-->
+    <select id="queryAllJbInfoCount" resultType="int">
+        SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y'
+    </select>
+    <!--添加脚本信息-->
+    <insert id="addJbInfo" useGeneratedKeys="true" keyProperty="id" parameterType="com.cnct.datax.entity.JbInfo">
+        INSERT INTO jb_info VALUES(DEFAULT,#{r_db_type},#{w_db_type},#{r_db_id},#{w_db_id},#{r_jb_tbgs},#{jb_group_id},#{jb_name},#{r_jb_column},#{r_jb_table},#{r_jb_url},#{r_jb_splitPk},#{r_jb_sql},#{r_where},#{w_jb_mode},#{w_jb_column},#{w_jb_session},#{w_jb_presql},#{w_jb_url},#{w_jb_table},#{jb_bz},NOW(),NOW(),#{jb_json_file_name},#{jb_json_fullPath},DEFAULT)
+    </insert>
+    <!--根据脚本id查询脚本的信息-->
+    <select id="queryJbInfoById" resultType="com.cnct.datax.entity.JbInfo" parameterType="com.cnct.datax.entity.JbInfo">
+        SELECT
+            b.jb_group_name,
+            a.*
+        FROM
+            jb_info a,
+            jb_group b
+        WHERE
+            a.jb_group_id = b.jb_group_id
+        AND	a.id = #{id}
+        AND jb_yxbz = 'Y'
+    </select>
+    <!--根据id查询脚本信息-查询的是txtfile的-->
+    <select id="queryJbInfoByIdTxtFile" parameterType="com.cnct.datax.entity.TxtFileInfo" resultType="com.cnct.datax.entity.TxtFileInfo">
+        SELECT
+            c.*
+        FROM
+            jb_txtfile_info c
+        WHERE
+            c.jb_txtFile_id = #{jb_txtFile_id}
+    </select>
+    <!--根据数据库连接信息的id查询对应的数据库信息-->
+    <select id="queryDbInfoById" resultType="com.cnct.datax.entity.JbInfo" parameterType="com.cnct.datax.entity.JbInfo">
+        SELECT
+            db_username,
+            db_password
+        FROM
+            db_contion_info
+        WHERE
+            id = #{db_id}
+        AND yxbz = 'Y'
+    </select>
+    <!--根据脚本id查询出该脚本对应的reader和writer对应的username和password-->
+    <select id="queryUserNameAndPasw" parameterType="com.cnct.datax.entity.JbInfo" resultType="com.cnct.datax.entity.JbInfo">
+        SELECT
+            a1.id,
+            a1.r_db_id,
+            a1.r_db_username,
+            a1.r_db_password,
+            a2.w_db_id,
+            a2.w_db_username,
+            a2.w_db_password
+         FROM (
+            SELECT
+                a.id,
+                a.r_db_id,
+                b.db_username r_db_username,
+                b.db_password r_db_password
+            FROM
+                jb_info a,
+                db_contion_info b
+            WHERE
+                a.r_db_id = b.id
+            AND	a.id = #{id}
+            AND a.jb_yxbz = 'Y'
+            AND b.yxbz = 'Y'
+        )a1,(
+            SELECT
+                a.id,
+                a.w_db_id,
+                b.db_username w_db_username,
+                b.db_password w_db_password
+            FROM
+                jb_info a,
+                db_contion_info b
+            WHERE
+                a.w_db_id = b.id
+            AND	a.id = #{id}
+            AND a.jb_yxbz = 'Y'
+            AND b.yxbz = 'Y'
+        )a2 WHERE a1.id = a2.id
+    </select>
+
+    <!--根据脚本信息id修改对应脚本的数据-->
+    <update id="editJbInfoById" parameterType="com.cnct.datax.entity.JbInfo">
+        UPDATE
+          jb_info a
+        SET
+         a.jb_group_id = #{jb_group_id},
+         a.jb_name = #{jb_name},
+         a.r_jb_column = #{r_jb_column},
+         a.r_jb_table = #{r_jb_table},
+         a.r_jb_url = #{r_jb_url},
+         a.r_jb_splitPk = #{r_jb_splitPk},
+         a.r_jb_sql = #{r_jb_sql},
+         a.r_where = #{r_where},
+         a.w_jb_mode = #{w_jb_mode},
+         a.w_jb_column = #{w_jb_column},
+         a.w_jb_session = #{w_jb_session},
+         a.w_jb_presql = #{w_jb_presql},
+         a.w_jb_url = #{w_jb_url},
+         a.w_jb_table = #{w_jb_table},
+         a.jb_bz = #{jb_bz},
+         a.jb_xgsj = NOW(),
+         a.jb_json_file_name = #{jb_json_file_name},
+         a.jb_json_fullPath = #{jb_json_fullPath}
+        WHERE
+            a.id = #{id}
+        AND a.jb_yxbz = 'Y'
+    </update>
+    <!--根据脚本id修改对应脚本信息-txtfile-->
+    <update id="editJbInfoByIdTxtFile" parameterType="com.cnct.datax.entity.TxtFileInfo">
+        UPDATE
+            jb_txtfile_info a
+        SET
+            a.jb_r_txtFile_path = #{jb_r_txtFile_path},
+            a.jb_r_txtFile_en = #{jb_r_txtFile_en},
+            a.jb_r_txtFile_column = #{jb_r_txtFile_column},
+            a.jb_r_txtFile_fgf = #{jb_r_txtFile_fgf},
+            a.jb_r_txtFile_ysgs = #{jb_r_txtFile_ysgs},
+            a.jb_r_txtFile_csv_h = #{jb_r_txtFile_csv_h},
+            a.jb_w_txtFile_path = #{jb_w_txtFile_path},
+            a.jb_w_txtFile_filename = #{jb_w_txtFile_filename},
+            a.jb_w_txtfile_ms = #{jb_w_txtfile_ms},
+            a.jb_w_txtfile_fgf = #{jb_w_txtfile_fgf},
+            a.jb_w_txtfile_ysgs = #{jb_w_txtfile_ysgs},
+            a.jb_w_txtfile_en = #{jb_w_txtfile_en},
+            a.jb_w_txtfile_dateF = #{jb_w_txtfile_dateF},
+            a.jb_w_txtfile_fileF = #{jb_w_txtfile_fileF},
+            a.jb_w_txtfile_header = #{jb_w_txtfile_header}
+        WHERE
+            a.jb_txtFile_id = #{jb_txtFile_id}
+    </update>
+    <!--根据id删除对应脚本的信息-->
+    <update id="delJbInfoById" parameterType="com.cnct.datax.entity.JbInfo">
+        UPDATE
+            jb_info a
+        SET
+          a.jb_yxbz = 'N'
+        WHERE
+            a.id = #{id}
+    </update>
+    <!--根据id删除对应脚本时候判断该脚本是否存在-->
+    <select id="isNullJbInfoById" parameterType="com.cnct.datax.entity.JbInfo" resultType="int">
+        SELECT COUNT(*) FROM jb_info WHERE id = #{id} AND jb_yxbz = 'Y'
+    </select>
+    <!--根据筛选的条件查询脚本信息-->
+    <select id="queryAllJbInfoByTj" parameterType="com.cnct.datax.entity.JbInfo" resultType="com.cnct.datax.entity.JbInfo">
+        SELECT
+          *
+        FROM
+          jb_info A
+        WHERE
+          A.jb_yxbz = 'Y'
+        <if test="jb_name!='' and jb_name!=null">
+            AND A.jb_name LIKE ${jb_name}
+        </if>
+        <if test="jb_group_id!='' and jb_group_id!=null">
+            AND A.jb_group_id = #{jb_group_id}
+        </if>
+        <if test="r_db_type!='' and r_db_type!=null">
+            AND A.r_db_type = #{r_db_type}
+        </if>
+        <if test="w_db_type!='' and w_db_type!=null">
+            AND A.w_db_type = #{w_db_type}
+        </if>
+        <if test="jb_lrsj_q!=null">
+            AND A.jb_lrsj >=  #{jb_lrsj_q}
+        </if>
+        <if test="jb_lrsj_z!=null">
+            AND A.jb_lrsj &lt;=  #{jb_lrsj_z}
+        </if>
+        ORDER BY a.id DESC
+        LIMIT #{pageUtil.pageNum},#{pageUtil.limit}
+    </select>
+    <!--根据条件查询的时候，查询出总条数用于分页-->
+    <select id="queryAllJbInfoByTjPage" parameterType="com.cnct.datax.entity.JbInfo" resultType="int">
+        SELECT
+          COUNT(*)
+        FROM
+          jb_info A
+        WHERE
+           A.jb_yxbz = 'Y'
+        <if test="jb_name!='' and jb_name!=null">
+            AND A.jb_name LIKE ${jb_name}
+        </if>
+        <if test="jb_group_id!='' and jb_group_id!=null">
+            AND A.jb_group_id = #{jb_group_id}
+        </if>
+        <if test="r_db_type!='' and r_db_type!=null">
+            AND A.r_db_type = #{r_db_type}
+        </if>
+        <if test="w_db_type!='' and w_db_type!=null">
+            AND A.w_db_type = #{w_db_type}
+        </if>
+        <if test="jb_lrsj_q!=null">
+            AND A.jb_lrsj >=  #{jb_lrsj_q}
+        </if>
+        <if test="jb_lrsj_z!=null">
+            AND A.jb_lrsj &lt;=  #{jb_lrsj_z}
+        </if>
+    </select>
+    <!--查询所有脚本的分组信息-->
+    <select id="queryAllJbGroup"  resultType="com.cnct.datax.entity.JbInfo">
+        SELECT jb_group_id,jb_group_name FROM jb_group
+    </select>
+
+    <!--向txtfile表中添加对应的脚本信息-->
+    <insert id="addTxtfileJbInfo" parameterType="com.cnct.datax.entity.JbInfo">
+        INSERT INTO jb_txtfile_info VALUES
+        ( DEFAULT,
+          #{txtFileInfo.jb_txtFile_id},
+          #{txtFileInfo.jb_r_txtFile_path},
+          #{txtFileInfo.jb_r_txtFile_en},
+          #{txtFileInfo.jb_r_txtFile_column},
+          #{txtFileInfo.jb_r_txtFile_fgf},
+          #{txtFileInfo.jb_r_txtFile_ysgs},
+          #{txtFileInfo.jb_r_txtFile_csv_h},
+          #{txtFileInfo.jb_r_txtFile_nullF},
+          #{txtFileInfo.jb_w_txtFile_path},
+          #{txtFileInfo.jb_w_txtFile_filename},
+          #{txtFileInfo.jb_w_txtfile_ms},
+          #{txtFileInfo.jb_w_txtfile_fgf},
+          #{txtFileInfo.jb_w_txtfile_ysgs},
+          #{txtFileInfo.jb_w_txtfile_en},
+          #{txtFileInfo.jb_w_txtfile_nullF},
+          #{txtFileInfo.jb_w_txtfile_dateF},
+          #{txtFileInfo.jb_w_txtfile_fileF},
+          #{txtFileInfo.jb_w_txtfile_header},
+          DEFAULT)
+    </insert>
+
+</mapper>

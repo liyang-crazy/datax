@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>datax-web</title>
+    <link rel="stylesheet" type="text/css" href="/layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/Iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="/css/script.css">
+</head>
+<body class="">
+<div id="script" class="layui-layout layui-layout-admin">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;" class="scr-all">
+        <!--顶部按钮区域-->
+        <div class="layui-collapse" lay-accordion>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">新增区域</h2>
+                <div class="layui-colla-content">
+                    <div class="layui-field-box">
+                        <div class="reader">
+                            <fieldset class="layui-elem-field layui-field-title" style="width: 71.5%">
+                                <legend style="font-size: 13px">Reader区域</legend>
+                            </fieldset>
+                            <form class="layui-form">
+                                <div class="layui-inline" style="margin-bottom: 15px;">
+                                    <label class="layui-form-label">数据库类型</label>
+                                    <div class="layui-input-inline" style="width:8em;">
+                                        <select name="db_type_id" id="r_db_type_id"  lay-filter="r_db_typeFilter" lay-search="">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-inline r_db_name" style="margin-bottom: 15px;margin-left: -30px;">
+                                    <label class="layui-form-label" style="width:7em;">连接名称</label>
+                                    <div class="layui-input-inline" style="width:17em;">
+                                        <!--这个是下拉选择一个的写法-->
+                                        <!--<select name="db_name_id" id="r_db_name_id" lay-filter="db_nameFilter" lay-search="">
+                                            <option value=""></option>
+                                        </select>-->
+                                        <!--这个是下拉多个的写法-->
+                                        <div id="r_db_name_id" class="xm-select-demo"></div>
+                                    </div>
+                                </div>
+                                <div class="layui-inline to_local" style="margin-bottom: 15px;">
+                                    <label class="layui-form-label">同步格式</label>
+                                    <div class="layui-input-inline" style="width:7em;">
+                                        <select name="to_local" id="to_local" lay-filter="" lay-search="">
+                                            <option value="1">标准</option>
+                                            <option value="2">自定义SQL</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="writer">
+                            <fieldset class="layui-elem-field layui-field-title" style="width: 71.5%">
+                                <legend style="font-size: 13px">Writer区域</legend>
+                            </fieldset>
+                            <form class="layui-form">
+                                <div class="layui-inline" style="margin-bottom: 15px;">
+                                    <label class="layui-form-label">数据库类型</label>
+                                    <div class="layui-input-inline" style="width:8em;">
+                                        <select name="db_type_id" id="w_db_type_id"  lay-filter="w_db_typeFilter" lay-search="">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-inline w_db_name" style="margin-bottom: 15px;margin-left: -30px;">
+                                    <label class="layui-form-label" style="width:7em;">连接名称</label>
+                                    <div class="layui-input-inline" style="width:17em;">
+                                        <select name="db_name_id" id="w_db_name_id" lay-filter="db_nameFilter" lay-search="">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="button" class="layui-btn scr-all-til-add" style="margin-bottom: 1em;">新增</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">查询区域</h2>
+                <div class="layui-colla-content">
+                    <form class="layui-form">
+                        <div class="layui-form-item">
+                            <div class="layui-inline" style="margin-bottom: 15px;">
+                                <label class="layui-form-label">脚本名称</label>
+                                <div class="layui-input-block" style="width: 10em;">
+                                    <input type="text" class="layui-input" id="query_tj_jb_name">
+                                </div>
+                            </div>
+                            <div class="layui-inline" style="margin-bottom: 15px;">
+                                <label class="layui-form-label" style="width: 9em;">Reader数据库类型</label>
+                                <div class="layui-input-inline" style="width: 10em;">
+                                    <select name="db_type_id" id="query_r_db_type_id"  lay-filter="w_db_typeFilter" lay-search="">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline" style="margin-bottom: 15px;">
+                                <label class="layui-form-label" style="width: 9em;">Writer数据库类型</label>
+                                <div class="layui-input-inline" style="width: 10em;">
+                                    <select name="db_type_id" id="query_w_db_type_id"  lay-filter="w_db_typeFilter" lay-search="">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">录入时间起</label>
+                            <div class="layui-input-inline" style="width: 10em;">
+                                <input name="date" class="layui-input" id="date_q" type="text" lay-verify="date">
+                            </div>
+                        </div>
+                        <div class="layui-inline" style="margin-left: 4em;">
+                            <label class="layui-form-label">录入时间止</label>
+                            <div class="layui-input-inline" style="width: 10em;">
+                                <input name="date" class="layui-input" id="date_z" type="text" lay-verify="date">
+                            </div>
+                        </div>
+                        <div class="layui-inline" style="margin-bottom: 15px;">
+                            <label class="layui-form-label" style="width: 9em;margin-left: 1.5em;">脚本分组</label>
+                            <div class="layui-input-inline" style="width:10em;">
+                                <select name="jb_group" id="jb_group"  lay-filter="jb_group" lay-search="">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="layui-btn" id="query_sure_tj" type="button" style="width: 7em;margin-left: 5em;position: absolute;">确认</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--中心内容区域-->
+        <div>
+            <fieldset class="layui-elem-field layui-field-title">
+                <legend>内容区域</legend>
+            </fieldset>
+            <div class="scr-all-con">
+                <table class="layui-hide" id="con-data" lay-filter="con-data"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/jquery-1.11.0.min.js"></script>
+<script src="/layui/layui.all.js"></script>
+<script src="/layui/xm-select.js"></script>
+<script src="/js/script.js"></script>
+<script id="bar" type="text/html">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="select">应用</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+</body>
+</html>

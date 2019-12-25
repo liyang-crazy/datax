@@ -1,0 +1,31 @@
+a{
+     text-decoration: none;
+ }
+.con-select{
+    width: 10em;
+}
+.con-add{
+    margin: -38px 0 0 155px;
+}
+.add-btn{
+    width: 5em;
+}
+.width-25{
+    width: 25em;
+}
+.label-1{
+    margin-left: 1em;
+    position: absolute;
+}
+.m-left-9{
+    margin-left: 9em;
+}
+.m-left-10{
+    position: absolute;
+    margin-left: 9em;
+    width: 16em;
+}
+.m-left-11{
+    text-align: center;
+    margin-right: 10em;
+}

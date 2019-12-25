@@ -1,0 +1,45 @@
+.all{
+    width: 90%;
+    margin: 0 auto;
+}
+.header{
+    height: 3vw;
+    line-height: 3vw;
+    font-size: 17px;
+    font-weight: bold;
+    color: #868383;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.name-lab{
+    font-size: 18px;
+}
+.name{
+    margin-left: -4vw;
+}
+.btn{
+    width: 10%;
+    margin-left: 3vw;
+}
+.btn-cx{
+    background-color: #73f198;
+    color: white;
+    border: none;
+    width: 6vw;
+}
+.btn-add{
+    background-color: #73f198;
+    color: white;
+    border: none;
+    width: 6vw;
+}
+.edit{
+    color: #5597ea;cursor: pointer;
+}
+.delete{
+    color: red;cursor: pointer;
+}
