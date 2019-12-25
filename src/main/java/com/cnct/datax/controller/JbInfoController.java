@@ -111,7 +111,7 @@ public class JbInfoController {
                     writer = TxtFileWriter.txtFileWriter(jbInfo);
                     break;
             }
-            jsonString = Merge.mergeAll(reader,writer);
+            jsonString = Merge.mergeAll(jbInfo,reader,writer);
             //将连接信息转成json格式数据，存入本地
             //String fileName = jbInfo.getJb_name() + "_" + Calendar.getInstance().getTimeInMillis();
             String fileName = jbInfo.getJb_group_id()+"_"+UUID.randomUUID().toString().replaceAll("-","");
@@ -269,7 +269,7 @@ public class JbInfoController {
                     writer = TxtFileWriter.txtFileWriter(jbInfo);
                     break;
             }
-            jsonString = Merge.mergeAll(reader,writer);
+            jsonString = Merge.mergeAll(jbInfo,reader,writer);
             //将连接信息转成json格式数据，存入本地
             //String fileName = jbInfo.getJb_name() + "_" + Calendar.getInstance().getTimeInMillis();
             String fileName = jbInfo.getJb_group_id()+"_"+UUID.randomUUID().toString().replaceAll("-","");

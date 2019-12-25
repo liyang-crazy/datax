@@ -55,7 +55,11 @@ $(function () {
             jb_lrsj_q:'',
             jb_lrsj_z:'',
             jb_group_id:'',
-            w_jb_mode:''
+            w_jb_mode:'',
+            jb_byte:'',
+            jb_channel:'',
+            jb_record:'',
+            jb_percentage:''
         };
         var txtfile_jb = {};//定义一个txtfile的脚本信息对象
         var data_reader_db_arr = [];
@@ -296,6 +300,12 @@ $(function () {
                     dbConJson.r_jb_tbgs = $('#to_local').val();
                     dbConJson.jb_group_id = layero.find('iframe').contents().find('[id="jb_group"]').val();
                     dbConJson.jb_name = layero.find('iframe').contents().find('[id="sc-add-jb_name"]').val();
+
+                    dbConJson.jb_byte = layero.find('iframe').contents().find('[id="setting_byte"]').val();
+                    dbConJson.jb_channel = layero.find('iframe').contents().find('[id="settin_channel"]').val();
+                    dbConJson.jb_record = layero.find('iframe').contents().find('[id="setting_record"]').val();
+                    dbConJson.jb_percentage = layero.find('iframe').contents().find('[id="setting_percentage"]').val();
+
                     dbConJson.r_jb_column = layero.find('iframe').contents().find('[id="add_column"]').val();
                     dbConJson.w_jb_column = layero.find('iframe').contents().find('[id="w-add_column"]').val();
                     dbConJson.r_jb_table = layero.find('iframe').contents().find('[id="add_table"]').val();

@@ -18,7 +18,7 @@
     </select>
     <!--添加脚本信息-->
     <insert id="addJbInfo" useGeneratedKeys="true" keyProperty="id" parameterType="com.cnct.datax.entity.JbInfo">
-        INSERT INTO jb_info VALUES(DEFAULT,#{r_db_type},#{w_db_type},#{r_db_id},#{w_db_id},#{r_jb_tbgs},#{jb_group_id},#{jb_name},#{r_jb_column},#{r_jb_table},#{r_jb_url},#{r_jb_splitPk},#{r_jb_sql},#{r_where},#{w_jb_mode},#{w_jb_column},#{w_jb_session},#{w_jb_presql},#{w_jb_url},#{w_jb_table},#{jb_bz},NOW(),NOW(),#{jb_json_file_name},#{jb_json_fullPath},DEFAULT)
+        INSERT INTO jb_info VALUES(DEFAULT,#{jb_byte},#{jb_channel},#{jb_record},#{jb_percentage},#{r_db_type},#{w_db_type},#{r_db_id},#{w_db_id},#{r_jb_tbgs},#{jb_group_id},#{jb_name},#{r_jb_column},#{r_jb_table},#{r_jb_url},#{r_jb_splitPk},#{r_jb_sql},#{r_where},#{w_jb_mode},#{w_jb_column},#{w_jb_session},#{w_jb_presql},#{w_jb_url},#{w_jb_table},#{jb_bz},NOW(),NOW(),#{jb_json_file_name},#{jb_json_fullPath},DEFAULT)
     </insert>
     <!--根据脚本id查询脚本的信息-->
     <select id="queryJbInfoById" resultType="com.cnct.datax.entity.JbInfo" parameterType="com.cnct.datax.entity.JbInfo">

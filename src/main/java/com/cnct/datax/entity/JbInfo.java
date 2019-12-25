@@ -122,6 +122,46 @@ public class JbInfo {
     private String w_jb_mode;
     //存入txtfile的对象
     private TxtFileInfo txtFileInfo;
+    //通道数量
+    private int jb_channel;
+    //通道速度
+    private int jb_byte;
+    //出错限制
+    private int jb_record;
+    //出错限制-百分比
+    private double jb_percentage;
+
+    public int getJb_channel() {
+        return jb_channel;
+    }
+
+    public void setJb_channel(int jb_channel) {
+        this.jb_channel = jb_channel;
+    }
+
+    public int getJb_byte() {
+        return jb_byte;
+    }
+
+    public void setJb_byte(int jb_byte) {
+        this.jb_byte = jb_byte;
+    }
+
+    public int getJb_record() {
+        return jb_record;
+    }
+
+    public void setJb_record(int jb_record) {
+        this.jb_record = jb_record;
+    }
+
+    public double getJb_percentage() {
+        return jb_percentage;
+    }
+
+    public void setJb_percentage(double jb_percentage) {
+        this.jb_percentage = jb_percentage;
+    }
 
     public TxtFileInfo getTxtFileInfo() {
         return txtFileInfo;
