@@ -591,6 +591,7 @@ $(function () {
 
         });
         $('#select_jb_name_btn').on('click',function () {
+            var select_jb_path = [];
             $.each(select_jb_obj,function (index,item) {
                select_jb_path.push(item.jb_json_fullPath);
             });
