@@ -89,6 +89,10 @@ $(function () {
             $('#sc-show-jb_name').val(data.jb_name);
             $("#show_jb_group").append("<option value="+data.jb_group_id+" selected>"+data.jb_group_name+"</option>");
             layui.form.render("select");
+            $('#show_settin_channel').val(data.jb_channel);
+            $('#show_setting_byte').val(data.jb_byte);
+            $('#show_setting_record').val(data.jb_record);
+            $('#show_setting_percentage').val(data.jb_percentage);
             //$('#sc-show-r-db-url').val(data.r_db_url);
             $('#sc-show-r-db-username').val(data.r_db_username);
             $('#sc-show-r-db-pasw').val(data.r_db_password);

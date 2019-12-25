@@ -113,7 +113,6 @@ $(function () {
                     $('#w_edit_db_mode_all').addClass('layui-hide');
                 }
             }
-
             $('#sc-edit-jb_name').val(data.jb_name);
             $.each(jb_group_arr,function (index,item) {
                 if(data.jb_group_id == item.jb_group_id){
@@ -123,6 +122,10 @@ $(function () {
                 }
             });
             layui.form.render("select");
+            $('#edit_settin_channel').val(data.jb_channel);
+            $('#edit_setting_byte').val(data.jb_byte);
+            $('#edit_setting_record').val(data.jb_record);
+            $('#edit_setting_percentage').val(data.jb_percentage);
             //$('#sc-edit-db-url').val(data.r_db_url);
             $('#sc-edit-db-username').val(data.r_db_username);
             $('#sc-edit-db-pasw').val(data.r_db_password);

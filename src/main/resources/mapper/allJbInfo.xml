@@ -99,6 +99,10 @@
         UPDATE
           jb_info a
         SET
+         a.jb_channel = #{jb_channel},
+         a.jb_byte = #{jb_byte},
+         a.jb_record = #{jb_record},
+         a.jb_percentage = #{jb_percentage},
          a.jb_group_id = #{jb_group_id},
          a.jb_name = #{jb_name},
          a.r_jb_column = #{r_jb_column},

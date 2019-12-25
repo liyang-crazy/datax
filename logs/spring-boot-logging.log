@@ -1642,3 +1642,305 @@ Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range:
 2019-12-25 15:37:27.043 DEBUG 1468 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
 2019-12-25 15:37:27.044 DEBUG 1468 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
 2019-12-25 15:37:27.045 DEBUG 1468 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2019-12-25 15:42:05.446  INFO 1468 --- [Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2019-12-25 15:42:05.469  INFO 1468 --- [Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2019-12-25 15:42:06.446  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 1468 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2019-12-25 15:42:06.446  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2019-12-25 15:42:07.289  WARN 1468 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-12-25 15:42:07.382  INFO 1468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-25 15:42:07.383  INFO 1468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-25 15:42:07.418  INFO 1468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-25 15:42:07.468  INFO 1468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2019-12-25 15:42:07.468  WARN 1468 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-12-25 15:42:07.470  INFO 1468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2019-12-25 15:42:07.693  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.303 seconds (JVM running for 539.615)
+2019-12-25 15:42:27.048  INFO 1468 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2019-12-25 15:42:27.061  INFO 1468 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2019-12-25 15:42:28.556  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 1468 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2019-12-25 15:42:28.556  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2019-12-25 15:42:28.983  WARN 1468 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-12-25 15:42:29.035  INFO 1468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-25 15:42:29.036  INFO 1468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-25 15:42:29.055  INFO 1468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-25 15:42:29.093  INFO 1468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2019-12-25 15:42:29.093  WARN 1468 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-12-25 15:42:29.096  INFO 1468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2019-12-25 15:42:29.468  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.053 seconds (JVM running for 561.389)
+2019-12-25 15:42:33.084  INFO 1468 --- [Thread-34] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2019-12-25 15:42:33.101  INFO 1468 --- [Thread-34] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2019-12-25 15:42:34.436  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 1468 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2019-12-25 15:42:34.436  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2019-12-25 15:42:35.225  WARN 1468 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-12-25 15:42:35.371  INFO 1468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-25 15:42:35.372  INFO 1468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-25 15:42:35.601  INFO 1468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-25 15:42:35.848  INFO 1468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2019-12-25 15:42:35.848  WARN 1468 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-12-25 15:42:35.852  INFO 1468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2019-12-25 15:42:36.171  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.784 seconds (JVM running for 568.093)
+2019-12-25 15:42:39.714  INFO 1468 --- [Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2019-12-25 15:42:39.729  INFO 1468 --- [Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2019-12-25 15:42:40.791  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 1468 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2019-12-25 15:42:40.791  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2019-12-25 15:42:41.320  WARN 1468 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-12-25 15:42:41.428  INFO 1468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-25 15:42:41.428  INFO 1468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-25 15:42:41.465  INFO 1468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-25 15:42:41.530  INFO 1468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2019-12-25 15:42:41.530  WARN 1468 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-12-25 15:42:41.535  INFO 1468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2019-12-25 15:42:42.032  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.286 seconds (JVM running for 573.954)
+2019-12-25 15:42:46.728  INFO 1468 --- [Thread-44] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2019-12-25 15:42:46.739  INFO 1468 --- [Thread-44] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2019-12-25 15:42:47.615  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 1468 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2019-12-25 15:42:47.615  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2019-12-25 15:42:48.302  WARN 1468 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-12-25 15:42:48.475  INFO 1468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-25 15:42:48.475  INFO 1468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-25 15:42:48.497  INFO 1468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-25 15:42:48.556  INFO 1468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2019-12-25 15:42:48.556  WARN 1468 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-12-25 15:42:48.560  INFO 1468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2019-12-25 15:42:48.881  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.309 seconds (JVM running for 580.803)
+2019-12-25 15:42:53.432  INFO 1468 --- [Thread-49] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2019-12-25 15:42:53.438  INFO 1468 --- [Thread-49] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2019-12-25 15:42:54.494  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 1468 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2019-12-25 15:42:54.495  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2019-12-25 15:42:54.836  WARN 1468 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-12-25 15:42:54.888  INFO 1468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-25 15:42:54.888  INFO 1468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-25 15:42:54.906  INFO 1468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-25 15:42:54.945  INFO 1468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2019-12-25 15:42:54.945  WARN 1468 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-12-25 15:42:54.949  INFO 1468 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2019-12-25 15:42:55.153  INFO 1468 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 0.709 seconds (JVM running for 587.074)
+2019-12-25 15:44:25.701  INFO 12864 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 12864 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2019-12-25 15:44:25.704  INFO 12864 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2019-12-25 15:44:27.547  INFO 12864 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-25 15:44:27.547  INFO 12864 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-25 15:44:27.689  INFO 12864 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-25 15:44:27.931  INFO 12864 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-25 15:44:27.934  WARN 12864 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-12-25 15:44:28.081  INFO 12864 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-25 15:44:29.360  INFO 12864 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 5.459 seconds (JVM running for 7.07)
+2019-12-25 15:47:49.329  INFO 12864 --- [http-nio-8004-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-25 15:47:50.215 DEBUG 12864 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2019-12-25 15:47:50.224 DEBUG 12864 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2019-12-25 15:47:50.252 DEBUG 12864 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2019-12-25 15:47:50.289 DEBUG 12864 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2019-12-25 15:47:50.312 DEBUG 12864 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2019-12-25 15:47:50.319 DEBUG 12864 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2019-12-25 15:47:50.347 DEBUG 12864 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : <==      Total: 3
+2019-12-25 15:47:50.351 DEBUG 12864 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2019-12-25 15:47:50.365 DEBUG 12864 --- [http-nio-8004-exec-6] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2019-12-25 15:47:50.365 DEBUG 12864 --- [http-nio-8004-exec-6] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2019-12-25 15:47:50.366 DEBUG 12864 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2019-12-25 15:47:50.369 DEBUG 12864 --- [http-nio-8004-exec-6] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2019-12-25 15:47:52.169 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2019-12-25 15:47:52.169 DEBUG 12864 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2019-12-25 15:47:52.170 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 33(Integer)
+2019-12-25 15:47:52.170 DEBUG 12864 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2019-12-25 15:47:52.172 DEBUG 12864 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2019-12-25 15:47:52.173 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2019-12-25 15:47:52.174 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:47:52.174 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
+2019-12-25 15:47:52.175 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:47:52.176 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:47:52.177 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
+2019-12-25 15:47:52.178 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:47:52.179 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:47:52.179 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 2(String)
+2019-12-25 15:47:52.180 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:47:52.181 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:47:52.182 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 2(String)
+2019-12-25 15:47:52.183 DEBUG 12864 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:48:59.642 DEBUG 12864 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2019-12-25 15:48:59.643 DEBUG 12864 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2019-12-25 15:48:59.643 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2019-12-25 15:48:59.643 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2019-12-25 15:48:59.644 DEBUG 12864 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllType                   : <==      Total: 3
+2019-12-25 15:48:59.644 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2019-12-25 15:48:59.662 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2019-12-25 15:48:59.662 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2019-12-25 15:48:59.677 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2019-12-25 15:48:59.678 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2019-12-25 15:48:59.678 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2019-12-25 15:48:59.680 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2019-12-25 15:49:01.365 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2019-12-25 15:49:01.366 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 33(Integer)
+2019-12-25 15:49:01.366 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2019-12-25 15:49:01.367 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2019-12-25 15:49:01.368 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2019-12-25 15:49:01.369 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:49:01.369 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2019-12-25 15:49:01.369 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
+2019-12-25 15:49:01.370 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:49:01.372 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:49:01.373 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
+2019-12-25 15:49:01.374 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:49:01.375 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:49:01.376 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 2(String)
+2019-12-25 15:49:01.377 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:49:01.377 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:49:01.378 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 2(String)
+2019-12-25 15:49:01.379 DEBUG 12864 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:49:14.833 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2019-12-25 15:49:14.833 DEBUG 12864 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2019-12-25 15:49:14.833 DEBUG 12864 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2019-12-25 15:49:14.833 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 32(Integer)
+2019-12-25 15:49:14.835 DEBUG 12864 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2019-12-25 15:49:14.835 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2019-12-25 15:49:14.835 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
+2019-12-25 15:49:14.836 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 32(String)
+2019-12-25 15:49:14.839 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
+2019-12-25 15:49:29.065 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.editJbInfoById    : ==>  Preparing: UPDATE jb_info a SET a.jb_channel = ?, a.jb_byte = ?, a.jb_record = ?, a.jb_percentage = ?, a.jb_group_id = ?, a.jb_name = ?, a.r_jb_column = ?, a.r_jb_table = ?, a.r_jb_url = ?, a.r_jb_splitPk = ?, a.r_jb_sql = ?, a.r_where = ?, a.w_jb_mode = ?, a.w_jb_column = ?, a.w_jb_session = ?, a.w_jb_presql = ?, a.w_jb_url = ?, a.w_jb_table = ?, a.jb_bz = ?, a.jb_xgsj = NOW(), a.jb_json_file_name = ?, a.jb_json_fullPath = ? WHERE a.id = ? AND a.jb_yxbz = 'Y' 
+2019-12-25 15:49:29.069 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.editJbInfoById    : ==> Parameters: 5(Integer), 10245879(Integer), 1(Integer), 0.3(Double), 2(String), test(String), (String), (String), (String), (String), (String), (String), insert(String), (String), (String), (String), (String), (String), 备注(String), 2_18d4c743989044b5bddabb21abd39f47(String), G:\ideal_project_test\datax\target\classes\json\2_18d4c743989044b5bddabb21abd39f47.json(String), 32(Integer)
+2019-12-25 15:49:29.111 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.editJbInfoById    : <==    Updates: 1
+2019-12-25 15:49:29.112 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.d.J.editJbInfoByIdTxtFile          : ==>  Preparing: UPDATE jb_txtfile_info a SET a.jb_r_txtFile_path = ?, a.jb_r_txtFile_en = ?, a.jb_r_txtFile_column = ?, a.jb_r_txtFile_fgf = ?, a.jb_r_txtFile_ysgs = ?, a.jb_r_txtFile_csv_h = ?, a.jb_w_txtFile_path = ?, a.jb_w_txtFile_filename = ?, a.jb_w_txtfile_ms = ?, a.jb_w_txtfile_fgf = ?, a.jb_w_txtfile_ysgs = ?, a.jb_w_txtfile_en = ?, a.jb_w_txtfile_dateF = ?, a.jb_w_txtfile_fileF = ?, a.jb_w_txtfile_header = ? WHERE a.jb_txtFile_id = ? 
+2019-12-25 15:49:29.113 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.d.J.editJbInfoByIdTxtFile          : ==> Parameters: /home/datax/abc(String), UTF-8(String), {"index":0,"type":"long"}&{"index":1,"type":"int"}&{"index":2,"type":"date","format":"yyyy.MM.dd"}(String), ,(String), zip(String), false(Boolean), /home/abc(String), test(String), truncate(String), ,(String), zip(String), utf-8(String), yyyy-MM-dd(String), null, id,name(String), 32(String)
+2019-12-25 15:49:29.141 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.d.J.editJbInfoByIdTxtFile          : <==    Updates: 1
+2019-12-25 15:49:29.156 DEBUG 12864 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2019-12-25 15:49:29.157 DEBUG 12864 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2019-12-25 15:49:29.162 DEBUG 12864 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2019-12-25 15:49:29.163 DEBUG 12864 --- [http-nio-8004-exec-21] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2019-12-25 15:49:29.163 DEBUG 12864 --- [http-nio-8004-exec-21] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2019-12-25 15:49:29.164 DEBUG 12864 --- [http-nio-8004-exec-21] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2019-12-25 15:49:30.188  INFO 12864 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-12-25 15:49:30.200  INFO 12864 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-12-25 15:49:31.002  INFO 12864 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 12864 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2019-12-25 15:49:31.002  INFO 12864 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2019-12-25 15:49:31.431  WARN 12864 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2019-12-25 15:49:31.500  INFO 12864 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-25 15:49:31.501  INFO 12864 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-25 15:49:31.525  INFO 12864 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-25 15:49:31.577  INFO 12864 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2019-12-25 15:49:31.577  WARN 12864 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-12-25 15:49:31.581  INFO 12864 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2019-12-25 15:49:31.867  INFO 12864 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 0.909 seconds (JVM running for 309.577)
+2019-12-25 15:49:33.907  INFO 12864 --- [http-nio-8004-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-25 15:49:33.999 DEBUG 12864 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2019-12-25 15:49:33.999 DEBUG 12864 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2019-12-25 15:49:34.002 DEBUG 12864 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2019-12-25 15:49:34.003 DEBUG 12864 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2019-12-25 15:49:34.003 DEBUG 12864 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 32(Integer)
+2019-12-25 15:49:34.005 DEBUG 12864 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2019-12-25 15:49:34.005 DEBUG 12864 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
+2019-12-25 15:49:34.006 DEBUG 12864 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 32(String)
+2019-12-25 15:49:34.007 DEBUG 12864 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
+2019-12-25 15:52:56.974 DEBUG 12864 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2019-12-25 15:52:56.974 DEBUG 12864 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2019-12-25 15:52:56.975 DEBUG 12864 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2019-12-25 15:52:56.975 DEBUG 12864 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2019-12-25 15:52:56.976 DEBUG 12864 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2019-12-25 15:52:56.976 DEBUG 12864 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllType                   : <==      Total: 3
+2019-12-25 15:52:56.993 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2019-12-25 15:52:56.994 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2019-12-25 15:52:56.998 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2019-12-25 15:52:56.999 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2019-12-25 15:52:56.999 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2019-12-25 15:52:57.000 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2019-12-25 15:52:58.747 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2019-12-25 15:52:58.747 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 33(Integer)
+2019-12-25 15:52:58.749 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2019-12-25 15:52:58.750 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:52:58.751 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
+2019-12-25 15:52:58.752 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:52:58.753 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:52:58.753 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
+2019-12-25 15:52:58.754 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:52:58.754 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:52:58.754 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 2(String)
+2019-12-25 15:52:58.755 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:52:58.756 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:52:58.757 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 2(String)
+2019-12-25 15:52:58.758 DEBUG 12864 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:03.052 DEBUG 12864 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2019-12-25 15:53:03.052 DEBUG 12864 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 32(Integer)
+2019-12-25 15:53:03.054 DEBUG 12864 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2019-12-25 15:53:03.054 DEBUG 12864 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
+2019-12-25 15:53:03.054 DEBUG 12864 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 32(String)
+2019-12-25 15:53:03.055 DEBUG 12864 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
+2019-12-25 15:53:04.982 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2019-12-25 15:53:04.982 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 31(Integer)
+2019-12-25 15:53:04.985 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2019-12-25 15:53:04.986 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:04.986 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
+2019-12-25 15:53:04.987 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:04.987 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:04.987 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
+2019-12-25 15:53:04.988 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:04.989 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:04.989 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 2(String)
+2019-12-25 15:53:04.990 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:04.991 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:04.992 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 2(String)
+2019-12-25 15:53:04.993 DEBUG 12864 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:11.863 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2019-12-25 15:53:11.863 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 33(Integer)
+2019-12-25 15:53:11.865 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2019-12-25 15:53:11.867 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:11.867 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
+2019-12-25 15:53:11.868 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:11.868 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:11.869 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
+2019-12-25 15:53:11.869 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:11.870 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:11.870 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 2(String)
+2019-12-25 15:53:11.871 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:11.871 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:11.871 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 2(String)
+2019-12-25 15:53:11.872 DEBUG 12864 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:13.844 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2019-12-25 15:53:13.845 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 32(Integer)
+2019-12-25 15:53:13.875 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2019-12-25 15:53:13.875 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
+2019-12-25 15:53:13.876 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 32(String)
+2019-12-25 15:53:13.878 DEBUG 12864 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
+2019-12-25 15:53:39.406 DEBUG 12864 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2019-12-25 15:53:39.407 DEBUG 12864 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2019-12-25 15:53:39.407 DEBUG 12864 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllType                   : <==      Total: 3
+2019-12-25 15:53:39.408 DEBUG 12864 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2019-12-25 15:53:39.408 DEBUG 12864 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2019-12-25 15:53:39.409 DEBUG 12864 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2019-12-25 15:53:39.431 DEBUG 12864 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2019-12-25 15:53:39.431 DEBUG 12864 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2019-12-25 15:53:39.436 DEBUG 12864 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2019-12-25 15:53:39.437 DEBUG 12864 --- [http-nio-8004-exec-23] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2019-12-25 15:53:39.437 DEBUG 12864 --- [http-nio-8004-exec-23] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2019-12-25 15:53:39.438 DEBUG 12864 --- [http-nio-8004-exec-23] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2019-12-25 15:53:41.040 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2019-12-25 15:53:41.040 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 33(Integer)
+2019-12-25 15:53:41.042 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2019-12-25 15:53:41.043 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:41.044 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
+2019-12-25 15:53:41.045 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:41.045 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:41.045 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
+2019-12-25 15:53:41.046 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:41.046 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:41.046 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 2(String)
+2019-12-25 15:53:41.047 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:41.048 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:41.048 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 2(String)
+2019-12-25 15:53:41.050 DEBUG 12864 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:44.847 DEBUG 12864 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2019-12-25 15:53:44.847 DEBUG 12864 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 32(Integer)
+2019-12-25 15:53:44.848 DEBUG 12864 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2019-12-25 15:53:44.849 DEBUG 12864 --- [http-nio-8004-exec-25] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
+2019-12-25 15:53:44.849 DEBUG 12864 --- [http-nio-8004-exec-25] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 32(String)
+2019-12-25 15:53:44.850 DEBUG 12864 --- [http-nio-8004-exec-25] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
+2019-12-25 15:53:47.172 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2019-12-25 15:53:47.172 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 31(Integer)
+2019-12-25 15:53:47.174 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2019-12-25 15:53:47.174 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:47.175 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
+2019-12-25 15:53:47.176 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:47.176 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:47.177 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
+2019-12-25 15:53:47.178 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:47.179 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:47.179 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 2(String)
+2019-12-25 15:53:47.180 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
+2019-12-25 15:53:47.180 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2019-12-25 15:53:47.180 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 2(String)
+2019-12-25 15:53:47.181 DEBUG 12864 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1

@@ -300,12 +300,10 @@ $(function () {
                     dbConJson.r_jb_tbgs = $('#to_local').val();
                     dbConJson.jb_group_id = layero.find('iframe').contents().find('[id="jb_group"]').val();
                     dbConJson.jb_name = layero.find('iframe').contents().find('[id="sc-add-jb_name"]').val();
-
                     dbConJson.jb_byte = layero.find('iframe').contents().find('[id="setting_byte"]').val();
                     dbConJson.jb_channel = layero.find('iframe').contents().find('[id="settin_channel"]').val();
                     dbConJson.jb_record = layero.find('iframe').contents().find('[id="setting_record"]').val();
                     dbConJson.jb_percentage = layero.find('iframe').contents().find('[id="setting_percentage"]').val();
-
                     dbConJson.r_jb_column = layero.find('iframe').contents().find('[id="add_column"]').val();
                     dbConJson.w_jb_column = layero.find('iframe').contents().find('[id="w-add_column"]').val();
                     dbConJson.r_jb_table = layero.find('iframe').contents().find('[id="add_table"]').val();
@@ -411,6 +409,10 @@ $(function () {
                     dbConJson.r_jb_tbgs = data.r_jb_tbgs;
                     dbConJson.jb_group_id = layero.find('iframe').contents().find('[id="edit_jb_group"]').val();
                     dbConJson.jb_name = layero.find('iframe').contents().find('[id="sc-edit-jb_name"]').val();
+                    dbConJson.jb_byte = layero.find('iframe').contents().find('[id="edit_setting_byte"]').val();
+                    dbConJson.jb_channel = layero.find('iframe').contents().find('[id="edit_settin_channel"]').val();
+                    dbConJson.jb_record = layero.find('iframe').contents().find('[id="edit_setting_record"]').val();
+                    dbConJson.jb_percentage = layero.find('iframe').contents().find('[id="edit_setting_percentage"]').val();
                     dbConJson.r_jb_column = layero.find('iframe').contents().find('[id="edit_r_column"]').val();
                     dbConJson.w_jb_column = layero.find('iframe').contents().find('[id="w-edit_column"]').val();
                     dbConJson.r_jb_table = layero.find('iframe').contents().find('[id="edit_r_table"]').val();
