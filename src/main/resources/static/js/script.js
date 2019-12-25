@@ -369,7 +369,10 @@ $(function () {
             } else if(obj.event === 'edit'){//点击编辑
                 edit_fun(data);
             }else if(obj.event === 'select'){//点击应用
-                console.log('应用')
+                console.log(data)
+                layer.alert('脚本地址：'+'<br/>'+data.jb_json_fullPath,{
+                    area:['650px','400px']
+                })
             }
         });
         /*点击查看的时候数据显示方法*/
@@ -570,7 +573,33 @@ $(function () {
             dbConJson.jb_lrsj_z = $('#date_z').val();
             dbConJson.jb_group_id = $('#jb_group').val();
             info_by_tj_fun(dbConJson);
+        });
+
+        /*监听复选框事件*/
+        var select_jb_obj = [];
+        var select_jb_name = [];
+        var select_jb_path = [];
+        table.on('checkbox(con-data)', function(obj){
+            if(obj.checked){
+                select_jb_name.push(obj.data.jb_name);
+                select_jb_obj.push(obj.data)
+            }else {
+                select_jb_name.splice($.inArray(obj.data.jb_name,select_jb_name),1);
+                select_jb_obj.splice($.inArray(obj.data,select_jb_obj),1)
+            }
+            $('#select_jb_name').val(select_jb_name.join(','))
+
+        });
+        $('#select_jb_name_btn').on('click',function () {
+            $.each(select_jb_obj,function (index,item) {
+               select_jb_path.push(item.jb_json_fullPath);
+            });
+           // layer.alert('脚本地址：'+select_jb_path.join('<br/>'))
+            layer.alert('脚本地址：'+'<br/>'+select_jb_path.join('<br/>'), {
+                area:['650px','400px']
+            })
         })
+
 
     })
 });
