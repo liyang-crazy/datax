@@ -1,6 +1,5 @@
 $(function () {
     child = {};
-    var a = 123;
     layui.use(['element','table','laypage','layer','laydate','form','laytpl'],function () {
         var element = layui.element;
         var table = layui.table;
