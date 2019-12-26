@@ -369,7 +369,6 @@ $(function () {
             } else if(obj.event === 'edit'){//点击编辑
                 edit_fun(data);
             }else if(obj.event === 'select'){//点击应用
-                console.log(data)
                 layer.alert('脚本地址：'+'<br/>'+data.jb_json_fullPath,{
                     area:['650px','400px']
                 })
@@ -582,12 +581,17 @@ $(function () {
         table.on('checkbox(con-data)', function(obj){
             if(obj.checked){
                 select_jb_name.push(obj.data.jb_name);
-                select_jb_obj.push(obj.data)
+                select_jb_obj.push(obj.data);
             }else {
                 select_jb_name.splice($.inArray(obj.data.jb_name,select_jb_name),1);
-                select_jb_obj.splice($.inArray(obj.data,select_jb_obj),1)
+                select_jb_obj.splice($.inArray(obj.data,select_jb_obj),1);
             }
-            $('#select_jb_name').val(select_jb_name.join(','))
+            $('#select_jb_name').val(select_jb_name.join(','));
+            if(select_jb_name.length > 0){
+                $('#select_jb_name_all').addClass('layui-show');
+            }else {
+                $('#select_jb_name_all').removeClass('layui-show');
+            }
 
         });
         $('#select_jb_name_btn').on('click',function () {
@@ -595,7 +599,6 @@ $(function () {
             $.each(select_jb_obj,function (index,item) {
                select_jb_path.push(item.jb_json_fullPath);
             });
-           // layer.alert('脚本地址：'+select_jb_path.join('<br/>'))
             layer.alert('脚本地址：'+'<br/>'+select_jb_path.join('<br/>'), {
                 area:['650px','400px']
             })
