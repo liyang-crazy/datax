@@ -22,29 +22,6 @@ $(function () {
         };
         var is_null_flg = "";//判断新增参数是否为空
 
-        /*测试方法*/
-      /*  $('#test_btn').on('click',function () {
-            $.ajax({
-                type:'post',
-                dataType: "json",
-                contentType: "application/json;charset=UTF-8",
-                headers : {"Content-Type" : "application/json;charset=utf-8"},
-                url:'https://openapi.caishuib.com/token/create',
-                data:{
-                    app_id: "c4213f2f735f42ebb9a349624685eb77",
-                    app_secret: "741bbb93dd844c229e317ac25424b7b7"
-                },
-                success:function(res){
-                   debugger;
-
-                },
-                error:function () {
-                    layer.alert("请求错误！")
-                }
-            })
-        });*/
-
-
         var data_info = function () {
             table.render({
                 elem: '#con-data',
@@ -106,6 +83,11 @@ $(function () {
                 $('#oracle-contion').removeClass('layui-hide');
                 $('#mysql-zfj').addClass('layui-hide');
             }
+            if(select_val == 4){
+                $('#add_title').text("新增SqlServer数据");
+                $('#oracle-contion').addClass('layui-hide');
+                $('#mysql-zfj').addClass('layui-hide');
+            }
             $('#add_info_mysql').removeClass('layui-hide');
             layer.open({
                 type: 1,
@@ -144,6 +126,15 @@ $(function () {
                     $('#add_info_mysql').addClass('layui-hide');
                     layer.closeAll();
                 }
+                if(select_val == 4 && isNull_fun(dbContionInfo) == 1){
+                    layer.alert('连接参数信息不全！')
+                }else if(select_val == 4 && isNull_fun(dbContionInfo) == 2){
+                    /*点击新增确定*/
+                    add_info_fun(dbContionInfo);
+                    clean_parms_fun();
+                    $('#add_info_mysql').addClass('layui-hide');
+                    layer.closeAll();
+                }
             });
             $('#cancel').on('click',function () {
                 clean_parms_fun();
@@ -164,6 +155,12 @@ $(function () {
                 $('#update_oracle-contion').removeClass('layui-hide');
                 $('#show_oracle-contion').removeClass('layui-hide');
                 $('#show_mysql-zfj').addClass('layui-hide');
+                $('#update_mysql-zfj').addClass('layui-hide');
+            }
+            if(data.db_type == 4){
+                $('#show_oracle-contion').addClass('layui-hide');
+                $('#show_mysql-zfj').addClass('layui-hide');
+                $('#update_oracle-contion').addClass('layui-hide');
                 $('#update_mysql-zfj').addClass('layui-hide');
             }
             select_data = data;
@@ -236,6 +233,15 @@ $(function () {
                     if(dbContionInfo.db_type == 2 && isNull_fun_update(dbContionInfo) == 1){
                         layer.alert('连接参数信息不全！')
                     }else if(dbContionInfo.db_type == 2 && isNull_fun_update(dbContionInfo) == 2){
+                        /*调用修改的方法*/
+                        update_info_fun(dbContionInfo);
+                        dbContionInfo={};
+                        $('#update_info_mysql').addClass('layui-hide');
+                        layer.closeAll();
+                    }
+                    if(dbContionInfo.db_type == 4 && isNull_fun_update(dbContionInfo) == 1){
+                        layer.alert('连接参数信息不全！')
+                    }else if(dbContionInfo.db_type == 4 && isNull_fun_update(dbContionInfo) == 2){
                         /*调用修改的方法*/
                         update_info_fun(dbContionInfo);
                         dbContionInfo={};
@@ -333,6 +339,13 @@ $(function () {
                     return  is_null_flg = 2;
                 }
             }
+            if(select_val == 4){
+                if((parm.db_name == "" || parm.db_ip == "" || parm.db_port == "" || parm.db_username == "" ||parm.db_password == "")||(parm.db_name == null || parm.db_ip == null || parm.db_port == null || parm.db_username == null ||parm.db_password == null)){
+                    return  is_null_flg = 1;
+                }else {
+                    return  is_null_flg = 2;
+                }
+            }
         };
         /*判断修改提交参数不能为空*/
         var isNull_fun_update = function (parm) {
@@ -345,6 +358,13 @@ $(function () {
             }
             if(parm.db_type == 2){
                 if((parm.db_name == "" || parm.db_ip == "" || parm.db_port == "" || parm.db_sid == "" || parm.db_username == "" ||parm.db_password == "")||(parm.db_name == null || parm.db_ip == null || parm.db_port == null || parm.db_sid == null || parm.db_username == null ||parm.db_password == null)){
+                    return  is_null_flg = 1;
+                }else {
+                    return  is_null_flg = 2;
+                }
+            }
+            if(parm.db_type == 4){
+                if((parm.db_name == "" || parm.db_ip == "" || parm.db_port == "" || parm.db_username == "" ||parm.db_password == "")||(parm.db_name == null || parm.db_ip == null || parm.db_port == null || parm.db_username == null ||parm.db_password == null)){
                     return  is_null_flg = 1;
                 }else {
                     return  is_null_flg = 2;

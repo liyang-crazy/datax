@@ -35,6 +35,9 @@ public class DbContionInfoServiceImpl implements DbContionInfoService{
             if("2".equals(dbInfo.getDb_type())){
                 dbInfo.setDb_url(DbUrlHeader.DB_URL_ORACLE+dbInfo.getDb_ip()+":"+dbInfo.getDb_port()+"/"+dbInfo.getDb_sid());
             }
+            if("4".equals(dbInfo.getDb_type())){
+                dbInfo.setDb_url(DbUrlHeader.DB_URL_SQLSERVER+dbInfo.getDb_ip()+":"+dbInfo.getDb_port()+";DatabaseName="+dbInfo.getDb_name());
+            }
         }
         return list;
     }
@@ -88,6 +91,9 @@ public class DbContionInfoServiceImpl implements DbContionInfoService{
         }
         if("2".equals(dbCon.getDb_type())){
             dbCon.setDb_url(DbUrlHeader.DB_URL_ORACLE+dbCon.getDb_ip()+":"+dbCon.getDb_port()+"/"+dbCon.getDb_sid());
+        }
+        if("4".equals(dbContionInfo.getDb_type())){
+            dbContionInfo.setDb_url(DbUrlHeader.DB_URL_SQLSERVER+dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port()+";DatabaseName="+dbContionInfo.getDb_name());
         }
         return dbCon;
     }

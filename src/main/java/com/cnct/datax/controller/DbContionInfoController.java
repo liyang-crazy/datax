@@ -44,41 +44,16 @@ public class DbContionInfoController {
    @ResponseBody
    public Map<String,Object> addDbInfo(@RequestBody DbContionInfo dbContionInfo){
        Map<String,Object> map = new HashMap<>();
-       /*String jsonString = "";*/
        try {
            if("1".equals(dbContionInfo.getDb_type())){
                dbContionInfo.setDb_url(DbUrlHeader.DB_URL_MYSQL+dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port()+"/"+dbContionInfo.getDb_name()+"?"+dbContionInfo.getDb_zfj());
-               /*jsonString = ToJSONFile.toJSONFile(dbContionInfo);*/
            }
            if("2".equals(dbContionInfo.getDb_type())){
                dbContionInfo.setDb_url(DbUrlHeader.DB_URL_ORACLE+dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port()+"/"+dbContionInfo.getDb_sid());
-               /*jsonString = ToJSONFileByOracle.toJSONFileByOracle(dbContionInfo);*/
            }
-           //将连接信息转成json格式数据，存入本地
-           //String fileName = dbContionInfo.getDb_name() + Calendar.getInstance().getTimeInMillis();
-           //存入地址：G:\ideal_project_test\datax\target\classes\json
-           //String filePath = new File(this.getClass().getClassLoader().getResource("json").getPath()).toString();
-          // String fullPath = filePath + File.separator + fileName + ".json";
-           /*try {
-               // 保证创建一个新文件
-               File file = new File(fullPath);
-               if(!file.getParentFile().exists()){// 如果父目录不存在，创建父目录
-                   file.getParentFile().mkdirs();
-               }
-               if(file.exists()){// 如果已存在,删除旧文件
-                   file.delete();
-               }
-               file.createNewFile();
-               // 将格式化后的字符串写入文件
-               Writer write = new OutputStreamWriter(new FileOutputStream(file), "UTF-8");
-               write.write(jsonString);
-               write.flush();
-               write.close();
-           }catch (Exception e){
-               e.printStackTrace();
-           }*/
-           //dbContionInfo.setJson_file_name(fileName);
-           //dbContionInfo.setJson_file_fullPath(fullPath);
+           if("4".equals(dbContionInfo.getDb_type())){
+               dbContionInfo.setDb_url(DbUrlHeader.DB_URL_SQLSERVER+dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port()+";DatabaseName="+dbContionInfo.getDb_name());
+           }
            int index = dbContionInfoService.addDbInfo(dbContionInfo);
            map.put("code",0);
            map.put("data",index);
@@ -95,41 +70,16 @@ public class DbContionInfoController {
    @ResponseBody
    public Map<String,Object> updateDbInfoById(@RequestBody DbContionInfo dbContionInfo){
        Map<String,Object> map = new HashMap<>();
-       /*String jsonString = "";*/
        try {
            if("1".equals(dbContionInfo.getDb_type())){
                dbContionInfo.setDb_url(DbUrlHeader.DB_URL_MYSQL+dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port()+"/"+dbContionInfo.getDb_name()+"?"+dbContionInfo.getDb_zfj());
-              /* jsonString = ToJSONFile.toJSONFile(dbContionInfo);*/
            }
            if("2".equals(dbContionInfo.getDb_type())){
                dbContionInfo.setDb_url(DbUrlHeader.DB_URL_ORACLE+dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port()+"/"+dbContionInfo.getDb_sid());
-               /*jsonString = ToJSONFileByOracle.toJSONFileByOracle(dbContionInfo);*/
            }
-           //将连接信息转成json格式数据，存入本地
-           //String fileName = dbContionInfo.getDb_name() + Calendar.getInstance().getTimeInMillis();
-           //存入地址：G:\ideal_project_test\datax\target\classes\json
-           //String filePath = new File(this.getClass().getClassLoader().getResource("json").getPath()).toString();
-           //String fullPath = filePath + File.separator + fileName + ".json";
-           /*try {
-               // 保证创建一个新文件
-               File file = new File(fullPath);
-               if(!file.getParentFile().exists()){// 如果父目录不存在，创建父目录
-                   file.getParentFile().mkdirs();
-               }
-               if(file.exists()){// 如果已存在,删除旧文件
-                   file.delete();
-               }
-               file.createNewFile();
-               // 将格式化后的字符串写入文件
-               Writer write = new OutputStreamWriter(new FileOutputStream(file), "UTF-8");
-               write.write(jsonString);
-               write.flush();
-               write.close();
-           }catch (Exception e){
-               e.printStackTrace();
+           if("4".equals(dbContionInfo.getDb_type())){
+               dbContionInfo.setDb_url(DbUrlHeader.DB_URL_SQLSERVER+dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port()+";DatabaseName="+dbContionInfo.getDb_name());
            }
-           dbContionInfo.setJson_file_name(fileName);
-           dbContionInfo.setJson_file_fullPath(fullPath);*/
            int index =  dbContionInfoService.updateDbInfoById(dbContionInfo);
            map.put("code",0);
            map.put("data",index);
