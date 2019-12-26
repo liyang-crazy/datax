@@ -579,12 +579,17 @@ $(function () {
         var select_jb_name = [];
         var select_jb_path = [];
         table.on('checkbox(con-data)', function(obj){
-            if(obj.checked){
-                select_jb_name.push(obj.data.jb_name);
-                select_jb_obj.push(obj.data);
+            select_jb_obj = table.checkStatus('con-data').data;
+            if(select_jb_obj.length > 0){
+                select_jb_name = [];
+                select_jb_path = [];
+                $.each(select_jb_obj,function (index,item) {
+                    select_jb_name.push(item.jb_name);
+                    select_jb_path.push(item.jb_json_fullPath);
+                })
             }else {
-                select_jb_name.splice($.inArray(obj.data.jb_name,select_jb_name),1);
-                select_jb_obj.splice($.inArray(obj.data,select_jb_obj),1);
+                select_jb_name = [];
+                select_jb_path = [];
             }
             $('#select_jb_name').val(select_jb_name.join(','));
             if(select_jb_name.length > 0){
@@ -592,17 +597,13 @@ $(function () {
             }else {
                 $('#select_jb_name_all').removeClass('layui-show');
             }
-
         });
         $('#select_jb_name_btn').on('click',function () {
-            var select_jb_path = [];
-            $.each(select_jb_obj,function (index,item) {
-               select_jb_path.push(item.jb_json_fullPath);
-            });
             layer.alert('脚本地址：'+'<br/>'+select_jb_path.join('<br/>'), {
                 area:['650px','400px']
             })
-        })
+        });
+
 
 
     })
