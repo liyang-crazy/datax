@@ -85,6 +85,11 @@ $(function () {
                     $('#w-sc-show-session').addClass('layui-hide');
                     $('#w_show_db_mode_all').addClass('layui-hide');
                 }
+                if(data.w_db_type == 4){
+                    $('#w-sc-show-postSql').removeClass('layui-hide');
+                    $('#w-sc-show-session').addClass('layui-hide');
+                    $('#w_show_db_mode_all').addClass('layui-hide');
+                }
             }
             $('#sc-show-jb_name').val(data.jb_name);
             $("#show_jb_group").append("<option value="+data.jb_group_id+" selected>"+data.jb_group_name+"</option>");
@@ -111,6 +116,7 @@ $(function () {
             $('#w-show_contaion').val(data.w_jb_url);
             $('#w-show_session').val(data.w_jb_session);
             $('#w-show_preSql').val(data.w_jb_presql);
+            $('#w-show_postSql').val(data.w_jb_postsql);
             $('#sc-show-jb_bz').val(data.jb_bz);
             /*给txtfile表单赋值*/
             $('#show_path').val(data.txtFileInfo.jb_r_txtFile_path);
