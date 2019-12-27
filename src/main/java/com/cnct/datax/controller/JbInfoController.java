@@ -10,6 +10,7 @@ import com.cnct.datax.util.*;
 import com.cnct.datax.util.reader.*;
 import com.cnct.datax.util.writer.MysqlWriter;
 import com.cnct.datax.util.writer.OracleWriter;
+import com.cnct.datax.util.writer.SqlServerWriter;
 import com.cnct.datax.util.writer.TxtFileWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -76,6 +77,7 @@ public class JbInfoController {
             jbInfo.setW_jb_column_arr(jbInfo.getW_jb_column().split(","));
             jbInfo.setW_jb_session_arr(jbInfo.getW_jb_session().split("&"));
             jbInfo.setW_jb_preSql_arr(jbInfo.getW_jb_presql().split("&"));
+            jbInfo.setW_jb_postSql_arr(jbInfo.getW_jb_postsql().split("&"));
             jbInfo.setW_jb_table_arr(jbInfo.getW_jb_table().split(","));
             if("3".equals(jbInfo.getR_db_type()) || "3".equals(jbInfo.getW_db_type())){
                 jbInfo.getTxtFileInfo().setJb_r_txtFile_path_arr(jbInfo.getTxtFileInfo().getJb_r_txtFile_path().split(","));
@@ -99,6 +101,9 @@ public class JbInfoController {
                 case "3":
                     reader = TxtFileReader.txtFileReader(jbInfo);
                     break;
+                case "4":
+                    reader = SqlServerReader.sqlServerReader(jbInfo);
+                    break;
             }
             switch (jbInfo.getW_db_type()){
                 case "1":
@@ -109,6 +114,9 @@ public class JbInfoController {
                     break;
                 case "3":
                     writer = TxtFileWriter.txtFileWriter(jbInfo);
+                    break;
+                case "4":
+                    writer = SqlServerWriter.sqlServerWriter(jbInfo);
                     break;
             }
             jsonString = Merge.mergeAll(jbInfo,reader,writer);

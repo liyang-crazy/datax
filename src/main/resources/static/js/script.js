@@ -51,6 +51,7 @@ $(function () {
             r_where:'',
             w_jb_session:'',
             w_jb_presql:'',
+            w_jb_postsql:'',
             jb_bz:'',
             jb_lrsj_q:'',
             jb_lrsj_z:'',
@@ -315,6 +316,7 @@ $(function () {
                     dbConJson.r_where = '';
                     dbConJson.w_jb_session = layero.find('iframe').contents().find('[id="w-add_session"]').val();
                     dbConJson.w_jb_presql = layero.find('iframe').contents().find('[id="w-add_preSql"]').val();
+                    dbConJson.w_jb_postsql = layero.find('iframe').contents().find('[id="w-add_postSql"]').val();
                     dbConJson.jb_bz = layero.find('iframe').contents().find('[id="sc-add-jb_bz"]').val();
                     dbConJson.r_db_url = layero.find('iframe').contents().find('[id="add_contaion"]').val().replace(/\n/g,',');
                     /*dbConJson.w_db_url = res.data_w.db_url;*/

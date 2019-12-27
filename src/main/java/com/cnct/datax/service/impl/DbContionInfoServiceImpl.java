@@ -92,8 +92,8 @@ public class DbContionInfoServiceImpl implements DbContionInfoService{
         if("2".equals(dbCon.getDb_type())){
             dbCon.setDb_url(DbUrlHeader.DB_URL_ORACLE+dbCon.getDb_ip()+":"+dbCon.getDb_port()+"/"+dbCon.getDb_sid());
         }
-        if("4".equals(dbContionInfo.getDb_type())){
-            dbContionInfo.setDb_url(DbUrlHeader.DB_URL_SQLSERVER+dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port()+";DatabaseName="+dbContionInfo.getDb_name());
+        if("4".equals(dbCon.getDb_type())){
+            dbCon.setDb_url(DbUrlHeader.DB_URL_SQLSERVER+dbCon.getDb_ip()+":"+dbCon.getDb_port()+";DatabaseName="+dbCon.getDb_name());
         }
         return dbCon;
     }

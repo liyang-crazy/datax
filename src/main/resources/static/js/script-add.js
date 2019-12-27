@@ -73,13 +73,13 @@ $(function () {
                 $('#sc-add-sql').addClass('layui-hide');
                 $('#sc-add-col').removeClass('layui-hide');
                 $('#sc-add-tab').removeClass('layui-hide');
-                $('#sc-add-split').removeClass('layui-hide');
+                //$('#sc-add-split').removeClass('layui-hide');
             }
             if(getSearchString('jb_tbgs') == 2){
                 $('#sc-add-sql').removeClass('layui-hide');
                 $('#sc-add-col').addClass('layui-hide');
                 $('#sc-add-tab').addClass('layui-hide');
-                $('#sc-add-split').addClass('layui-hide');
+                //$('#sc-add-split').addClass('layui-hide');
             }
         }
         if(getSearchString('w_db_type') == 3){//表示writer区域是txtfile
@@ -96,17 +96,12 @@ $(function () {
                 $('#w-sc-add-session').addClass('layui-hide');
                 $('#w_add_db_mode_all').addClass('layui-hide');
             }
-        }
-        /*if(!$.isEmptyObject(data_w)){
-            if(data_w.db_type == 1){//表示写的时候选择的是mysql
-                $('#w-sc-add-session').removeClass('layui-hide');
-                $('#w_add_db_mode_all').removeClass('layui-hide');
-            }
-            if(data_w.db_type == 2){//表示写的时候选择的是oracle
-                $('#w-sc-add-session').addClass('layui-hide');
+            if(getSearchString('w_db_type') == 4){//表示写的是时候选择的是sqlserver
                 $('#w_add_db_mode_all').addClass('layui-hide');
+                $('#w-sc-add-session').addClass('layui-hide');
+                $('#w-sc-add-postSql').removeClass('layui-hide');
             }
-        }*/
+        }
         /*监听当鼠标点击列名input框的时候弹出对应的文本区域*/
         $('#add_column').on('focus',function () {
             $('.col-textarea').removeClass('layui-hide');
@@ -203,13 +198,6 @@ $(function () {
         });
         $('#w-session-sure').on('click',function () {
             $('.w-session-textarea').addClass('layui-hide');
-            /*var session_str_inpt = $('#w-add_session').val();
-            if(session_str_inpt == ""){
-                session_str_inpt = $.trim($('#w-session_texta').val());
-            }else {
-                session_str_inpt += '&'+$.trim($('#w-session_texta').val());
-            }
-            $('#w-add_session').val(session_str_inpt);*/
             $('#w-add_session').val($.trim($('#w-session_texta').val()));
         });
         $('#w-session-cancle').on('click',function () {
@@ -222,17 +210,22 @@ $(function () {
         });
         $('#w-preSql-sure').on('click',function () {
             $('.w-presql-textarea').addClass('layui-hide');
-            /*var presql_str_inpt = $('#w-add_preSql').val();
-            if(presql_str_inpt == ""){
-                presql_str_inpt = $.trim($('#w-preSql_texta').val());
-            }else {
-                presql_str_inpt += '&'+$.trim($('#w-preSql_texta').val());
-            }
-            $('#w-add_preSql').val(presql_str_inpt);*/
             $('#w-add_preSql').val($.trim($('#w-preSql_texta').val()));
         });
         $('#w-preSql-cancle').on('click',function () {
             $('.w-presql-textarea').addClass('layui-hide');
+        });
+
+        /*监听当鼠标点击postsql input框的时候弹出对应文本区域*/
+        $('#w-add_postSql').on('focus',function () {
+            $('.w-postsql-textarea').removeClass('layui-hide');
+        });
+        $('#w-postSql-sure').on('click',function () {
+            $('.w-postsql-textarea').addClass('layui-hide');
+            $('#w-add_postSql').val($.trim($('#w-postSql_texta').val()));
+        });
+        $('#w-postSql-cancle').on('click',function () {
+            $('.w-postsql-textarea').addClass('layui-hide');
         });
 
         /*监听当鼠标点击txtfile的读取列的input框的时候，弹出下面的新增选择框*/
@@ -270,14 +263,11 @@ $(function () {
                 add_cloumn_txt_inpt += '&'+JSON.stringify(obj);
             }
             $('#add_txtFile_column').val(add_cloumn_txt_inpt);
-            //console.log(JSON.parse(add_cloumn_txt_inpt))
-
-
-
         });
         $('#add_txtFile_column_cancle').on('click',function () {
             $('.add_col_txt').addClass('layui-hide');
         });
+
 
         /*该方法用于判断值是否是数字*/
         function isRealNum(val){

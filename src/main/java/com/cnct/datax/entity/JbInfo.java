@@ -37,10 +37,12 @@ public class JbInfo {
     private String r_jb_sql;
     //脚本-oracle条件-读
     private String r_where;
-    //脚本-写
+    //脚本-写session
     private String w_jb_session;
-    //脚本-写
+    //脚本-写presql
     private String w_jb_presql;
+    //脚本-写postsql
+    private String w_jb_postsql;
     //脚本-备注
     private String jb_bz;
     //脚本-录入时间
@@ -80,6 +82,8 @@ public class JbInfo {
     private String[] w_jb_session_arr;
     //脚本-preSql-数组-写
     private String[] w_jb_preSql_arr;
+    //脚本-postSql-数组-写
+    private String[] w_jb_postSql_arr;
 
 
     //数据库ip-读
@@ -130,6 +134,22 @@ public class JbInfo {
     private int jb_record;
     //出错限制-百分比
     private double jb_percentage;
+
+    public String getW_jb_postsql() {
+        return w_jb_postsql;
+    }
+
+    public void setW_jb_postsql(String w_jb_postsql) {
+        this.w_jb_postsql = w_jb_postsql;
+    }
+
+    public String[] getW_jb_postSql_arr() {
+        return w_jb_postSql_arr;
+    }
+
+    public void setW_jb_postSql_arr(String[] w_jb_postSql_arr) {
+        this.w_jb_postSql_arr = w_jb_postSql_arr;
+    }
 
     public int getJb_channel() {
         return jb_channel;
