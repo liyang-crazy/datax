@@ -119,25 +119,27 @@ $(function () {
             $('#w-show_postSql').val(data.w_jb_postsql);
             $('#sc-show-jb_bz').val(data.jb_bz);
             /*给txtfile表单赋值*/
-            $('#show_path').val(data.txtFileInfo.jb_r_txtFile_path);
-            $('#show_encoding').val(data.txtFileInfo.jb_r_txtFile_en);
-            $('#show_fgf').val(data.txtFileInfo.jb_r_txtFile_fgf);
-            $("#show_ys").append("<option value="+data.txtFileInfo.jb_r_txtFile_ysgs+" selected>"+data.txtFileInfo.jb_r_txtFile_ysgs+"</option>");
-            layui.form.render("select");
-            $("#show_csv").append("<option value="+data.txtFileInfo.jb_r_txtFile_csv_h+" selected>"+data.txtFileInfo.jb_r_txtFile_csv_h+"</option>");
-            layui.form.render("select");
-            $('#show_txtFile_column').val(data.txtFileInfo.jb_r_txtFile_column);
-            $('#w_show_path').val(data.txtFileInfo.jb_w_txtFile_path);
-            $('#w_show_fileName').val(data.txtFileInfo.jb_w_txtFile_filename);
-            $("#w_show_wmode").append("<option value="+data.txtFileInfo.jb_w_txtfile_ms+" selected>"+data.txtFileInfo.jb_w_txtfile_ms+"</option>");
-            layui.form.render("select");
-            $("#w_show_ys").append("<option value="+data.txtFileInfo.jb_w_txtfile_ysgs+" selected>"+data.txtFileInfo.jb_w_txtfile_ysgs+"</option>");
-            layui.form.render("select");
-            $('#w_show_fgf').val(data.txtFileInfo.jb_w_txtfile_fgf);
-            $('#w_show_encoding').val(data.txtFileInfo.jb_w_txtfile_en);
-            $('#w_show_date').val(data.txtFileInfo.jb_w_txtfile_dateF);
-            $('#w_show_fileFormat').val(data.txtFileInfo.jb_w_txtfile_fileF);
-            $('#w_show_header').val(data.txtFileInfo.jb_w_txtfile_header);
+            if(data.txtFileInfo != null){
+                $('#show_path').val(data.txtFileInfo.jb_r_txtFile_path);
+                $('#show_encoding').val(data.txtFileInfo.jb_r_txtFile_en);
+                $('#show_fgf').val(data.txtFileInfo.jb_r_txtFile_fgf);
+                $("#show_ys").append("<option value="+data.txtFileInfo.jb_r_txtFile_ysgs+" selected>"+data.txtFileInfo.jb_r_txtFile_ysgs+"</option>");
+                layui.form.render("select");
+                $("#show_csv").append("<option value="+data.txtFileInfo.jb_r_txtFile_csv_h+" selected>"+data.txtFileInfo.jb_r_txtFile_csv_h+"</option>");
+                layui.form.render("select");
+                $('#show_txtFile_column').val(data.txtFileInfo.jb_r_txtFile_column);
+                $('#w_show_path').val(data.txtFileInfo.jb_w_txtFile_path);
+                $('#w_show_fileName').val(data.txtFileInfo.jb_w_txtFile_filename);
+                $("#w_show_wmode").append("<option value="+data.txtFileInfo.jb_w_txtfile_ms+" selected>"+data.txtFileInfo.jb_w_txtfile_ms+"</option>");
+                layui.form.render("select");
+                $("#w_show_ys").append("<option value="+data.txtFileInfo.jb_w_txtfile_ysgs+" selected>"+data.txtFileInfo.jb_w_txtfile_ysgs+"</option>");
+                layui.form.render("select");
+                $('#w_show_fgf').val(data.txtFileInfo.jb_w_txtfile_fgf);
+                $('#w_show_encoding').val(data.txtFileInfo.jb_w_txtfile_en);
+                $('#w_show_date').val(data.txtFileInfo.jb_w_txtfile_dateF);
+                $('#w_show_fileFormat').val(data.txtFileInfo.jb_w_txtfile_fileF);
+                $('#w_show_header').val(data.txtFileInfo.jb_w_txtfile_header);
+            }
         };
 
 
@@ -222,7 +224,7 @@ $(function () {
         $('#sql-cancle').on('click',function () {
             $('.sql-textarea').addClass('layui-hide');
         });
-
+        /*session*/
         $('#w-show_session').on('focus',function () {
             $('.w-session-textarea').removeClass('layui-hide');
             $('#w-session_texta').val($('#w-show_session').val())
@@ -233,10 +235,10 @@ $(function () {
         $('#w-session-cancle').on('click',function () {
             $('.w-session-textarea').addClass('layui-hide');
         });
-
+        /*presql*/
         $('#w-show_preSql').on('focus',function () {
             $('.w-presql-textarea').removeClass('layui-hide');
-            $('#w-preSql_texta').val($('#w-show_preSql').val())
+            $('#w-preSql_texta').val($('#w-show_preSql').val().replaceAll('&','\n'));
         });
         $('#w-preSql-sure').on('click',function () {
             $('.w-presql-textarea').addClass('layui-hide');
@@ -244,6 +246,16 @@ $(function () {
         $('#w-preSql-cancle').on('click',function () {
             $('.w-presql-textarea').addClass('layui-hide');
         });
-
+        /*postsql*/
+        $('#w-show_postSql').on('focus',function () {
+            $('.w-postSql-textarea').removeClass('layui-hide');
+            $('#w-postSql_texta').val($('#w-show_postSql').val().replaceAll('&','\n'));
+        });
+        $('#w-postSql-sure').on('click',function () {
+            $('.w-postSql-textarea').addClass('layui-hide');
+        });
+        $('#w-postSql-cancle').on('click',function () {
+            $('.w-postSql-textarea').addClass('layui-hide');
+        });
     })
 });

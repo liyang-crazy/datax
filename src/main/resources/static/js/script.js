@@ -430,6 +430,7 @@ $(function () {
                     dbConJson.r_where = '';
                     dbConJson.w_jb_session = layero.find('iframe').contents().find('[id="w-edit_session"]').val();
                     dbConJson.w_jb_presql = layero.find('iframe').contents().find('[id="w-edit_preSql"]').val();
+                    dbConJson.w_jb_postsql = layero.find('iframe').contents().find('[id="w-edit_postSql"]').val();
                     dbConJson.jb_bz = layero.find('iframe').contents().find('[id="sc-edit-jb_bz"]').val();
                     dbConJson.r_db_username = layero.find('iframe').contents().find('[id="sc-edit-db-username"]').val();
                     dbConJson.w_db_username = layero.find('iframe').contents().find('[id="w-sc-edit-db-username"]').val();

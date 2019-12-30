@@ -79,6 +79,7 @@ $(function () {
         getAllJb_group_fun();
         /*回填数据的方法*/
         var back_data_fun = function (data) {
+            console.log(data)
             if(data.r_db_type == 3){
                 $('.mysqlAndOracle').addClass('layui-hide');
                 $('.txtFile').removeClass('layui-hide');
@@ -111,6 +112,11 @@ $(function () {
                 if(data.w_db_type == 2){
                     $('#w-sc-edit-session').addClass('layui-hide');
                     $('#w_edit_db_mode_all').addClass('layui-hide');
+                }
+                if(data.w_db_type == 4){
+                    $('#w-sc-edit-postSql').removeClass('layui-hide');
+                    $('#w_edit_db_mode_all').addClass('layui-hide');
+                    $('#w-sc-edit-session').addClass('layui-hide');
                 }
             }
             $('#sc-edit-jb_name').val(data.jb_name);
@@ -150,61 +156,64 @@ $(function () {
             $('#w-edit_contaion').val(data.w_jb_url);
             $('#w-edit_session').val(data.w_jb_session);
             $('#w-edit_preSql').val(data.w_jb_presql);
+            $('#w-edit_postSql').val(data.w_jb_postsql);
             $('#sc-edit-jb_bz').val(data.jb_bz);
             /*给txtfile表单赋值*/
-            $('#edit_path').val(data.txtFileInfo.jb_r_txtFile_path);
-            $('#edit_encoding').val(data.txtFileInfo.jb_r_txtFile_en);
-            $('#edit_fgf').val(data.txtFileInfo.jb_r_txtFile_fgf);
-            $.each(jb_r_txtFile_ysgs_arr,function (index,item) {
-                if(data.txtFileInfo.jb_r_txtFile_ysgs == item){
-                    $("#edit_ys").append("<option value="+item+" selected>"+item+"</option>");
-                }else {
-                    $("#edit_ys").append("<option value="+item+">"+item+"</option>");
-                }
-            });
-            layui.form.render("select");
-            $.each(jb_r_txtFile_csv_h_arr,function (index,item) {
-                if(data.txtFileInfo.jb_r_txtFile_csv_h == item){
-                    if(item == 0){
-                        item = false;
+            if(data.txtFileInfo != null){
+                $('#edit_path').val(data.txtFileInfo.jb_r_txtFile_path);
+                $('#edit_encoding').val(data.txtFileInfo.jb_r_txtFile_en);
+                $('#edit_fgf').val(data.txtFileInfo.jb_r_txtFile_fgf);
+                $.each(jb_r_txtFile_ysgs_arr,function (index,item) {
+                    if(data.txtFileInfo.jb_r_txtFile_ysgs == item){
+                        $("#edit_ys").append("<option value="+item+" selected>"+item+"</option>");
                     }else {
-                        item = true;
+                        $("#edit_ys").append("<option value="+item+">"+item+"</option>");
                     }
-                    $("#edit_csv").append("<option value="+item+" selected>"+item+"</option>");
-                }else {
-                    if(item == 0){
-                        item = false;
+                });
+                layui.form.render("select");
+                $.each(jb_r_txtFile_csv_h_arr,function (index,item) {
+                    if(data.txtFileInfo.jb_r_txtFile_csv_h == item){
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#edit_csv").append("<option value="+item+" selected>"+item+"</option>");
                     }else {
-                        item = true;
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#edit_csv").append("<option value="+item+">"+item+"</option>");
                     }
-                    $("#edit_csv").append("<option value="+item+">"+item+"</option>");
-                }
-            });
-            layui.form.render("select");
-            $('#edit_txtFile_column').val(data.txtFileInfo.jb_r_txtFile_column);
-            $('#w_edit_path').val(data.txtFileInfo.jb_w_txtFile_path);
-            $('#w_edit_fileName').val(data.txtFileInfo.jb_w_txtFile_filename);
-            $.each(jb_w_txtfile_ms_arr,function (index,item) {
-                if(data.txtFileInfo.jb_w_txtfile_ms == item){
-                    $("#w_edit_wmode").append("<option value="+item+" selected>"+item+"</option>");
-                }else {
-                    $("#w_edit_wmode").append("<option value="+item+">"+item+"</option>");
-                }
-            });
-            layui.form.render("select");
-            $.each(jb_w_txtfile_ysgs_arr,function (index,item) {
-                if(data.txtFileInfo.jb_w_txtfile_ysgs == item){
-                    $("#w_edit_ys").append("<option value="+item+" selected>"+item+"</option>");
-                }else {
-                    $("#w_edit_ys").append("<option value="+item+">"+item+"</option>");
-                }
-            });
-            layui.form.render("select");
-            $('#w_edit_fgf').val(data.txtFileInfo.jb_w_txtfile_fgf);
-            $('#w_edit_encoding').val(data.txtFileInfo.jb_w_txtfile_en);
-            $('#w_edit_date').val(data.txtFileInfo.jb_w_txtfile_dateF);
-            $('#w_editadd_fileFormat').val(data.txtFileInfo.jb_w_txtfile_fileF);
-            $('#w_edit_header').val(data.txtFileInfo.jb_w_txtfile_header);
+                });
+                layui.form.render("select");
+                $('#edit_txtFile_column').val(data.txtFileInfo.jb_r_txtFile_column);
+                $('#w_edit_path').val(data.txtFileInfo.jb_w_txtFile_path);
+                $('#w_edit_fileName').val(data.txtFileInfo.jb_w_txtFile_filename);
+                $.each(jb_w_txtfile_ms_arr,function (index,item) {
+                    if(data.txtFileInfo.jb_w_txtfile_ms == item){
+                        $("#w_edit_wmode").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        $("#w_edit_wmode").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $.each(jb_w_txtfile_ysgs_arr,function (index,item) {
+                    if(data.txtFileInfo.jb_w_txtfile_ysgs == item){
+                        $("#w_edit_ys").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        $("#w_edit_ys").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#w_edit_fgf').val(data.txtFileInfo.jb_w_txtfile_fgf);
+                $('#w_edit_encoding').val(data.txtFileInfo.jb_w_txtfile_en);
+                $('#w_edit_date').val(data.txtFileInfo.jb_w_txtfile_dateF);
+                $('#w_editadd_fileFormat').val(data.txtFileInfo.jb_w_txtfile_fileF);
+                $('#w_edit_header').val(data.txtFileInfo.jb_w_txtfile_header);
+            }
         };
 
         /*监听当鼠标点击列名input框的时候弹出对应的文本区域*/
@@ -219,7 +228,7 @@ $(function () {
         $('#r_col-cancle').on('click',function () {
             $('.col-textarea').addClass('layui-hide');
         });
-
+        /*column*/
         $('#w-edit_column').on('focus',function () {
             $('.w-col-textarea').removeClass('layui-hide');
             $('#w-col_texta').val($('#w-edit_column').val())
@@ -244,7 +253,7 @@ $(function () {
         $('#r-tab-cancle').on('click',function () {
             $('.tab-textarea').addClass('layui-hide');
         });
-
+        /*table*/
         $('#w-edit_table').on('focus',function () {
             $('.w-tab-textarea').removeClass('layui-hide');
             $('#w-tab_texta').val($('#w-edit_table').val())
@@ -263,13 +272,13 @@ $(function () {
             $('.cont-textarea').removeClass('layui-hide');
             $('#r_url_texta').val($('#edit_r_contaion').val())
         });*/
-        $('#r-cont-sure').on('click',function () {
+        /*$('#r-cont-sure').on('click',function () {
             $('.cont-textarea').addClass('layui-hide');
             $('#edit_r_contaion').val($.trim($('#r_url_texta').val()));
         });
         $('#r-cont-cancle').on('click',function () {
             $('.cont-textarea').addClass('layui-hide');
-        });
+        });*/
 
         /*$('#w-edit_contaion').on('focus',function () {
             $('.w-cont-textarea').removeClass('layui-hide');
@@ -303,45 +312,43 @@ $(function () {
         $('#r-sql-cancle').on('click',function () {
             $('.sql-textarea').addClass('layui-hide');
         });
-
+        /*session*/
         $('#w-edit_session').on('focus',function () {
             $('.w-session-textarea').removeClass('layui-hide');
             $('#w-session_texta').val($('#w-edit_session').val())
         });
         $('#w-session-sure').on('click',function () {
             $('.w-session-textarea').addClass('layui-hide');
-            /*var ession_str_inpt = $('#w-edit_session').val();
-            if(ession_str_inpt == ""){
-                ession_str_inpt = $.trim($('#w-session_texta').val());
-            }else {
-                ession_str_inpt += '&'+$.trim($('#w-session_texta').val());
-            }
-            $('#w-edit_session').val(ession_str_inpt);*/
             $('#w-edit_session').val($.trim($('#w-session_texta').val()));
         });
         $('#w-session-cancle').on('click',function () {
             $('.w-session-textarea').addClass('layui-hide');
         });
 
+        /*presql*/
         $('#w-edit_preSql').on('focus',function () {
             $('.w-presql-textarea').removeClass('layui-hide');
-            $('#w-preSql_texta').val($('#w-edit_preSql').val())
+            $('#w-preSql_texta').val($('#w-edit_preSql').val().replaceAll('&','\n'))
         });
         $('#w-preSql-sure').on('click',function () {
             $('.w-presql-textarea').addClass('layui-hide');
-            /*var preSql_str_inpt = $('#w-edit_preSql').val();
-            if(preSql_str_inpt == ""){
-                preSql_str_inpt = $.trim($('#w-preSql_texta').val());
-            }else {
-                preSql_str_inpt += '&'+$.trim($('#w-preSql_texta').val());
-            }
-            $('#w-edit_preSql').val(preSql_str_inpt);*/
-            $('#w-edit_preSql').val($.trim($('#w-preSql_texta').val()));
+            $('#w-edit_preSql').val($.trim($('#w-preSql_texta').val().replaceAll('\n','&')));
         });
         $('#w-preSql-cancle').on('click',function () {
             $('.w-presql-textarea').addClass('layui-hide');
         });
-
+        /*postsql*/
+        $('#w-edit_postSql').on('focus',function () {
+            $('.w-postSql-textarea').removeClass('layui-hide');
+            $('#w-postSql_texta').val($('#w-edit_postSql').val().replaceAll('&','\n'))
+        });
+        $('#w-postSql-sure').on('click',function () {
+            $('.w-postSql-textarea').addClass('layui-hide');
+            $('#w-edit_postSql').val($.trim($('#w-postSql_texta').val().replaceAll('\n','&')));
+        });
+        $('#w-postSql-cancle').on('click',function () {
+            $('.w-postSql-textarea').addClass('layui-hide');
+        });
 
         /*监听当鼠标点击txtfile的读取列的input框的时候，弹出下面的新增选择框*/
         $('#edit_txtFile_column').on('focus',function () {
