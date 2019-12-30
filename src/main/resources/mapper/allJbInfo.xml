@@ -154,6 +154,7 @@
         UPDATE
             jb_info a
         SET
+          a.jb_xgsj = NOW(),
           a.jb_yxbz = 'N'
         WHERE
             a.id = #{id}

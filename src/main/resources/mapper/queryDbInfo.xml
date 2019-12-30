@@ -56,7 +56,7 @@
     </update>
     <!--根据id删除对应的连接信息-->
     <update id="deletDbInfoById" parameterType="com.cnct.datax.entity.DbContionInfo">
-        UPDATE db_contion_info a SET A.yxbz = 'N' WHERE a.id = #{id}
+        UPDATE db_contion_info a SET a.db_xgsj = NOW(),A.yxbz = 'N' WHERE a.id = #{id}
     </update>
     <!--删除之前判断对应的id存在不-->
     <select id="isNullById" parameterType="com.cnct.datax.entity.DbContionInfo" resultType="int">
