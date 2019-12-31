@@ -126,6 +126,7 @@ public class JbInfo {
     private String w_jb_mode;
     //存入txtfile的对象
     private TxtFileInfo txtFileInfo;
+    private FtpInfo ftpInfo;
     //通道数量
     private int jb_channel;
     //通道速度
@@ -134,6 +135,14 @@ public class JbInfo {
     private int jb_record;
     //出错限制-百分比
     private double jb_percentage;
+
+    public FtpInfo getFtpInfo() {
+        return ftpInfo;
+    }
+
+    public void setFtpInfo(FtpInfo ftpInfo) {
+        this.ftpInfo = ftpInfo;
+    }
 
     public String getW_jb_postsql() {
         return w_jb_postsql;

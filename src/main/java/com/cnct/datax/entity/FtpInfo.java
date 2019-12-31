@@ -11,7 +11,9 @@ public class FtpInfo {
     private String jb_ftp_password_r;
     private String jb_ftp_protocol_r;
     private String jb_ftp_path_r;
+    private String[] jb_ftp_path_arr_r;
     private String jb_ftp_column_r;
+    private String[] jb_ftp_column_arr_r;
     private String jb_ftp_en_r;
     private String jb_ftp_fgf_r;
     private int jb_ftp_timeout_r;
@@ -37,7 +39,32 @@ public class FtpInfo {
     private String jb_ftp_dateF_w;
     private String jb_ftp_fileF_w;
     private String jb_ftp_header_w;
+    private String[] jb_ftp_header_arr_w;
     private String jb_ftp_yxbz;
+
+    public String[] getJb_ftp_path_arr_r() {
+        return jb_ftp_path_arr_r;
+    }
+
+    public void setJb_ftp_path_arr_r(String[] jb_ftp_path_arr_r) {
+        this.jb_ftp_path_arr_r = jb_ftp_path_arr_r;
+    }
+
+    public String[] getJb_ftp_column_arr_r() {
+        return jb_ftp_column_arr_r;
+    }
+
+    public void setJb_ftp_column_arr_r(String[] jb_ftp_column_arr_r) {
+        this.jb_ftp_column_arr_r = jb_ftp_column_arr_r;
+    }
+
+    public String[] getJb_ftp_header_arr_w() {
+        return jb_ftp_header_arr_w;
+    }
+
+    public void setJb_ftp_header_arr_w(String[] jb_ftp_header_arr_w) {
+        this.jb_ftp_header_arr_w = jb_ftp_header_arr_w;
+    }
 
     public int getId() {
         return id;
