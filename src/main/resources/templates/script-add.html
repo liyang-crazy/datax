@@ -63,12 +63,6 @@
         <div class="reader">
             <!--mysql和orcale区域-->
             <div class="mysqlAndOracle layui-hide">
-                <!--<div class="layui-form-item width-25">
-                <label class="layui-form-label label-a">数据库地址</label>
-                <div class="layui-input-block m-left-10">
-                    <input class="layui-input input-a layui-disabled" id="sc-add-db-url" type="text" placeholder="jdbc:mysql://localhost:3306">
-                </div>
-                </div>-->
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">用户名</label>
                     <div class="layui-input-block m-left-9">
@@ -229,7 +223,155 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <!--ftp区域-->
+            <div class="ftp layui-hide">
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">用户名<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_ftp_username" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">密码<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_ftp_pasw" type="text" placeholder="">
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">服务器协议<span class="col-red">(必填)</span></label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="add_ftp_protocol"  lay-filter="ftp_protocol_filter" lay-search="">
+                                <option value="ftp">ftp</option>
+                                <option value="sftp" selected>sftp</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">服务器地址<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_ftp_host" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">服务器端口</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_ftp_port" type="text" value="22" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">路径地址<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_ftp_path"  type="text" placeholder="">
+                        <div class="layui-hide add-ftp-path-textarea teax-a">
+                            <textarea class="layui-textarea mar-1" id="add_ftp_path_texta" placeholder="如果有多个路径，请用英文逗号分隔"></textarea>
+                            <div class="layui-inline mar-2">
+                                <button type="button" class="layui-btn layui-btn-xs" id="add_ftp_path-sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="add_ftp_path-cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">读取列</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_ftp_column" type="text" value="">
+                        <div class="add_ftp_col_txt layui-hide">
+                            <form class="layui-form" style="margin-top: 0.5em;">
+                                <div class="layui-inline" style="margin-bottom: 1em;">
+                                    <label class="layui-form-label" style="margin-left: -4em;">key:</label>
+                                    <div class="layui-input-inline" style="width:7em;">
+                                        <select name="" id="add_ftp_column1"  lay-filter="" lay-search="">
+                                            <option value="index" selected>index</option>
+                                            <option value="value">value</option>
+                                        </select>
+                                    </div>
+                                    <label class="layui-form-label" style="margin-left: -4em;">value:</label>
+                                    <div class="layui-input-block m-left-9">
+                                        <input  class="layui-input" id="add_ftp_column2" type="text" value="0" style="margin: 0 0 0 7em;position: absolute;height: 30px;">
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="layui-form" style="margin-top: -0.9em;">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label" style="margin-left: -4em;">key:</label>
+                                    <div class="layui-input-inline" style="width:7em;">
+                                        <select name="" id="add_ftp_column3"  lay-filter="" lay-search="">
+                                            <option value="type" selected>type</option>
+                                        </select>
+                                    </div>
+                                    <label class="layui-form-label" style="margin-left: -4em;">value:</label>
+                                    <div class="layui-input-block m-left-9">
+                                        <input  class="layui-input" id="add_ftp_column4" type="text" value="long" style="margin: 0 0 0 7em;position: absolute;height: 30px;">
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="layui-inline mar-2-1">
+                                <button type="button" class="layui-btn layui-btn-xs" id="add_ftp_column_sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="add_ftp_column_cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">编码</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_ftp_en" type="text" value="UTF-8" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">分隔符</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_ftp_fgf" type="text" value="," placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">连接超时时间</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_ftp_timeout" type="text" value="60000" placeholder="">
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25 layui-hide" id="add_ftp_cp_all">
+                        <label class="layui-form-label label-1 label-a">连接模式</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="add_ftp_cp"  lay-filter="" lay-search="">
+                                <option value="PORT" selected>PORT</option>
+                                <option value="PASV">PASV</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">压缩格式</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="add_ftp_ysgs"  lay-filter="" lay-search="">
+                                <option value="zip" selected>zip</option>
+                                <option value="gzip">gzip</option>
+                                <option value="bzip2">bzip2</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">跳过csv表头</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_ftp_csvH" type="text" value="false" placeholder="">
+                    </div>
+                </div>
+                <!--<div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">nullFormat</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_ftp_nullF" type="text" value="\N" placeholder="">
+                    </div>
+                </div>-->
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">遍历最大层数</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_ftp_maxT" type="text" value="100" placeholder="">
+                    </div>
+                </div>
             </div>
         </div>
         <!--writer区域-->
@@ -239,12 +381,6 @@
         <div class="writer">
             <!--mysql和oracle区域-->
             <div class="w_mysqlAndOracle layui-hide">
-                <!-- <div class="layui-form-item width-25">
-                <label class="layui-form-label label-a">数据库地址</label>
-                <div class="layui-input-block m-left-10">
-                    <input class="layui-input input-a layui-disabled" id="w-sc-add-db-url" type="text" placeholder="jdbc:mysql://localhost:3306">
-                </div>
-                </div>-->
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">用户名</label>
                     <div class="layui-input-block m-left-9">
@@ -420,6 +556,133 @@
                     <label class="layui-form-label label-1 label-a">写出表头</label>
                     <div class="layui-input-block m-left-9">
                         <input  class="layui-input input-a" id="w_add_header" type="text" placeholder="id,name  多个时用英文逗号分隔">
+                    </div>
+                </div>
+            </div>
+            <!--ftp区域-->
+            <div class="w_ftp layui-hide">
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">用户名<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_ftp_username" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">密码<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_ftp_pasw" type="text" placeholder="">
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">服务器协议<span class="col-red">(必填)</span></label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="w_add_ftp_protocol"  lay-filter="w_ftp_protocol_filter" lay-search="">
+                                <option value="ftp">ftp</option>
+                                <option value="sftp" selected>sftp</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">服务器地址<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_ftp_host" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">服务器端口</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_ftp_port" type="text" value="22" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">连接超时时间</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_ftp_timeout" type="text" value="60000" placeholder="">
+                    </div>
+                </div>
+                <form class="layui-form" style="" id="w_add_ftp_cp_all">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">连接模式</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="w_add_ftp_cp"  lay-filter="" lay-search="">
+                                <option value="PORT" selected>PORT</option>
+                                <option value="PASV">PASV</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">路径地址<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_ftp_path" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">写入文件名<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_ftp_fileName" type="text" placeholder="">
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">处理模式<span class="col-red">(必填)</span></label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="w_add_ftp_ms"  lay-filter="" lay-search="">
+                                <option value="truncate" selected>truncate</option>
+                                <option value="append">append</option>
+                                <option value="nonConflict">nonConflict</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">分隔符</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_ftp_fgf" type="text" value="," placeholder="">
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">压缩格式</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="w_add_ftp_ysgs"  lay-filter="" lay-search="">
+                                <option value="zip" selected>zip</option>
+                                <option value="gzip">gzip</option>
+                                <option value="bzip2">bzip2</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">编码</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_ftp_en" type="text" value="UTF-8" placeholder="">
+                    </div>
+                </div>
+                <!--<div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">nullFormat</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_ftp_nullF" type="text" value="\N" placeholder="">
+                    </div>
+                </div>-->
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">日期格式</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_ftp_dateF" type="text" value="yyyy-MM-dd" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">文件写出格式</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_ftp_fileF" type="text" value="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">写出表头</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_ftp_header" type="text" value="" placeholder="多个请用英文逗号分隔，例如：id,name,age">
                     </div>
                 </div>
             </div>

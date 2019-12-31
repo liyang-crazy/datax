@@ -7,6 +7,8 @@ $(function () {
         var layer = layui.layer;
         var laytpl = layui.laytpl;
         var form = layui.form;
+
+        var db_type_arr = ['3','5'];
         /*接收从父页面传递过来的三个参数*/
         function getSearchString(key) {
             // 获取URL中?之后的字符
@@ -62,10 +64,24 @@ $(function () {
             $('#w-sc-add-db-pasw').val(data_w.db_password);
             $('#w-add_contaion').val(data_w.db_url);
         }
-
-        if(getSearchString('r_db_type') == 3){//表示reader区域是txtfile
-            $('.mysqlAndOracle').addClass('layui-hide');
-            $('.txtFile').removeClass('layui-hide');
+        if(db_type_arr.indexOf(getSearchString('r_db_type'))>-1){
+            if(getSearchString('r_db_type') == 3){//表示reader区域是txtfile
+                $('.mysqlAndOracle').addClass('layui-hide');
+                $('.txtFile').removeClass('layui-hide');
+            }else if(getSearchString('r_db_type') == 5){//表示reader区域是ftp
+                $('.mysqlAndOracle').addClass('layui-hide');
+                $('.ftp').removeClass('layui-hide');
+                /*监听ftp协议，用于控制服务器端口的值*/
+                form.on('select(ftp_protocol_filter)', function(data){
+                    if(data.value == 'ftp'){
+                        $('#add_ftp_port').val('21');
+                        $('#add_ftp_cp_all').removeClass('layui-hide');
+                    }else if(data.value == 'sftp'){
+                        $('#add_ftp_port').val('22');
+                        $('#add_ftp_cp_all').addClass('layui-hide');
+                    }
+                });
+            }
         }else {//表示reader区域是mysql或者oracle
             $('.mysqlAndOracle').removeClass('layui-hide');
             $('.txtFile').addClass('layui-hide');
@@ -82,9 +98,24 @@ $(function () {
                 //$('#sc-add-split').addClass('layui-hide');
             }
         }
-        if(getSearchString('w_db_type') == 3){//表示writer区域是txtfile
-            $('.w_mysqlAndOracle').addClass('layui-hide');
-            $('.w_txtFile').removeClass('layui-hide');
+        if(db_type_arr.indexOf(getSearchString('w_db_type'))>-1){//表示writer区域是txtfile
+            if(getSearchString('w_db_type') == 3){
+                $('.w_mysqlAndOracle').addClass('layui-hide');
+                $('.w_txtFile').removeClass('layui-hide');
+            }else if(getSearchString('w_db_type') == 5){
+                $('.w_mysqlAndOracle').addClass('layui-hide');
+                $('.w_ftp').removeClass('layui-hide');
+                /*监听ftp协议，用于控制服务器端口的值*/
+                form.on('select(w_ftp_protocol_filter)', function(data){
+                    if(data.value == 'ftp'){
+                        $('#w_add_ftp_port').val('21');
+                        $('#w_add_ftp_cp_all').removeClass('layui-hide');
+                    }else if(data.value == 'sftp'){
+                        $('#w_add_ftp_port').val('22');
+                        $('#w_add_ftp_cp_all').addClass('layui-hide');
+                    }
+                });
+            }
         }else {//表示writer区域是mysql或者oracle
             $('.w_mysqlAndOracle').removeClass('layui-hide');
             $('.w_txtFile').addClass('layui-hide');
@@ -267,6 +298,59 @@ $(function () {
         $('#add_txtFile_column_cancle').on('click',function () {
             $('.add_col_txt').addClass('layui-hide');
         });
+
+        /*监听ftp点击input框的部分*/
+        /*监听path*/
+        $('#add_ftp_path').on('focus',function () {
+            $('.add-ftp-path-textarea').removeClass('layui-hide');
+        });
+        $('#add_ftp_path-sure').on('click',function () {
+            $('.add-ftp-path-textarea').addClass('layui-hide');
+            $('#add_ftp_path').val($.trim($('#add_ftp_path_texta').val()));
+        });
+        $('#add_ftp_path-cancle').on('click',function () {
+            $('.add-ftp-path-textarea').addClass('layui-hide');
+        });
+        /*监听列cloumn*/
+        $('#add_ftp_column').on('focus',function () {
+            $('.add_ftp_col_txt').removeClass('layui-hide');
+        });
+        $('#add_ftp_column_sure').on('click',function () {
+            $('.add_ftp_col_txt').addClass('layui-hide');
+            /*将获取的数据封装成json对象的形式添加到input框中*/
+            var key1 = "";
+            var key2 = "";
+            var value1 = "";
+            var value2 = "";
+            var obj = {};
+            key1 = $('#add_ftp_column1').val();
+            if(key1 == "index"){
+                key1 = $('#add_ftp_column1').val();
+                value1 = parseInt($('#add_ftp_column2').val())
+            }else {
+                key1 = $('#add_ftp_column1').val();
+                value1 = $('#add_ftp_column2').val();
+            }
+            key2 = $('#add_ftp_column3').val();
+            value2 = $('#add_ftp_column4').val();
+            obj[key1] = value1;
+            obj[key2] = value2;
+            if(value2 == "date"){
+                var key3 = "format";
+                obj[key3] = "yyyy.MM.dd";
+            }
+            var add_cloumn_txt_inpt = $('#add_ftp_column').val();
+            if(add_cloumn_txt_inpt == ""){
+                add_cloumn_txt_inpt = JSON.stringify(obj);
+            }else {
+                add_cloumn_txt_inpt += '&'+JSON.stringify(obj);
+            }
+            $('#add_ftp_column').val(add_cloumn_txt_inpt);
+        });
+        $('#add_ftp_column_cancle').on('click',function () {
+            $('.add_ftp_col_txt').addClass('layui-hide');
+        });
+
 
 
         /*该方法用于判断值是否是数字*/
