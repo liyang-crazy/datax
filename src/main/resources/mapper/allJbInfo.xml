@@ -42,6 +42,15 @@
         WHERE
             c.jb_txtFile_id = #{jb_txtFile_id}
     </select>
+    <!--根据id查询脚本信息-查询的是ftp的-->
+    <select id="queryJbInfoByIdFtp" parameterType="com.cnct.datax.entity.FtpInfo" resultType="com.cnct.datax.entity.FtpInfo">
+        SELECT
+            c.*
+        FROM
+            jb_ftp_info c
+        WHERE
+            c.jb_ftp_id = #{jb_ftp_id}
+    </select>
     <!--根据数据库连接信息的id查询对应的数据库信息-->
     <select id="queryDbInfoById" resultType="com.cnct.datax.entity.JbInfo" parameterType="com.cnct.datax.entity.JbInfo">
         SELECT

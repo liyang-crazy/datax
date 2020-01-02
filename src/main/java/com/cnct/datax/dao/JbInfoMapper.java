@@ -1,5 +1,6 @@
 package com.cnct.datax.dao;
 
+import com.cnct.datax.entity.FtpInfo;
 import com.cnct.datax.entity.JbInfo;
 import com.cnct.datax.entity.PageUtil;
 import com.cnct.datax.entity.TxtFileInfo;
@@ -75,8 +76,12 @@ public interface JbInfoMapper {
      */
     public void editJbInfoByIdTxtFile(TxtFileInfo txtFileInfo);
     /**
-     * 想ftp表中添加对应的脚本信息
+     * 向ftp表中添加对应的脚本信息
      */
     public int addFtpJbInfo(JbInfo jbInfo);
+    /**
+     * 根据id查询脚本信息-查询的是ftp的
+     */
+    public FtpInfo queryJbInfoByIdFtp(FtpInfo ftpInfo);
 
 }

@@ -1,6 +1,7 @@
 package com.cnct.datax.service.impl;
 
 import com.cnct.datax.dao.JbInfoMapper;
+import com.cnct.datax.entity.FtpInfo;
 import com.cnct.datax.entity.JbInfo;
 import com.cnct.datax.entity.PageUtil;
 import com.cnct.datax.entity.TxtFileInfo;
@@ -139,6 +140,20 @@ public class JbInfoServiceImpl implements JbInfoService{
         jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
         txtFileInfo = jbInfoMapper.queryJbInfoByIdTxtFile(txtFileInfo);
         jbInfo_obj.setTxtFileInfo(txtFileInfo);
+        return jbInfo_obj;
+    }
+
+    /**
+     * 根据id查询脚本信息-查询的是ftp的
+     */
+    @Override
+    public JbInfo queryJbInfoByIdFtp(JbInfo jbInfo) {
+        FtpInfo ftpInfo = new FtpInfo();
+        ftpInfo.setJb_ftp_id(String.valueOf(jbInfo.getId()));
+        JbInfo jbInfo_obj = new JbInfo();
+        jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
+        ftpInfo = jbInfoMapper.queryJbInfoByIdFtp(ftpInfo);
+        jbInfo_obj.setFtpInfo(ftpInfo);
         return jbInfo_obj;
     }
 }

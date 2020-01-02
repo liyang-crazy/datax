@@ -60,5 +60,9 @@ public interface JbInfoService {
     根据id查询脚本信息-查询的是txtfile的
      */
     public JbInfo queryJbInfoByIdTxtFile(JbInfo jbInfo);
+    /**
+     * 根据id查询脚本信息-查询的是ftp的
+     */
+    public JbInfo queryJbInfoByIdFtp(JbInfo jbInfo);
 
 }
