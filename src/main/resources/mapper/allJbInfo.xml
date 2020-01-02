@@ -248,5 +248,21 @@
           #{txtFileInfo.jb_w_txtfile_header},
           DEFAULT)
     </insert>
+    <!--向ftp表中添加对应的脚本信息-->
+    <insert id="addFtpJbInfo" parameterType="com.cnct.datax.entity.JbInfo">
+        INSERT INTO jb_ftp_info VALUES
+        (
+          DEFAULT,
+          #{ftpInfo.jb_ftp_id},#{ftpInfo.jb_ftp_host_r},#{ftpInfo.jb_ftp_port_r},#{ftpInfo.jb_ftp_username_r},
+          #{ftpInfo.jb_ftp_password_r},#{ftpInfo.jb_ftp_protocol_r},#{ftpInfo.jb_ftp_path_r},#{ftpInfo.jb_ftp_column_r},
+          #{ftpInfo.jb_ftp_en_r},#{ftpInfo.jb_ftp_fgf_r},#{ftpInfo.jb_ftp_timeout_r},#{ftpInfo.jb_ftp_cp_r},
+          #{ftpInfo.jb_ftp_ysgs_r},#{ftpInfo.jb_ftp_csvH_r},#{ftpInfo.jb_ftp_nullF_r},#{ftpInfo.jb_ftp_maxT_r},
+          #{ftpInfo.jb_ftp_host_w},#{ftpInfo.jb_ftp_port_w},#{ftpInfo.jb_ftp_username_w},#{ftpInfo.jb_ftp_password_w},
+          #{ftpInfo.jb_ftp_protocol_w},#{ftpInfo.jb_ftp_timeout_w},#{ftpInfo.jb_ftp_cp_w},#{ftpInfo.jb_ftp_path_w},
+          #{ftpInfo.jb_ftp_fileName_w},#{ftpInfo.jb_ftp_ms_w},#{ftpInfo.jb_ftp_fgf_w},#{ftpInfo.jb_ftp_ysgs_w},
+          #{ftpInfo.jb_ftp_en_w},#{ftpInfo.jb_ftp_nullF_w},#{ftpInfo.jb_ftp_dateF_w},#{ftpInfo.jb_ftp_fileF_w},
+          #{ftpInfo.jb_ftp_header_w},DEFAULT
+        )
+    </insert>
 
 </mapper>

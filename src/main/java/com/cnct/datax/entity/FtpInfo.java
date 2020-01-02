@@ -1,4 +1,7 @@
 package com.cnct.datax.entity;
+
+import java.util.ArrayList;
+
 /*
 ftp实体类
  */
@@ -6,24 +9,24 @@ public class FtpInfo {
     private int id;
     private String jb_ftp_id;
     private String jb_ftp_host_r;
-    private String jb_ftp_port_r;
+    private int jb_ftp_port_r;
     private String jb_ftp_username_r;
     private String jb_ftp_password_r;
     private String jb_ftp_protocol_r;
     private String jb_ftp_path_r;
     private String[] jb_ftp_path_arr_r;
     private String jb_ftp_column_r;
-    private String[] jb_ftp_column_arr_r;
+    private ArrayList<Object> jb_ftp_column_arr_r;
     private String jb_ftp_en_r;
     private String jb_ftp_fgf_r;
     private int jb_ftp_timeout_r;
     private String jb_ftp_cp_r;
     private String jb_ftp_ysgs_r;
-    private String jb_ftp_csvH_r;
+    private boolean jb_ftp_csvH_r;
     private String jb_ftp_nullF_r;
     private int jb_ftp_maxT_r;
     private String jb_ftp_host_w;
-    private String jb_ftp_port_w;
+    private int jb_ftp_port_w;
     private String jb_ftp_username_w;
     private String jb_ftp_password_w;
     private String jb_ftp_protocol_w;
@@ -50,11 +53,11 @@ public class FtpInfo {
         this.jb_ftp_path_arr_r = jb_ftp_path_arr_r;
     }
 
-    public String[] getJb_ftp_column_arr_r() {
+    public ArrayList<Object> getJb_ftp_column_arr_r() {
         return jb_ftp_column_arr_r;
     }
 
-    public void setJb_ftp_column_arr_r(String[] jb_ftp_column_arr_r) {
+    public void setJb_ftp_column_arr_r(ArrayList<Object> jb_ftp_column_arr_r) {
         this.jb_ftp_column_arr_r = jb_ftp_column_arr_r;
     }
 
@@ -90,11 +93,11 @@ public class FtpInfo {
         this.jb_ftp_host_r = jb_ftp_host_r;
     }
 
-    public String getJb_ftp_port_r() {
+    public int getJb_ftp_port_r() {
         return jb_ftp_port_r;
     }
 
-    public void setJb_ftp_port_r(String jb_ftp_port_r) {
+    public void setJb_ftp_port_r(int jb_ftp_port_r) {
         this.jb_ftp_port_r = jb_ftp_port_r;
     }
 
@@ -178,11 +181,11 @@ public class FtpInfo {
         this.jb_ftp_ysgs_r = jb_ftp_ysgs_r;
     }
 
-    public String getJb_ftp_csvH_r() {
+    public boolean getJb_ftp_csvH_r() {
         return jb_ftp_csvH_r;
     }
 
-    public void setJb_ftp_csvH_r(String jb_ftp_csvH_r) {
+    public void setJb_ftp_csvH_r(boolean jb_ftp_csvH_r) {
         this.jb_ftp_csvH_r = jb_ftp_csvH_r;
     }
 
@@ -210,11 +213,11 @@ public class FtpInfo {
         this.jb_ftp_host_w = jb_ftp_host_w;
     }
 
-    public String getJb_ftp_port_w() {
+    public int getJb_ftp_port_w() {
         return jb_ftp_port_w;
     }
 
-    public void setJb_ftp_port_w(String jb_ftp_port_w) {
+    public void setJb_ftp_port_w(int jb_ftp_port_w) {
         this.jb_ftp_port_w = jb_ftp_port_w;
     }
 

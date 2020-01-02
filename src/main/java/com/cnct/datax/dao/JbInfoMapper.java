@@ -74,5 +74,9 @@ public interface JbInfoMapper {
      * 根据脚本id修改对应脚本信息-txtfile
      */
     public void editJbInfoByIdTxtFile(TxtFileInfo txtFileInfo);
+    /**
+     * 想ftp表中添加对应的脚本信息
+     */
+    public int addFtpJbInfo(JbInfo jbInfo);
 
 }

@@ -41,9 +41,15 @@ public class JbInfoServiceImpl implements JbInfoService{
     @Override
     public void addJbInfo(JbInfo jbInfo) {
         if("3".equals(jbInfo.getR_db_type()) || "3".equals(jbInfo.getW_db_type())){
+            /*txtfile文件添加*/
             jbInfoMapper.addJbInfo(jbInfo);
             jbInfo.getTxtFileInfo().setJb_txtFile_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.addTxtfileJbInfo(jbInfo);
+        }else if("5".equals(jbInfo.getR_db_type()) || "5".equals(jbInfo.getW_db_type())){
+            /*ftp文件添加*/
+            jbInfoMapper.addJbInfo(jbInfo);
+            jbInfo.getFtpInfo().setJb_ftp_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addFtpJbInfo(jbInfo);
         }else {
             jbInfoMapper.addJbInfo(jbInfo);
         }

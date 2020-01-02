@@ -126,6 +126,7 @@ public class JbInfo {
     private String w_jb_mode;
     //存入txtfile的对象
     private TxtFileInfo txtFileInfo;
+    //存入ftp的对象
     private FtpInfo ftpInfo;
     //通道数量
     private int jb_channel;
