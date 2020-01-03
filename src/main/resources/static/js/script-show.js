@@ -166,7 +166,8 @@ $(function () {
                 }
                 $("#show_ftp_ysgs").append("<option value="+data.ftpInfo.jb_ftp_ysgs_r+" selected>"+data.ftpInfo.jb_ftp_ysgs_r+"</option>");
                 layui.form.render("select");
-                $('#show_ftp_csvH').val(data.ftpInfo.jb_ftp_csvH_r);
+                $("#show_ftp_csvH").append("<option value="+data.ftpInfo.jb_ftp_csvH_r+" selected>"+data.ftpInfo.jb_ftp_csvH_r+"</option>");
+                layui.form.render("select");
                 $('#show_ftp_maxT').val(data.ftpInfo.jb_ftp_maxT_r);
                 $('#w_show_ftp_username').val(data.ftpInfo.jb_ftp_username_w);
                 $('#w_show_ftp_pasw').val(data.ftpInfo.jb_ftp_password_w);

@@ -261,7 +261,24 @@ $(function () {
                     }
                 });
                 layui.form.render("select");
-                $('#edit_ftp_csvH').val(data.ftpInfo.jb_ftp_csvH_r);
+                $.each(jb_r_txtFile_csv_h_arr,function (index,item) {
+                    if(data.ftpInfo.jb_ftp_csvH_r == item){
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#edit_ftp_csvH").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#edit_ftp_csvH").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
                 $('#edit_ftp_maxT').val(data.ftpInfo.jb_ftp_maxT_r);
                 $('#w_edit_ftp_username').val(data.ftpInfo.jb_ftp_username_w);
                 $('#w_edit_ftp_pasw').val(data.ftpInfo.jb_ftp_password_w);

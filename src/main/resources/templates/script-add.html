@@ -353,13 +353,16 @@
                             </select>
                         </div>
                     </div>
-                </form>
-                <div class="layui-form-item width-25">
-                    <label class="layui-form-label label-1 label-a">跳过csv表头</label>
-                    <div class="layui-input-block m-left-9">
-                        <input  class="layui-input input-a" id="add_ftp_csvH" type="text" value="false" placeholder="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">跳过csv表头</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="add_ftp_csvH"  lay-filter="" lay-search="">
+                                <option value="false" selected>false</option>
+                                <option value="true">true</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
+                </form>
                 <!--<div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">nullFormat</label>
                     <div class="layui-input-block m-left-9">
