@@ -17,6 +17,10 @@ $(function () {
         var jb_r_txtFile_csv_h_arr = ["0","1"];
         var jb_w_txtfile_ms_arr = ["truncate","append","nonConflict"];
         var jb_w_txtfile_ysgs_arr = ["zip","lzo","lzop","tgz","bzip2"];
+        var jb_ftp_protocol_arr = ["ftp","sftp"];
+        var jb_ftp_cp_arr = ["PORT","PASV"];
+        var jb_ftp_ysgs_arr = ["zip","gzip","bzip2"];
+        var jb_w_ftp_ms_arr = ["truncate","append","nonConflict"];
         var flg = true;
         /*接收从父页面传递过来的三个参数*/
         function getSearchString(key) {
@@ -79,10 +83,12 @@ $(function () {
         getAllJb_group_fun();
         /*回填数据的方法*/
         var back_data_fun = function (data) {
-            console.log(data)
             if(data.r_db_type == 3){
                 $('.mysqlAndOracle').addClass('layui-hide');
                 $('.txtFile').removeClass('layui-hide');
+            }else if(data.r_db_type == 5){
+                $('.mysqlAndOracle').addClass('layui-hide');
+                $('.ftp').removeClass('layui-hide');
             }else {
                 $('.mysqlAndOracle').removeClass('layui-hide');
                 $('.txtFile').addClass('layui-hide');
@@ -102,6 +108,9 @@ $(function () {
             if(data.w_db_type == 3){
                 $('.w_mysqlAndOracle').addClass('layui-hide');
                 $('.w_txtFile').removeClass('layui-hide');
+            }else if(data.w_db_type == 5){
+                $('.w_mysqlAndOracle').addClass('layui-hide');
+                $('.w_ftp').removeClass('layui-hide');
             }else {
                 $('.w_mysqlAndOracle').removeClass('layui-hide');
                 $('.w_txtFile').addClass('layui-hide');
@@ -213,6 +222,94 @@ $(function () {
                 $('#w_edit_date').val(data.txtFileInfo.jb_w_txtfile_dateF);
                 $('#w_editadd_fileFormat').val(data.txtFileInfo.jb_w_txtfile_fileF);
                 $('#w_edit_header').val(data.txtFileInfo.jb_w_txtfile_header);
+            }
+            /*给ftp表单赋值*/
+            if(data.ftpInfo != null){
+                $('#edit_ftp_username').val(data.ftpInfo.jb_ftp_username_r);
+                $('#edit_ftp_pasw').val(data.ftpInfo.jb_ftp_password_r);
+                $.each(jb_ftp_protocol_arr,function (index,item) {
+                    if(data.ftpInfo.jb_ftp_protocol_r == item){
+                        $("#edit_ftp_protocol").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        $("#edit_ftp_protocol").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#edit_ftp_host').val(data.ftpInfo.jb_ftp_host_r);
+                $('#edit_ftp_port').val(data.ftpInfo.jb_ftp_port_r);
+                $('#edit_ftp_path').val(data.ftpInfo.jb_ftp_path_r);
+                $('#edit_ftp_column').val(data.ftpInfo.jb_ftp_column_r);
+                $('#edit_ftp_en').val(data.ftpInfo.jb_ftp_en_r);
+                $('#edit_ftp_fgf').val(data.ftpInfo.jb_ftp_fgf_r);
+                $('#edit_ftp_timeout').val(data.ftpInfo.jb_ftp_timeout_r);
+                if(data.ftpInfo.jb_ftp_protocol_r == 'ftp'){
+                    $('#edit_ftp_cp_all').removeClass('layui-hide');
+                    $.each(jb_ftp_cp_arr,function (index,item) {
+                        if(data.ftpInfo.jb_ftp_cp_r == item){
+                            $("#edit_ftp_cp").append("<option value="+item+" selected>"+item+"</option>");
+                        }else {
+                            $("#edit_ftp_cp").append("<option value="+item+">"+item+"</option>");
+                        }
+                    });
+                }
+                layui.form.render("select");
+                $.each(jb_ftp_ysgs_arr,function (index,item) {
+                    if(data.ftpInfo.jb_ftp_ysgs_r == item){
+                        $("#edit_ftp_ysgs").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        $("#edit_ftp_ysgs").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#edit_ftp_csvH').val(data.ftpInfo.jb_ftp_csvH_r);
+                $('#edit_ftp_maxT').val(data.ftpInfo.jb_ftp_maxT_r);
+                $('#w_edit_ftp_username').val(data.ftpInfo.jb_ftp_username_w);
+                $('#w_edit_ftp_pasw').val(data.ftpInfo.jb_ftp_password_w);
+                $.each(jb_ftp_protocol_arr,function (index,item) {
+                    if(data.ftpInfo.jb_ftp_protocol_w == item){
+                        $("#w_edit_ftp_protocol").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        $("#w_edit_ftp_protocol").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#w_edit_ftp_host').val(data.ftpInfo.jb_ftp_host_w);
+                $('#w_edit_ftp_port').val(data.ftpInfo.jb_ftp_port_w);
+                $('#w_edit_ftp_timeout').val(data.ftpInfo.jb_ftp_timeout_w);
+                if(data.ftpInfo.jb_ftp_protocol_w == 'ftp'){
+                    $('#w_edit_ftp_cp_all').removeClass('layui-hide');
+                    $.each(jb_ftp_cp_arr,function (index,item) {
+                        if(data.ftpInfo.jb_ftp_cp_w == item){
+                            $("#w_edit_ftp_cp").append("<option value="+item+" selected>"+item+"</option>");
+                        }else {
+                            $("#w_edit_ftp_cp").append("<option value="+item+">"+item+"</option>");
+                        }
+                    });
+                }
+                layui.form.render("select");
+                $('#w_edit_ftp_path').val(data.ftpInfo.jb_ftp_path_w);
+                $('#w_edit_ftp_fileName').val(data.ftpInfo.jb_ftp_fileName_w);
+                $.each(jb_w_ftp_ms_arr,function (index,item) {
+                    if(data.ftpInfo.jb_ftp_ms_w == item){
+                        $("#w_edit_ftp_ms").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        $("#w_edit_ftp_ms").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#w_edit_ftp_fgf').val(data.ftpInfo.jb_ftp_fgf_w);
+                $.each(jb_ftp_ysgs_arr,function (index,item) {
+                    if(data.ftpInfo.jb_ftp_ysgs_w == item){
+                        $("#w_edit_ftp_ysgs").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        $("#w_edit_ftp_ysgs").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#w_edit_ftp_en').val(data.ftpInfo.jb_ftp_en_w);
+                $('#w_edit_ftp_dateF').val(data.ftpInfo.jb_ftp_dateF_w);
+                $('#w_edit_ftp_fileF').val(data.ftpInfo.jb_ftp_fileF_w);
+                $('#w_edit_ftp_header').val(data.ftpInfo.jb_ftp_header_w);
             }
         };
 
@@ -393,5 +490,62 @@ $(function () {
         $('#edit_txtFile_column_cancle').on('click',function () {
             $('.edit_col_txt').addClass('layui-hide');
         });
+
+        /*监听ftp:path路径地址*/
+        $('#edit_ftp_path').on('focus',function () {
+            $('.edit-ftp-path-textarea').removeClass('layui-hide');
+            $('#edit_ftp_path_texta').val($('#edit_ftp_path').val().replaceAll(',','\n'))
+        });
+        $('#edit_ftp_path-sure').on('click',function () {
+            $('.edit-ftp-path-textarea').addClass('layui-hide');
+            $('#edit_ftp_path').val($.trim($('#edit_ftp_path_texta').val().replaceAll('\n',',')));
+        });
+        $('#edit_ftp_path-cancle').on('click',function () {
+            $('.edit-ftp-path-textarea').addClass('layui-hide');
+        });
+        /*监听ftp:column*/
+        $('#edit_ftp_column').on('focus',function () {
+            $('.edit_ftp_col_txt').removeClass('layui-hide');
+        });
+        $('#edit_ftp_column_sure').on('click',function () {
+            if(flg){
+                $('#edit_ftp_column').val('');
+                flg = !flg;
+            }
+            $('.edit_ftp_col_txt').addClass('layui-hide');
+            /*将获取的数据封装成json对象的形式添加到input框中*/
+            var key1 = "";
+            var key2 = "";
+            var value1 = "";
+            var value2 = "";
+            var obj = {};
+            key1 = $('#edit_ftp_column1').val();
+            if(key1 == "index"){
+                key1 = $('#edit_ftp_column1').val();
+                value1 = parseInt($('#edit_ftp_column2').val())
+            }else {
+                key1 = $('#edit_ftp_column1').val();
+                value1 = $('#edit_ftp_column2').val();
+            }
+            key2 = $('#edit_ftp_column3').val();
+            value2 = $('#edit_ftp_column4').val();
+            obj[key1] = value1;
+            obj[key2] = value2;
+            if(value2 == "date"){
+                var key3 = "format";
+                obj[key3] = "yyyy.MM.dd";
+            }
+            var add_cloumn_txt_inpt = $('#edit_ftp_column').val();
+            if(add_cloumn_txt_inpt == ""){
+                add_cloumn_txt_inpt = JSON.stringify(obj);
+            }else {
+                add_cloumn_txt_inpt += '&'+JSON.stringify(obj);
+            }
+            $('#edit_ftp_column').val(add_cloumn_txt_inpt);
+        });
+        $('#edit_ftp_column_cancle').on('click',function () {
+            $('.edit_ftp_col_txt').addClass('layui-hide');
+        });
+
     })
 });

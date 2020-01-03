@@ -441,6 +441,7 @@ $(function () {
                 yes:function (index,layero) {//点击确认时候调用修改的方法
                     dbContionInfo = {};
                     txtfile_jb = {};
+                    ftp_jb = {};
                     dbConJson.id = data.id;
                     dbConJson.r_db_type = data.r_db_type;
                     dbConJson.w_db_type = data.w_db_type;
@@ -492,6 +493,40 @@ $(function () {
                     txtfile_jb.jb_w_txtfile_fileF = layero.find('iframe').contents().find('[id="w_edit_fileFormat"]').val();
                     txtfile_jb.jb_w_txtfile_header = layero.find('iframe').contents().find('[id="w_edit_header"]').val();
                     dbConJson.txtFileInfo = txtfile_jb;
+                    /*获取ftp的脚本信息*/
+                    ftp_jb.jb_ftp_host_r = layero.find('iframe').contents().find('[id="edit_ftp_host"]').val();
+                    ftp_jb.jb_ftp_port_r = layero.find('iframe').contents().find('[id="edit_ftp_port"]').val();
+                    ftp_jb.jb_ftp_username_r = layero.find('iframe').contents().find('[id="edit_ftp_username"]').val();
+                    ftp_jb.jb_ftp_password_r = layero.find('iframe').contents().find('[id="edit_ftp_pasw"]').val();
+                    ftp_jb.jb_ftp_protocol_r = layero.find('iframe').contents().find('[id="edit_ftp_protocol"]').val();
+                    ftp_jb.jb_ftp_path_r = layero.find('iframe').contents().find('[id="edit_ftp_path"]').val();
+                    ftp_jb.jb_ftp_column_r = layero.find('iframe').contents().find('[id="edit_ftp_column"]').val();
+                    ftp_jb.jb_ftp_en_r = layero.find('iframe').contents().find('[id="edit_ftp_en"]').val();
+                    ftp_jb.jb_ftp_fgf_r = layero.find('iframe').contents().find('[id="edit_ftp_fgf"]').val();
+                    ftp_jb.jb_ftp_timeout_r = layero.find('iframe').contents().find('[id="edit_ftp_timeout"]').val();
+                    ftp_jb.jb_ftp_cp_r = layero.find('iframe').contents().find('[id="edit_ftp_cp"]').val();
+                    ftp_jb.jb_ftp_ysgs_r = layero.find('iframe').contents().find('[id="edit_ftp_ysgs"]').val();
+                    ftp_jb.jb_ftp_csvH_r = layero.find('iframe').contents().find('[id="edit_ftp_csvH"]').val();
+                    ftp_jb.jb_ftp_nullF_r = layero.find('iframe').contents().find('[id="edit_ftp_nullF"]').val();
+                    ftp_jb.jb_ftp_maxT_r = layero.find('iframe').contents().find('[id="edit_ftp_maxT"]').val();
+                    ftp_jb.jb_ftp_host_w = layero.find('iframe').contents().find('[id="w_edit_ftp_host"]').val();
+                    ftp_jb.jb_ftp_port_w = layero.find('iframe').contents().find('[id="w_edit_ftp_port"]').val();
+                    ftp_jb.jb_ftp_username_w = layero.find('iframe').contents().find('[id="w_edit_ftp_username"]').val();
+                    ftp_jb.jb_ftp_password_w = layero.find('iframe').contents().find('[id="w_edit_ftp_pasw"]').val();
+                    ftp_jb.jb_ftp_protocol_w = layero.find('iframe').contents().find('[id="w_edit_ftp_protocol"]').val();
+                    ftp_jb.jb_ftp_timeout_w = layero.find('iframe').contents().find('[id="w_edit_ftp_timeout"]').val();
+                    ftp_jb.jb_ftp_cp_w = layero.find('iframe').contents().find('[id="w_edit_ftp_cp"]').val();
+                    ftp_jb.jb_ftp_path_w = layero.find('iframe').contents().find('[id="w_edit_ftp_path"]').val();
+                    ftp_jb.jb_ftp_fileName_w = layero.find('iframe').contents().find('[id="w_edit_ftp_fileName"]').val();
+                    ftp_jb.jb_ftp_ms_w = layero.find('iframe').contents().find('[id="w_edit_ftp_ms"]').val();
+                    ftp_jb.jb_ftp_fgf_w = layero.find('iframe').contents().find('[id="w_edit_ftp_fgf"]').val();
+                    ftp_jb.jb_ftp_ysgs_w = layero.find('iframe').contents().find('[id="w_edit_ftp_ysgs"]').val();
+                    ftp_jb.jb_ftp_en_w = layero.find('iframe').contents().find('[id="w_edit_ftp_en"]').val();
+                    ftp_jb.jb_ftp_nullF_w = layero.find('iframe').contents().find('[id="w_edit_ftp_nullF"]').val();
+                    ftp_jb.jb_ftp_dateF_w = layero.find('iframe').contents().find('[id="w_edit_ftp_dateF"]').val();
+                    ftp_jb.jb_ftp_fileF_w = layero.find('iframe').contents().find('[id="w_edit_ftp_fileF"]').val();
+                    ftp_jb.jb_ftp_header_w = layero.find('iframe').contents().find('[id="w_edit_ftp_header"]').val();
+                    dbConJson.ftpInfo = ftp_jb;
                     edit_info_fun(dbConJson);
                     layer.closeAll();
                 },

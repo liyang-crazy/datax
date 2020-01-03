@@ -80,6 +80,11 @@ public class JbInfoServiceImpl implements JbInfoService{
             txtFileInfo.setJb_txtFile_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.editJbInfoById(jbInfo);
             jbInfoMapper.editJbInfoByIdTxtFile(txtFileInfo);
+        }else if("5".equals(jbInfo.getR_db_type()) || "5".equals(jbInfo.getW_db_type())){
+            FtpInfo ftpInfo = jbInfo.getFtpInfo();
+            ftpInfo.setJb_ftp_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoById(jbInfo);
+            jbInfoMapper.editJbInfoByIdFtP(ftpInfo);
         }else {
             jbInfoMapper.editJbInfoById(jbInfo);
         }

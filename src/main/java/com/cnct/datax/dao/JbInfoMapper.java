@@ -83,5 +83,8 @@ public interface JbInfoMapper {
      * 根据id查询脚本信息-查询的是ftp的
      */
     public FtpInfo queryJbInfoByIdFtp(FtpInfo ftpInfo);
-
+    /**
+     * 据脚本id修改对应脚本信息-ftp
+     */
+    public void editJbInfoByIdFtP(FtpInfo ftpInfo);
 }

@@ -281,6 +281,17 @@ public class JbInfoController {
                }
                jbInfo.getTxtFileInfo().setJb_r_txtFile_column_arr(r_column_arr);
             }
+           if("5".equals(jbInfo.getR_db_type()) || "5".equals(jbInfo.getW_db_type())){
+               jbInfo.getFtpInfo().setJb_ftp_path_arr_r(jbInfo.getFtpInfo().getJb_ftp_path_r().split(","));
+               jbInfo.getFtpInfo().setJb_ftp_header_arr_w(jbInfo.getFtpInfo().getJb_ftp_header_w().split(","));
+               String[] r_column = jbInfo.getFtpInfo().getJb_ftp_column_r().split("&");
+               ArrayList<Object> r_column_arr = new ArrayList<>();
+               for(String r_column_one : r_column){
+                   JSONObject jsonObject = JSON.parseObject(r_column_one);
+                   r_column_arr.add(jsonObject);
+               }
+               jbInfo.getFtpInfo().setJb_ftp_column_arr_r(r_column_arr);
+           }
             switch (jbInfo.getR_db_type()){
                 case "1":
                    reader = MysqlReader.mysqlReader(jbInfo);
@@ -293,6 +304,9 @@ public class JbInfoController {
                     break;
                 case "4":
                     reader = SqlServerReader.sqlServerReader(jbInfo);
+                    break;
+                case "5":
+                    reader = FtpReader.ftpReader(jbInfo);
                     break;
             }
             switch (jbInfo.getW_db_type()){
@@ -307,6 +321,9 @@ public class JbInfoController {
                     break;
                 case "4":
                     writer = SqlServerWriter.sqlServerWriter(jbInfo);
+                    break;
+                case "5":
+                    writer = FtpWriter.ftpWriter(jbInfo);
                     break;
             }
             jsonString = Merge.mergeAll(jbInfo,reader,writer);

@@ -158,6 +158,48 @@
         WHERE
             a.jb_txtFile_id = #{jb_txtFile_id}
     </update>
+    <!--根据脚本id修改对应脚本信息-ftp-->
+    <update id="editJbInfoByIdFtP" parameterType="com.cnct.datax.entity.FtpInfo">
+        UPDATE
+            jb_ftp_info a
+        SET
+            a.jb_ftp_host_r = #{jb_ftp_host_r},
+            a.jb_ftp_port_r = #{jb_ftp_port_r},
+            a.jb_ftp_username_r = #{jb_ftp_username_r},
+            a.jb_ftp_password_r = #{jb_ftp_password_r},
+            a.jb_ftp_protocol_r = #{jb_ftp_protocol_r},
+            a.jb_ftp_path_r = #{jb_ftp_path_r},
+            a.jb_ftp_column_r = #{jb_ftp_column_r},
+            a.jb_ftp_en_r = #{jb_ftp_en_r},
+            a.jb_ftp_fgf_r = #{jb_ftp_fgf_r},
+            a.jb_ftp_timeout_r = #{jb_ftp_timeout_r},
+            a.jb_ftp_cp_r = #{jb_ftp_cp_r},
+            a.jb_ftp_ysgs_r = #{jb_ftp_ysgs_r},
+            a.jb_ftp_csvH_r = #{jb_ftp_csvH_r},
+            a.jb_ftp_nullF_r = #{jb_ftp_nullF_r},
+            a.jb_ftp_maxT_r = #{jb_ftp_maxT_r},
+            a.jb_ftp_host_w = #{jb_ftp_host_w},
+            a.jb_ftp_port_w = #{jb_ftp_port_w},
+            a.jb_ftp_username_w = #{jb_ftp_username_w},
+            a.jb_ftp_password_w = #{jb_ftp_password_w},
+            a.jb_ftp_protocol_w = #{jb_ftp_protocol_w},
+            a.jb_ftp_timeout_w = #{jb_ftp_timeout_w},
+            a.jb_ftp_cp_w = #{jb_ftp_cp_w},
+            a.jb_ftp_path_w = #{jb_ftp_path_w},
+            a.jb_ftp_fileName_w = #{jb_ftp_fileName_w},
+            a.jb_ftp_ms_w = #{jb_ftp_ms_w},
+            a.jb_ftp_fgf_w = #{jb_ftp_fgf_w},
+            a.jb_ftp_ysgs_w = #{jb_ftp_ysgs_w},
+            a.jb_ftp_en_w = #{jb_ftp_en_w},
+            a.jb_ftp_nullF_w = #{jb_ftp_nullF_w},
+            a.jb_ftp_dateF_w = #{jb_ftp_dateF_w},
+            a.jb_ftp_fileF_w = #{jb_ftp_fileF_w},
+            a.jb_ftp_header_w = #{jb_ftp_header_w}
+        WHERE
+            a.jb_ftp_id = #{jb_ftp_id}
+    </update>
+
+
     <!--根据id删除对应脚本的信息-->
     <update id="delJbInfoById" parameterType="com.cnct.datax.entity.JbInfo">
         UPDATE
