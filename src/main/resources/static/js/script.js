@@ -175,6 +175,10 @@ $(function () {
             if(data.value == 3 || data.value == 5){
                 $('.r_db_name').addClass('layui-hide');
                 $('.to_local').addClass('layui-hide');
+            }else if(data.value == 6){
+                getDb_nameByDb_type(data.value,'r');
+                $('.r_db_name').removeClass('layui-hide');
+                $('.to_local').addClass('layui-hide');
             }else {
                 getDb_nameByDb_type(data.value,'r');
                 $('.r_db_name').removeClass('layui-hide');

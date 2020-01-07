@@ -9,6 +9,7 @@ $(function () {
         var form = layui.form;
 
         var db_type_arr = ['3','5'];
+        var db_type_arr_1 = ['1','2','4'];
         /*接收从父页面传递过来的三个参数*/
         function getSearchString(key) {
             // 获取URL中?之后的字符
@@ -45,8 +46,6 @@ $(function () {
         /*给reader数据库信息赋值*/
         /*$('#sc-add-db-url').val(getSearchString('r_db_url'));*/
         if(!$.isEmptyObject(data_r)){
-            $('#sc-add-db-username').val(data_r[0].db_username);
-            $('#sc-add-db-pasw').val(data_r[0].db_password);
             var r_db_url = '';
             var r_db_url_arr = [];
             if(data_r.length > 0){
@@ -55,14 +54,34 @@ $(function () {
                 });
             }
             r_db_url = r_db_url_arr.join('\n');
-            $('#add_contaion').val(r_db_url);
+            if(data_r[0].db_type == 6){
+                $('.mongodb').removeClass('layui-hide');
+                $('#add_mongodb_address').val(r_db_url);
+                $('#add_mongodb_username').val(data_r[0].db_username);
+                $('#add_mongodb_pasw').val(data_r[0].db_password);
+            }else {
+                $('.mysqlAndOracle').removeClass('layui-hide');
+                $('#add_contaion').val(r_db_url);
+                $('#sc-add-db-username').val(data_r[0].db_username);
+                $('#sc-add-db-pasw').val(data_r[0].db_password);
+            }
+
         }
         /*给writer数据库信息赋值*/
         /*$('#w-sc-add-db-url').val(data_w.db_url);*/
         if(!$.isEmptyObject(data_w)){
-            $('#w-sc-add-db-username').val(data_w.db_username);
-            $('#w-sc-add-db-pasw').val(data_w.db_password);
-            $('#w-add_contaion').val(data_w.db_url);
+            if(data_w.db_type == 6){
+                $('.w_mongodb').removeClass('layui-hide');
+                $('#w_add_mongodb_address').val(data_w.db_url);
+                $('#w_add_mongodb_username').val(data_w.db_username);
+                $('#w_add_mongodb_pasw').val(data_w.db_password);
+            }else {
+                $('.w_mysqlAndOracle').removeClass('layui-hide');
+                $('#w-sc-add-db-username').val(data_w.db_username);
+                $('#w-sc-add-db-pasw').val(data_w.db_password);
+                $('#w-add_contaion').val(data_w.db_url);
+            }
+
         }
         if(db_type_arr.indexOf(getSearchString('r_db_type'))>-1){
             if(getSearchString('r_db_type') == 3){//表示reader区域是txtfile
@@ -82,7 +101,7 @@ $(function () {
                     }
                 });
             }
-        }else {//表示reader区域是mysql或者oracle
+        }else if(db_type_arr_1.indexOf(getSearchString('r_db_type'))>-1){//表示reader区域是mysql或者oracle
             $('.mysqlAndOracle').removeClass('layui-hide');
             $('.txtFile').addClass('layui-hide');
             if(getSearchString('jb_tbgs') == 1){
@@ -116,7 +135,7 @@ $(function () {
                     }
                 });
             }
-        }else {//表示writer区域是mysql或者oracle
+        }else if(db_type_arr_1.indexOf(getSearchString('w_db_type'))>-1){//表示writer区域是mysql或者oracle
             $('.w_mysqlAndOracle').removeClass('layui-hide');
             $('.w_txtFile').addClass('layui-hide');
             if(getSearchString('w_db_type') == 1){//表示写的时候选择的是mysql

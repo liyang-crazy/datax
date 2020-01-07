@@ -459,3 +459,850 @@ Consider defining a bean of type 'com.cnct.datax.service.DbContionInfoService' i
 2020-01-07 11:13:39.352 DEBUG 7364 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllCount                  : ==>  Preparing: SELECT count(*) FROM db_contion_info WHERE yxbz = 'Y' 
 2020-01-07 11:13:39.352 DEBUG 7364 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllCount                  : ==> Parameters: 
 2020-01-07 11:13:39.353 DEBUG 7364 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllCount                  : <==      Total: 1
+2020-01-07 11:15:49.382 DEBUG 7364 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllDbInfo                 : ==>  Preparing: SELECT a.id, b.db_type, b.db_type_name, a.db_name, a.db_ip, a.db_port, a.db_sid, a.db_zfj, a.db_username, a.db_password, a.db_lrsj, a.db_xgsj FROM db_contion_info a, db_info b WHERE a.db_type = b.db_type AND a.yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 11:15:49.383 DEBUG 7364 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllDbInfo                 : ==> Parameters: 10(Integer), 10(Integer)
+2020-01-07 11:15:49.385 DEBUG 7364 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllDbInfo                 : <==      Total: 10
+2020-01-07 11:15:49.386 DEBUG 7364 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllCount                  : ==>  Preparing: SELECT count(*) FROM db_contion_info WHERE yxbz = 'Y' 
+2020-01-07 11:15:49.386 DEBUG 7364 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllCount                  : ==> Parameters: 
+2020-01-07 11:15:49.387 DEBUG 7364 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllCount                  : <==      Total: 1
+2020-01-07 11:15:49.982 DEBUG 7364 --- [http-nio-8004-exec-26] c.c.d.d.D.queryAllDbInfo                 : ==>  Preparing: SELECT a.id, b.db_type, b.db_type_name, a.db_name, a.db_ip, a.db_port, a.db_sid, a.db_zfj, a.db_username, a.db_password, a.db_lrsj, a.db_xgsj FROM db_contion_info a, db_info b WHERE a.db_type = b.db_type AND a.yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 11:15:49.983 DEBUG 7364 --- [http-nio-8004-exec-26] c.c.d.d.D.queryAllDbInfo                 : ==> Parameters: 20(Integer), 10(Integer)
+2020-01-07 11:15:49.985 DEBUG 7364 --- [http-nio-8004-exec-26] c.c.d.d.D.queryAllDbInfo                 : <==      Total: 1
+2020-01-07 11:15:49.987 DEBUG 7364 --- [http-nio-8004-exec-26] c.c.d.d.D.queryAllCount                  : ==>  Preparing: SELECT count(*) FROM db_contion_info WHERE yxbz = 'Y' 
+2020-01-07 11:15:49.987 DEBUG 7364 --- [http-nio-8004-exec-26] c.c.d.d.D.queryAllCount                  : ==> Parameters: 
+2020-01-07 11:15:49.989 DEBUG 7364 --- [http-nio-8004-exec-26] c.c.d.d.D.queryAllCount                  : <==      Total: 1
+2020-01-07 11:15:51.557 DEBUG 7364 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllDbInfo                 : ==>  Preparing: SELECT a.id, b.db_type, b.db_type_name, a.db_name, a.db_ip, a.db_port, a.db_sid, a.db_zfj, a.db_username, a.db_password, a.db_lrsj, a.db_xgsj FROM db_contion_info a, db_info b WHERE a.db_type = b.db_type AND a.yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 11:15:51.559 DEBUG 7364 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllDbInfo                 : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 11:15:51.563 DEBUG 7364 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllDbInfo                 : <==      Total: 10
+2020-01-07 11:15:51.565 DEBUG 7364 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllCount                  : ==>  Preparing: SELECT count(*) FROM db_contion_info WHERE yxbz = 'Y' 
+2020-01-07 11:15:51.565 DEBUG 7364 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllCount                  : ==> Parameters: 
+2020-01-07 11:15:51.566 DEBUG 7364 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllCount                  : <==      Total: 1
+2020-01-07 11:15:54.583 DEBUG 7364 --- [http-nio-8004-exec-2] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 11:15:54.584 DEBUG 7364 --- [http-nio-8004-exec-2] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 11:15:54.588 DEBUG 7364 --- [http-nio-8004-exec-2] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 11:15:54.595 DEBUG 7364 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 11:15:54.596 DEBUG 7364 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 11:15:54.597 DEBUG 7364 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 11:15:54.655 DEBUG 7364 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 11:15:54.656 DEBUG 7364 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 11:15:54.666 DEBUG 7364 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 11:15:54.667 DEBUG 7364 --- [http-nio-8004-exec-3] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 11:15:54.667 DEBUG 7364 --- [http-nio-8004-exec-3] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 11:15:54.668 DEBUG 7364 --- [http-nio-8004-exec-3] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 11:15:58.982 DEBUG 7364 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 11:15:58.982 DEBUG 7364 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 11:15:58.983 DEBUG 7364 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 11:16:09.347 DEBUG 7364 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 11:16:09.348 DEBUG 7364 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 11:16:09.349 DEBUG 7364 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 14:45:34.406  INFO 18924 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 18924 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-07 14:45:34.410  INFO 18924 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-07 14:45:36.294  INFO 18924 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-07 14:45:36.294  INFO 18924 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-07 14:45:36.424  INFO 18924 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-07 14:45:36.660  INFO 18924 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-01-07 14:45:36.663  WARN 18924 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-07 14:45:36.824  INFO 18924 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-01-07 14:45:38.042  INFO 18924 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 4.957 seconds (JVM running for 6.289)
+2020-01-07 14:51:56.396  INFO 18924 --- [http-nio-8004-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-07 14:51:57.923 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 14:51:57.923 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 14:51:57.945 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 14:51:57.963 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 14:51:57.963 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 14:51:57.963 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 14:51:57.991 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 14:51:57.992 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 14:51:58.004 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 14:51:58.005 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 14:51:58.006 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 14:51:58.009 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 14:54:30.990 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 14:54:30.991 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 14:54:30.993 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 14:54:30.992 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 14:54:30.994 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 14:54:30.998 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 14:54:31.057 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 14:54:31.058 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 14:54:31.076 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 14:54:31.077 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 14:54:31.078 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 14:54:31.079 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 14:54:37.900 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 14:54:37.900 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 14:54:37.903 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 14:55:49.560 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllDbInfo                 : ==>  Preparing: SELECT a.id, b.db_type, b.db_type_name, a.db_name, a.db_ip, a.db_port, a.db_sid, a.db_zfj, a.db_username, a.db_password, a.db_lrsj, a.db_xgsj FROM db_contion_info a, db_info b WHERE a.db_type = b.db_type AND a.yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 14:55:49.561 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllDbInfo                 : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 14:55:49.566 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllDbInfo                 : <==      Total: 10
+2020-01-07 14:55:49.567 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllCount                  : ==>  Preparing: SELECT count(*) FROM db_contion_info WHERE yxbz = 'Y' 
+2020-01-07 14:55:49.567 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllCount                  : ==> Parameters: 
+2020-01-07 14:55:49.568 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllCount                  : <==      Total: 1
+2020-01-07 14:55:51.418 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 14:55:51.418 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 14:55:51.418 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 14:55:51.418 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 14:55:51.419 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 14:55:51.419 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 14:55:51.449 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 14:55:51.450 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 14:55:51.461 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 14:55:51.461 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 14:55:51.462 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 14:55:51.463 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 14:57:26.786 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 14:57:26.786 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 14:57:26.787 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 14:57:26.787 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 14:57:26.788 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 14:57:26.789 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 14:57:26.816 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 14:57:26.816 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 14:57:26.821 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 14:57:26.822 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 14:57:26.823 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 14:57:26.824 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 14:57:29.491 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 14:57:29.492 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 14:57:29.493 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 14:57:38.081 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 14:57:38.082 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 14:57:38.082 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 14:57:38.082 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 14:57:38.083 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 14:57:38.083 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 14:57:38.115 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 14:57:38.115 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 14:57:38.118 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 14:57:38.119 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 14:57:38.120 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 14:57:38.120 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 14:57:44.572 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 14:57:44.572 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 14:57:44.574 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 14:57:47.578 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 14:57:47.579 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 2(String)
+2020-01-07 14:57:47.581 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 14:58:13.459 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 14:58:13.459 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 14:58:13.460 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 14:58:13.460 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 14:58:13.460 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 14:58:13.461 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 14:58:13.490 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 14:58:13.491 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 14:58:13.495 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 14:58:13.495 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 14:58:13.495 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 14:58:13.496 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 14:58:16.282 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 14:58:16.283 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 14:58:16.284 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 14:58:19.789 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 14:58:19.790 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 14:58:19.791 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 14:58:23.085 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 14:58:23.085 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 14:58:23.086 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 14:58:23.086 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 14:58:23.087 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 14:58:23.087 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 14:58:23.116 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 14:58:23.118 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 14:58:23.121 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 14:58:23.121 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 14:58:23.122 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 14:58:23.122 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 14:58:25.078 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 14:58:25.079 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 14:58:25.080 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 14:58:30.987 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 14:58:30.987 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 14:58:30.989 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 14:59:05.779 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 14:59:05.780 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 14:59:05.781 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 14:59:05.781 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 14:59:05.781 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 14:59:05.783 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 14:59:05.821 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 14:59:05.822 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 14:59:05.826 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 14:59:05.826 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 14:59:05.826 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 14:59:05.827 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 14:59:08.606 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 14:59:08.607 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 14:59:08.608 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 14:59:13.947 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 14:59:13.947 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 14:59:13.949 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 14:59:16.362 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 14:59:16.363 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 2(String)
+2020-01-07 14:59:16.365 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 14:59:19.114 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 14:59:19.115 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 14:59:19.115 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:00:21.532 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:00:21.532 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:00:21.534 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:00:22.566 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:00:22.567 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:00:22.568 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:00:22.569 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:00:22.569 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:00:22.570 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:00:22.798 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:00:22.799 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:00:22.799 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:20:35.633 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 15:20:35.634 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 15:20:35.635 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:20:35.635 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:20:35.636 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:20:35.636 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 15:20:35.665 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 15:20:35.665 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 15:20:35.669 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 15:20:35.669 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 15:20:35.670 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 15:20:35.670 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 15:20:38.751 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:20:38.752 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:20:38.753 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:20:42.121 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:20:42.122 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:20:42.123 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:20:43.041 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:20:43.042 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:20:43.043 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:20:43.044 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:20:43.044 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:20:43.045 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:20:43.217 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:20:43.217 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:20:43.218 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:24:08.003 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 15:24:08.004 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 15:24:08.004 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:24:08.004 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:24:08.005 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 15:24:08.005 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:24:08.035 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 15:24:08.036 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 15:24:08.039 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 15:24:08.039 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 15:24:08.040 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 15:24:08.041 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 15:24:10.089 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:24:10.090 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 15:24:10.091 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 15:24:14.169 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:24:14.170 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 2(String)
+2020-01-07 15:24:14.171 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 15:24:15.161 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:24:15.161 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 1(Integer)
+2020-01-07 15:24:15.162 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:24:15.164 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:24:15.164 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 5(Integer)
+2020-01-07 15:24:15.165 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:24:15.166 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:24:15.167 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 2(Integer)
+2020-01-07 15:24:15.168 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:24:15.339 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:24:15.339 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:24:15.340 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:24:26.751 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:24:26.751 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 2(String)
+2020-01-07 15:24:26.752 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 15:24:32.319 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:24:32.320 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 2(Integer)
+2020-01-07 15:24:32.321 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:24:32.322 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:24:32.322 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 2(Integer)
+2020-01-07 15:24:32.323 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:24:32.480 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:24:32.480 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:24:32.481 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:24:40.574 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:24:40.575 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:24:40.576 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:24:43.969 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:24:43.970 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:24:43.971 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:24:44.784 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:24:44.784 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:24:44.786 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:24:44.786 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:24:44.786 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:24:44.788 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:24:44.963 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:24:44.964 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:24:44.964 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:25:34.111 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 15:25:34.112 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 15:25:34.113 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 15:25:34.128 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:25:34.128 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:25:34.130 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:25:34.207 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 15:25:34.207 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 15:25:34.209 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 15:25:34.211 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 15:25:34.211 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 15:25:34.212 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 15:25:36.255 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:25:36.256 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:25:36.256 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:25:38.694 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:25:38.695 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:25:38.695 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:25:39.496 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:25:39.497 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:25:39.498 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:25:39.499 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:25:39.499 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:25:39.501 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:25:39.753 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:25:39.753 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:25:39.754 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:28:33.634 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllDbInfo                 : ==>  Preparing: SELECT a.id, b.db_type, b.db_type_name, a.db_name, a.db_ip, a.db_port, a.db_sid, a.db_zfj, a.db_username, a.db_password, a.db_lrsj, a.db_xgsj FROM db_contion_info a, db_info b WHERE a.db_type = b.db_type AND a.yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 15:28:33.635 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllDbInfo                 : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 15:28:33.638 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllDbInfo                 : <==      Total: 10
+2020-01-07 15:28:33.639 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllCount                  : ==>  Preparing: SELECT count(*) FROM db_contion_info WHERE yxbz = 'Y' 
+2020-01-07 15:28:33.639 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllCount                  : ==> Parameters: 
+2020-01-07 15:28:33.640 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllCount                  : <==      Total: 1
+2020-01-07 15:28:34.162 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 15:28:34.162 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 15:28:34.163 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 15:28:34.163 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:28:34.163 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:28:34.164 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:28:34.194 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 15:28:34.195 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 15:28:34.198 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 15:28:34.199 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 15:28:34.199 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 15:28:34.200 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 15:28:38.183 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:28:38.183 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:28:38.184 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:28:41.111 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:28:41.111 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:28:41.113 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:28:42.040 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:28:42.041 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:28:42.042 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:28:42.042 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:28:42.043 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:28:42.044 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:28:42.217 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:28:42.217 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:28:42.218 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:29:54.672 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 15:29:54.673 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 15:29:54.673 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:29:54.673 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:29:54.674 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 15:29:54.674 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:29:54.707 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 15:29:54.708 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 15:29:54.711 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 15:29:54.711 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 15:29:54.711 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 15:29:54.712 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 15:29:57.593 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:29:57.593 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:29:57.594 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:30:00.470 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:30:00.470 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:30:00.471 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:30:01.288 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:30:01.289 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:30:01.291 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:30:01.292 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:30:01.292 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:30:01.293 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:30:01.464 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:30:01.465 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:30:01.465 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:30:44.270 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 15:30:44.270 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 15:30:44.270 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:30:44.270 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:30:44.271 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 15:30:44.271 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:30:44.302 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 15:30:44.303 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 15:30:44.305 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 15:30:44.306 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 15:30:44.306 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 15:30:44.306 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 15:30:46.750 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:30:46.751 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:30:46.751 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:30:49.982 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:30:49.982 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:30:49.984 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:30:50.808 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:30:50.809 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:30:50.810 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:30:50.810 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:30:50.811 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:30:50.812 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:30:50.979 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:30:50.980 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:30:50.980 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:32:05.933 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 15:32:05.934 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 15:32:05.934 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:32:05.935 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:32:05.935 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 15:32:05.935 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:32:06.014 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 15:32:06.014 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 15:32:06.017 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 15:32:06.018 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 15:32:06.018 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 15:32:06.019 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 15:32:08.166 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:32:08.167 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:32:08.168 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:32:11.246 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:32:11.247 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:32:11.248 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:32:12.041 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:32:12.041 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:32:12.042 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:32:12.043 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:32:12.043 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:32:12.044 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:32:12.210 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:32:12.210 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:32:12.211 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:39:33.239 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:39:33.239 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:39:33.240 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:39:33.247 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 15:39:33.247 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 15:39:33.248 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 15:39:33.280 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 15:39:33.281 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 15:39:33.284 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 15:39:33.285 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 15:39:33.285 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 15:39:33.286 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 15:39:38.047 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:39:38.047 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:39:38.048 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:39:39.534 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:39:39.534 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:39:39.535 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:39:42.152 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:39:42.152 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:39:42.153 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:39:42.154 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:39:42.154 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:39:42.155 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:39:42.344 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:39:42.344 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:39:42.345 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:40:05.685 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:40:05.686 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 15:40:05.687 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 15:40:08.599 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:40:08.600 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 1(Integer)
+2020-01-07 15:40:08.600 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:40:08.601 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:40:08.601 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 5(Integer)
+2020-01-07 15:40:08.602 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:40:08.603 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:40:08.603 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:40:08.604 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:40:08.762 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:40:08.762 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:40:08.762 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:40:16.998 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:40:16.998 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 1(Integer)
+2020-01-07 15:40:16.999 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:40:17.000 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:40:17.000 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 5(Integer)
+2020-01-07 15:40:17.001 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:40:17.001 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:40:17.002 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:40:17.003 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:40:17.200 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:40:17.200 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:40:17.200 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:40:27.383 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:40:27.384 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 1(Integer)
+2020-01-07 15:40:27.385 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:40:27.385 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:40:27.386 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 5(Integer)
+2020-01-07 15:40:27.387 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:40:27.388 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:40:27.389 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:40:27.390 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:40:27.548 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:40:27.548 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:40:27.549 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:40:35.733 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:40:35.734 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 4(String)
+2020-01-07 15:40:35.734 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 4
+2020-01-07 15:40:38.550 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:40:38.550 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 17(Integer)
+2020-01-07 15:40:38.551 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:40:38.552 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:40:38.552 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:40:38.553 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:40:38.719 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:40:38.719 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:40:38.720 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:40:46.687 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:40:46.687 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 17(Integer)
+2020-01-07 15:40:46.688 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:40:46.689 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:40:46.689 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:40:46.690 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:40:46.856 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:40:46.856 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:40:46.857 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:43:43.802 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 15:43:43.802 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:43:43.802 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 15:43:43.802 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:43:43.803 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:43:43.803 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 15:43:43.840 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 15:43:43.840 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 15:43:43.842 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 15:43:43.842 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 15:43:43.842 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 15:43:43.843 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 15:43:47.070 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:43:47.070 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:43:47.071 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:43:50.188 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:43:50.188 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:43:50.189 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:43:51.072 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:43:51.073 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:43:51.074 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:43:51.074 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:43:51.075 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:43:51.075 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:43:51.261 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:43:51.261 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:43:51.262 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:44:36.115 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 15:44:36.116 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 15:44:36.117 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 15:44:36.118 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:44:36.118 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:44:36.118 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:44:36.146 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 15:44:36.146 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 15:44:36.149 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 15:44:36.149 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 15:44:36.149 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 15:44:36.150 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 15:44:39.301 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:44:39.301 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:44:39.302 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:44:43.798 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:44:43.798 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:44:43.799 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:44:44.718 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:44:44.719 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:44:44.720 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:44:44.720 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:44:44.721 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:44:44.722 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:44:44.899 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:44:44.899 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:44:44.900 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:45:10.973 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:45:10.974 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 15:45:10.975 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 15:45:11.853 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:45:11.854 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:45:11.855 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:45:11.856 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:45:11.856 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 1(Integer)
+2020-01-07 15:45:11.858 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:45:12.023 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:45:12.023 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:45:12.024 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:46:35.722 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 15:46:35.722 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 15:46:35.722 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:46:35.723 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:46:35.723 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 15:46:35.723 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 15:46:35.756 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 15:46:35.756 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 15:46:35.759 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 15:46:35.759 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 15:46:35.759 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 15:46:35.760 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 15:46:38.629 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:46:38.629 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 15:46:38.630 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 15:46:43.004 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 15:46:43.004 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 15:46:43.005 DEBUG 18924 --- [http-nio-8004-exec-23] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 15:46:43.750 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:46:43.750 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 15:46:43.751 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:46:43.751 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 15:46:43.752 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 1(Integer)
+2020-01-07 15:46:43.753 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 15:46:43.923 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 15:46:43.923 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 15:46:43.924 DEBUG 18924 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:01:06.034 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 16:01:06.035 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 16:01:06.035 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:01:06.035 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:01:06.036 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:01:06.036 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 16:01:06.088 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 16:01:06.088 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 16:01:06.090 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 16:01:06.091 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 16:01:06.091 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 16:01:06.092 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 16:01:08.411 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:01:08.411 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:01:08.412 DEBUG 18924 --- [http-nio-8004-exec-1] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:01:11.851 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:01:11.852 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:01:11.853 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:01:12.691 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:01:12.692 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:01:12.693 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:01:12.693 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:01:12.694 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:01:12.695 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:01:12.875 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:01:12.875 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:01:12.876 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:03:39.516 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 16:03:39.516 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 16:03:39.517 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:03:39.517 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:03:39.517 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:03:39.517 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 16:03:39.549 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 16:03:39.549 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 16:03:39.552 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 16:03:39.552 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 16:03:39.553 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 16:03:39.553 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 16:03:42.284 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:03:42.284 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:03:42.285 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:03:44.826 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:03:44.826 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:03:44.827 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:03:45.645 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:03:45.646 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:03:45.647 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:03:45.647 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:03:45.648 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:03:45.648 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:03:45.828 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:03:45.828 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:03:45.829 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:03:56.036 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:03:56.036 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 16:03:56.037 DEBUG 18924 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 16:03:58.572 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:03:58.573 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 1(Integer)
+2020-01-07 16:03:58.574 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:03:58.574 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:03:58.574 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 5(Integer)
+2020-01-07 16:03:58.575 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:03:58.576 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:03:58.576 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:03:58.577 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:03:58.748 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:03:58.748 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:03:58.749 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:04:19.283 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:04:19.283 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:04:19.284 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:04:22.850 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:04:22.851 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 2(String)
+2020-01-07 16:04:22.852 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 16:04:23.658 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:04:23.658 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:04:23.659 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:04:23.660 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:04:23.660 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 2(Integer)
+2020-01-07 16:04:23.661 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:04:23.815 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:04:23.815 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:04:23.816 DEBUG 18924 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:04:35.762 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:04:35.763 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 16:04:35.764 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 16:04:36.556 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:04:36.556 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:04:36.557 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:04:36.557 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:04:36.557 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 1(Integer)
+2020-01-07 16:04:36.558 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:04:36.716 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:04:36.716 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:04:36.717 DEBUG 18924 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:04:43.636 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:04:43.636 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 4(String)
+2020-01-07 16:04:43.637 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 4
+2020-01-07 16:04:44.483 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:04:44.484 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:04:44.485 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:04:44.485 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:04:44.485 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 17(Integer)
+2020-01-07 16:04:44.486 DEBUG 18924 --- [http-nio-8004-exec-4] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:04:44.655 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:04:44.656 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:04:44.656 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:04:52.282 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:04:52.282 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:04:52.283 DEBUG 18924 --- [http-nio-8004-exec-14] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:04:54.568 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:04:54.568 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 2(String)
+2020-01-07 16:04:54.569 DEBUG 18924 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 16:04:58.610 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:04:58.610 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 2(Integer)
+2020-01-07 16:04:58.611 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:04:58.612 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:04:58.613 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 3(Integer)
+2020-01-07 16:04:58.614 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:04:58.614 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:04:58.615 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:04:58.616 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:04:58.791 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:04:58.791 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:04:58.791 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:05:07.692 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:05:07.692 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:05:07.693 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:05:07.864 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:05:07.864 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:05:07.864 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:05:14.035 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:05:14.035 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:05:14.036 DEBUG 18924 --- [http-nio-8004-exec-13] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:08:35.776 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 16:08:35.777 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 16:08:35.777 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:08:35.777 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:08:35.778 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 16:08:35.778 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:08:35.808 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 16:08:35.809 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 16:08:35.811 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 16:08:35.811 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 16:08:35.812 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 16:08:35.812 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 16:08:40.074 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:08:40.075 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 16:08:40.076 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 16:08:44.627 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:08:44.628 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:08:44.628 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:08:45.493 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:08:45.493 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 1(Integer)
+2020-01-07 16:08:45.494 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:08:45.495 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:08:45.495 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:08:45.496 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:08:45.673 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:08:45.673 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:08:45.674 DEBUG 18924 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:09:01.627 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:09:01.627 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:09:01.628 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:09:01.807 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:09:01.807 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:09:01.808 DEBUG 18924 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:09:11.442 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:09:11.443 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 16:09:11.444 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 16:09:13.403 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:09:13.403 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:09:13.404 DEBUG 18924 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:09:17.315 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:09:17.316 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:09:17.317 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:11:12.606 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 16:11:12.607 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 16:11:12.607 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:11:12.607 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:11:12.608 DEBUG 18924 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:11:12.608 DEBUG 18924 --- [http-nio-8004-exec-12] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 16:11:12.640 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 16:11:12.640 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 16:11:12.643 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 16:11:12.643 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 16:11:12.644 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 16:11:12.644 DEBUG 18924 --- [http-nio-8004-exec-15] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 16:11:15.947 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:11:15.947 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:11:15.948 DEBUG 18924 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:11:22.606 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:11:22.607 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:11:22.607 DEBUG 18924 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:11:26.634 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:11:26.634 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:11:26.635 DEBUG 18924 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:11:40.484 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:11:40.485 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:11:40.485 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:11:40.486 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:11:40.486 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:11:40.487 DEBUG 18924 --- [http-nio-8004-exec-7] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:11:40.667 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:11:40.667 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:11:40.667 DEBUG 18924 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:12:13.924 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-07 16:12:13.924 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-07 16:12:13.925 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:12:13.925 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:12:13.925 DEBUG 18924 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : <==      Total: 6
+2020-01-07 16:12:13.926 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:12:13.956 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 16:12:13.956 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 16:12:13.958 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-07 16:12:13.959 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-07 16:12:13.959 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-07 16:12:13.960 DEBUG 18924 --- [http-nio-8004-exec-2] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-07 16:12:16.427 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:12:16.427 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 1(String)
+2020-01-07 16:12:16.428 DEBUG 18924 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 8
+2020-01-07 16:12:21.031 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:12:21.032 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:12:21.033 DEBUG 18924 --- [http-nio-8004-exec-27] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:12:21.747 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:12:21.747 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 1(Integer)
+2020-01-07 16:12:21.748 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:12:21.749 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:12:21.749 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:12:21.750 DEBUG 18924 --- [http-nio-8004-exec-17] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:12:21.945 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:12:21.945 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:12:21.946 DEBUG 18924 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-07 16:12:33.250 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-07 16:12:33.250 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 6(String)
+2020-01-07 16:12:33.251 DEBUG 18924 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 1
+2020-01-07 16:12:37.036 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:12:37.036 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:12:37.037 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:12:37.038 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : ==>  Preparing: SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
+2020-01-07 16:12:37.038 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : ==> Parameters: 21(Integer)
+2020-01-07 16:12:37.039 DEBUG 18924 --- [http-nio-8004-exec-6] c.c.d.d.D.queryOneDbContionById          : <==      Total: 1
+2020-01-07 16:12:37.203 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-07 16:12:37.203 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-07 16:12:37.204 DEBUG 18924 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
