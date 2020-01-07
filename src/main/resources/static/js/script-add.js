@@ -370,6 +370,89 @@ $(function () {
             $('.add_ftp_col_txt').addClass('layui-hide');
         });
 
+        /*监听mongodb：column-读*/
+        $('#add_mongodb_column').on('focus',function () {
+            $('.add_mongodb_col_txt').removeClass('layui-hide');
+            $('#add_mongodb_column4').bind('input propertychange', function(){
+                if($(this).val() == 'array' || $(this).val() == 'Array'){
+                    $('#add_mongodb_col_key3').removeClass('layui-hide');
+                }else {
+                    $('#add_mongodb_col_key3').addClass('layui-hide');
+                }
+            })
+        });
+        $('#add_mongodb_column_sure').on('click',function () {
+            $('.add_mongodb_col_txt').addClass('layui-hide');
+            /*将获取的数据封装成json对象的形式添加到input框中*/
+            var key1 = "";
+            var key2 = "";
+            var key3 = "";
+            var value1 = "";
+            var value2 = "";
+            var obj = {};
+            key1 = $('#add_mongodb_column1').val();
+            value1 = $('#add_mongodb_column2').val();
+            key2 = $('#add_mongodb_column3').val();
+            value2 = $('#add_mongodb_column4').val();
+            obj[key1] = value1;
+            obj[key2] = value2;
+            if(value2 == "Array" || value2 == "array"){
+                key3 = $('#add_mongodb_column5').val();
+                obj[key3] = $('#add_mongodb_column6').val();
+            }
+            var add_cloumn_txt_inpt = $('#add_mongodb_column').val();
+            if(add_cloumn_txt_inpt == ""){
+                add_cloumn_txt_inpt = JSON.stringify(obj);
+            }else {
+                add_cloumn_txt_inpt += '&'+JSON.stringify(obj);
+            }
+            $('#add_mongodb_column').val(add_cloumn_txt_inpt);
+        });
+        $('#add_mongodb_column_cancle').on('click',function () {
+            $('.add_mongodb_col_txt').addClass('layui-hide');
+        });
+        /*监听mongodb：column-写*/
+        $('#w_add_mongodb_column').on('focus',function () {
+            $('.w_add_mongodb_col_txt').removeClass('layui-hide');
+            $('#w_add_mongodb_column4').bind('input propertychange', function(){
+                if($(this).val() == 'array' || $(this).val() == 'Array'){
+                    $('#w_add_mongodb_col_key3').removeClass('layui-hide');
+                }else {
+                    $('#w_add_mongodb_col_key3').addClass('layui-hide');
+                }
+            })
+        });
+        $('#w_add_mongodb_column_sure').on('click',function () {
+            $('.w_add_mongodb_col_txt').addClass('layui-hide');
+            /*将获取的数据封装成json对象的形式添加到input框中*/
+            var key1 = "";
+            var key2 = "";
+            var key3 = "";
+            var value1 = "";
+            var value2 = "";
+            var obj = {};
+            key1 = $('#w_add_mongodb_column1').val();
+            value1 = $('#w_add_mongodb_column2').val();
+            key2 = $('#w_add_mongodb_column3').val();
+            value2 = $('#w_add_mongodb_column4').val();
+            obj[key1] = value1;
+            obj[key2] = value2;
+            if(value2 == "Array" || value2 == "array"){
+                key3 = $('#w_add_mongodb_column5').val();
+                obj[key3] = $('#w_add_mongodb_column6').val();
+            }
+            var add_cloumn_txt_inpt = $('#w_add_mongodb_column').val();
+            if(add_cloumn_txt_inpt == ""){
+                add_cloumn_txt_inpt = JSON.stringify(obj);
+            }else {
+                add_cloumn_txt_inpt += '&'+JSON.stringify(obj);
+            }
+            $('#w_add_mongodb_column').val(add_cloumn_txt_inpt);
+        });
+        $('#w_add_mongodb_column_cancle').on('click',function () {
+            $('.w_add_mongodb_col_txt').addClass('layui-hide');
+        });
+
 
 
         /*该方法用于判断值是否是数字*/
