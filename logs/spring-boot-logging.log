@@ -386,3 +386,76 @@ Consider defining a bean of type 'com.cnct.datax.service.DbContionInfoService' i
 2020-01-07 11:06:10.023 DEBUG 18564 --- [http-nio-8004-exec-13] c.c.d.d.D.queryAllCount                  : ==>  Preparing: SELECT count(*) FROM db_contion_info WHERE yxbz = 'Y' 
 2020-01-07 11:06:10.024 DEBUG 18564 --- [http-nio-8004-exec-13] c.c.d.d.D.queryAllCount                  : ==> Parameters: 
 2020-01-07 11:06:10.025 DEBUG 18564 --- [http-nio-8004-exec-13] c.c.d.d.D.queryAllCount                  : <==      Total: 1
+2020-01-07 11:09:37.227 DEBUG 18564 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllDbInfo                 : ==>  Preparing: SELECT a.id, b.db_type, b.db_type_name, a.db_name, a.db_ip, a.db_port, a.db_sid, a.db_zfj, a.db_username, a.db_password, a.db_lrsj, a.db_xgsj FROM db_contion_info a, db_info b WHERE a.db_type = b.db_type AND a.yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 11:09:37.228 DEBUG 18564 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllDbInfo                 : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 11:09:37.233 DEBUG 18564 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllDbInfo                 : <==      Total: 10
+2020-01-07 11:09:37.234 DEBUG 18564 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllCount                  : ==>  Preparing: SELECT count(*) FROM db_contion_info WHERE yxbz = 'Y' 
+2020-01-07 11:09:37.235 DEBUG 18564 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllCount                  : ==> Parameters: 
+2020-01-07 11:09:37.236 DEBUG 18564 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllCount                  : <==      Total: 1
+2020-01-07 11:11:30.892  INFO 18564 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-01-07 11:11:31.200  INFO 18564 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-01-07 11:11:31.872  INFO 18564 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 18564 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-07 11:11:31.873  INFO 18564 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-07 11:11:32.548  WARN 18564 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-07 11:11:32.892  INFO 18564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-07 11:11:32.892  INFO 18564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-07 11:11:32.930  INFO 18564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-07 11:11:32.981  INFO 18564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-01-07 11:11:32.981  WARN 18564 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-07 11:11:32.986  INFO 18564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-01-07 11:11:33.321  INFO 18564 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.498 seconds (JVM running for 439.148)
+2020-01-07 11:11:35.889  INFO 18564 --- [Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-01-07 11:11:35.932  INFO 18564 --- [Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-01-07 11:11:36.636  INFO 18564 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 18564 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-07 11:11:36.637  INFO 18564 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-07 11:11:37.151  WARN 18564 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-07 11:11:37.236  INFO 18564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-07 11:11:37.236  INFO 18564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-07 11:11:37.262  INFO 18564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-07 11:11:37.316  INFO 18564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2020-01-07 11:11:37.316  WARN 18564 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-07 11:11:37.321  INFO 18564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2020-01-07 11:11:37.617  INFO 18564 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.036 seconds (JVM running for 443.444)
+2020-01-07 11:12:17.102  INFO 7364 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 7364 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-07 11:12:17.106  INFO 7364 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-07 11:12:19.149  INFO 7364 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-07 11:12:19.149  INFO 7364 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-07 11:12:19.284  INFO 7364 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-07 11:12:19.526  INFO 7364 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-01-07 11:12:19.528  WARN 7364 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-07 11:12:19.685  INFO 7364 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-01-07 11:12:21.019  INFO 7364 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 5.614 seconds (JVM running for 7.093)
+2020-01-07 11:12:24.677  INFO 7364 --- [http-nio-8004-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-07 11:12:25.556 DEBUG 7364 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllDbInfo                 : ==>  Preparing: SELECT a.id, b.db_type, b.db_type_name, a.db_name, a.db_ip, a.db_port, a.db_sid, a.db_zfj, a.db_username, a.db_password, a.db_lrsj, a.db_xgsj FROM db_contion_info a, db_info b WHERE a.db_type = b.db_type AND a.yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 11:12:25.592 DEBUG 7364 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllDbInfo                 : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 11:12:25.623 DEBUG 7364 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllDbInfo                 : <==      Total: 10
+2020-01-07 11:12:25.625 DEBUG 7364 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllCount                  : ==>  Preparing: SELECT count(*) FROM db_contion_info WHERE yxbz = 'Y' 
+2020-01-07 11:12:25.626 DEBUG 7364 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllCount                  : ==> Parameters: 
+2020-01-07 11:12:25.628 DEBUG 7364 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllCount                  : <==      Total: 1
+2020-01-07 11:12:53.406 DEBUG 7364 --- [http-nio-8004-exec-4] c.c.d.d.D.updateDbInfoById               : ==>  Preparing: UPDATE db_contion_info a SET a.db_name = ?, a.db_ip = ?, a.db_port = ?, a.db_zfj = ?, a.db_username = ?, a.db_password = ?, a.db_xgsj = NOW() WHERE a.id = ? AND a.yxbz = 'Y' 
+2020-01-07 11:12:53.407 DEBUG 7364 --- [http-nio-8004-exec-4] c.c.d.d.D.updateDbInfoById               : ==> Parameters: test_mongodb_123(String), 192.168.1.1(String), 27017(String), serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8(String), root(String), 123456(String), 21(Integer)
+2020-01-07 11:12:53.549 DEBUG 7364 --- [http-nio-8004-exec-4] c.c.d.d.D.updateDbInfoById               : <==    Updates: 1
+2020-01-07 11:12:53.571 DEBUG 7364 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllDbInfo                 : ==>  Preparing: SELECT a.id, b.db_type, b.db_type_name, a.db_name, a.db_ip, a.db_port, a.db_sid, a.db_zfj, a.db_username, a.db_password, a.db_lrsj, a.db_xgsj FROM db_contion_info a, db_info b WHERE a.db_type = b.db_type AND a.yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 11:12:53.572 DEBUG 7364 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllDbInfo                 : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 11:12:53.583 DEBUG 7364 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllDbInfo                 : <==      Total: 10
+2020-01-07 11:12:53.584 DEBUG 7364 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllCount                  : ==>  Preparing: SELECT count(*) FROM db_contion_info WHERE yxbz = 'Y' 
+2020-01-07 11:12:53.584 DEBUG 7364 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllCount                  : ==> Parameters: 
+2020-01-07 11:12:53.585 DEBUG 7364 --- [http-nio-8004-exec-5] c.c.d.d.D.queryAllCount                  : <==      Total: 1
+2020-01-07 11:13:21.612 DEBUG 7364 --- [http-nio-8004-exec-3] c.c.d.d.DbContionInfoMapper.isNullById   : ==>  Preparing: SELECT COUNT(*) FROM db_contion_info WHERE id = ? 
+2020-01-07 11:13:21.613 DEBUG 7364 --- [http-nio-8004-exec-3] c.c.d.d.DbContionInfoMapper.isNullById   : ==> Parameters: 21(Integer)
+2020-01-07 11:13:21.614 DEBUG 7364 --- [http-nio-8004-exec-3] c.c.d.d.DbContionInfoMapper.isNullById   : <==      Total: 1
+2020-01-07 11:13:21.615 DEBUG 7364 --- [http-nio-8004-exec-3] c.c.d.d.D.deletDbInfoById                : ==>  Preparing: UPDATE db_contion_info a SET a.db_xgsj = NOW(),A.yxbz = 'N' WHERE a.id = ? 
+2020-01-07 11:13:21.615 DEBUG 7364 --- [http-nio-8004-exec-3] c.c.d.d.D.deletDbInfoById                : ==> Parameters: 21(Integer)
+2020-01-07 11:13:21.689 DEBUG 7364 --- [http-nio-8004-exec-3] c.c.d.d.D.deletDbInfoById                : <==    Updates: 1
+2020-01-07 11:13:21.725 DEBUG 7364 --- [http-nio-8004-exec-2] c.c.d.d.D.queryAllDbInfo                 : ==>  Preparing: SELECT a.id, b.db_type, b.db_type_name, a.db_name, a.db_ip, a.db_port, a.db_sid, a.db_zfj, a.db_username, a.db_password, a.db_lrsj, a.db_xgsj FROM db_contion_info a, db_info b WHERE a.db_type = b.db_type AND a.yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 11:13:21.726 DEBUG 7364 --- [http-nio-8004-exec-2] c.c.d.d.D.queryAllDbInfo                 : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 11:13:21.733 DEBUG 7364 --- [http-nio-8004-exec-2] c.c.d.d.D.queryAllDbInfo                 : <==      Total: 10
+2020-01-07 11:13:21.734 DEBUG 7364 --- [http-nio-8004-exec-2] c.c.d.d.D.queryAllCount                  : ==>  Preparing: SELECT count(*) FROM db_contion_info WHERE yxbz = 'Y' 
+2020-01-07 11:13:21.734 DEBUG 7364 --- [http-nio-8004-exec-2] c.c.d.d.D.queryAllCount                  : ==> Parameters: 
+2020-01-07 11:13:21.735 DEBUG 7364 --- [http-nio-8004-exec-2] c.c.d.d.D.queryAllCount                  : <==      Total: 1
+2020-01-07 11:13:39.347 DEBUG 7364 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllDbInfo                 : ==>  Preparing: SELECT a.id, b.db_type, b.db_type_name, a.db_name, a.db_ip, a.db_port, a.db_sid, a.db_zfj, a.db_username, a.db_password, a.db_lrsj, a.db_xgsj FROM db_contion_info a, db_info b WHERE a.db_type = b.db_type AND a.yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-07 11:13:39.347 DEBUG 7364 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllDbInfo                 : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-07 11:13:39.351 DEBUG 7364 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllDbInfo                 : <==      Total: 10
+2020-01-07 11:13:39.352 DEBUG 7364 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllCount                  : ==>  Preparing: SELECT count(*) FROM db_contion_info WHERE yxbz = 'Y' 
+2020-01-07 11:13:39.352 DEBUG 7364 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllCount                  : ==> Parameters: 
+2020-01-07 11:13:39.353 DEBUG 7364 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllCount                  : <==      Total: 1

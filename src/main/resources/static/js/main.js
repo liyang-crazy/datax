@@ -177,6 +177,12 @@ $(function () {
                 $('#update_oracle-contion').addClass('layui-hide');
                 $('#update_mysql-zfj').addClass('layui-hide');
             }
+            if(data.db_type == 6){
+                $('#show_oracle-contion').addClass('layui-hide');
+                $('#show_mysql-zfj').addClass('layui-hide');
+                $('#update_oracle-contion').addClass('layui-hide');
+                $('#update_mysql-zfj').addClass('layui-hide');
+            }
             select_data = data;
             //将内容回填到对应input上
             if(str_flg == 'detail'){
@@ -256,6 +262,15 @@ $(function () {
                     if(dbContionInfo.db_type == 4 && isNull_fun_update(dbContionInfo) == 1){
                         layer.alert('连接参数信息不全！')
                     }else if(dbContionInfo.db_type == 4 && isNull_fun_update(dbContionInfo) == 2){
+                        /*调用修改的方法*/
+                        update_info_fun(dbContionInfo);
+                        dbContionInfo={};
+                        $('#update_info_mysql').addClass('layui-hide');
+                        layer.closeAll();
+                    }
+                    if(dbContionInfo.db_type == 6 && isNull_fun_update(dbContionInfo) == 1){
+                        layer.alert('连接参数信息不全！')
+                    }else if(dbContionInfo.db_type == 6 && isNull_fun_update(dbContionInfo) == 2){
                         /*调用修改的方法*/
                         update_info_fun(dbContionInfo);
                         dbContionInfo={};
