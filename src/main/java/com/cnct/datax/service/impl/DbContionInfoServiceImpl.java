@@ -38,6 +38,9 @@ public class DbContionInfoServiceImpl implements DbContionInfoService{
             if("4".equals(dbInfo.getDb_type())){
                 dbInfo.setDb_url(DbUrlHeader.DB_URL_SQLSERVER+dbInfo.getDb_ip()+":"+dbInfo.getDb_port()+";DatabaseName="+dbInfo.getDb_name());
             }
+            if("6".equals(dbInfo.getDb_type())){
+                dbInfo.setDb_url(DbUrlHeader.DB_URL_MONGODB+dbInfo.getDb_username()+":"+dbInfo.getDb_password()+"@"+dbInfo.getDb_ip()+":"+dbInfo.getDb_port());
+            }
         }
         return list;
     }
@@ -94,6 +97,9 @@ public class DbContionInfoServiceImpl implements DbContionInfoService{
         }
         if("4".equals(dbCon.getDb_type())){
             dbCon.setDb_url(DbUrlHeader.DB_URL_SQLSERVER+dbCon.getDb_ip()+":"+dbCon.getDb_port()+";DatabaseName="+dbCon.getDb_name());
+        }
+        if("6".equals(dbCon.getDb_type())){
+            dbCon.setDb_url(DbUrlHeader.DB_URL_MONGODB+dbCon.getDb_username()+":"+dbCon.getDb_password()+"@"+dbCon.getDb_ip()+":"+dbCon.getDb_port());
         }
         return dbCon;
     }
