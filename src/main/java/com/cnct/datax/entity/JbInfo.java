@@ -128,6 +128,8 @@ public class JbInfo {
     private TxtFileInfo txtFileInfo;
     //存入ftp的对象
     private FtpInfo ftpInfo;
+    //存入mongodb的对象
+    private MongodbInfo mongodbInfo;
     //通道数量
     private int jb_channel;
     //通道速度
@@ -136,6 +138,14 @@ public class JbInfo {
     private int jb_record;
     //出错限制-百分比
     private double jb_percentage;
+
+    public MongodbInfo getMongodbInfo() {
+        return mongodbInfo;
+    }
+
+    public void setMongodbInfo(MongodbInfo mongodbInfo) {
+        this.mongodbInfo = mongodbInfo;
+    }
 
     public FtpInfo getFtpInfo() {
         return ftpInfo;

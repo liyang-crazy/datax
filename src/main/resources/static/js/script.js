@@ -64,6 +64,7 @@ $(function () {
         };
         var txtfile_jb = {};//定义一个txtfile的脚本信息对象
         var ftp_jb = {};//定义一个ftp的脚本信息对象
+        var mongodb_jb = {};//定义一个mongodb的脚本信息对象
         var data_reader_db_arr = [];
         var data_reader_db = {
             name:'',
@@ -389,6 +390,22 @@ $(function () {
                     ftp_jb.jb_ftp_fileF_w = layero.find('iframe').contents().find('[id="w_add_ftp_fileF"]').val();
                     ftp_jb.jb_ftp_header_w = layero.find('iframe').contents().find('[id="w_add_ftp_header"]').val();
                     dbConJson.ftpInfo = ftp_jb;
+                    /*获取mongodb脚本的信息*/
+                    mongodb_jb.jb_mongodb_address_r = layero.find('iframe').contents().find('[id="add_mongodb_address"]').val();
+                    mongodb_jb.jb_mongodb_username_r = layero.find('iframe').contents().find('[id="add_mongodb_username"]').val();
+                    mongodb_jb.jb_mongodb_userpasw_r = layero.find('iframe').contents().find('[id="add_mongodb_pasw"]').val();
+                    mongodb_jb.jb_mongodb_dbname_r = layero.find('iframe').contents().find('[id="add_mongodb_dbname"]').val();
+                    mongodb_jb.jb_mongodb_collname_r = layero.find('iframe').contents().find('[id="add_mongodb_collName"]').val();
+                    mongodb_jb.jb_mongodb_column_r = layero.find('iframe').contents().find('[id="add_mongodb_column"]').val();
+                    mongodb_jb.jb_mongodb_address_w = layero.find('iframe').contents().find('[id="w_add_mongodb_address"]').val();
+                    mongodb_jb.jb_mongodb_username_w = layero.find('iframe').contents().find('[id="w_add_mongodb_username"]').val();
+                    mongodb_jb.jb_mongodb_userpasw_w = layero.find('iframe').contents().find('[id="w_add_mongodb_pasw"]').val();
+                    mongodb_jb.jb_mongodb_dbname_w = layero.find('iframe').contents().find('[id="w_add_mongodb_dbname"]').val();
+                    mongodb_jb.jb_mongodb_collname_w = layero.find('iframe').contents().find('[id="w_add_mongodb_collName"]').val();
+                    mongodb_jb.jb_mongodb_column_w = layero.find('iframe').contents().find('[id="w_add_mongodb_column"]').val();
+                    mongodb_jb.jb_mongodb_isupsert_w = layero.find('iframe').contents().find('[id="add_mongodb_isUpsert"]').val();
+                    mongodb_jb.jb_mongodb_upsertKey_w = layero.find('iframe').contents().find('[id="w_add_mongodb_upsertKey"]').val();
+                    dbConJson.mongodbInfo = mongodb_jb;
                     add_info_fun(dbConJson);
                     layer.closeAll();
                 },
