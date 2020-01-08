@@ -440,13 +440,13 @@ $(function () {
                     ftp_jb.jb_ftp_header_w = layero.find('iframe').contents().find('[id="w_add_ftp_header"]').val();
                     dbConJson.ftpInfo = ftp_jb;
                     /*获取mongodb脚本的信息*/
-                    mongodb_jb.jb_mongodb_address_r = layero.find('iframe').contents().find('[id="add_mongodb_address"]').val();
+                    mongodb_jb.jb_mongodb_address_r = layero.find('iframe').contents().find('[id="add_mongodb_address"]').val().replace(/\n/g,',');
                     mongodb_jb.jb_mongodb_username_r = layero.find('iframe').contents().find('[id="add_mongodb_username"]').val();
                     mongodb_jb.jb_mongodb_userpasw_r = layero.find('iframe').contents().find('[id="add_mongodb_pasw"]').val();
                     mongodb_jb.jb_mongodb_dbname_r = layero.find('iframe').contents().find('[id="add_mongodb_dbname"]').val();
                     mongodb_jb.jb_mongodb_collname_r = layero.find('iframe').contents().find('[id="add_mongodb_collName"]').val();
                     mongodb_jb.jb_mongodb_column_r = layero.find('iframe').contents().find('[id="add_mongodb_column"]').val();
-                    mongodb_jb.jb_mongodb_address_w = layero.find('iframe').contents().find('[id="w_add_mongodb_address"]').val();
+                    mongodb_jb.jb_mongodb_address_w = layero.find('iframe').contents().find('[id="w_add_mongodb_address"]').val().replace(/\n/g,',');
                     mongodb_jb.jb_mongodb_username_w = layero.find('iframe').contents().find('[id="w_add_mongodb_username"]').val();
                     mongodb_jb.jb_mongodb_userpasw_w = layero.find('iframe').contents().find('[id="w_add_mongodb_pasw"]').val();
                     mongodb_jb.jb_mongodb_dbname_w = layero.find('iframe').contents().find('[id="w_add_mongodb_dbname"]').val();

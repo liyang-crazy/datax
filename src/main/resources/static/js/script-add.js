@@ -80,8 +80,8 @@ $(function () {
                 if(data_w[0].db_type == 6){
                     $('.w_mongodb').removeClass('layui-hide');
                     $('#w_add_mongodb_address').val(w_db_url);
-                    $('#w_add_mongodb_username').val(data_w.db_username);
-                    $('#w_add_mongodb_pasw').val(data_w.db_password);
+                    $('#w_add_mongodb_username').val(data_w[0].db_username);
+                    $('#w_add_mongodb_pasw').val(data_w[0].db_password);
                 }
             }else if(data_w.db_type == 6){
                 $('.w_mongodb').removeClass('layui-hide');
