@@ -1,9 +1,6 @@
 package com.cnct.datax.dao;
 
-import com.cnct.datax.entity.FtpInfo;
-import com.cnct.datax.entity.JbInfo;
-import com.cnct.datax.entity.PageUtil;
-import com.cnct.datax.entity.TxtFileInfo;
+import com.cnct.datax.entity.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -91,4 +88,8 @@ public interface JbInfoMapper {
      * 向mongodb表中添加对应的脚本信息
      */
     public int addMongodbJbInfo(JbInfo jbInfo);
+    /**
+     * 根据id查询脚本信息-查询的是mongodb的
+     */
+    public MongodbInfo queryJbInfoByIdMongoDB(MongodbInfo mongodbInfo);
 }

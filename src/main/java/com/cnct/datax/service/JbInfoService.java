@@ -64,5 +64,9 @@ public interface JbInfoService {
      * 根据id查询脚本信息-查询的是ftp的
      */
     public JbInfo queryJbInfoByIdFtp(JbInfo jbInfo);
+    /**
+     * 根据id查询脚本信息-查询的是mongodb的
+     */
+    public JbInfo queryJbInfoByIdMongoDB(JbInfo jbInfo);
 
 }

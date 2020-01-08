@@ -58,6 +58,9 @@ $(function () {
             }else if(data.r_db_type == 5){
                 $('.mysqlAndOracle').addClass('layui-hide');
                 $('.ftp').removeClass('layui-hide');
+            }else if(data.r_db_type == 6){
+                $('.mysqlAndOracle').addClass('layui-hide');
+                $('.mongodb').removeClass('layui-hide');
             }else {
                 $('.mysqlAndOracle').removeClass('layui-hide');
                 $('.txtFile').addClass('layui-hide');
@@ -80,6 +83,9 @@ $(function () {
             }else if(data.w_db_type == 5){
                 $('.w_mysqlAndOracle').addClass('layui-hide');
                 $('.w_ftp').removeClass('layui-hide');
+            }else if(data.w_db_type == 6){
+                $('.w_mysqlAndOracle').addClass('layui-hide');
+                $('.w_mongodb').removeClass('layui-hide');
             }else {
                 $('.w_mysqlAndOracle').removeClass('layui-hide');
                 $('.w_txtFile').addClass('layui-hide');
@@ -192,6 +198,24 @@ $(function () {
                 $('#w_show_ftp_dateF').val(data.ftpInfo.jb_ftp_dateF_w);
                 $('#w_show_ftp_fileF').val(data.ftpInfo.jb_ftp_fileF_w);
                 $('#w_show_ftp_header').val(data.ftpInfo.jb_ftp_header_w);
+            }
+            /*给mongodb赋值*/
+            if(data.mongodbInfo != null){
+                $('#show_mongodb_address').val(data.mongodbInfo.jb_mongodb_address_r.replaceAll(',','\n'));
+                $('#show_mongodb_username').val(data.mongodbInfo.jb_mongodb_username_r);
+                $('#show_mongodb_pasw').val(data.mongodbInfo.jb_mongodb_userpasw_r);
+                $('#show_mongodb_dbname').val(data.mongodbInfo.jb_mongodb_dbname_r);
+                $('#show_mongodb_collName').val(data.mongodbInfo.jb_mongodb_collname_r);
+                $('#show_mongodb_column').val(data.mongodbInfo.jb_mongodb_column_r);
+                $('#w_show_mongodb_address').val(data.mongodbInfo.jb_mongodb_address_w.replaceAll(',','\n'));
+                $('#w_show_mongodb_username').val(data.mongodbInfo.jb_mongodb_username_w);
+                $('#w_show_mongodb_pasw').val(data.mongodbInfo.jb_mongodb_userpasw_w);
+                $('#w_show_mongodb_dbname').val(data.mongodbInfo.jb_mongodb_dbname_w);
+                $('#w_show_mongodb_collName').val(data.mongodbInfo.jb_mongodb_collname_w);
+                $('#w_show_mongodb_column').val(data.mongodbInfo.jb_mongodb_column_w);
+                $("#w_show_mongodb_isUpsert").append("<option value="+data.mongodbInfo.jb_mongodb_isupsert_w+" selected>"+data.mongodbInfo.jb_mongodb_isupsert_w+"</option>");
+                layui.form.render("select");
+                $('#w_show_mongodb_upsertKey').val(data.mongodbInfo.jb_mongodb_upsertKey_w);
             }
         };
 

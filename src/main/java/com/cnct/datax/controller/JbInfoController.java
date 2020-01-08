@@ -207,26 +207,10 @@ public class JbInfoController {
             JbInfo jbInfo_obj = new JbInfo();
             if("3".equals(r_db_type) || "3".equals(w_db_type)){
                 jbInfo_obj = jbInfoService.queryJbInfoByIdTxtFile(jbInfo);
-                if(!"".equals(jbInfo_obj.getR_db_id())){
-                    String[] r_db_id_arr = jbInfo_obj.getR_db_id().split(",");
-                    jbInfo_obj.setR_db_username(jbInfoService.queryDbInfoById(r_db_id_arr[0]).getDb_username());
-                    jbInfo_obj.setR_db_password(jbInfoService.queryDbInfoById(r_db_id_arr[0]).getDb_password());
-                }
-                if(!"".equals(jbInfo_obj.getW_db_id())){
-                    jbInfo_obj.setW_db_username(jbInfoService.queryDbInfoById(jbInfo_obj.getW_db_id()).getDb_username());
-                    jbInfo_obj.setW_db_password(jbInfoService.queryDbInfoById(jbInfo_obj.getW_db_id()).getDb_password());
-                }
             }else if("5".equals(r_db_type) || "5".equals(w_db_type)){
                 jbInfo_obj = jbInfoService.queryJbInfoByIdFtp(jbInfo);
-                if(!"".equals(jbInfo_obj.getR_db_id())){
-                    String[] r_db_id_arr = jbInfo_obj.getR_db_id().split(",");
-                    jbInfo_obj.setR_db_username(jbInfoService.queryDbInfoById(r_db_id_arr[0]).getDb_username());
-                    jbInfo_obj.setR_db_password(jbInfoService.queryDbInfoById(r_db_id_arr[0]).getDb_password());
-                }
-                if(!"".equals(jbInfo_obj.getW_db_id())){
-                    jbInfo_obj.setW_db_username(jbInfoService.queryDbInfoById(jbInfo_obj.getW_db_id()).getDb_username());
-                    jbInfo_obj.setW_db_password(jbInfoService.queryDbInfoById(jbInfo_obj.getW_db_id()).getDb_password());
-                }
+            }else if("6".equals(r_db_type) || "6".equals(w_db_type)){
+                jbInfo_obj = jbInfoService.queryJbInfoByIdMongoDB(jbInfo);
             }else {
                 jbInfo_obj = jbInfoService.queryJbInfoById(jbInfo);
                 /*这里获取的reader的username和password默认取的是r_db_id的第一个*/

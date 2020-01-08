@@ -1,10 +1,7 @@
 package com.cnct.datax.service.impl;
 
 import com.cnct.datax.dao.JbInfoMapper;
-import com.cnct.datax.entity.FtpInfo;
-import com.cnct.datax.entity.JbInfo;
-import com.cnct.datax.entity.PageUtil;
-import com.cnct.datax.entity.TxtFileInfo;
+import com.cnct.datax.entity.*;
 import com.cnct.datax.service.JbInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -164,6 +161,19 @@ public class JbInfoServiceImpl implements JbInfoService{
         jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
         ftpInfo = jbInfoMapper.queryJbInfoByIdFtp(ftpInfo);
         jbInfo_obj.setFtpInfo(ftpInfo);
+        return jbInfo_obj;
+    }
+    /**
+     * 根据id查询脚本信息-查询的是mongodb的
+     */
+    @Override
+    public JbInfo queryJbInfoByIdMongoDB(JbInfo jbInfo) {
+        MongodbInfo mongodbInfo = new MongodbInfo();
+        mongodbInfo.setJb_mongodb_id(String.valueOf(jbInfo.getId()));
+        JbInfo jbInfo_obj = new JbInfo();
+        jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
+        mongodbInfo = jbInfoMapper.queryJbInfoByIdMongoDB(mongodbInfo);
+        jbInfo_obj.setMongodbInfo(mongodbInfo);
         return jbInfo_obj;
     }
 }

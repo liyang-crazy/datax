@@ -298,6 +298,45 @@
                     </div>
                 </div>
             </div>
+            <!--mongodb区域-->
+            <div class="mongodb layui-hide">
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">数据地址</label>
+                    <div class="layui-input-block m-left-9">
+                        <textarea class="layui-textarea mar-1 layui-disabled" id="show_mongodb_address" style="width: 35em;"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">用户名</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="show_mongodb_username" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">密码</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="show_mongodb_pasw" type="password" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">数据名称</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="show_mongodb_dbname" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">集合名称</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="show_mongodb_collName" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">文档列名</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="show_mongodb_column" type="text" value="">
+                    </div>
+                </div>
+            </div>
         </div>
         <!--writer区域-->
         <fieldset class="layui-elem-field layui-field-title">
@@ -594,6 +633,61 @@
                     <label class="layui-form-label label-1 label-a">写出表头</label>
                     <div class="layui-input-block m-left-9">
                         <input  class="layui-input input-a layui-disabled" id="w_show_ftp_header" type="text" value="" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <!--mongodb区域-->
+            <div class="w_mongodb layui-hide">
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">数据地址</label>
+                    <div class="layui-input-block m-left-9">
+                        <textarea class="layui-textarea mar-1 layui-disabled" id="w_show_mongodb_address" style="width: 35em;"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">用户名</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_mongodb_username" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">密码</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_mongodb_pasw" type="password" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">数据名称</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_mongodb_dbname" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">集合名称</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_mongodb_collName" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">文档列名</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_mongodb_column" type="text" value="">
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">传输时是否更新</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="w_show_mongodb_isUpsert" disabled lay-filter="" lay-search="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">业务主键</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_mongodb_upsertKey" type="text" placeholder="">
                     </div>
                 </div>
             </div>
