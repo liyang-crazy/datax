@@ -70,7 +70,20 @@ $(function () {
         /*给writer数据库信息赋值*/
         /*$('#w-sc-add-db-url').val(data_w.db_url);*/
         if(!$.isEmptyObject(data_w)){
-            if(data_w.db_type == 6){
+            if($.isArray(data_w)){//写这个的目的是因为：writer是mongodb的时候存在多选
+                var w_db_url = '';
+                var w_db_url_arr = [];
+                $.each(data_w,function (index,item) {
+                    w_db_url_arr.push(item.db_url);
+                });
+                w_db_url = w_db_url_arr.join('\n');
+                if(data_w[0].db_type == 6){
+                    $('.w_mongodb').removeClass('layui-hide');
+                    $('#w_add_mongodb_address').val(w_db_url);
+                    $('#w_add_mongodb_username').val(data_w.db_username);
+                    $('#w_add_mongodb_pasw').val(data_w.db_password);
+                }
+            }else if(data_w.db_type == 6){
                 $('.w_mongodb').removeClass('layui-hide');
                 $('#w_add_mongodb_address').val(data_w.db_url);
                 $('#w_add_mongodb_username').val(data_w.db_username);

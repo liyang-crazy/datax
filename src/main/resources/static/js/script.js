@@ -71,6 +71,7 @@ $(function () {
             value:''
         };
         var reader_db_name = '';
+        var writer_db_name = '';
         //日期
         laydate.render({
             elem: '#date_q'
@@ -134,6 +135,29 @@ $(function () {
             });
         };
         reader_db_name_fun(data_reader_db_arr);
+        /*定义获取writer区域数据库名称的多选下拉方法*/
+        //写这个的目的是因为：writer是mongodb的时候存在多选
+        var writer_db_name_fun = function (data_reader_db_arr) {
+            writer_db_name = xmSelect.render({
+                el: '#w_db_name_id_dx',
+                toolbar: {show: true},
+                model: {
+                    label: {
+                        type: 'block',
+                        block: {
+                            //最大显示数量, 0:不限制
+                            showCount: 2,
+                            //是否显示删除图标
+                            showIcon: true
+                        }
+                    }
+                },
+                paging: true,
+                pageSize: 3,
+                data: data_reader_db_arr
+            });
+        };
+        writer_db_name_fun(data_reader_db_arr);
         //获取对应数据库类型下面的连接名称
         var getDb_nameByDb_type = function(data,flg) {
             dbContionInfo.db_type = data;
@@ -161,10 +185,21 @@ $(function () {
                         reader_db_name_fun(data_reader_db_arr);
                     }
                     if(flg == 'w'){
-                        $("#w_db_name_id").empty();
-                        $.each(res.data, function (index, item) {
-                            $('#w_db_name_id').append(new Option(item.db_name, item.id));
-                        });
+                        if(data == 6){//写这个的目的是因为：writer是mongodb的时候存在多选
+                            data_reader_db_arr = [];
+                            $.each(res.data,function (index,item) {
+                                data_reader_db = {};
+                                data_reader_db.name = item.db_name;
+                                data_reader_db.value = item.id;
+                                data_reader_db_arr.push(data_reader_db);
+                            });
+                            writer_db_name_fun(data_reader_db_arr);
+                        }else {
+                            $("#w_db_name_id").empty();
+                            $.each(res.data, function (index, item) {
+                                $('#w_db_name_id').append(new Option(item.db_name, item.id));
+                            });
+                        }
                     }
 
                     layui.form.render("select");//重新渲染 固定写法
@@ -190,9 +225,17 @@ $(function () {
         form.on('select(w_db_typeFilter)', function(data){
             if(data.value == 3 || data.value == 5){
                 $('.w_db_name').addClass('layui-hide');
+            }else if(data.value == 6){//写这个的目的是因为：writer是mongodb的时候存在多选
+                getDb_nameByDb_type(data.value,'w');
+                $('.w_db_name').removeClass('layui-hide');
+                $('.w_db_name_id_all').addClass('layui-hide');
+                $('#w_db_name_id_dx').removeClass('layui-hide');
             }else {
                 getDb_nameByDb_type(data.value,'w');
                 $('.w_db_name').removeClass('layui-hide');
+                $('#w_db_name_id_dx').addClass('layui-hide');
+                $('.w_db_name_id_all').removeClass('layui-hide');
+
             }
         });
 
@@ -289,6 +332,8 @@ $(function () {
             }
             if(dbContionInfo.w_db_type == 3 || dbContionInfo.w_db_type == 5){
                 dbContionInfo.writerId = '';
+            }else if(dbContionInfo.w_db_type == 6){//写这个的目的是因为：writer是mongodb的时候存在多选
+                dbContionInfo.writerId = writer_db_name.getValue('value').toString();
             }else {
                 dbContionInfo.writerId = $('#w_db_name_id').val();
             }
@@ -304,7 +349,11 @@ $(function () {
                     dbConJson.r_db_type = $('#r_db_type_id').val();
                     dbConJson.w_db_type = $('#w_db_type_id').val();
                     dbConJson.r_db_id = reader_db_name.getValue('value').toString();
-                    dbConJson.w_db_id = $('#w_db_name_id').val();
+                    if(dbConJson.w_db_type == 6){//写这个的目的是因为：writer是mongodb的时候存在多选
+                        dbConJson.w_db_id = writer_db_name.getValue('value').toString();
+                    }else {
+                        dbConJson.w_db_id = $('#w_db_name_id').val();
+                    }
                     dbConJson.r_jb_tbgs = $('#to_local').val();
                     dbConJson.jb_group_id = layero.find('iframe').contents().find('[id="jb_group"]').val();
                     dbConJson.jb_name = layero.find('iframe').contents().find('[id="sc-add-jb_name"]').val();

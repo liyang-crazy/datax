@@ -8,7 +8,7 @@ import java.util.Date;
 public class DbContionInfo {
     private int id;
     private String readerId;
-    private int writerId;
+    private String writerId;
     private String db_type;
     private String db_type_name;
     private String db_name;
@@ -41,11 +41,11 @@ public class DbContionInfo {
         this.readerId = readerId;
     }
 
-    public int getWriterId() {
+    public String getWriterId() {
         return writerId;
     }
 
-    public void setWriterId(int writerId) {
+    public void setWriterId(String writerId) {
         this.writerId = writerId;
     }
 

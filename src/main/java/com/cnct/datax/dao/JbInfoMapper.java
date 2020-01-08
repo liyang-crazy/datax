@@ -87,4 +87,8 @@ public interface JbInfoMapper {
      * 据脚本id修改对应脚本信息-ftp
      */
     public void editJbInfoByIdFtP(FtpInfo ftpInfo);
+    /**
+     * 向mongodb表中添加对应的脚本信息
+     */
+    public int addMongodbJbInfo(JbInfo jbInfo);
 }

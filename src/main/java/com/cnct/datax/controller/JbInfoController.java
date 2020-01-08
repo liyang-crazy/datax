@@ -98,7 +98,24 @@ public class JbInfoController {
                 }
                 jbInfo.getFtpInfo().setJb_ftp_column_arr_r(r_column_arr);
             }
-
+            if("6".equals(jbInfo.getR_db_type()) || "6".equals(jbInfo.getW_db_type())){
+                jbInfo.getMongodbInfo().setJb_mongodb_address_arr_r(jbInfo.getMongodbInfo().getJb_mongodb_address_r().split(","));
+                jbInfo.getMongodbInfo().setJb_mongodb_address_arr_w(jbInfo.getMongodbInfo().getJb_mongodb_address_w().split(","));
+                String[] r_column = jbInfo.getMongodbInfo().getJb_mongodb_column_r().split("&");
+                ArrayList<Object> r_column_arr = new ArrayList<>();
+                for(String r_column_one : r_column){
+                    JSONObject jsonObject = JSON.parseObject(r_column_one);
+                    r_column_arr.add(jsonObject);
+                }
+                jbInfo.getMongodbInfo().setJb_mongodb_column_arr_r(r_column_arr);
+                String[] w_column = jbInfo.getMongodbInfo().getJb_mongodb_column_w().split("&");
+                ArrayList<Object> w_column_arr = new ArrayList<>();
+                for(String w_column_one : w_column){
+                    JSONObject jsonObject = JSON.parseObject(w_column_one);
+                    w_column_arr.add(jsonObject);
+                }
+                jbInfo.getMongodbInfo().setJb_mongodb_column_arr_w(w_column_arr);
+            }
             switch (jbInfo.getR_db_type()){
                 case "1":
                     reader = MysqlReader.mysqlReader(jbInfo);
@@ -114,6 +131,9 @@ public class JbInfoController {
                     break;
                 case "5":
                     reader = FtpReader.ftpReader(jbInfo);
+                    break;
+                case "6":
+                    reader = MongoDBReader.mongoDBReader(jbInfo);
                     break;
             }
             switch (jbInfo.getW_db_type()){
@@ -131,6 +151,9 @@ public class JbInfoController {
                     break;
                 case "5":
                     writer = FtpWriter.ftpWriter(jbInfo);
+                    break;
+                case "6":
+                    writer = MongoDBWriter.mongoDBWriter(jbInfo);
                     break;
             }
             jsonString = Merge.mergeAll(jbInfo,reader,writer);

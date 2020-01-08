@@ -179,15 +179,28 @@ public class DbContionInfoController {
                     dbCon_r_arr.add(dbCon_r);
                 }
             }
-            DbContionInfo dbCon_w = new DbContionInfo();
-            if(!"".equals(dbContionInfo.getWriterId()) && dbContionInfo.getWriterId()!=0){
-                DbContionInfo dbContionInfo_w = new DbContionInfo();
-                dbContionInfo_w.setId(dbContionInfo.getWriterId());
-                dbCon_w = dbContionInfoService.queryOneDbContionById(dbContionInfo_w);
+            if(!"".equals(dbContionInfo.getWriterId()) && dbContionInfo.getWriterId()!=null){
+                //写这个的目的是因为：writer是mongodb的时候存在多选
+                String[] writerId = dbContionInfo.getWriterId().split(",");
+                if(writerId.length > 1){
+                    List<Object> dbCon_w_arr = new ArrayList<>();
+                    for(String w_id : writerId){
+                        DbContionInfo dbContionInfo_w = new DbContionInfo();
+                        dbContionInfo_w.setId(Integer.valueOf(w_id));
+                        DbContionInfo dbCon_w = dbContionInfoService.queryOneDbContionById(dbContionInfo_w);
+                        dbCon_w_arr.add(dbCon_w);
+                    }
+                    map.put("data_w",dbCon_w_arr);
+                }else {
+                    DbContionInfo dbCon_w = new DbContionInfo();
+                    DbContionInfo dbContionInfo_w = new DbContionInfo();
+                    dbContionInfo_w.setId(Integer.valueOf(dbContionInfo.getWriterId()));
+                    dbCon_w = dbContionInfoService.queryOneDbContionById(dbContionInfo_w);
+                    map.put("data_w",dbCon_w);
+                }
             }
             map.put("code",0);
             map.put("data_r",dbCon_r_arr);
-            map.put("data_w",dbCon_w);
             map.put("msg","查询成功！");
         }catch (Exception e){
             e.printStackTrace();

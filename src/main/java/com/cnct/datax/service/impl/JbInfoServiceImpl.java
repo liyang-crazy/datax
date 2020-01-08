@@ -51,6 +51,11 @@ public class JbInfoServiceImpl implements JbInfoService{
             jbInfoMapper.addJbInfo(jbInfo);
             jbInfo.getFtpInfo().setJb_ftp_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.addFtpJbInfo(jbInfo);
+        }else if("6".equals(jbInfo.getR_db_type()) || "6".equals(jbInfo.getW_db_type())){
+            /*mongodb文件添加*/
+            jbInfoMapper.addJbInfo(jbInfo);
+            jbInfo.getMongodbInfo().setJb_mongodb_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addMongodbJbInfo(jbInfo);
         }else {
             jbInfoMapper.addJbInfo(jbInfo);
         }

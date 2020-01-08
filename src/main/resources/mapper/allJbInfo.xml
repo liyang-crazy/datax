@@ -315,5 +315,28 @@
           #{ftpInfo.jb_ftp_header_w},DEFAULT
         )
     </insert>
+    <!--向mongodb表中添加对应的脚本信息-->
+    <insert id="addMongodbJbInfo" parameterType="com.cnct.datax.entity.JbInfo">
+        INSERT INTO jb_mongodb_info VALUES
+        (
+          DEFAULT,
+          #{mongodbInfo.jb_mongodb_id},
+          #{mongodbInfo.jb_mongodb_address_r},
+          #{mongodbInfo.jb_mongodb_username_r},
+          #{mongodbInfo.jb_mongodb_userpasw_r},
+          #{mongodbInfo.jb_mongodb_dbname_r},
+          #{mongodbInfo.jb_mongodb_collname_r},
+          #{mongodbInfo.jb_mongodb_column_r},
+          #{mongodbInfo.jb_mongodb_address_w},
+          #{mongodbInfo.jb_mongodb_username_w},
+          #{mongodbInfo.jb_mongodb_userpasw_w},
+          #{mongodbInfo.jb_mongodb_dbname_w},
+          #{mongodbInfo.jb_mongodb_collname_w},
+          #{mongodbInfo.jb_mongodb_column_w},
+          #{mongodbInfo.jb_mongodb_isupsert_w},
+          #{mongodbInfo.jb_mongodb_upsertKey_w},
+          DEFAULT
+        )
+    </insert>
 
 </mapper>

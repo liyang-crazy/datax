@@ -68,9 +68,12 @@
                                 <div class="layui-inline w_db_name" style="margin-bottom: 15px;margin-left: -30px;">
                                     <label class="layui-form-label" style="width:7em;">连接名称</label>
                                     <div class="layui-input-inline" style="width:17em;">
-                                        <select name="db_name_id" id="w_db_name_id" lay-filter="db_nameFilter" lay-search="">
-                                            <option value=""></option>
-                                        </select>
+                                        <div class="w_db_name_id_all">
+                                            <select name="db_name_id" id="w_db_name_id" lay-filter="db_nameFilter" lay-search="">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div id="w_db_name_id_dx" class="xm-select-demo layui-hide"></div>
                                     </div>
                                 </div>
                                 <button type="button" class="layui-btn scr-all-til-add" style="margin-bottom: 1em;">新增</button>
