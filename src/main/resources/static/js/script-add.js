@@ -59,6 +59,20 @@ $(function () {
                 $('#add_mongodb_address').val(r_db_url);
                 $('#add_mongodb_username').val(data_r[0].db_username);
                 $('#add_mongodb_pasw').val(data_r[0].db_password);
+            }else if(data_r[0].db_type == 7){
+                var r_db_host = '';
+                var r_db_host_arr = [];
+                if(data_r.length > 0){
+                    $.each(data_r,function (index,item) {
+                        r_db_host_arr.push(item.db_ip);
+                    });
+                }
+                r_db_host = r_db_host_arr.join(',');
+                $('.cassandra').removeClass('layui-hide');
+                $('#add_cassandra_host').val(r_db_host);
+                $('#add_cassandra_port').val(data_r[0].db_port);
+                $('#add_cassandra_username').val(data_r[0].db_username);
+                $('#add_cassandra_pasw').val(data_r[0].db_password);
             }else {
                 $('.mysqlAndOracle').removeClass('layui-hide');
                 $('#add_contaion').val(r_db_url);
@@ -83,11 +97,33 @@ $(function () {
                     $('#w_add_mongodb_username').val(data_w[0].db_username);
                     $('#w_add_mongodb_pasw').val(data_w[0].db_password);
                 }
+                if(data_w[0].db_type == 7){
+                    $('.w_cassandra').removeClass('layui-hide');
+                    var w_db_host = '';
+                    var w_db_host_arr = [];
+                    if(data_w.length > 0){
+                        $.each(data_w,function (index,item) {
+                            w_db_host_arr.push(item.db_ip);
+                        });
+                    }
+                    w_db_host = w_db_host_arr.join(',');
+                    $('.cassandra').removeClass('layui-hide');
+                    $('#w_add_cassandra_host').val(w_db_host);
+                    $('#w_add_cassandra_port').val(data_w[0].db_port);
+                    $('#w_add_cassandra_username').val(data_w[0].db_username);
+                    $('#w_add_cassandra_pasw').val(data_w[0].db_password);
+                }
             }else if(data_w.db_type == 6){
                 $('.w_mongodb').removeClass('layui-hide');
                 $('#w_add_mongodb_address').val(data_w.db_url);
                 $('#w_add_mongodb_username').val(data_w.db_username);
                 $('#w_add_mongodb_pasw').val(data_w.db_password);
+            }else if(data_w.db_type == 7){
+                $('.w_cassandra').removeClass('layui-hide');
+                $('#w_add_cassandra_host').val(data_w.db_ip);
+                $('#w_add_cassandra_port').val(data_w.db_port);
+                $('#w_add_cassandra_username').val(data_w.db_username);
+                $('#w_add_cassandra_pasw').val(data_w.db_password);
             }else {
                 $('.w_mysqlAndOracle').removeClass('layui-hide');
                 $('#w-sc-add-db-username').val(data_w.db_username);

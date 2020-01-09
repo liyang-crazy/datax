@@ -65,6 +65,7 @@ $(function () {
         var txtfile_jb = {};//定义一个txtfile的脚本信息对象
         var ftp_jb = {};//定义一个ftp的脚本信息对象
         var mongodb_jb = {};//定义一个mongodb的脚本信息对象
+        var cassandra_jb = {};//定义一个cassandra的脚本信息对象
         var data_reader_db_arr = [];
         var data_reader_db = {
             name:'',
@@ -194,6 +195,15 @@ $(function () {
                                 data_reader_db_arr.push(data_reader_db);
                             });
                             writer_db_name_fun(data_reader_db_arr);
+                        }else if(data == 7){//写这个的目的是因为：writer是cassandra的时候存在多选
+                            data_reader_db_arr = [];
+                            $.each(res.data,function (index,item) {
+                                data_reader_db = {};
+                                data_reader_db.name = item.db_name;
+                                data_reader_db.value = item.id;
+                                data_reader_db_arr.push(data_reader_db);
+                            });
+                            writer_db_name_fun(data_reader_db_arr);
                         }else {
                             $("#w_db_name_id").empty();
                             $.each(res.data, function (index, item) {
@@ -215,6 +225,10 @@ $(function () {
                 getDb_nameByDb_type(data.value,'r');
                 $('.r_db_name').removeClass('layui-hide');
                 $('.to_local').addClass('layui-hide');
+            }else if(data.value == 7){
+                getDb_nameByDb_type(data.value,'r');
+                $('.r_db_name').removeClass('layui-hide');
+                $('.to_local').addClass('layui-hide');
             }else {
                 getDb_nameByDb_type(data.value,'r');
                 $('.r_db_name').removeClass('layui-hide');
@@ -226,6 +240,11 @@ $(function () {
             if(data.value == 3 || data.value == 5){
                 $('.w_db_name').addClass('layui-hide');
             }else if(data.value == 6){//写这个的目的是因为：writer是mongodb的时候存在多选
+                getDb_nameByDb_type(data.value,'w');
+                $('.w_db_name').removeClass('layui-hide');
+                $('.w_db_name_id_all').addClass('layui-hide');
+                $('#w_db_name_id_dx').removeClass('layui-hide');
+            }else if(data.value == 7){//写这个的目的是因为：writer是cassandra的时候存在多选
                 getDb_nameByDb_type(data.value,'w');
                 $('.w_db_name').removeClass('layui-hide');
                 $('.w_db_name_id_all').addClass('layui-hide');
@@ -320,6 +339,8 @@ $(function () {
             dbContionInfo = {};
             txtfile_jb = {};
             ftp_jb = {};
+            mongodb_jb = {};
+            cassandra_jb = {};
             //dbContionInfo.readerId = $('#r_db_name_id').val();
             dbContionInfo.r_db_type = $('#r_db_type_id').val();
             dbContionInfo.w_db_type = $('#w_db_type_id').val();
@@ -333,6 +354,8 @@ $(function () {
             if(dbContionInfo.w_db_type == 3 || dbContionInfo.w_db_type == 5){
                 dbContionInfo.writerId = '';
             }else if(dbContionInfo.w_db_type == 6){//写这个的目的是因为：writer是mongodb的时候存在多选
+                dbContionInfo.writerId = writer_db_name.getValue('value').toString();
+            }else if(dbContionInfo.w_db_type == 7){//写这个的目的是因为：writer是cassandra的时候存在多选
                 dbContionInfo.writerId = writer_db_name.getValue('value').toString();
             }else {
                 dbContionInfo.writerId = $('#w_db_name_id').val();
@@ -350,6 +373,8 @@ $(function () {
                     dbConJson.w_db_type = $('#w_db_type_id').val();
                     dbConJson.r_db_id = reader_db_name.getValue('value').toString();
                     if(dbConJson.w_db_type == 6){//写这个的目的是因为：writer是mongodb的时候存在多选
+                        dbConJson.w_db_id = writer_db_name.getValue('value').toString();
+                    }else if(dbConJson.w_db_type == 7){//写这个的目的是因为：writer是cassandra的时候存在多选
                         dbConJson.w_db_id = writer_db_name.getValue('value').toString();
                     }else {
                         dbConJson.w_db_id = $('#w_db_name_id').val();
