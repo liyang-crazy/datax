@@ -57,6 +57,9 @@ public class DbContionInfoController {
            if("6".equals(dbContionInfo.getDb_type())){
                dbContionInfo.setDb_url(DbUrlHeader.DB_URL_MONGODB+dbContionInfo.getDb_username()+":"+dbContionInfo.getDb_password()+"@"+dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port());
            }
+           if("7".equals(dbContionInfo.getDb_type())){
+               dbContionInfo.setDb_url(dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port());
+           }
            int index = dbContionInfoService.addDbInfo(dbContionInfo);
            map.put("code",0);
            map.put("data",index);
@@ -85,6 +88,9 @@ public class DbContionInfoController {
            }
            if("6".equals(dbContionInfo.getDb_type())){
                dbContionInfo.setDb_url(DbUrlHeader.DB_URL_MONGODB+dbContionInfo.getDb_username()+":"+dbContionInfo.getDb_password()+"@"+dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port());
+           }
+           if("7".equals(dbContionInfo.getDb_type())){
+               dbContionInfo.setDb_url(dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port());
            }
            int index =  dbContionInfoService.updateDbInfoById(dbContionInfo);
            map.put("code",0);
