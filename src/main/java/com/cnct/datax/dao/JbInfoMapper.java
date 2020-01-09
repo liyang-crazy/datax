@@ -81,7 +81,7 @@ public interface JbInfoMapper {
      */
     public FtpInfo queryJbInfoByIdFtp(FtpInfo ftpInfo);
     /**
-     * 据脚本id修改对应脚本信息-ftp
+     * 根据脚本id修改对应脚本信息-ftp
      */
     public void editJbInfoByIdFtP(FtpInfo ftpInfo);
     /**
@@ -92,4 +92,8 @@ public interface JbInfoMapper {
      * 根据id查询脚本信息-查询的是mongodb的
      */
     public MongodbInfo queryJbInfoByIdMongoDB(MongodbInfo mongodbInfo);
+    /**
+     *根据脚本id修改对应脚本信息-mongodb
+     */
+    public void editJbInfoByIdMongoDB(MongodbInfo mongodbInfo);
 }

@@ -202,7 +202,28 @@
         WHERE
             a.jb_ftp_id = #{jb_ftp_id}
     </update>
-
+    <!--根据脚本id修改对应脚本信息-mongodb-->
+    <update id="editJbInfoByIdMongoDB" parameterType="com.cnct.datax.entity.MongodbInfo">
+        UPDATE
+            jb_mongodb_info a
+        SET
+            a.jb_mongodb_address_r = #{jb_mongodb_address_r},
+            a.jb_mongodb_username_r = #{jb_mongodb_username_r},
+            a.jb_mongodb_userpasw_r = #{jb_mongodb_userpasw_r},
+            a.jb_mongodb_dbname_r = #{jb_mongodb_dbname_r},
+            a.jb_mongodb_collname_r = #{jb_mongodb_collname_r},
+            a.jb_mongodb_column_r = #{jb_mongodb_column_r},
+            a.jb_mongodb_address_w = #{jb_mongodb_address_w},
+            a.jb_mongodb_username_w = #{jb_mongodb_username_w},
+            a.jb_mongodb_userpasw_w = #{jb_mongodb_userpasw_w},
+            a.jb_mongodb_dbname_w = #{jb_mongodb_dbname_w},
+            a.jb_mongodb_collname_w = #{jb_mongodb_collname_w},
+            a.jb_mongodb_column_w = #{jb_mongodb_column_w},
+            a.jb_mongodb_isupsert_w = #{jb_mongodb_isupsert_w},
+            a.jb_mongodb_upsertKey_w = #{jb_mongodb_upsertKey_w}
+        WHERE
+            a.jb_mongodb_id = #{jb_mongodb_id}
+    </update>
 
     <!--根据id删除对应脚本的信息-->
     <update id="delJbInfoById" parameterType="com.cnct.datax.entity.JbInfo">

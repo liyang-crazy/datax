@@ -512,6 +512,7 @@ $(function () {
                     dbContionInfo = {};
                     txtfile_jb = {};
                     ftp_jb = {};
+                    mongodb_jb = {};
                     dbConJson.id = data.id;
                     dbConJson.r_db_type = data.r_db_type;
                     dbConJson.w_db_type = data.w_db_type;
@@ -597,6 +598,22 @@ $(function () {
                     ftp_jb.jb_ftp_fileF_w = layero.find('iframe').contents().find('[id="w_edit_ftp_fileF"]').val();
                     ftp_jb.jb_ftp_header_w = layero.find('iframe').contents().find('[id="w_edit_ftp_header"]').val();
                     dbConJson.ftpInfo = ftp_jb;
+                    /*获取mongodb的脚本信息*/
+                    mongodb_jb.jb_mongodb_address_r = layero.find('iframe').contents().find('[id="edit_mongodb_address"]').val().replace(/\n/g,',');
+                    mongodb_jb.jb_mongodb_username_r = layero.find('iframe').contents().find('[id="edit_mongodb_username"]').val();
+                    mongodb_jb.jb_mongodb_userpasw_r = layero.find('iframe').contents().find('[id="edit_mongodb_pasw"]').val();
+                    mongodb_jb.jb_mongodb_dbname_r = layero.find('iframe').contents().find('[id="edit_mongodb_dbname"]').val();
+                    mongodb_jb.jb_mongodb_collname_r = layero.find('iframe').contents().find('[id="edit_mongodb_collName"]').val();
+                    mongodb_jb.jb_mongodb_column_r = layero.find('iframe').contents().find('[id="edit_mongodb_column"]').val();
+                    mongodb_jb.jb_mongodb_address_w = layero.find('iframe').contents().find('[id="w_edit_mongodb_address"]').val().replace(/\n/g,',');
+                    mongodb_jb.jb_mongodb_username_w = layero.find('iframe').contents().find('[id="w_edit_mongodb_username"]').val();
+                    mongodb_jb.jb_mongodb_userpasw_w = layero.find('iframe').contents().find('[id="w_edit_mongodb_pasw"]').val();
+                    mongodb_jb.jb_mongodb_dbname_w = layero.find('iframe').contents().find('[id="w_edit_mongodb_dbname"]').val();
+                    mongodb_jb.jb_mongodb_collname_w = layero.find('iframe').contents().find('[id="w_edit_mongodb_collName"]').val();
+                    mongodb_jb.jb_mongodb_column_w = layero.find('iframe').contents().find('[id="w_edit_mongodb_column"]').val();
+                    mongodb_jb.jb_mongodb_isupsert_w = layero.find('iframe').contents().find('[id="w_edit_mongodb_isUpsert"]').val();
+                    mongodb_jb.jb_mongodb_upsertKey_w = layero.find('iframe').contents().find('[id="w_edit_mongodb_upsertKey"]').val();
+                    dbConJson.mongodbInfo = mongodb_jb;
                     edit_info_fun(dbConJson);
                     layer.closeAll();
                 },
