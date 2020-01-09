@@ -22,6 +22,8 @@ $(function () {
         var jb_ftp_ysgs_arr = ["zip","gzip","bzip2"];
         var jb_w_ftp_ms_arr = ["truncate","append","nonConflict"];
         var flg = true;
+        var flg_r= true;
+        var flg_w = true;
         /*接收从父页面传递过来的三个参数*/
         function getSearchString(key) {
             // 获取URL中?之后的字符
@@ -89,6 +91,9 @@ $(function () {
             }else if(data.r_db_type == 5){
                 $('.mysqlAndOracle').addClass('layui-hide');
                 $('.ftp').removeClass('layui-hide');
+            }else if(data.r_db_type == 6){
+                $('.mysqlAndOracle').addClass('layui-hide');
+                $('.mongodb').removeClass('layui-hide');
             }else {
                 $('.mysqlAndOracle').removeClass('layui-hide');
                 $('.txtFile').addClass('layui-hide');
@@ -111,6 +116,9 @@ $(function () {
             }else if(data.w_db_type == 5){
                 $('.w_mysqlAndOracle').addClass('layui-hide');
                 $('.w_ftp').removeClass('layui-hide');
+            }else if(data.w_db_type == 6){
+                $('.w_mysqlAndOracle').addClass('layui-hide');
+                $('.w_mongodb').removeClass('layui-hide');
             }else {
                 $('.w_mysqlAndOracle').removeClass('layui-hide');
                 $('.w_txtFile').addClass('layui-hide');
@@ -327,6 +335,40 @@ $(function () {
                 $('#w_edit_ftp_dateF').val(data.ftpInfo.jb_ftp_dateF_w);
                 $('#w_edit_ftp_fileF').val(data.ftpInfo.jb_ftp_fileF_w);
                 $('#w_edit_ftp_header').val(data.ftpInfo.jb_ftp_header_w);
+            }
+            /*给mongodb表单赋值*/
+            if(data.mongodbInfo != null){
+                $('#edit_mongodb_address').val(data.mongodbInfo.jb_mongodb_address_r.replaceAll(',','\n'));
+                $('#edit_mongodb_username').val(data.mongodbInfo.jb_mongodb_username_r);
+                $('#edit_mongodb_pasw').val(data.mongodbInfo.jb_mongodb_userpasw_r);
+                $('#edit_mongodb_dbname').val(data.mongodbInfo.jb_mongodb_dbname_r);
+                $('#edit_mongodb_collName').val(data.mongodbInfo.jb_mongodb_collname_r);
+                $('#edit_mongodb_column').val(data.mongodbInfo.jb_mongodb_column_r);
+                $('#w_edit_mongodb_address').val(data.mongodbInfo.jb_mongodb_address_w.replaceAll(',','\n'));
+                $('#w_edit_mongodb_username').val(data.mongodbInfo.jb_mongodb_username_w);
+                $('#w_edit_mongodb_pasw').val(data.mongodbInfo.jb_mongodb_userpasw_w);
+                $('#w_edit_mongodb_dbname').val(data.mongodbInfo.jb_mongodb_dbname_w);
+                $('#w_edit_mongodb_collName').val(data.mongodbInfo.jb_mongodb_collname_w);
+                $('#w_edit_mongodb_column').val(data.mongodbInfo.jb_mongodb_column_w);
+                $.each(jb_r_txtFile_csv_h_arr,function (index,item) {
+                    if(data.mongodbInfo.jb_mongodb_isupsert_w == item){
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#w_edit_mongodb_isUpsert").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#w_edit_mongodb_isUpsert").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#w_edit_mongodb_upsertKey').val(data.mongodbInfo.jb_mongodb_upsertKey_w);
             }
         };
 
@@ -562,6 +604,96 @@ $(function () {
         });
         $('#edit_ftp_column_cancle').on('click',function () {
             $('.edit_ftp_col_txt').addClass('layui-hide');
+        });
+        /*监听mongodb:column-读*/
+        $('#edit_mongodb_column').on('focus',function () {
+            $('.edit_mongodb_col_txt').removeClass('layui-hide');
+            $('#edit_mongodb_column4').bind('input propertychange', function(){
+                if($(this).val() == 'array' || $(this).val() == 'Array'){
+                    $('#edit_mongodb_col_key3').removeClass('layui-hide');
+                }else {
+                    $('#edit_mongodb_col_key3').addClass('layui-hide');
+                }
+            })
+        });
+        $('#edit_mongodb_column_sure').on('click',function () {
+            if(flg_r){
+                $('#edit_mongodb_column').val('');
+                flg_r = !flg_r;
+            }
+            $('.edit_mongodb_col_txt').addClass('layui-hide');
+            /*将获取的数据封装成json对象的形式添加到input框中*/
+            var key1 = "";
+            var key2 = "";
+            var key3 = "";
+            var value1 = "";
+            var value2 = "";
+            var obj = {};
+            key1 = $('#edit_mongodb_column1').val();
+            value1 = $('#edit_mongodb_column2').val();
+            key2 = $('#edit_mongodb_column3').val();
+            value2 = $('#edit_mongodb_column4').val();
+            obj[key1] = value1;
+            obj[key2] = value2;
+            if(value2 == "Array" || value2 == "array"){
+                key3 = $('#edit_mongodb_column5').val();
+                obj[key3] = $('#edit_mongodb_column6').val();
+            }
+            var add_cloumn_txt_inpt = $('#edit_mongodb_column').val();
+            if(add_cloumn_txt_inpt == ""){
+                add_cloumn_txt_inpt = JSON.stringify(obj);
+            }else {
+                add_cloumn_txt_inpt += '&'+JSON.stringify(obj);
+            }
+            $('#edit_mongodb_column').val(add_cloumn_txt_inpt);
+        });
+        $('#edit_mongodb_column_cancle').on('click',function () {
+            $('.edit_mongodb_col_txt').addClass('layui-hide');
+        });
+        /*监听mongodb:column-写*/
+        $('#w_edit_mongodb_column').on('focus',function () {
+            $('.w_edit_mongodb_col_txt').removeClass('layui-hide');
+            $('#w_edit_mongodb_column4').bind('input propertychange', function(){
+                if($(this).val() == 'array' || $(this).val() == 'Array'){
+                    $('#w_edit_mongodb_col_key3').removeClass('layui-hide');
+                }else {
+                    $('#w_edit_mongodb_col_key3').addClass('layui-hide');
+                }
+            })
+        });
+        $('#w_edit_mongodb_column_sure').on('click',function () {
+            if(flg_w){
+                $('#w_edit_mongodb_column').val('');
+                flg_w = !flg_w;
+            }
+            $('.w_edit_mongodb_col_txt').addClass('layui-hide');
+            /*将获取的数据封装成json对象的形式添加到input框中*/
+            var key1 = "";
+            var key2 = "";
+            var key3 = "";
+            var value1 = "";
+            var value2 = "";
+            var obj = {};
+            key1 = $('#w_edit_mongodb_column1').val();
+            value1 = $('#w_edit_mongodb_column2').val();
+            key2 = $('#w_edit_mongodb_column3').val();
+            value2 = $('#w_edit_mongodb_column4').val();
+            obj[key1] = value1;
+            obj[key2] = value2;
+            if(value2 == "Array" || value2 == "array"){
+                key3 = $('#w_edit_mongodb_column5').val();
+                obj[key3] = $('#w_edit_mongodb_column6').val();
+            }
+            var add_cloumn_txt_inpt = $('#w_edit_mongodb_column').val();
+            if(add_cloumn_txt_inpt == ""){
+                add_cloumn_txt_inpt = JSON.stringify(obj);
+            }else {
+                add_cloumn_txt_inpt += '&'+JSON.stringify(obj);
+            }
+            $('#w_edit_mongodb_column').val(add_cloumn_txt_inpt);
+        });
+        $('#w_edit_mongodb_column_cancle').on('click',function () {
+            $('.w_edit_mongodb_col_txt').addClass('layui-hide');
         });
 
     })
