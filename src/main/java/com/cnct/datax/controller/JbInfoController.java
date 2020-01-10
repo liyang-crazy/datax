@@ -331,6 +331,12 @@ public class JbInfoController {
                }
                jbInfo.getMongodbInfo().setJb_mongodb_column_arr_w(w_column_arr);
            }
+           if("7".equals(jbInfo.getR_db_type()) || "7".equals(jbInfo.getW_db_type())){
+               jbInfo.getCassandraInfo().setJb_cassandra_host_arr_r(jbInfo.getCassandraInfo().getJb_cassandra_host_r().split(","));
+               jbInfo.getCassandraInfo().setJb_cassandra_column_arr_r(jbInfo.getCassandraInfo().getJb_cassandra_column_r().split(","));
+               jbInfo.getCassandraInfo().setJb_cassandra_host_arr_w(jbInfo.getCassandraInfo().getJb_cassandra_host_w().split(","));
+               jbInfo.getCassandraInfo().setJb_cassandra_column_arr_w(jbInfo.getCassandraInfo().getJb_cassandra_column_w().split(","));
+           }
             switch (jbInfo.getR_db_type()){
                 case "1":
                    reader = MysqlReader.mysqlReader(jbInfo);
@@ -349,6 +355,9 @@ public class JbInfoController {
                     break;
                 case "6":
                     reader = MongoDBReader.mongoDBReader(jbInfo);
+                    break;
+                case "7":
+                    reader = CassandraReader.cassandraReader(jbInfo);
                     break;
             }
             switch (jbInfo.getW_db_type()){
@@ -369,6 +378,9 @@ public class JbInfoController {
                     break;
                 case "6":
                     writer = MongoDBWriter.mongoDBWriter(jbInfo);
+                    break;
+                case "7":
+                    writer = CassandraWriter.cassandraWriter(jbInfo);
                     break;
             }
             jsonString = Merge.mergeAll(jbInfo,reader,writer);

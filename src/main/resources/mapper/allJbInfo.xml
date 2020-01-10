@@ -228,6 +228,37 @@
         WHERE
             a.jb_mongodb_id = #{jb_mongodb_id}
     </update>
+    <!--根据脚本id修改对应脚本信息-cassandra-->
+    <update id="editJbInfoByIdCassandra" parameterType="com.cnct.datax.entity.CassandraInfo">
+        UPDATE
+            jb_cassandra_info a
+        SET
+            a.jb_cassandra_host_r = #{jb_cassandra_host_r},
+            a.jb_cassandra_port_r = #{jb_cassandra_port_r},
+            a.jb_cassandra_username_r = #{jb_cassandra_username_r},
+            a.jb_cassandra_pasw_r = #{jb_cassandra_pasw_r},
+            a.jb_cassandra_useSSL_r = #{jb_cassandra_useSSL_r},
+            a.jb_cassandra_keyspace_r = #{jb_cassandra_keyspace_r},
+            a.jb_cassandra_table_r = #{jb_cassandra_table_r},
+            a.jb_cassandra_column_r = #{jb_cassandra_column_r},
+            a.jb_cassandra_where_r = #{jb_cassandra_where_r},
+            a.jb_cassandra_allowF_r = #{jb_cassandra_allowF_r},
+            a.jb_cassandra_conL_r = #{jb_cassandra_conL_r},
+            a.jb_cassandra_host_w = #{jb_cassandra_host_w},
+            a.jb_cassandra_port_w = #{jb_cassandra_port_w},
+            a.jb_cassandra_username_w = #{jb_cassandra_username_w},
+            a.jb_cassandra_pasw_w = #{jb_cassandra_pasw_w},
+            a.jb_cassandra_useSSL_w = #{jb_cassandra_useSSL_w},
+            a.jb_cassandra_conP_w = #{jb_cassandra_conP_w},
+            a.jb_cassandra_maxC_w = #{jb_cassandra_maxC_w},
+            a.jb_cassandra_keyspace_w = #{jb_cassandra_keyspace_w},
+            a.jb_cassandra_table_w = #{jb_cassandra_table_w},
+            a.jb_cassandra_batchSize_w = #{jb_cassandra_batchSize_w},
+            a.jb_cassandra_column_w = #{jb_cassandra_column_w},
+            a.jb_cassandra_conL_w = #{jb_cassandra_conL_w}
+        WHERE
+            a.jb_cassandra_id = #{jb_cassandra_id}
+    </update>
 
     <!--根据id删除对应脚本的信息-->
     <update id="delJbInfoById" parameterType="com.cnct.datax.entity.JbInfo">

@@ -97,6 +97,11 @@ public class JbInfoServiceImpl implements JbInfoService{
             mongodbInfo.setJb_mongodb_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.editJbInfoById(jbInfo);
             jbInfoMapper.editJbInfoByIdMongoDB(mongodbInfo);
+        }else if("7".equals(jbInfo.getR_db_type()) || "7".equals(jbInfo.getW_db_type())){
+            CassandraInfo cassandraInfo = jbInfo.getCassandraInfo();
+            cassandraInfo.setJb_cassandra_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoById(jbInfo);
+            jbInfoMapper.editJbInfoByIdCassandra(cassandraInfo);
         }else {
             jbInfoMapper.editJbInfoById(jbInfo);
         }

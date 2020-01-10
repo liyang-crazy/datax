@@ -104,4 +104,8 @@ public interface JbInfoMapper {
      * 根据id查询脚本信息-查询的是cassabdra的
      */
     public CassandraInfo queryJbInfoByIdCassandra(CassandraInfo cassandraInfo);
+    /**
+     * 根据脚本id修改对应脚本信息-cassandra
+     */
+    public void editJbInfoByIdCassandra(CassandraInfo cassandraInfo);
 }

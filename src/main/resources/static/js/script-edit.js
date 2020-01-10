@@ -15,12 +15,14 @@ $(function () {
         var w_jb_mode_arr = ["insert","replace","update"];
         var jb_r_txtFile_ysgs_arr = ["zip","gzip","bzip2"];
         var jb_r_txtFile_csv_h_arr = ["0","1"];
+        var jb_r_cassandra_allowF_arr= ["","0","1"];
         var jb_w_txtfile_ms_arr = ["truncate","append","nonConflict"];
         var jb_w_txtfile_ysgs_arr = ["zip","lzo","lzop","tgz","bzip2"];
         var jb_ftp_protocol_arr = ["ftp","sftp"];
         var jb_ftp_cp_arr = ["PORT","PASV"];
         var jb_ftp_ysgs_arr = ["zip","gzip","bzip2"];
         var jb_w_ftp_ms_arr = ["truncate","append","nonConflict"];
+        var jb_cassandra_conL_arr = ["LOCAL_QUORUM","QUORUM","EACH_QUORUM","ALL","ANY","ONE","TWO","THREE","LOCAL_ONE"];
         var flg = true;
         var flg_r= true;
         var flg_w = true;
@@ -94,6 +96,9 @@ $(function () {
             }else if(data.r_db_type == 6){
                 $('.mysqlAndOracle').addClass('layui-hide');
                 $('.mongodb').removeClass('layui-hide');
+            }else if(data.r_db_type == 7){
+                $('.mysqlAndOracle').addClass('layui-hide');
+                $('.cassandra').removeClass('layui-hide');
             }else {
                 $('.mysqlAndOracle').removeClass('layui-hide');
                 $('.txtFile').addClass('layui-hide');
@@ -119,6 +124,9 @@ $(function () {
             }else if(data.w_db_type == 6){
                 $('.w_mysqlAndOracle').addClass('layui-hide');
                 $('.w_mongodb').removeClass('layui-hide');
+            }else if(data.w_db_type == 7){
+                $('.w_mysqlAndOracle').addClass('layui-hide');
+                $('.w_cassandra').removeClass('layui-hide');
             }else {
                 $('.w_mysqlAndOracle').removeClass('layui-hide');
                 $('.w_txtFile').addClass('layui-hide');
@@ -369,6 +377,97 @@ $(function () {
                 });
                 layui.form.render("select");
                 $('#w_edit_mongodb_upsertKey').val(data.mongodbInfo.jb_mongodb_upsertKey_w);
+            }
+            /*给cassandra表单赋值*/
+            if(data.cassandraInfo != null){
+                $('#edit_cassandra_host').val(data.cassandraInfo.jb_cassandra_host_r);
+                $('#edit_cassandra_port').val(data.cassandraInfo.jb_cassandra_port_r);
+                $('#edit_cassandra_username').val(data.cassandraInfo.jb_cassandra_username_r);
+                $('#edit_cassandra_pasw').val(data.cassandraInfo.jb_cassandra_pasw_r);
+                $.each(jb_r_txtFile_csv_h_arr,function (index,item) {
+                    if(data.cassandraInfo.jb_cassandra_useSSL_r == item){
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#edit_cassandra_useSSL").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#edit_cassandra_useSSL").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#edit_cassandra_keyspace').val(data.cassandraInfo.jb_cassandra_keyspace_r);
+                $('#edit_cassandra_table').val(data.cassandraInfo.jb_cassandra_table_r);
+                $('#edit_cassandra_column').val(data.cassandraInfo.jb_cassandra_column_r);
+                $('#edit_cassandra_where').val(data.cassandraInfo.jb_cassandra_where_r);
+                $.each(jb_r_txtFile_csv_h_arr,function (index,item) {
+                    if(data.cassandraInfo.jb_cassandra_allowF_r == item){
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#edit_cassandra_allowF").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#edit_cassandra_allowF").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $.each(jb_cassandra_conL_arr,function (index,item) {
+                    if(data.cassandraInfo.jb_cassandra_conL_r == item){
+                        $("#edit_cassandra_conL").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        $("#edit_cassandra_conL").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#w_edit_cassandra_host').val(data.cassandraInfo.jb_cassandra_host_w);
+                $('#w_edit_cassandra_port').val(data.cassandraInfo.jb_cassandra_port_w);
+                $('#w_edit_cassandra_username').val(data.cassandraInfo.jb_cassandra_username_w);
+                $('#w_edit_cassandra_pasw').val(data.cassandraInfo.jb_cassandra_pasw_w);
+                $.each(jb_r_txtFile_csv_h_arr,function (index,item) {
+                    if(data.cassandraInfo.jb_cassandra_useSSL_w == item){
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#w_edit_cassandra_useSSL").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#w_edit_cassandra_useSSL").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#w_edit_cassandra_conP').val(data.cassandraInfo.jb_cassandra_conP_w);
+                $('#w_edit_cassandra_maxC').val(data.cassandraInfo.jb_cassandra_maxC_w);
+                $('#w_edit_cassandra_keyspace').val(data.cassandraInfo.jb_cassandra_keyspace_w);
+                $('#w_edit_cassandra_table').val(data.cassandraInfo.jb_cassandra_table_w);
+                $('#w_edit_cassandra_batchSize').val(data.cassandraInfo.jb_cassandra_batchSize_w);
+                $('#w_edit_cassandra_column').val(data.cassandraInfo.jb_cassandra_column_w);
+                $.each(jb_cassandra_conL_arr,function (index,item) {
+                    if(data.cassandraInfo.jb_cassandra_conL_w == item){
+                        $("#w_edit_cassandra_conL").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        $("#w_edit_cassandra_conL").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
             }
         };
 
