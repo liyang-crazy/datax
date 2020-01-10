@@ -363,5 +363,37 @@
           DEFAULT
         )
     </insert>
+    <!--向cassandra表中添加脚本信息-->
+    <insert id="addCassandraJbInfo" parameterType="com.cnct.datax.entity.JbInfo">
+        INSERT INTO jb_cassandra_info VALUES
+        (
+          DEFAULT,
+          #{cassandraInfo.jb_cassandra_id},
+          #{cassandraInfo.jb_cassandra_host_r},
+          #{cassandraInfo.jb_cassandra_port_r},
+          #{cassandraInfo.jb_cassandra_username_r},
+          #{cassandraInfo.jb_cassandra_pasw_r},
+          #{cassandraInfo.jb_cassandra_useSSL_r},
+          #{cassandraInfo.jb_cassandra_keyspace_r},
+          #{cassandraInfo.jb_cassandra_table_r},
+          #{cassandraInfo.jb_cassandra_column_r},
+          #{cassandraInfo.jb_cassandra_where_r},
+          #{cassandraInfo.jb_cassandra_allowF_r},
+          #{cassandraInfo.jb_cassandra_conL_r},
+          #{cassandraInfo.jb_cassandra_host_w},
+          #{cassandraInfo.jb_cassandra_port_w},
+          #{cassandraInfo.jb_cassandra_username_w},
+          #{cassandraInfo.jb_cassandra_pasw_w},
+          #{cassandraInfo.jb_cassandra_useSSL_w},
+          #{cassandraInfo.jb_cassandra_conP_w},
+          #{cassandraInfo.jb_cassandra_maxC_w},
+          #{cassandraInfo.jb_cassandra_keyspace_w},
+          #{cassandraInfo.jb_cassandra_table_w},
+          #{cassandraInfo.jb_cassandra_batchSize_w},
+          #{cassandraInfo.jb_cassandra_column_w},
+          #{cassandraInfo.jb_cassandra_conL_w},
+          DEFAULT
+        )
+    </insert>
 
 </mapper>

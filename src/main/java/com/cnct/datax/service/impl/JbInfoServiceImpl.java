@@ -53,6 +53,11 @@ public class JbInfoServiceImpl implements JbInfoService{
             jbInfoMapper.addJbInfo(jbInfo);
             jbInfo.getMongodbInfo().setJb_mongodb_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.addMongodbJbInfo(jbInfo);
+        }else if("7".equals(jbInfo.getR_db_type()) || "7".equals(jbInfo.getW_db_type())){
+            /*cassandra文件添加*/
+            jbInfoMapper.addJbInfo(jbInfo);
+            jbInfo.getCassandraInfo().setJb_cassandra_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addCassandraJbInfo(jbInfo);
         }else {
             jbInfoMapper.addJbInfo(jbInfo);
         }

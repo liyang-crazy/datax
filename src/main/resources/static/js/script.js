@@ -480,6 +480,31 @@ $(function () {
                     mongodb_jb.jb_mongodb_isupsert_w = layero.find('iframe').contents().find('[id="add_mongodb_isUpsert"]').val();
                     mongodb_jb.jb_mongodb_upsertKey_w = layero.find('iframe').contents().find('[id="w_add_mongodb_upsertKey"]').val();
                     dbConJson.mongodbInfo = mongodb_jb;
+                    /*获取cassandra脚本的信息*/
+                    cassandra_jb.jb_cassandra_host_r = layero.find('iframe').contents().find('[id="add_cassandra_host"]').val();
+                    cassandra_jb.jb_cassandra_port_r = layero.find('iframe').contents().find('[id="add_cassandra_port"]').val();
+                    cassandra_jb.jb_cassandra_username_r = layero.find('iframe').contents().find('[id="add_cassandra_username"]').val();
+                    cassandra_jb.jb_cassandra_pasw_r = layero.find('iframe').contents().find('[id="add_cassandra_pasw"]').val();
+                    cassandra_jb.jb_cassandra_useSSL_r = layero.find('iframe').contents().find('[id="add_cassandra_useSSL"]').val();
+                    cassandra_jb.jb_cassandra_keyspace_r = layero.find('iframe').contents().find('[id="add_cassandra_keyspace"]').val();
+                    cassandra_jb.jb_cassandra_table_r = layero.find('iframe').contents().find('[id="add_cassandra_table"]').val();
+                    cassandra_jb.jb_cassandra_column_r = layero.find('iframe').contents().find('[id="add_cassandra_column"]').val();
+                    cassandra_jb.jb_cassandra_where_r = layero.find('iframe').contents().find('[id="add_cassandra_where"]').val();
+                    cassandra_jb.jb_cassandra_allowF_r = layero.find('iframe').contents().find('[id="add_cassandra_allowF"]').val();
+                    cassandra_jb.jb_cassandra_conL_r = layero.find('iframe').contents().find('[id="add_cassandra_conL"]').val();
+                    cassandra_jb.jb_cassandra_host_w = layero.find('iframe').contents().find('[id="w_add_cassandra_host"]').val();
+                    cassandra_jb.jb_cassandra_port_w = layero.find('iframe').contents().find('[id="w_add_cassandra_port"]').val();
+                    cassandra_jb.jb_cassandra_username_w = layero.find('iframe').contents().find('[id="w_add_cassandra_username"]').val();
+                    cassandra_jb.jb_cassandra_pasw_w = layero.find('iframe').contents().find('[id="w_add_cassandra_pasw"]').val();
+                    cassandra_jb.jb_cassandra_useSSL_w = layero.find('iframe').contents().find('[id="w_add_cassandra_useSSL"]').val();
+                    cassandra_jb.jb_cassandra_conP_w = layero.find('iframe').contents().find('[id="w_add_cassandra_conP"]').val();
+                    cassandra_jb.jb_cassandra_maxC_w = layero.find('iframe').contents().find('[id="w_add_cassandra_maxC"]').val();
+                    cassandra_jb.jb_cassandra_keyspace_w = layero.find('iframe').contents().find('[id="w_add_cassandra_keyspace"]').val();
+                    cassandra_jb.jb_cassandra_table_w = layero.find('iframe').contents().find('[id="w_add_cassandra_table"]').val();
+                    cassandra_jb.jb_cassandra_batchSize_w = layero.find('iframe').contents().find('[id="w_add_cassandra_batchSize"]').val();
+                    cassandra_jb.jb_cassandra_column_w = layero.find('iframe').contents().find('[id="w_add_cassandra_column"]').val();
+                    cassandra_jb.jb_cassandra_conL_w = layero.find('iframe').contents().find('[id="w_add_cassandra_conL"]').val();
+                    dbConJson.cassandraInfo = cassandra_jb;
                     add_info_fun(dbConJson);
                     layer.closeAll();
                 },

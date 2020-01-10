@@ -96,4 +96,8 @@ public interface JbInfoMapper {
      *根据脚本id修改对应脚本信息-mongodb
      */
     public void editJbInfoByIdMongoDB(MongodbInfo mongodbInfo);
+    /**
+     * 向cassandra表中添加对应的脚本信息
+     */
+    public int addCassandraJbInfo(JbInfo jbInfo);
 }
