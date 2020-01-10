@@ -68,5 +68,9 @@ public interface JbInfoService {
      * 根据id查询脚本信息-查询的是mongodb的
      */
     public JbInfo queryJbInfoByIdMongoDB(JbInfo jbInfo);
+    /**
+     * 根据id查询脚本信息-查询的是cassandra的
+     */
+    public JbInfo queryJbInfoByIdCassandra(JbInfo jbInfo);
 
 }

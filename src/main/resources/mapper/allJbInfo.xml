@@ -55,6 +55,10 @@
     <select id="queryJbInfoByIdMongoDB" parameterType="com.cnct.datax.entity.MongodbInfo" resultType="com.cnct.datax.entity.MongodbInfo">
         SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = #{jb_mongodb_id}
     </select>
+    <!--根据id查询脚本信息-查询的是cassandra的-->
+    <select id="queryJbInfoByIdCassandra" parameterType="com.cnct.datax.entity.CassandraInfo" resultType="com.cnct.datax.entity.CassandraInfo">
+        SELECT * FROM jb_cassandra_info WHERE jb_cassandra_id = #{jb_cassandra_id}
+    </select>
     <!--根据数据库连接信息的id查询对应的数据库信息-->
     <select id="queryDbInfoById" resultType="com.cnct.datax.entity.JbInfo" parameterType="com.cnct.datax.entity.JbInfo">
         SELECT

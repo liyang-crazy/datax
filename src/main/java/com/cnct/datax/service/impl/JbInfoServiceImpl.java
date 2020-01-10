@@ -186,4 +186,17 @@ public class JbInfoServiceImpl implements JbInfoService{
         jbInfo_obj.setMongodbInfo(mongodbInfo);
         return jbInfo_obj;
     }
+    /**
+     * 根据id查询脚本信息-查询的是cassandra的
+     */
+    @Override
+    public JbInfo queryJbInfoByIdCassandra(JbInfo jbInfo) {
+        CassandraInfo cassandraInfo = new CassandraInfo();
+        cassandraInfo.setJb_cassandra_id(String.valueOf(jbInfo.getId()));
+        JbInfo jbInfo_obj = new JbInfo();
+        jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
+        cassandraInfo = jbInfoMapper.queryJbInfoByIdCassandra(cassandraInfo);
+        jbInfo_obj.setCassandraInfo(cassandraInfo);
+        return jbInfo_obj;
+    }
 }

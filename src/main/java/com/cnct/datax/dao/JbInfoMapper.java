@@ -100,4 +100,8 @@ public interface JbInfoMapper {
      * 向cassandra表中添加对应的脚本信息
      */
     public int addCassandraJbInfo(JbInfo jbInfo);
+    /**
+     * 根据id查询脚本信息-查询的是cassabdra的
+     */
+    public CassandraInfo queryJbInfoByIdCassandra(CassandraInfo cassandraInfo);
 }

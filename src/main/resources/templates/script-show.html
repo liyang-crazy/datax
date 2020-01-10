@@ -337,6 +337,85 @@
                     </div>
                 </div>
             </div>
+            <!--cassandra区域-->
+            <div class="cassandra layui-hide">
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">连接IP</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled"  id="show_cassandra_host" type="text" value="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">端口</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="show_cassandra_port" type="text" value="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">用户名</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="show_cassandra_username" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">密码</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="show_cassandra_pasw" type="password" placeholder="">
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">是否使用SSL连接</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="show_cassandra_useSSL" disabled  lay-filter="" lay-search="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">keyspace</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="show_cassandra_keyspace" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">需要同步的表</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="show_cassandra_table" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">同步列名</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="show_cassandra_column"  type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">筛选条件表达式</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="show_cassandra_where"  type="text" placeholder="">
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">是否在服务端过滤数据</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="show_cassandra_allowF" disabled lay-filter="" lay-search="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">数据一致性级别</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="show_cassandra_conL" disabled  lay-filter="" lay-search="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
         <!--writer区域-->
         <fieldset class="layui-elem-field layui-field-title">
@@ -690,6 +769,89 @@
                         <input  class="layui-input input-a layui-disabled" id="w_show_mongodb_upsertKey" type="text" placeholder="">
                     </div>
                 </div>
+            </div>
+            <!--cassandra区域-->
+            <div class="w_cassandra layui-hide">
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">连接IP</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled"  id="w_show_cassandra_host" type="text" value="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">端口</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_cassandra_port" type="text" value="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">用户名</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_cassandra_username" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">密码</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_cassandra_pasw" type="password" placeholder="">
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">是否使用SSL连接</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="w_show_cassandra_useSSL" disabled  lay-filter="" lay-search="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">客户端连接池数量</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_cassandra_conP" type="text" value="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">最大请求数</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_cassandra_maxC" type="text" value="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">keyspace</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_cassandra_keyspace" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">需要同步的表</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_cassandra_table" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">批量提交条数</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_cassandra_batchSize" type="text" value="" max="65535">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">同步列名</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a layui-disabled" id="w_show_cassandra_column"  type="text" placeholder="">
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">数据一致性级别</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="w_show_cassandra_conL" disabled lay-filter="" lay-search="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="layui-form-item width-25">

@@ -223,6 +223,8 @@ public class JbInfoController {
                 jbInfo_obj = jbInfoService.queryJbInfoByIdFtp(jbInfo);
             }else if("6".equals(r_db_type) || "6".equals(w_db_type)){
                 jbInfo_obj = jbInfoService.queryJbInfoByIdMongoDB(jbInfo);
+            }else if("7".equals(r_db_type) || "7".equals(w_db_type)){
+                jbInfo_obj = jbInfoService.queryJbInfoByIdCassandra(jbInfo);
             }else {
                 jbInfo_obj = jbInfoService.queryJbInfoById(jbInfo);
                 /*这里获取的reader的username和password默认取的是r_db_id的第一个*/

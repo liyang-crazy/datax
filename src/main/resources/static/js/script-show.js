@@ -61,6 +61,9 @@ $(function () {
             }else if(data.r_db_type == 6){
                 $('.mysqlAndOracle').addClass('layui-hide');
                 $('.mongodb').removeClass('layui-hide');
+            }else if(data.r_db_type == 7){
+                $('.mysqlAndOracle').addClass('layui-hide');
+                $('.cassandra').removeClass('layui-hide');
             }else {
                 $('.mysqlAndOracle').removeClass('layui-hide');
                 $('.txtFile').addClass('layui-hide');
@@ -86,6 +89,9 @@ $(function () {
             }else if(data.w_db_type == 6){
                 $('.w_mysqlAndOracle').addClass('layui-hide');
                 $('.w_mongodb').removeClass('layui-hide');
+            }else if(data.w_db_type == 7){
+                $('.w_mysqlAndOracle').addClass('layui-hide');
+                $('.w_cassandra').removeClass('layui-hide');
             }else {
                 $('.w_mysqlAndOracle').removeClass('layui-hide');
                 $('.w_txtFile').addClass('layui-hide');
@@ -216,6 +222,37 @@ $(function () {
                 $("#w_show_mongodb_isUpsert").append("<option value="+data.mongodbInfo.jb_mongodb_isupsert_w+" selected>"+data.mongodbInfo.jb_mongodb_isupsert_w+"</option>");
                 layui.form.render("select");
                 $('#w_show_mongodb_upsertKey').val(data.mongodbInfo.jb_mongodb_upsertKey_w);
+            }
+            /*给cassandra赋值*/
+            if(data.cassandraInfo != null){
+                $('#show_cassandra_host').val(data.cassandraInfo.jb_cassandra_host_r);
+                $('#show_cassandra_port').val(data.cassandraInfo.jb_cassandra_port_r);
+                $('#show_cassandra_username').val(data.cassandraInfo.jb_cassandra_username_r);
+                $('#show_cassandra_pasw').val(data.cassandraInfo.jb_cassandra_pasw_r);
+                $("#show_cassandra_useSSL").append("<option value="+data.cassandraInfo.jb_cassandra_useSSL_r+" selected>"+data.cassandraInfo.jb_cassandra_useSSL_r+"</option>");
+                layui.form.render("select");
+                $('#show_cassandra_keyspace').val(data.cassandraInfo.jb_cassandra_keyspace_r);
+                $('#show_cassandra_table').val(data.cassandraInfo.jb_cassandra_table_r);
+                $('#show_cassandra_column').val(data.cassandraInfo.jb_cassandra_column_r);
+                $('#show_cassandra_where').val(data.cassandraInfo.jb_cassandra_where_r);
+                $("#show_cassandra_allowF").append("<option value="+data.cassandraInfo.jb_cassandra_allowF_r+" selected>"+data.cassandraInfo.jb_cassandra_allowF_r+"</option>");
+                layui.form.render("select");
+                $("#show_cassandra_conL").append("<option value="+data.cassandraInfo.jb_cassandra_conL_r+" selected>"+data.cassandraInfo.jb_cassandra_conL_r+"</option>");
+                layui.form.render("select");
+                $('#w_show_cassandra_host').val(data.cassandraInfo.jb_cassandra_host_w);
+                $('#w_show_cassandra_port').val(data.cassandraInfo.jb_cassandra_port_w);
+                $('#w_show_cassandra_username').val(data.cassandraInfo.jb_cassandra_username_w);
+                $('#w_show_cassandra_pasw').val(data.cassandraInfo.jb_cassandra_pasw_w);
+                $("#w_show_cassandra_useSSL").append("<option value="+data.cassandraInfo.jb_cassandra_useSSL_w+" selected>"+data.cassandraInfo.jb_cassandra_useSSL_w+"</option>");
+                layui.form.render("select");
+                $('#w_show_cassandra_conP').val(data.cassandraInfo.jb_cassandra_conP_w);
+                $('#w_show_cassandra_maxC').val(data.cassandraInfo.jb_cassandra_maxC_w);
+                $('#w_show_cassandra_keyspace').val(data.cassandraInfo.jb_cassandra_keyspace_w);
+                $('#w_show_cassandra_table').val(data.cassandraInfo.jb_cassandra_table_w);
+                $('#w_show_cassandra_batchSize').val(data.cassandraInfo.jb_cassandra_batchSize_w);
+                $('#w_show_cassandra_column').val(data.cassandraInfo.jb_cassandra_column_w);
+                $("#w_show_cassandra_conL").append("<option value="+data.cassandraInfo.jb_cassandra_conL_w+" selected>"+data.cassandraInfo.jb_cassandra_conL_w+"</option>");
+                layui.form.render("select");
             }
         };
 
