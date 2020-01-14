@@ -66,6 +66,7 @@ $(function () {
         var ftp_jb = {};//定义一个ftp的脚本信息对象
         var mongodb_jb = {};//定义一个mongodb的脚本信息对象
         var cassandra_jb = {};//定义一个cassandra的脚本信息对象
+        var drds_jb = {};//定义一个drds的脚本信息对象
         var data_reader_db_arr = [];
         var data_reader_db = {
             name:'',
@@ -341,6 +342,7 @@ $(function () {
             ftp_jb = {};
             mongodb_jb = {};
             cassandra_jb = {};
+            drds_jb = {};
             //dbContionInfo.readerId = $('#r_db_name_id').val();
             dbContionInfo.r_db_type = $('#r_db_type_id').val();
             dbContionInfo.w_db_type = $('#w_db_type_id').val();

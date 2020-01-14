@@ -46,6 +46,7 @@ $(function () {
         /*给reader数据库信息赋值*/
         /*$('#sc-add-db-url').val(getSearchString('r_db_url'));*/
         if(!$.isEmptyObject(data_r)){
+            console.log(data_r)
             var r_db_url = '';
             var r_db_url_arr = [];
             if(data_r.length > 0){
@@ -73,6 +74,22 @@ $(function () {
                 $('#add_cassandra_port').val(data_r[0].db_port);
                 $('#add_cassandra_username').val(data_r[0].db_username);
                 $('#add_cassandra_pasw').val(data_r[0].db_password);
+            }else if(data_r[0].db_type == 8){
+                $('.drds').removeClass('layui-hide');
+                $('#add_drds_username').val(data_r[0].db_username);
+                $('#add_drds_pasw').val(data_r[0].db_password);
+                $('#add_drds_jdbcUrl').val(r_db_url);
+                if(getSearchString('jb_tbgs') == 1){
+                    $('#add_drds_column_all').removeClass('layui-hide');
+                    $('#add_drds_where_all').removeClass('layui-hide');
+                    $('#add_drds_table_all').removeClass('layui-hide');
+                    $('#add_drds_querySql_all').addClass('layui-hide');
+                }else {
+                    $('#add_drds_column_all').addClass('layui-hide');
+                    $('#add_drds_where_all').addClass('layui-hide');
+                    $('#add_drds_table_all').addClass('layui-hide');
+                    $('#add_drds_querySql_all').removeClass('layui-hide');
+                }
             }else {
                 $('.mysqlAndOracle').removeClass('layui-hide');
                 $('#add_contaion').val(r_db_url);
@@ -124,13 +141,17 @@ $(function () {
                 $('#w_add_cassandra_port').val(data_w.db_port);
                 $('#w_add_cassandra_username').val(data_w.db_username);
                 $('#w_add_cassandra_pasw').val(data_w.db_password);
+            }else if(data_w.db_type == 8){
+                $('.w_drds').removeClass('layui-hide');
+                $('#w_add_drds_username').val(data_w.db_username);
+                $('#w_add_drds_pasw').val(data_w.db_password);
+                $('#w_add_drds_jdbcUrl').val(data_w.db_url);
             }else {
                 $('.w_mysqlAndOracle').removeClass('layui-hide');
                 $('#w-sc-add-db-username').val(data_w.db_username);
                 $('#w-sc-add-db-pasw').val(data_w.db_password);
                 $('#w-add_contaion').val(data_w.db_url);
             }
-
         }
         if(db_type_arr.indexOf(getSearchString('r_db_type'))>-1){
             if(getSearchString('r_db_type') == 3){//表示reader区域是txtfile
