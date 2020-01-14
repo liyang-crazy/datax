@@ -430,5 +430,30 @@
           DEFAULT
         )
     </insert>
+    <!--向drds表中添加对应的脚本信息-->
+    <insert id="addDrdsJbInfo" parameterType="com.cnct.datax.entity.JbInfo">
+        INSERT INTO jb_drds_info VALUES
+        (
+          DEFAULT,
+          #{drdsInfo.jb_drds_id},
+          #{drdsInfo.jb_drds_username_r},
+          #{drdsInfo.jb_drds_pasw_r},
+          #{drdsInfo.jb_drds_column_r},
+          #{drdsInfo.jb_drds_where_r},
+          #{drdsInfo.jb_drds_table_r},
+          #{drdsInfo.jb_drds_jdbcUrl_r},
+          #{drdsInfo.jb_drds_querySql_r},
+          #{drdsInfo.jb_drds_writeM_w},
+          #{drdsInfo.jb_drds_username_w},
+          #{drdsInfo.jb_drds_pasw_w},
+          #{drdsInfo.jb_drds_column_w},
+          #{drdsInfo.jb_drds_preSql_w},
+          #{drdsInfo.jb_drds_postSql_w},
+          #{drdsInfo.jb_drds_jdbcUrl_w},
+          #{drdsInfo.jb_drds_table_w},
+          #{drdsInfo.jb_drds_batchSize_w},
+          DEFAULT
+        )
+    </insert>
 
 </mapper>

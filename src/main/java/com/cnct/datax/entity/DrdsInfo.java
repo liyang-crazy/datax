@@ -20,8 +20,8 @@ public class DrdsInfo {
     private String jb_drds_writeM_w;
     private String jb_drds_username_w;
     private String jb_drds_pasw_w;
-    private String jb_drds_colemn_w;
-    private String[] jb_drds_colemn_arr_w;
+    private String jb_drds_column_w;
+    private String[] jb_drds_column_arr_w;
     private String jb_drds_preSql_w;
     private String[] jb_drds_preSql_arr_w;
     private String jb_drds_postSql_w;
@@ -160,20 +160,20 @@ public class DrdsInfo {
         this.jb_drds_pasw_w = jb_drds_pasw_w;
     }
 
-    public String getJb_drds_colemn_w() {
-        return jb_drds_colemn_w;
+    public String getJb_drds_column_w() {
+        return jb_drds_column_w;
     }
 
-    public void setJb_drds_colemn_w(String jb_drds_colemn_w) {
-        this.jb_drds_colemn_w = jb_drds_colemn_w;
+    public void setJb_drds_column_w(String jb_drds_column_w) {
+        this.jb_drds_column_w = jb_drds_column_w;
     }
 
-    public String[] getJb_drds_colemn_arr_w() {
-        return jb_drds_colemn_arr_w;
+    public String[] getJb_drds_column_arr_w() {
+        return jb_drds_column_arr_w;
     }
 
-    public void setJb_drds_colemn_arr_w(String[] jb_drds_colemn_arr_w) {
-        this.jb_drds_colemn_arr_w = jb_drds_colemn_arr_w;
+    public void setJb_drds_column_arr_w(String[] jb_drds_column_arr_w) {
+        this.jb_drds_column_arr_w = jb_drds_column_arr_w;
     }
 
     public String getJb_drds_preSql_w() {

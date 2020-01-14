@@ -108,4 +108,8 @@ public interface JbInfoMapper {
      * 根据脚本id修改对应脚本信息-cassandra
      */
     public void editJbInfoByIdCassandra(CassandraInfo cassandraInfo);
+    /**
+     * 向drds表中添加对应的脚本信息
+     */
+    public int addDrdsJbInfo(JbInfo jbInfo);
 }

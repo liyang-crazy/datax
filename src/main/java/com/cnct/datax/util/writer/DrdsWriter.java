@@ -15,7 +15,7 @@ public class DrdsWriter {
         parameter.put("writeMode",jbInfo.getDrdsInfo().getJb_drds_writeM_w());
         parameter.put("username",jbInfo.getDrdsInfo().getJb_drds_username_w());
         parameter.put("password",jbInfo.getDrdsInfo().getJb_drds_pasw_w());
-        parameter.put("column",jbInfo.getDrdsInfo().getJb_drds_colemn_arr_w());
+        parameter.put("column",jbInfo.getDrdsInfo().getJb_drds_column_arr_w());
         parameter.put("preSql",jbInfo.getDrdsInfo().getJb_drds_preSql_arr_w());
         parameter.put("postSql",jbInfo.getDrdsInfo().getJb_drds_postSql_arr_w());
         JSONArray connection = new JSONArray();

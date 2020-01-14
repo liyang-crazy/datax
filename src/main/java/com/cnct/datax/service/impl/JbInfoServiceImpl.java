@@ -58,6 +58,11 @@ public class JbInfoServiceImpl implements JbInfoService{
             jbInfoMapper.addJbInfo(jbInfo);
             jbInfo.getCassandraInfo().setJb_cassandra_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.addCassandraJbInfo(jbInfo);
+        }else if("8".equals(jbInfo.getR_db_type()) || "8".equals(jbInfo.getW_db_type())){
+            /*drds文件添加*/
+            jbInfoMapper.addJbInfo(jbInfo);
+            jbInfo.getDrdsInfo().setJb_drds_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addDrdsJbInfo(jbInfo);
         }else {
             jbInfoMapper.addJbInfo(jbInfo);
         }

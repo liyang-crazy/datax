@@ -122,6 +122,20 @@ public class JbInfoController {
                 jbInfo.getCassandraInfo().setJb_cassandra_host_arr_w(jbInfo.getCassandraInfo().getJb_cassandra_host_w().split(","));
                 jbInfo.getCassandraInfo().setJb_cassandra_column_arr_w(jbInfo.getCassandraInfo().getJb_cassandra_column_w().split(","));
             }
+            if("8".equals(jbInfo.getR_db_type()) || "8".equals(jbInfo.getW_db_type())){
+                jbInfo.getDrdsInfo().setJb_drds_jdbcUrl_arr_r(jbInfo.getDrdsInfo().getJb_drds_jdbcUrl_r().split(","));
+                if("1".equals(jbInfo.getR_jb_tbgs())){
+                    jbInfo.getDrdsInfo().setJb_drds_column_arr_r(jbInfo.getDrdsInfo().getJb_drds_column_r().split(","));
+                    jbInfo.getDrdsInfo().setJb_drds_table_arr_r(jbInfo.getDrdsInfo().getJb_drds_table_r().split(","));
+                }
+                if("2".equals(jbInfo.getR_jb_tbgs())){
+                    jbInfo.getDrdsInfo().setJb_drds_querySql_arr_r(jbInfo.getDrdsInfo().getJb_drds_querySql_r().split("&"));
+                }
+                jbInfo.getDrdsInfo().setJb_drds_column_arr_w(jbInfo.getDrdsInfo().getJb_drds_column_w().split(","));
+                jbInfo.getDrdsInfo().setJb_drds_preSql_arr_w(jbInfo.getDrdsInfo().getJb_drds_preSql_w().split("&"));
+                jbInfo.getDrdsInfo().setJb_drds_postSql_arr_w(jbInfo.getDrdsInfo().getJb_drds_postSql_w().split("&"));
+                jbInfo.getDrdsInfo().setJb_drds_table_arr_w(jbInfo.getDrdsInfo().getJb_drds_table_w().split(","));
+            }
             switch (jbInfo.getR_db_type()){
                 case "1":
                     reader = MysqlReader.mysqlReader(jbInfo);
@@ -143,6 +157,9 @@ public class JbInfoController {
                     break;
                 case "7":
                     reader = CassandraReader.cassandraReader(jbInfo);
+                    break;
+                case "8":
+                    reader = DrdsReader.drdsReader(jbInfo);
                     break;
             }
             switch (jbInfo.getW_db_type()){
@@ -166,6 +183,9 @@ public class JbInfoController {
                     break;
                 case "7":
                     writer = CassandraWriter.cassandraWriter(jbInfo);
+                    break;
+                case "8":
+                    writer = DrdsWriter.drdsWriter(jbInfo);
                     break;
             }
             jsonString = Merge.mergeAll(jbInfo,reader,writer);
