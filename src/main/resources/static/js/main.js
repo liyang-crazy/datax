@@ -98,6 +98,12 @@ $(function () {
                 $('#oracle-contion').addClass('layui-hide');
                 $('#mysql-zfj').addClass('layui-hide');
             }
+            if(select_val == 8){
+                $('#add_title').text("新增Drds数据");
+                $('#oracle-contion').addClass('layui-hide');
+                $('#mysql-zfj').addClass('layui-hide');
+                $('#mysql-bm').removeClass('layui-hide');
+            }
             $('#add_info_mysql').removeClass('layui-hide');
             layer.open({
                 type: 1,
@@ -115,6 +121,7 @@ $(function () {
                 dbContionInfo.db_port = $.trim($('#add_db_port').val());
                 dbContionInfo.db_sid = $.trim($('#add_db_sid').val());
                 dbContionInfo.db_zfj = $.trim($('#add_db_zfj').val());
+                dbContionInfo.db_bm = $.trim($('#add_db_bm').val());
                 dbContionInfo.db_username = $.trim($('#add_db_username').val());
                 dbContionInfo.db_password = $.trim($('#add_db_password').val());
                 if(select_val == 1 && isNull_fun(dbContionInfo) == 1){
@@ -163,6 +170,15 @@ $(function () {
                     $('#add_info_mysql').addClass('layui-hide');
                     layer.closeAll();
                 }
+                if(select_val == 8 && isNull_fun(dbContionInfo) == 1){
+                    layer.alert('连接参数信息不全！')
+                }else if(select_val == 8 && isNull_fun(dbContionInfo) == 2){
+                    /*点击新增确定*/
+                    add_info_fun(dbContionInfo);
+                    clean_parms_fun();
+                    $('#add_info_mysql').addClass('layui-hide');
+                    layer.closeAll();
+                }
             });
             $('#cancel').on('click',function () {
                 clean_parms_fun();
@@ -178,30 +194,48 @@ $(function () {
                 $('#show_oracle-contion').addClass('layui-hide');
                 $('#show_mysql-zfj').removeClass('layui-hide');
                 $('#update_mysql-zfj').removeClass('layui-hide');
+                $('#show_mysql-bm').addClass('layui-hide');
+                $('#update_mysql-bm').addClass('layui-hide');
             }
             if(data.db_type == 2){
                 $('#update_oracle-contion').removeClass('layui-hide');
                 $('#show_oracle-contion').removeClass('layui-hide');
                 $('#show_mysql-zfj').addClass('layui-hide');
                 $('#update_mysql-zfj').addClass('layui-hide');
+                $('#show_mysql-bm').addClass('layui-hide');
+                $('#update_mysql-bm').addClass('layui-hide');
             }
             if(data.db_type == 4){
                 $('#show_oracle-contion').addClass('layui-hide');
                 $('#show_mysql-zfj').addClass('layui-hide');
                 $('#update_oracle-contion').addClass('layui-hide');
                 $('#update_mysql-zfj').addClass('layui-hide');
+                $('#show_mysql-bm').addClass('layui-hide');
+                $('#update_mysql-bm').addClass('layui-hide');
             }
             if(data.db_type == 6){
                 $('#show_oracle-contion').addClass('layui-hide');
                 $('#show_mysql-zfj').addClass('layui-hide');
                 $('#update_oracle-contion').addClass('layui-hide');
                 $('#update_mysql-zfj').addClass('layui-hide');
+                $('#show_mysql-bm').addClass('layui-hide');
+                $('#update_mysql-bm').addClass('layui-hide');
             }
             if(data.db_type == 7){
                 $('#show_oracle-contion').addClass('layui-hide');
                 $('#show_mysql-zfj').addClass('layui-hide');
                 $('#update_oracle-contion').addClass('layui-hide');
                 $('#update_mysql-zfj').addClass('layui-hide');
+                $('#show_mysql-bm').addClass('layui-hide');
+                $('#update_mysql-bm').addClass('layui-hide');
+            }
+            if(data.db_type == 8){
+                $('#show_oracle-contion').addClass('layui-hide');
+                $('#show_mysql-zfj').addClass('layui-hide');
+                $('#update_oracle-contion').addClass('layui-hide');
+                $('#update_mysql-zfj').addClass('layui-hide');
+                $('#show_mysql-bm').removeClass('layui-hide');
+                $('#update_mysql-bm').removeClass('layui-hide');
             }
             select_data = data;
             //将内容回填到对应input上
@@ -212,6 +246,7 @@ $(function () {
                 $('#show_contion_dk').val(data.db_port);
                 $('#show_contion_sid').val(data.db_sid);
                 $('#show_db_zfj').val(data.db_zfj);
+                $('#show_db_bm').val(data.db_bm);
                 $('#show_contion_username').val(data.db_username);
                 $('#show_contion_userpassword').val(data.db_password);
                 $('#show_info_mysql').removeClass('layui-hide');
@@ -238,6 +273,7 @@ $(function () {
                 $('#contion_dk').val(data.db_port);
                 $('#contion_sid').val(data.db_sid);
                 $('#update_db_zfj').val(data.db_zfj);
+                $('#update_db_bm').val(data.db_bm);
                 $('#contion_username').val(data.db_username);
                 $('#contion_userpassword').val(data.db_password);
                 $('#update_info_mysql').removeClass('layui-hide');
@@ -258,6 +294,7 @@ $(function () {
                     dbContionInfo.db_port = $.trim($('#contion_dk').val());
                     dbContionInfo.db_sid = $.trim($('#contion_sid').val());
                     dbContionInfo.db_zfj = $.trim($('#update_db_zfj').val());
+                    dbContionInfo.db_bm = $.trim($('#update_db_bm').val());
                     dbContionInfo.db_username = $.trim($('#contion_username').val());
                     dbContionInfo.db_password = $.trim($('#contion_userpassword').val());
 
@@ -300,6 +337,15 @@ $(function () {
                     if(dbContionInfo.db_type == 7 && isNull_fun_update(dbContionInfo) == 1){
                         layer.alert('连接参数信息不全！')
                     }else if(dbContionInfo.db_type == 7 && isNull_fun_update(dbContionInfo) == 2){
+                        /*调用修改的方法*/
+                        update_info_fun(dbContionInfo);
+                        dbContionInfo={};
+                        $('#update_info_mysql').addClass('layui-hide');
+                        layer.closeAll();
+                    }
+                    if(dbContionInfo.db_type == 8 && isNull_fun_update(dbContionInfo) == 1){
+                        layer.alert('连接参数信息不全！')
+                    }else if(dbContionInfo.db_type == 8 && isNull_fun_update(dbContionInfo) == 2){
                         /*调用修改的方法*/
                         update_info_fun(dbContionInfo);
                         dbContionInfo={};
@@ -418,6 +464,13 @@ $(function () {
                     return  is_null_flg = 2;
                 }
             }
+            if(select_val == 8){
+                if((parm.db_name == "" || parm.db_ip == "" || parm.db_port == "" || parm.db_username == "" ||parm.db_password == "")||(parm.db_name == null || parm.db_ip == null || parm.db_port == null || parm.db_username == null ||parm.db_password == null)){
+                    return  is_null_flg = 1;
+                }else {
+                    return  is_null_flg = 2;
+                }
+            }
         };
         /*判断修改提交参数不能为空*/
         var isNull_fun_update = function (parm) {
@@ -450,6 +503,13 @@ $(function () {
                 }
             }
             if(parm.db_type == 7){
+                if((parm.db_name == "" || parm.db_ip == "" || parm.db_port == "" || parm.db_username == "" ||parm.db_password == "")||(parm.db_name == null || parm.db_ip == null || parm.db_port == null || parm.db_username == null ||parm.db_password == null)){
+                    return  is_null_flg = 1;
+                }else {
+                    return  is_null_flg = 2;
+                }
+            }
+            if(parm.db_type == 8){
                 if((parm.db_name == "" || parm.db_ip == "" || parm.db_port == "" || parm.db_username == "" ||parm.db_password == "")||(parm.db_name == null || parm.db_ip == null || parm.db_port == null || parm.db_username == null ||parm.db_password == null)){
                     return  is_null_flg = 1;
                 }else {

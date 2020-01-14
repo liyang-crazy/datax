@@ -12,6 +12,7 @@
             a.db_port,
             a.db_sid,
             a.db_zfj,
+            a.db_bm,
             a.db_username,
             a.db_password,
             a.db_lrsj,
@@ -31,7 +32,7 @@
     </select>
     <!--新增连接信息-->
     <insert id="addDbInfo"  parameterType="com.cnct.datax.entity.DbContionInfo">
-      INSERT INTO db_contion_info VALUES(DEFAULT,#{db_type},#{db_name},#{db_ip},#{db_port},#{db_sid},#{db_zfj},#{db_username},#{db_password},NOW(),NOW(),DEFAULT)
+      INSERT INTO db_contion_info VALUES(DEFAULT,#{db_type},#{db_name},#{db_ip},#{db_port},#{db_sid},#{db_zfj},#{db_bm},#{db_username},#{db_password},NOW(),NOW(),DEFAULT)
     </insert>
     <!--根据连接信息的id修改对应连接信息-->
     <update id="updateDbInfoById" parameterType="com.cnct.datax.entity.DbContionInfo">
@@ -46,6 +47,9 @@
         </if>
         <if test="db_zfj!='' and db_zfj!=null">
             a.db_zfj = #{db_zfj},
+        </if>
+        <if test="db_bm!='' and db_bm!=null">
+            a.db_bm = #{db_bm},
         </if>
           a.db_username = #{db_username},
           a.db_password = #{db_password},
@@ -86,7 +90,7 @@
 
     <!--根据id查询数据库连接信息-->
     <select id="queryOneDbContionById" parameterType="com.cnct.datax.entity.DbContionInfo" resultType="com.cnct.datax.entity.DbContionInfo">
-        SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_username,db_password FROM db_contion_info WHERE id = #{id} AND yxbz = 'Y'
+        SELECT db_type,db_name,db_ip,db_port,db_sid,db_zfj,db_bm,db_username,db_password FROM db_contion_info WHERE id = #{id} AND yxbz = 'Y'
     </select>
 
 </mapper>

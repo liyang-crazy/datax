@@ -21,6 +21,7 @@
                         <option value="4">SqlServer</option>
                         <option value="6">MongoDB</option>
                         <option value="7">Cassandra</option>
+                        <option value="8">Drds</option>
                     </select>
                 </form>
             </div>
@@ -81,6 +82,12 @@
                 <input  class="layui-input" id="add_db_zfj" type="text" value="serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8" autocomplete="off" lay-verify="title">
             </div>
         </div>
+        <div class="layui-form-item width-25 layui-hide" id="mysql-bm">
+            <label class="layui-form-label label-1">编码</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input" id="add_db_bm" type="text" value="utf8" autocomplete="off" lay-verify="title">
+            </div>
+        </div>
         <div class="layui-form-item width-25">
             <label class="layui-form-label label-1">用户名</label>
             <div class="layui-input-block m-left-9">
@@ -137,6 +144,12 @@
                 <input  class="layui-input" id="update_db_zfj" type="text"  autocomplete="off" lay-verify="title">
             </div>
         </div>
+        <div class="layui-form-item width-25 layui-hide" id="update_mysql-bm">
+            <label class="layui-form-label label-1">编码</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input" id="update_db_bm" type="text"  autocomplete="off" lay-verify="title">
+            </div>
+        </div>
         <div class="layui-form-item width-25">
             <label class="layui-form-label label-1">用户名</label>
             <div class="layui-input-block m-left-9">
@@ -191,6 +204,12 @@
             <label class="layui-form-label label-1">字符集</label>
             <div class="layui-input-block m-left-9">
                 <input  class="layui-input layui-disabled" id="show_db_zfj" type="text"  autocomplete="off" lay-verify="title">
+            </div>
+        </div>
+        <div class="layui-form-item width-25 layui-hide" id="show_mysql-bm">
+            <label class="layui-form-label label-1">编码</label>
+            <div class="layui-input-block m-left-9">
+                <input  class="layui-input layui-disabled" id="show_db_bm" type="text"  autocomplete="off" lay-verify="title">
             </div>
         </div>
         <div class="layui-form-item width-25">

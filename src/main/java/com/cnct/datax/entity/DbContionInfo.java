@@ -16,6 +16,7 @@ public class DbContionInfo {
     private String db_port;
     private String db_sid;
     private String db_zfj;
+    private String db_bm;
     private String db_username;
     private String db_password;
     private String db_url;
@@ -24,6 +25,14 @@ public class DbContionInfo {
     private Date db_xgsj;
     private String json_file_name;
     private String json_file_fullPath;
+
+    public String getDb_bm() {
+        return db_bm;
+    }
+
+    public void setDb_bm(String db_bm) {
+        this.db_bm = db_bm;
+    }
 
     public String getReaderId() {
         return readerId;

@@ -44,6 +44,9 @@ public class DbContionInfoServiceImpl implements DbContionInfoService{
             if("7".equals(dbInfo.getDb_type())){
                 dbInfo.setDb_url(dbInfo.getDb_ip()+":"+dbInfo.getDb_port());
             }
+            if("8".equals(dbInfo.getDb_type())){
+                dbInfo.setDb_url(DbUrlHeader.DB_URL_DRDS+dbInfo.getDb_ip()+":"+dbInfo.getDb_port()+"/"+dbInfo.getDb_name()+"?useUnicode=true&characterEncoding="+dbInfo.getDb_bm());
+            }
         }
         return list;
     }
@@ -106,6 +109,9 @@ public class DbContionInfoServiceImpl implements DbContionInfoService{
         }
         if("7".equals(dbCon.getDb_type())){
             dbCon.setDb_url(dbCon.getDb_ip()+":"+dbCon.getDb_port());
+        }
+        if("8".equals(dbCon.getDb_type())){
+            dbCon.setDb_url(DbUrlHeader.DB_URL_DRDS+dbCon.getDb_ip()+":"+dbCon.getDb_port()+"/"+dbCon.getDb_name()+"?useUnicode=true&characterEncoding="+dbCon.getDb_bm());
         }
         return dbCon;
     }

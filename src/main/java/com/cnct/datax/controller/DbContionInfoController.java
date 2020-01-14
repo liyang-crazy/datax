@@ -60,6 +60,9 @@ public class DbContionInfoController {
            if("7".equals(dbContionInfo.getDb_type())){
                dbContionInfo.setDb_url(dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port());
            }
+           if("8".equals(dbContionInfo.getDb_type())){
+               dbContionInfo.setDb_url(DbUrlHeader.DB_URL_DRDS+dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port()+"/"+dbContionInfo.getDb_name()+"?useUnicode=true&characterEncoding="+dbContionInfo.getDb_bm());
+           }
            int index = dbContionInfoService.addDbInfo(dbContionInfo);
            map.put("code",0);
            map.put("data",index);
@@ -91,6 +94,9 @@ public class DbContionInfoController {
            }
            if("7".equals(dbContionInfo.getDb_type())){
                dbContionInfo.setDb_url(dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port());
+           }
+           if("8".equals(dbContionInfo.getDb_type())){
+               dbContionInfo.setDb_url(DbUrlHeader.DB_URL_DRDS+dbContionInfo.getDb_ip()+":"+dbContionInfo.getDb_port()+"/"+dbContionInfo.getDb_name()+"?useUnicode=true&characterEncoding="+dbContionInfo.getDb_bm());
            }
            int index =  dbContionInfoService.updateDbInfoById(dbContionInfo);
            map.put("code",0);
