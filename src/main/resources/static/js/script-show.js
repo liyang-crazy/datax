@@ -64,6 +64,20 @@ $(function () {
             }else if(data.r_db_type == 7){
                 $('.mysqlAndOracle').addClass('layui-hide');
                 $('.cassandra').removeClass('layui-hide');
+            }else if(data.r_db_type == 8){
+                $('.mysqlAndOracle').addClass('layui-hide');
+                $('.drds').removeClass('layui-hide');
+                if(data.r_jb_tbgs == 1){
+                    $('#add_drds_column_all').removeClass('layui-hide');
+                    $('#add_drds_where_all').removeClass('layui-hide');
+                    $('#add_drds_table_all').removeClass('layui-hide');
+                    $('#show_drds_querySql_all').addClass('layui-hide');
+                }else {
+                    $('#add_drds_column_all').addClass('layui-hide');
+                    $('#add_drds_where_all').addClass('layui-hide');
+                    $('#add_drds_table_all').addClass('layui-hide');
+                    $('#show_drds_querySql_all').removeClass('layui-hide');
+                }
             }else {
                 $('.mysqlAndOracle').removeClass('layui-hide');
                 $('.txtFile').addClass('layui-hide');
@@ -92,6 +106,9 @@ $(function () {
             }else if(data.w_db_type == 7){
                 $('.w_mysqlAndOracle').addClass('layui-hide');
                 $('.w_cassandra').removeClass('layui-hide');
+            }else if(data.w_db_type == 8){
+                $('.w_mysqlAndOracle').addClass('layui-hide');
+                $('.w_drds').removeClass('layui-hide');
             }else {
                 $('.w_mysqlAndOracle').removeClass('layui-hide');
                 $('.w_txtFile').addClass('layui-hide');
@@ -254,6 +271,27 @@ $(function () {
                 $("#w_show_cassandra_conL").append("<option value="+data.cassandraInfo.jb_cassandra_conL_w+" selected>"+data.cassandraInfo.jb_cassandra_conL_w+"</option>");
                 layui.form.render("select");
             }
+            /*给drds赋值*/
+            if(data.drdsInfo != null){
+                $('#show_drds_username').val(data.drdsInfo.jb_drds_username_r);
+                $('#show_drds_pasw').val(data.drdsInfo.jb_drds_pasw_r);
+                $('#show_drds_column').val(data.drdsInfo.jb_drds_column_r);
+                $('#show_drds_where').val(data.drdsInfo.jb_drds_where_r);
+                $('#show_drds_table').val(data.drdsInfo.jb_drds_table_r);
+                $('#show_drds_jdbcUrl').val(data.drdsInfo.jb_drds_jdbcUrl_r);
+                $('#show_drds_querySql').val(data.drdsInfo.jb_drds_querySql_r);
+                $("#w_show_drds_writeM").append("<option value="+data.drdsInfo.jb_drds_writeM_w+" selected>"+data.drdsInfo.jb_drds_writeM_w+"</option>");
+                layui.form.render("select");
+                $('#w_show_drds_username').val(data.drdsInfo.jb_drds_username_w);
+                $('#w_show_drds_pasw').val(data.drdsInfo.jb_drds_pasw_w);
+                $('#w_show_drds_column').val(data.drdsInfo.jb_drds_column_w);
+                $('#w_show_drds_preSql').val(data.drdsInfo.jb_drds_preSql_w);
+                $('#w_show_drds_postSql').val(data.drdsInfo.jb_drds_postSql_w);
+                $('#w_show_drds_jdbcUrl').val(data.drdsInfo.jb_drds_jdbcUrl_w);
+                $('#w_show_drds_table').val(data.drdsInfo.jb_drds_table_w);
+                $('#w_show_drds_batchSize').val(data.drdsInfo.jb_drds_batchSize_w);
+            }
+
         };
 
 
@@ -382,6 +420,51 @@ $(function () {
         $('#show_ftp_path-cancle').on('click',function () {
             $('.show-ftp-path-textarea').addClass('layui-hide');
         });
+        /*监听drds:where筛选条件*/
+        $('#show_drds_where').on('focus',function () {
+            $('.show_drds_where_textarea').removeClass('layui-hide');
+            $('#show_drds_where_texta').val($('#show_drds_where').val());
+        });
+        $('#show_drds_where_sure').on('click',function () {
+            $('.show_drds_where_textarea').addClass('layui-hide');
+        });
+        $('#show_drds_where_cancle').on('click',function () {
+            $('.show_drds_where_textarea').addClass('layui-hide');
+        });
+        /*监听drds:querysql动态sql*/
+        $('#show_drds_querySql').on('focus',function () {
+            $('.show_drds_where_textarea').removeClass('layui-hide');
+            $('#show_drds_querySql_texta').val($('#show_drds_querySql').val().replaceAll('&','\n'));
+        });
+        $('#show_drds_querySql_sure').on('click',function () {
+            $('.show_drds_querySql_textarea').addClass('layui-hide');
+        });
+        $('#show_drds_querySql_cancle').on('click',function () {
+            $('.show_drds_querySql_textarea').addClass('layui-hide');
+        });
+        /*监听drds:presql动态sql*/
+        $('#w_show_drds_preSql').on('focus',function () {
+            $('.w_show_drds_preSql_textarea').removeClass('layui-hide');
+            $('#w_show_drds_preSql_texta').val($('#w_show_drds_preSql').val().replaceAll('&','\n'));
+        });
+        $('#w_show_drds_preSql_sure').on('click',function () {
+            $('.w_show_drds_preSql_textarea').addClass('layui-hide');
+        });
+        $('#w_show_drds_preSql_cancle').on('click',function () {
+            $('.w_show_drds_preSql_textarea').addClass('layui-hide');
+        });
+        /*监听drds:postsql动态sql*/
+        $('#w_show_drds_postSql').on('focus',function () {
+            $('.w_show_drds_postSql_textarea').removeClass('layui-hide');
+            $('#w_show_drds_postSql_texta').val($('#w_show_drds_postSql').val().replaceAll('&','\n'));
+        });
+        $('#w_show_drds_postSql_sure').on('click',function () {
+            $('.w_show_drds_postSql_textarea').addClass('layui-hide');
+        });
+        $('#w_show_drds_postSql_cancle').on('click',function () {
+            $('.w_show_drds_postSql_textarea').addClass('layui-hide');
+        });
+
 
     })
 });

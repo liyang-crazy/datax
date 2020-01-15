@@ -59,6 +59,10 @@
     <select id="queryJbInfoByIdCassandra" parameterType="com.cnct.datax.entity.CassandraInfo" resultType="com.cnct.datax.entity.CassandraInfo">
         SELECT * FROM jb_cassandra_info WHERE jb_cassandra_id = #{jb_cassandra_id}
     </select>
+    <!--根据id查询脚本信息-查询的是drds的-->
+    <select id="queryJbInfoByIdDrds" parameterType="com.cnct.datax.entity.DrdsInfo" resultType="com.cnct.datax.entity.DrdsInfo">
+        SELECT * FROM jb_drds_info WHERE jb_drds_id = #{jb_drds_id}
+    </select>
     <!--根据数据库连接信息的id查询对应的数据库信息-->
     <select id="queryDbInfoById" resultType="com.cnct.datax.entity.JbInfo" parameterType="com.cnct.datax.entity.JbInfo">
         SELECT

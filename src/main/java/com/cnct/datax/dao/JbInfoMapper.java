@@ -112,4 +112,8 @@ public interface JbInfoMapper {
      * 向drds表中添加对应的脚本信息
      */
     public int addDrdsJbInfo(JbInfo jbInfo);
+    /**
+     * 根据id查询脚本信息-查询的是drds的
+     */
+    public DrdsInfo queryJbInfoByIdDrds(DrdsInfo drdsInfo);
 }

@@ -209,4 +209,17 @@ public class JbInfoServiceImpl implements JbInfoService{
         jbInfo_obj.setCassandraInfo(cassandraInfo);
         return jbInfo_obj;
     }
+    /**
+     * 根据id查询脚本信息-查询的是drds的
+     */
+    @Override
+    public JbInfo queryJbInfoByIdDrds(JbInfo jbInfo) {
+        DrdsInfo drdsInfo = new DrdsInfo();
+        drdsInfo.setJb_drds_id(String.valueOf(jbInfo.getId()));
+        JbInfo jbInfo_obj = new JbInfo();
+        jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
+        drdsInfo = jbInfoMapper.queryJbInfoByIdDrds(drdsInfo);
+        jbInfo_obj.setDrdsInfo(drdsInfo);
+        return jbInfo_obj;
+    }
 }
