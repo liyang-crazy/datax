@@ -46,7 +46,6 @@ $(function () {
         /*给reader数据库信息赋值*/
         /*$('#sc-add-db-url').val(getSearchString('r_db_url'));*/
         if(!$.isEmptyObject(data_r)){
-            console.log(data_r)
             var r_db_url = '';
             var r_db_url_arr = [];
             if(data_r.length > 0){
@@ -522,7 +521,71 @@ $(function () {
         $('#w_add_mongodb_column_cancle').on('click',function () {
             $('.w_add_mongodb_col_txt').addClass('layui-hide');
         });
-
+        /*监听drds:where筛选条件*/
+        $('#add_drds_where').on('focus',function () {
+            $('.add_drds_where_textarea').removeClass('layui-hide');
+        });
+        $('#add_drds_where_sure').on('click',function () {
+            $('.add_drds_where_textarea').addClass('layui-hide');
+            $('#add_drds_where').val($.trim($('#add_drds_where_texta').val()));
+        });
+        $('#add_drds_where_cancle').on('click',function () {
+            $('.add_drds_where_textarea').addClass('layui-hide');
+        });
+        /*监听drds:querysql动态sql*/
+        $('#add_drds_querySql').on('focus',function () {
+            $('.add_drds_querySql_textarea').removeClass('layui-hide');
+            $('#add_drds_querySql_texta').val('');
+        });
+        $('#add_drds_querySql_sure').on('click',function () {
+            $('.add_drds_querySql_textarea').addClass('layui-hide');
+            var sql_str_inpt = $('#add_drds_querySql').val();
+            if(sql_str_inpt == ""){
+                sql_str_inpt = $.trim($('#add_drds_querySql_texta').val());
+            }else {
+                sql_str_inpt += '&'+$.trim($('#add_drds_querySql_texta').val());
+            }
+            $('#add_drds_querySql').val(sql_str_inpt);
+        });
+        $('#add_drds_querySql_cancle').on('click',function () {
+            $('.add_drds_querySql_textarea').addClass('layui-hide');
+        });
+        /*监听drds:presql动态sql*/
+        $('#w_add_drds_preSql').on('focus',function () {
+            $('.w_add_drds_preSql_textarea').removeClass('layui-hide');
+            $('#w_add_drds_preSql_texta').val('');
+        });
+        $('#w_add_drds_preSql_sure').on('click',function () {
+            $('.w_add_drds_preSql_textarea').addClass('layui-hide');
+            var sql_str_inpt = $('#w_add_drds_preSql').val();
+            if(sql_str_inpt == ""){
+                sql_str_inpt = $.trim($('#w_add_drds_preSql_texta').val());
+            }else {
+                sql_str_inpt += '&'+$.trim($('#w_add_drds_preSql_texta').val());
+            }
+            $('#w_add_drds_preSql').val(sql_str_inpt);
+        });
+        $('#w_add_drds_preSql_cancle').on('click',function () {
+            $('.w_add_drds_preSql_textarea').addClass('layui-hide');
+        });
+        /*监听drds:postsql动态sql*/
+        $('#w_add_drds_postSql').on('focus',function () {
+            $('.w_add_drds_postSql_textarea').removeClass('layui-hide');
+            $('#w_add_drds_postSql_texta').val('');
+        });
+        $('#w_add_drds_postSql_sure').on('click',function () {
+            $('.w_add_drds_postSql_textarea').addClass('layui-hide');
+            var sql_str_inpt = $('#w_add_drds_postSql').val();
+            if(sql_str_inpt == ""){
+                sql_str_inpt = $.trim($('#w_add_drds_postSql_texta').val());
+            }else {
+                sql_str_inpt += '&'+$.trim($('#w_add_drds_postSql_texta').val());
+            }
+            $('#w_add_drds_postSql').val(sql_str_inpt);
+        });
+        $('#w_add_drds_postSql_cancle').on('click',function () {
+            $('.w_add_drds_postSql_textarea').addClass('layui-hide');
+        });
 
 
         /*该方法用于判断值是否是数字*/
