@@ -533,6 +533,65 @@
                     </div>
                 </form>
             </div>
+            <!--drds区域-->
+            <div class="drds layui-hide">
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">用户名<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="edit_drds_username" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">密码<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="edit_drds_pasw" type="password" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25 layui-hide" id="edit_drds_column_all">
+                    <label class="layui-form-label label-1 label-a">列名<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="edit_drds_column" type="text" placeholder="例如：id,name。多个情况下用英文逗号分隔。">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25" id="edit_drds_where_all">
+                    <label class="layui-form-label label-1 label-a">筛选条件</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="edit_drds_where"  type="text" placeholder="">
+                        <div class="layui-hide edit_drds_where_textarea teax-a">
+                            <textarea class="layui-textarea mar-1" id="edit_drds_where_texta" placeholder=""></textarea>
+                            <div class="layui-inline mar-2">
+                                <button type="button" class="layui-btn layui-btn-xs" id="edit_drds_where_sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="edit_drds_where_cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25 layui-hide" id="edit_drds_table_all">
+                    <label class="layui-form-label label-1 label-a">抽取表名<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="edit_drds_table" type="text" placeholder="例如：tab1,tab2。多个情况下用英文逗号分隔。">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">连接地址<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <textarea class="layui-textarea mar-1" id="edit_drds_jdbcUrl" placeholder="" style="width: 35em;"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25 layui-hide" id="edit_drds_querySql_all">
+                    <label class="layui-form-label label-1 label-a">动态sql</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="edit_drds_querySql" type="text" placeholder="">
+                        <div class="layui-hide edit_drds_querySql_textarea teax-a">
+                            <textarea class="layui-textarea mar-1" id="edit_drds_querySql_texta" placeholder=""></textarea>
+                            <div class="layui-inline mar-2">
+                                <button type="button" class="layui-btn layui-btn-xs" id="edit_drds_querySql_sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="edit_drds_querySql_cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!--writer区域-->
         <fieldset class="layui-elem-field layui-field-title">
@@ -1017,6 +1076,81 @@
                         </div>
                     </div>
                 </form>
+            </div>
+            <!--drds区域-->
+            <div class="w_drds layui-hide">
+                <form class="layui-form" id="w_edit_drds_writeM_all">
+                    <div class="layui-inline" style="margin-bottom: 15px;">
+                        <label class="layui-form-label" style="margin-left: 3em;">写入方式</label>
+                        <div class="layui-input-inline" style="width: 35em;">
+                            <select name="w_edit_drds_writeM" id="w_edit_drds_writeM"  lay-filter="w_edit_drds_writeM" lay-search="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">用户名<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_edit_drds_username" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">密码<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_edit_drds_pasw" type="password" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">列名<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_edit_drds_column" type="text" placeholder="例如：id,name。多个情况下用英文逗号分隔。">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">preSql</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_edit_drds_preSql" type="text" placeholder="">
+                        <div class="layui-hide w_edit_drds_preSql_textarea teax-a">
+                            <textarea class="layui-textarea mar-1" id="w_edit_drds_preSql_texta" placeholder=""></textarea>
+                            <div class="layui-inline mar-2">
+                                <button type="button" class="layui-btn layui-btn-xs" id="w_edit_drds_preSql_sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="w_edit_drds_preSql_cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">postSql</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_edit_drds_postSql" type="text" placeholder="">
+                        <div class="layui-hide w_edit_drds_postSql_textarea teax-a">
+                            <textarea class="layui-textarea mar-1" id="w_edit_drds_postSql_texta" placeholder=""></textarea>
+                            <div class="layui-inline mar-2">
+                                <button type="button" class="layui-btn layui-btn-xs" id="w_edit_drds_postSql_sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="w_edit_drds_postSql_cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">连接地址<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <textarea class="layui-textarea mar-1" id="w_edit_drds_jdbcUrl" placeholder="" style="width: 35em;"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">目的表名<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_edit_drds_table" type="text" placeholder="例如：tab1,tab2。多个情况下用英文逗号分隔。">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">批量提交记录数</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_edit_drds_batchSize" type="text" placeholder="">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="layui-form-item width-25">

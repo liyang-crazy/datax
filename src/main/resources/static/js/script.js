@@ -584,6 +584,7 @@ $(function () {
                     ftp_jb = {};
                     mongodb_jb = {};
                     cassandra_jb = {};
+                    drds_jb = {};
                     dbConJson.id = data.id;
                     dbConJson.r_db_type = data.r_db_type;
                     dbConJson.w_db_type = data.w_db_type;
@@ -710,6 +711,24 @@ $(function () {
                     cassandra_jb.jb_cassandra_column_w = layero.find('iframe').contents().find('[id="w_edit_cassandra_column"]').val();
                     cassandra_jb.jb_cassandra_conL_w = layero.find('iframe').contents().find('[id="w_edit_cassandra_conL"]').val();
                     dbConJson.cassandraInfo = cassandra_jb;
+                    /*获取drds脚本的信息*/
+                    drds_jb.jb_drds_username_r = layero.find('iframe').contents().find('[id="edit_drds_username"]').val();
+                    drds_jb.jb_drds_pasw_r = layero.find('iframe').contents().find('[id="edit_drds_pasw"]').val();
+                    drds_jb.jb_drds_column_r = layero.find('iframe').contents().find('[id="edit_drds_column"]').val();
+                    drds_jb.jb_drds_where_r = layero.find('iframe').contents().find('[id="edit_drds_where"]').val();
+                    drds_jb.jb_drds_table_r = layero.find('iframe').contents().find('[id="edit_drds_table"]').val();
+                    drds_jb.jb_drds_jdbcUrl_r = layero.find('iframe').contents().find('[id="edit_drds_jdbcUrl"]').val().replace(/\n/g,',');
+                    drds_jb.jb_drds_querySql_r = layero.find('iframe').contents().find('[id="edit_drds_querySql"]').val();
+                    drds_jb.jb_drds_writeM_w = layero.find('iframe').contents().find('[id="w_edit_drds_writeM"]').val();
+                    drds_jb.jb_drds_username_w = layero.find('iframe').contents().find('[id="w_edit_drds_username"]').val();
+                    drds_jb.jb_drds_pasw_w = layero.find('iframe').contents().find('[id="w_edit_drds_pasw"]').val();
+                    drds_jb.jb_drds_column_w = layero.find('iframe').contents().find('[id="w_edit_drds_column"]').val();
+                    drds_jb.jb_drds_preSql_w = layero.find('iframe').contents().find('[id="w_edit_drds_preSql"]').val();
+                    drds_jb.jb_drds_postSql_w = layero.find('iframe').contents().find('[id="w_edit_drds_postSql"]').val();
+                    drds_jb.jb_drds_jdbcUrl_w = layero.find('iframe').contents().find('[id="w_edit_drds_jdbcUrl"]').val();
+                    drds_jb.jb_drds_table_w = layero.find('iframe').contents().find('[id="w_edit_drds_table"]').val();
+                    drds_jb.jb_drds_batchSize_w = layero.find('iframe').contents().find('[id="w_edit_drds_batchSize"]').val();
+                    dbConJson.drdsInfo = drds_jb;
                     edit_info_fun(dbConJson);
                     layer.closeAll();
                 },

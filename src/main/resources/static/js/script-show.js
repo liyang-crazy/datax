@@ -70,12 +70,12 @@ $(function () {
                 if(data.r_jb_tbgs == 1){
                     $('#add_drds_column_all').removeClass('layui-hide');
                     $('#add_drds_where_all').removeClass('layui-hide');
-                    $('#add_drds_table_all').removeClass('layui-hide');
+                    $('#show_drds_table_all').removeClass('layui-hide');
                     $('#show_drds_querySql_all').addClass('layui-hide');
                 }else {
-                    $('#add_drds_column_all').addClass('layui-hide');
-                    $('#add_drds_where_all').addClass('layui-hide');
-                    $('#add_drds_table_all').addClass('layui-hide');
+                    $('#show_drds_column_all').addClass('layui-hide');
+                    $('#show_drds_where_all').addClass('layui-hide');
+                    $('#show_drds_table_all').addClass('layui-hide');
                     $('#show_drds_querySql_all').removeClass('layui-hide');
                 }
             }else {
@@ -278,7 +278,7 @@ $(function () {
                 $('#show_drds_column').val(data.drdsInfo.jb_drds_column_r);
                 $('#show_drds_where').val(data.drdsInfo.jb_drds_where_r);
                 $('#show_drds_table').val(data.drdsInfo.jb_drds_table_r);
-                $('#show_drds_jdbcUrl').val(data.drdsInfo.jb_drds_jdbcUrl_r);
+                $('#show_drds_jdbcUrl').val(data.drdsInfo.jb_drds_jdbcUrl_r.replaceAll(',','\n'));
                 $('#show_drds_querySql').val(data.drdsInfo.jb_drds_querySql_r);
                 $("#w_show_drds_writeM").append("<option value="+data.drdsInfo.jb_drds_writeM_w+" selected>"+data.drdsInfo.jb_drds_writeM_w+"</option>");
                 layui.form.render("select");

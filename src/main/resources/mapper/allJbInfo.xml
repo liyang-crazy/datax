@@ -263,6 +263,30 @@
         WHERE
             a.jb_cassandra_id = #{jb_cassandra_id}
     </update>
+    <!--根据脚本id修改对应脚本信息-drds-->
+    <update id="editJbInfoByIdDrds" parameterType="com.cnct.datax.entity.DrdsInfo">
+        UPDATE
+            jb_drds_info a
+        SET
+            a.jb_drds_username_r = #{jb_drds_username_r},
+            a.jb_drds_pasw_r = #{jb_drds_pasw_r},
+            a.jb_drds_column_r = #{jb_drds_column_r},
+            a.jb_drds_where_r = #{jb_drds_where_r},
+            a.jb_drds_table_r = #{jb_drds_table_r},
+            a.jb_drds_jdbcUrl_r = #{jb_drds_jdbcUrl_r},
+            a.jb_drds_querySql_r = #{jb_drds_querySql_r},
+            a.jb_drds_writeM_w = #{jb_drds_writeM_w},
+            a.jb_drds_username_w = #{jb_drds_username_w},
+            a.jb_drds_pasw_w = #{jb_drds_pasw_w},
+            a.jb_drds_column_w = #{jb_drds_column_w},
+            a.jb_drds_preSql_w = #{jb_drds_preSql_w},
+            a.jb_drds_postSql_w = #{jb_drds_postSql_w},
+            a.jb_drds_jdbcUrl_w = #{jb_drds_jdbcUrl_w},
+            a.jb_drds_table_w = #{jb_drds_table_w},
+            a.jb_drds_batchSize_w = #{jb_drds_batchSize_w}
+        WHERE
+            a.jb_drds_id = #{jb_drds_id}
+    </update>
 
     <!--根据id删除对应脚本的信息-->
     <update id="delJbInfoById" parameterType="com.cnct.datax.entity.JbInfo">
