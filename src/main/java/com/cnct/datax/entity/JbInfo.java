@@ -134,6 +134,8 @@ public class JbInfo {
     private CassandraInfo cassandraInfo;
     //存入drds的对象
     private DrdsInfo drdsInfo;
+    //存入hdfs的对象
+    private HdfsInfo hdfsInfo;
     //通道数量
     private int jb_channel;
     //通道速度
@@ -142,6 +144,14 @@ public class JbInfo {
     private int jb_record;
     //出错限制-百分比
     private double jb_percentage;
+
+    public HdfsInfo getHdfsInfo() {
+        return hdfsInfo;
+    }
+
+    public void setHdfsInfo(HdfsInfo hdfsInfo) {
+        this.hdfsInfo = hdfsInfo;
+    }
 
     public DrdsInfo getDrdsInfo() {
         return drdsInfo;
