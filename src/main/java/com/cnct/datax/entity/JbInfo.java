@@ -53,6 +53,8 @@ public class JbInfo {
     private String jb_json_file_name;
     //脚本-生成json文件的存放地址
     private String jb_json_fullPath;
+    //脚本-生成的json文件详细内容
+    private String jb_json_info;
     //脚本-有效标志
     private String jb_yxbz;
 
@@ -144,6 +146,15 @@ public class JbInfo {
     private int jb_record;
     //出错限制-百分比
     private double jb_percentage;
+
+
+    public String getJb_json_info() {
+        return jb_json_info;
+    }
+
+    public void setJb_json_info(String jb_json_info) {
+        this.jb_json_info = jb_json_info;
+    }
 
     public HdfsInfo getHdfsInfo() {
         return hdfsInfo;

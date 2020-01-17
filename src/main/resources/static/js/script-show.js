@@ -24,6 +24,7 @@ $(function () {
             }
             return obj[key];
         }
+        /*根据脚本的路径地址获取脚本文件详情信息*/
 
         /*根据脚本id查询脚本的信息*/
         var jb_info_byID = function (id,r_db_type,w_db_type) {

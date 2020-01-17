@@ -215,6 +215,7 @@ public class JbInfoController {
             }
             jbInfo.setJb_json_file_name(fileName);
             jbInfo.setJb_json_fullPath(fullPath);
+            jbInfo.setJb_json_info(jsonString);
             jbInfoService.addJbInfo(jbInfo);
             map.put("code",0);
             map.put("msg","新增脚本信息成功！");
@@ -452,6 +453,7 @@ public class JbInfoController {
             }
             jbInfo.setJb_json_file_name(fileName);
             jbInfo.setJb_json_fullPath(fullPath);
+            jbInfo.setJb_json_info(jsonString);
             jbInfoService.editJbInfoById(jbInfo);
             map.put("code",0);
             map.put("msg","修改脚本信息成功！");
