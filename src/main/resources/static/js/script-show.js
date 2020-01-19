@@ -24,8 +24,6 @@ $(function () {
             }
             return obj[key];
         }
-        /*根据脚本的路径地址获取脚本文件详情信息*/
-
         /*根据脚本id查询脚本的信息*/
         var jb_info_byID = function (id,r_db_type,w_db_type) {
             $.ajax({
@@ -51,9 +49,39 @@ $(function () {
         };
         /*获取父页面传递过来的脚本id*/
         jb_info_byID(getSearchString('id'),getSearchString('r_db_type'),getSearchString('w_db_type'));
+        //处理json数据，采用正则过滤出不同类型参数
+      /*  var syntaxHighlight = function(json) {
+            if (typeof json != 'string') {
+                json = JSON.stringify(json, undefined, 2);
+            }
+            json = json.replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>');
+            return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function(match) {
+                var cls = 'number';
+                if (/^"/.test(match)) {
+                    if (/:$/.test(match)) {
+                        cls = 'key';
+                    } else {
+                        cls = 'string';
+                    }
+                } else if (/true|false/.test(match)) {
+                    cls = 'boolean';
+                } else if (/null/.test(match)) {
+                    cls = 'null';
+                }
+                return '<span class="' + cls + '">' + match + '</span>';
+            });
+        };*/
+
         /*回填数据的方法*/
         var back_data_fun = function (data) {
-            if(data.r_db_type == 3){
+            if(data.jb_json_info_obj != null){
+                var json_str = JSON.stringify(data.jb_json_info_obj);
+                var result = JSON.stringify(JSON.parse(json_str), null, 2);
+                document.getElementById('out_pre').innerText= result;
+            }else {
+                layer.msg('对不起，暂无对应的json文件！')
+            }
+            /*if(data.r_db_type == 3){
                 $('.mysqlAndOracle').addClass('layui-hide');
                 $('.txtFile').removeClass('layui-hide');
             }else if(data.r_db_type == 5){
@@ -94,8 +122,8 @@ $(function () {
                     $('#sc-show-split').addClass('layui-hide');
                     $('#sc-show-sql').removeClass('layui-hide');
                 }
-            }
-            if(data.w_db_type == 3){
+            }*/
+            /*if(data.w_db_type == 3){
                 $('.w_mysqlAndOracle').addClass('layui-hide');
                 $('.w_txtFile').removeClass('layui-hide');
             }else if(data.w_db_type == 5){
@@ -126,8 +154,8 @@ $(function () {
                     $('#w-sc-show-session').addClass('layui-hide');
                     $('#w_show_db_mode_all').addClass('layui-hide');
                 }
-            }
-            $('#sc-show-jb_name').val(data.jb_name);
+            }*/
+            /*$('#sc-show-jb_name').val(data.jb_name);
             $("#show_jb_group").append("<option value="+data.jb_group_id+" selected>"+data.jb_group_name+"</option>");
             layui.form.render("select");
             $('#show_settin_channel').val(data.jb_channel);
@@ -153,9 +181,9 @@ $(function () {
             $('#w-show_session').val(data.w_jb_session);
             $('#w-show_preSql').val(data.w_jb_presql);
             $('#w-show_postSql').val(data.w_jb_postsql);
-            $('#sc-show-jb_bz').val(data.jb_bz);
+            $('#sc-show-jb_bz').val(data.jb_bz);*/
             /*给txtfile表单赋值*/
-            if(data.txtFileInfo != null){
+           /* if(data.txtFileInfo != null){
                 $('#show_path').val(data.txtFileInfo.jb_r_txtFile_path);
                 $('#show_encoding').val(data.txtFileInfo.jb_r_txtFile_en);
                 $('#show_fgf').val(data.txtFileInfo.jb_r_txtFile_fgf);
@@ -175,9 +203,9 @@ $(function () {
                 $('#w_show_date').val(data.txtFileInfo.jb_w_txtfile_dateF);
                 $('#w_show_fileFormat').val(data.txtFileInfo.jb_w_txtfile_fileF);
                 $('#w_show_header').val(data.txtFileInfo.jb_w_txtfile_header);
-            }
+            }*/
             /*给ftp赋值*/
-            if(data.ftpInfo != null){
+            /*if(data.ftpInfo != null){
                 $('#show_ftp_username').val(data.ftpInfo.jb_ftp_username_r);
                 $('#show_ftp_pasw').val(data.ftpInfo.jb_ftp_password_r);
                 $("#show_ftp_protocol").append("<option value="+data.ftpInfo.jb_ftp_protocol_r+" selected>"+data.ftpInfo.jb_ftp_protocol_r+"</option>");
@@ -222,9 +250,9 @@ $(function () {
                 $('#w_show_ftp_dateF').val(data.ftpInfo.jb_ftp_dateF_w);
                 $('#w_show_ftp_fileF').val(data.ftpInfo.jb_ftp_fileF_w);
                 $('#w_show_ftp_header').val(data.ftpInfo.jb_ftp_header_w);
-            }
+            }*/
             /*给mongodb赋值*/
-            if(data.mongodbInfo != null){
+            /*if(data.mongodbInfo != null){
                 $('#show_mongodb_address').val(data.mongodbInfo.jb_mongodb_address_r.replaceAll(',','\n'));
                 $('#show_mongodb_username').val(data.mongodbInfo.jb_mongodb_username_r);
                 $('#show_mongodb_pasw').val(data.mongodbInfo.jb_mongodb_userpasw_r);
@@ -240,9 +268,9 @@ $(function () {
                 $("#w_show_mongodb_isUpsert").append("<option value="+data.mongodbInfo.jb_mongodb_isupsert_w+" selected>"+data.mongodbInfo.jb_mongodb_isupsert_w+"</option>");
                 layui.form.render("select");
                 $('#w_show_mongodb_upsertKey').val(data.mongodbInfo.jb_mongodb_upsertKey_w);
-            }
+            }*/
             /*给cassandra赋值*/
-            if(data.cassandraInfo != null){
+            /*if(data.cassandraInfo != null){
                 $('#show_cassandra_host').val(data.cassandraInfo.jb_cassandra_host_r);
                 $('#show_cassandra_port').val(data.cassandraInfo.jb_cassandra_port_r);
                 $('#show_cassandra_username').val(data.cassandraInfo.jb_cassandra_username_r);
@@ -271,9 +299,9 @@ $(function () {
                 $('#w_show_cassandra_column').val(data.cassandraInfo.jb_cassandra_column_w);
                 $("#w_show_cassandra_conL").append("<option value="+data.cassandraInfo.jb_cassandra_conL_w+" selected>"+data.cassandraInfo.jb_cassandra_conL_w+"</option>");
                 layui.form.render("select");
-            }
+            }*/
             /*给drds赋值*/
-            if(data.drdsInfo != null){
+            /*if(data.drdsInfo != null){
                 $('#show_drds_username').val(data.drdsInfo.jb_drds_username_r);
                 $('#show_drds_pasw').val(data.drdsInfo.jb_drds_pasw_r);
                 $('#show_drds_column').val(data.drdsInfo.jb_drds_column_r);
@@ -291,13 +319,13 @@ $(function () {
                 $('#w_show_drds_jdbcUrl').val(data.drdsInfo.jb_drds_jdbcUrl_w);
                 $('#w_show_drds_table').val(data.drdsInfo.jb_drds_table_w);
                 $('#w_show_drds_batchSize').val(data.drdsInfo.jb_drds_batchSize_w);
-            }
+            }*/
 
         };
 
 
         /*监听当鼠标点击列名input框的时候弹出对应的文本区域*/
-        $('#show_r_column').on('focus',function () {
+        /*$('#show_r_column').on('focus',function () {
             $('.col-textarea').removeClass('layui-hide');
             $('#r_col_texta').val($('#show_r_column').val())
         });
@@ -317,10 +345,10 @@ $(function () {
         });
         $('#w-col-cancle').on('click',function () {
             $('.w-col-textarea').addClass('layui-hide');
-        });
+        });*/
 
         /*监听当鼠标点击同步表名input框的时候弹出对应的文本区域*/
-        $('#show_r_table').on('focus',function () {
+        /*$('#show_r_table').on('focus',function () {
             $('.tab-textarea').removeClass('layui-hide');
             $('#r_tab_texta').val($('#show_r_table').val())
         });
@@ -340,11 +368,11 @@ $(function () {
         });
         $('#w-tab-cancle').on('click',function () {
             $('.w-tab-textarea').addClass('layui-hide');
-        });
+        });*/
 
 
         /*监听当鼠标点击URL地址input框的时候弹出对应的文本区域*/
-        $('#show_r_contaion').on('focus',function () {
+        /*$('#show_r_contaion').on('focus',function () {
             $('.cont-textarea').removeClass('layui-hide');
             $('#r_url_texta').val($('#show_r_contaion').val())
         });
@@ -364,10 +392,10 @@ $(function () {
         });
         $('#w-cont-cancle').on('click',function () {
             $('.w-cont-textarea').addClass('layui-hide');
-        });
+        });*/
 
         /*监听当鼠标点击动态sqlinput框的时候弹出对应的文本区域*/
-        $('#show_r_sql').on('focus',function () {
+        /*$('#show_r_sql').on('focus',function () {
             $('.sql-textarea').removeClass('layui-hide');
             $('#r_sql_texta').val($('#show_r_sql').val())
         });
@@ -376,9 +404,9 @@ $(function () {
         });
         $('#sql-cancle').on('click',function () {
             $('.sql-textarea').addClass('layui-hide');
-        });
+        });*/
         /*session*/
-        $('#w-show_session').on('focus',function () {
+        /*$('#w-show_session').on('focus',function () {
             $('.w-session-textarea').removeClass('layui-hide');
             $('#w-session_texta').val($('#w-show_session').val())
         });
@@ -387,9 +415,9 @@ $(function () {
         });
         $('#w-session-cancle').on('click',function () {
             $('.w-session-textarea').addClass('layui-hide');
-        });
+        });*/
         /*presql*/
-        $('#w-show_preSql').on('focus',function () {
+        /*$('#w-show_preSql').on('focus',function () {
             $('.w-presql-textarea').removeClass('layui-hide');
             $('#w-preSql_texta').val($('#w-show_preSql').val().replaceAll('&','\n'));
         });
@@ -398,9 +426,9 @@ $(function () {
         });
         $('#w-preSql-cancle').on('click',function () {
             $('.w-presql-textarea').addClass('layui-hide');
-        });
+        });*/
         /*postsql*/
-        $('#w-show_postSql').on('focus',function () {
+        /*$('#w-show_postSql').on('focus',function () {
             $('.w-postSql-textarea').removeClass('layui-hide');
             $('#w-postSql_texta').val($('#w-show_postSql').val().replaceAll('&','\n'));
         });
@@ -409,9 +437,9 @@ $(function () {
         });
         $('#w-postSql-cancle').on('click',function () {
             $('.w-postSql-textarea').addClass('layui-hide');
-        });
+        });*/
         /*监听：ftp-path*/
-        $('#show_ftp_path').on('focus',function () {
+        /*$('#show_ftp_path').on('focus',function () {
             $('.show-ftp-path-textarea').removeClass('layui-hide');
             $('#show_ftp_path_texta').val($('#show_ftp_path').val().replaceAll(',','\n'));
         });
@@ -420,9 +448,9 @@ $(function () {
         });
         $('#show_ftp_path-cancle').on('click',function () {
             $('.show-ftp-path-textarea').addClass('layui-hide');
-        });
+        });*/
         /*监听drds:where筛选条件*/
-        $('#show_drds_where').on('focus',function () {
+        /*$('#show_drds_where').on('focus',function () {
             $('.show_drds_where_textarea').removeClass('layui-hide');
             $('#show_drds_where_texta').val($('#show_drds_where').val());
         });
@@ -431,9 +459,9 @@ $(function () {
         });
         $('#show_drds_where_cancle').on('click',function () {
             $('.show_drds_where_textarea').addClass('layui-hide');
-        });
+        });*/
         /*监听drds:querysql动态sql*/
-        $('#show_drds_querySql').on('focus',function () {
+        /*$('#show_drds_querySql').on('focus',function () {
             $('.show_drds_where_textarea').removeClass('layui-hide');
             $('#show_drds_querySql_texta').val($('#show_drds_querySql').val().replaceAll('&','\n'));
         });
@@ -442,9 +470,9 @@ $(function () {
         });
         $('#show_drds_querySql_cancle').on('click',function () {
             $('.show_drds_querySql_textarea').addClass('layui-hide');
-        });
+        });*/
         /*监听drds:presql动态sql*/
-        $('#w_show_drds_preSql').on('focus',function () {
+        /*$('#w_show_drds_preSql').on('focus',function () {
             $('.w_show_drds_preSql_textarea').removeClass('layui-hide');
             $('#w_show_drds_preSql_texta').val($('#w_show_drds_preSql').val().replaceAll('&','\n'));
         });
@@ -453,9 +481,9 @@ $(function () {
         });
         $('#w_show_drds_preSql_cancle').on('click',function () {
             $('.w_show_drds_preSql_textarea').addClass('layui-hide');
-        });
+        });*/
         /*监听drds:postsql动态sql*/
-        $('#w_show_drds_postSql').on('focus',function () {
+        /*$('#w_show_drds_postSql').on('focus',function () {
             $('.w_show_drds_postSql_textarea').removeClass('layui-hide');
             $('#w_show_drds_postSql_texta').val($('#w_show_drds_postSql').val().replaceAll('&','\n'));
         });
@@ -464,7 +492,7 @@ $(function () {
         });
         $('#w_show_drds_postSql_cancle').on('click',function () {
             $('.w_show_drds_postSql_textarea').addClass('layui-hide');
-        });
+        });*/
 
 
     })

@@ -1,5 +1,6 @@
 package com.cnct.datax.service.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.cnct.datax.dao.JbInfoMapper;
 import com.cnct.datax.entity.*;
 import com.cnct.datax.service.JbInfoService;
@@ -72,7 +73,9 @@ public class JbInfoServiceImpl implements JbInfoService{
      */
     @Override
     public JbInfo queryJbInfoById(JbInfo jbInfo) {
-        return jbInfoMapper.queryJbInfoById(jbInfo);
+        JbInfo jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
+        jbInfo_obj.setJb_json_info_obj(JSONObject.parseObject(jbInfo_obj.getJb_json_info()));
+        return jbInfo_obj;
     }
     /**
      *根据脚本id查询出该脚本对应的reader和writer对应的username和password
@@ -170,6 +173,7 @@ public class JbInfoServiceImpl implements JbInfoService{
         txtFileInfo.setJb_txtFile_id(String.valueOf(jbInfo.getId()));
         JbInfo jbInfo_obj = new JbInfo();
         jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
+        jbInfo_obj.setJb_json_info_obj(JSONObject.parseObject(jbInfo_obj.getJb_json_info()));
         txtFileInfo = jbInfoMapper.queryJbInfoByIdTxtFile(txtFileInfo);
         jbInfo_obj.setTxtFileInfo(txtFileInfo);
         return jbInfo_obj;
@@ -184,6 +188,7 @@ public class JbInfoServiceImpl implements JbInfoService{
         ftpInfo.setJb_ftp_id(String.valueOf(jbInfo.getId()));
         JbInfo jbInfo_obj = new JbInfo();
         jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
+        jbInfo_obj.setJb_json_info_obj(JSONObject.parseObject(jbInfo_obj.getJb_json_info()));
         ftpInfo = jbInfoMapper.queryJbInfoByIdFtp(ftpInfo);
         jbInfo_obj.setFtpInfo(ftpInfo);
         return jbInfo_obj;
@@ -197,6 +202,7 @@ public class JbInfoServiceImpl implements JbInfoService{
         mongodbInfo.setJb_mongodb_id(String.valueOf(jbInfo.getId()));
         JbInfo jbInfo_obj = new JbInfo();
         jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
+        jbInfo_obj.setJb_json_info_obj(JSONObject.parseObject(jbInfo_obj.getJb_json_info()));
         mongodbInfo = jbInfoMapper.queryJbInfoByIdMongoDB(mongodbInfo);
         jbInfo_obj.setMongodbInfo(mongodbInfo);
         return jbInfo_obj;
@@ -210,6 +216,7 @@ public class JbInfoServiceImpl implements JbInfoService{
         cassandraInfo.setJb_cassandra_id(String.valueOf(jbInfo.getId()));
         JbInfo jbInfo_obj = new JbInfo();
         jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
+        jbInfo_obj.setJb_json_info_obj(JSONObject.parseObject(jbInfo_obj.getJb_json_info()));
         cassandraInfo = jbInfoMapper.queryJbInfoByIdCassandra(cassandraInfo);
         jbInfo_obj.setCassandraInfo(cassandraInfo);
         return jbInfo_obj;
@@ -223,6 +230,7 @@ public class JbInfoServiceImpl implements JbInfoService{
         drdsInfo.setJb_drds_id(String.valueOf(jbInfo.getId()));
         JbInfo jbInfo_obj = new JbInfo();
         jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
+        jbInfo_obj.setJb_json_info_obj(JSONObject.parseObject(jbInfo_obj.getJb_json_info()));
         drdsInfo = jbInfoMapper.queryJbInfoByIdDrds(drdsInfo);
         jbInfo_obj.setDrdsInfo(drdsInfo);
         return jbInfo_obj;

@@ -6,11 +6,15 @@
     <link rel="stylesheet" type="text/css" href="/layui/css/layui.css" media="all">
     <link rel="stylesheet" type="text/css" href="/Iconfont/iconfont.css">
     <link rel="stylesheet" type="text/css" href="/css/script-add.css">
+    <!--<link rel="stylesheet" type="text/css" href="/css/script-show.css">-->
 </head>
 <body class="">
 <div id="script-add" class="layui-layout layui-layout-admin">
     <!-- 内容主体区域 -->
     <div style="padding: 15px;" class="scr-all">
+        <pre id="out_pre"></pre>
+    </div>
+    <!--<div style="padding: 15px;" class="scr-all layui-hide">
         <div class="layui-form-item width-25">
             <label class="layui-form-label label-1 label-a">脚本名</label>
             <div class="layui-input-block m-left-9">
@@ -59,9 +63,9 @@
         <fieldset class="layui-elem-field layui-field-title">
             <legend style="font-size: 13px">Reader参数</legend>
         </fieldset>
-        <!--reader区域-->
+        &lt;!&ndash;reader区域&ndash;&gt;
         <div class="reader">
-            <!--mysql和orcale区域-->
+            &lt;!&ndash;mysql和orcale区域&ndash;&gt;
             <div class="mysqlAndOracle layui-hide">
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">用户名</label>
@@ -105,14 +109,14 @@
                     <label class="layui-form-label label-1 label-a">连接地址</label>
                     <div class="layui-input-block m-left-9">
                         <textarea class="layui-textarea mar-1 layui-disabled" id="show_r_contaion" style="width: 35em;"></textarea>
-                        <!--<input  class="layui-input input-a layui-disabled" id="show_r_contaion" type="text">
+                        &lt;!&ndash;<input  class="layui-input input-a layui-disabled" id="show_r_contaion" type="text">
                         <div class="layui-hide cont-textarea teax-a">
                             <textarea class="layui-textarea mar-1" id="r_url_texta"></textarea>
                             <div class="layui-inline mar-2">
                                 <button type="button" class="layui-btn layui-btn-xs" id="cont-sure">确定</button>
                                 <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="cont-cancle">取消</button>
                             </div>
-                        </div>-->
+                        </div>&ndash;&gt;
                     </div>
                 </div>
                 <div class="layui-form-item width-25" id="sc-show-split">
@@ -135,7 +139,7 @@
                     </div>
                 </div>
             </div>
-            <!--textFile区域-->
+            &lt;!&ndash;textFile区域&ndash;&gt;
             <div class="txtFile layui-hide">
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">路径地址</label>
@@ -173,12 +177,12 @@
                         </div>
                     </div>
                 </form>
-                <!--<div class="layui-form-item width-25">
+                &lt;!&ndash;<div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">nullFormat</label>
                     <div class="layui-input-block m-left-9">
                         <input  class="layui-input input-a" id="add_nullFor" type="text" value="\N">
                     </div>
-                </div>-->
+                </div>&ndash;&gt;
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">读取列</label>
                     <div class="layui-input-block m-left-9">
@@ -186,7 +190,7 @@
                     </div>
                 </div>
             </div>
-            <!--ftp区域-->
+            &lt;!&ndash;ftp区域&ndash;&gt;
             <div class="ftp layui-hide">
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">用户名</label>
@@ -285,12 +289,12 @@
                         </div>
                     </div>
                 </form>
-                <!--<div class="layui-form-item width-25">
+                &lt;!&ndash;<div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">nullFormat</label>
                     <div class="layui-input-block m-left-9">
                         <input  class="layui-input input-a layui-disabled" id="show_ftp_nullF" type="text" value="" placeholder="">
                     </div>
-                </div>-->
+                </div>&ndash;&gt;
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">遍历最大层数</label>
                     <div class="layui-input-block m-left-9">
@@ -298,7 +302,7 @@
                     </div>
                 </div>
             </div>
-            <!--mongodb区域-->
+            &lt;!&ndash;mongodb区域&ndash;&gt;
             <div class="mongodb layui-hide">
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">数据地址</label>
@@ -337,7 +341,7 @@
                     </div>
                 </div>
             </div>
-            <!--cassandra区域-->
+            &lt;!&ndash;cassandra区域&ndash;&gt;
             <div class="cassandra layui-hide">
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">连接IP</label>
@@ -416,7 +420,7 @@
                     </div>
                 </form>
             </div>
-            <!--drds区域-->
+            &lt;!&ndash;drds区域&ndash;&gt;
             <div class="drds layui-hide">
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">用户名</label>
@@ -476,12 +480,12 @@
                 </div>
             </div>
         </div>
-        <!--writer区域-->
+        &lt;!&ndash;writer区域&ndash;&gt;
         <fieldset class="layui-elem-field layui-field-title">
             <legend style="font-size: 13px">Writer参数</legend>
         </fieldset>
         <div class="writer">
-            <!--mysql和oracle区域-->
+            &lt;!&ndash;mysql和oracle区域&ndash;&gt;
             <div class="w_mysqlAndOracle layui-hide">
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">用户名</label>
@@ -584,7 +588,7 @@
                     </div>
                 </div>
             </div>
-            <!--txtfile区域-->
+            &lt;!&ndash;txtfile区域&ndash;&gt;
             <div class="w_txtFile layui-hide">
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">路径地址</label>
@@ -628,12 +632,12 @@
                         <input  class="layui-input input-a layui-disabled" id="w_show_encoding" type="text">
                     </div>
                 </div>
-                <!--<div class="layui-form-item width-25">
+                &lt;!&ndash;<div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">nullFormat</label>
                     <div class="layui-input-block m-left-9">
                         <input  class="layui-input input-a" id="w_add_nullFor" type="text" value="\N">
                     </div>
-                </div>-->
+                </div>&ndash;&gt;
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">日期格式</label>
                     <div class="layui-input-block m-left-9">
@@ -653,7 +657,7 @@
                     </div>
                 </div>
             </div>
-            <!--ftp区域-->
+            &lt;!&ndash;ftp区域&ndash;&gt;
             <div class="w_ftp layui-hide">
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">用户名</label>
@@ -749,12 +753,12 @@
                         <input  class="layui-input input-a layui-disabled" id="w_show_ftp_en" type="text" value="" placeholder="">
                     </div>
                 </div>
-                <!--<div class="layui-form-item width-25">
+                &lt;!&ndash;<div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">nullFormat</label>
                     <div class="layui-input-block m-left-9">
                         <input  class="layui-input input-a layui-disabled" id="w_show_ftp_nullF" type="text" value="" placeholder="">
                     </div>
-                </div>-->
+                </div>&ndash;&gt;
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">日期格式</label>
                     <div class="layui-input-block m-left-9">
@@ -774,7 +778,7 @@
                     </div>
                 </div>
             </div>
-            <!--mongodb区域-->
+            &lt;!&ndash;mongodb区域&ndash;&gt;
             <div class="w_mongodb layui-hide">
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">数据地址</label>
@@ -829,7 +833,7 @@
                     </div>
                 </div>
             </div>
-            <!--cassandra区域-->
+            &lt;!&ndash;cassandra区域&ndash;&gt;
             <div class="w_cassandra layui-hide">
                 <div class="layui-form-item width-25">
                     <label class="layui-form-label label-1 label-a">连接IP</label>
@@ -912,7 +916,7 @@
                     </div>
                 </form>
             </div>
-            <!--drds区域-->
+            &lt;!&ndash;drds区域&ndash;&gt;
             <div class="w_drds layui-hide">
                 <form class="layui-form" id="w_show_drds_writeM_all">
                     <div class="layui-inline" style="margin-bottom: 15px;">
@@ -994,7 +998,7 @@
                 <textarea class="layui-textarea teax-a layui-disabled" id="sc-show-jb_bz"></textarea>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>
 <script src="/js/jquery-1.11.0.min.js"></script>
 <script src="/layui/layui.all.js"></script>

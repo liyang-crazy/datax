@@ -1,5 +1,7 @@
 package com.cnct.datax.entity;
 
+import com.alibaba.fastjson.JSONObject;
+
 import java.util.Date;
 
 /**
@@ -55,6 +57,7 @@ public class JbInfo {
     private String jb_json_fullPath;
     //脚本-生成的json文件详细内容
     private String jb_json_info;
+    private JSONObject jb_json_info_obj;
     //脚本-有效标志
     private String jb_yxbz;
 
@@ -147,6 +150,13 @@ public class JbInfo {
     //出错限制-百分比
     private double jb_percentage;
 
+    public JSONObject getJb_json_info_obj() {
+        return jb_json_info_obj;
+    }
+
+    public void setJb_json_info_obj(JSONObject jb_json_info_obj) {
+        this.jb_json_info_obj = jb_json_info_obj;
+    }
 
     public String getJb_json_info() {
         return jb_json_info;
