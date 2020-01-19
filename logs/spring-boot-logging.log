@@ -6368,3 +6368,882 @@ Caused by: com.mysql.cj.exceptions.ConnectionIsClosedException: No operations al
 2020-01-19 16:34:25.312  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
 2020-01-19 16:34:25.315  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Start completed.
 2020-01-19 16:34:25.587  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.018 seconds (JVM running for 2645.773)
+2020-01-19 17:04:13.241  INFO 19396 --- [http-nio-8004-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-19 17:04:13.440 DEBUG 19396 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-19 17:04:13.441 DEBUG 19396 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-19 17:04:13.442 DEBUG 19396 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-19 17:04:13.442 DEBUG 19396 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2020-01-19 17:04:13.442 DEBUG 19396 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
+2020-01-19 17:04:13.444 DEBUG 19396 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2020-01-19 17:04:13.445 DEBUG 19396 --- [http-nio-8004-exec-27] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
+2020-01-19 17:04:13.445 DEBUG 19396 --- [http-nio-8004-exec-27] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
+2020-01-19 17:04:13.447 DEBUG 19396 --- [http-nio-8004-exec-27] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
+2020-01-19 17:04:13.448 DEBUG 19396 --- [http-nio-8004-exec-27] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
+2020-01-19 17:04:13.448 DEBUG 19396 --- [http-nio-8004-exec-27] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
+2020-01-19 17:04:13.450 DEBUG 19396 --- [http-nio-8004-exec-27] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
+2020-01-19 17:04:17.585 DEBUG 19396 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2020-01-19 17:04:17.586 DEBUG 19396 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 50(Integer)
+2020-01-19 17:04:17.586 DEBUG 19396 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-19 17:04:17.586 DEBUG 19396 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-19 17:04:17.586 DEBUG 19396 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-19 17:04:17.587 DEBUG 19396 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2020-01-19 17:04:17.588 DEBUG 19396 --- [http-nio-8004-exec-9] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
+2020-01-19 17:04:17.588 DEBUG 19396 --- [http-nio-8004-exec-9] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 50(String)
+2020-01-19 17:04:17.589 DEBUG 19396 --- [http-nio-8004-exec-9] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
+2020-01-19 17:04:17.590 DEBUG 19396 --- [http-nio-8004-exec-9] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
+2020-01-19 17:04:17.590 DEBUG 19396 --- [http-nio-8004-exec-9] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 50(String)
+2020-01-19 17:04:17.591 DEBUG 19396 --- [http-nio-8004-exec-9] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
+2020-01-19 17:04:49.090 DEBUG 19396 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.editJbInfoById    : ==>  Preparing: UPDATE jb_info a SET a.jb_channel = ?, a.jb_byte = ?, a.jb_record = ?, a.jb_percentage = ?, a.jb_group_id = ?, a.jb_name = ?, a.r_jb_column = ?, a.r_jb_table = ?, a.r_jb_url = ?, a.r_jb_splitPk = ?, a.r_jb_sql = ?, a.r_where = ?, a.w_jb_mode = ?, a.w_jb_column = ?, a.w_jb_session = ?, a.w_jb_presql = ?, a.w_jb_postsql = ?, a.w_jb_url = ?, a.w_jb_table = ?, a.jb_bz = ?, a.jb_xgsj = NOW(), a.jb_json_file_name = ?, a.jb_json_fullPath = ?, a.jb_json_info = ? WHERE a.id = ? AND a.jb_yxbz = 'Y' 
+2020-01-19 17:04:49.091 DEBUG 19396 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.editJbInfoById    : ==> Parameters: 5(Integer), 1048576(Integer), 0(Integer), 0.02(Double), 2(String), M_TO_TXT_2(String), (String), (String), (String), (String), (String), (String), insert(String), (String), (String), (String), (String), (String), (String), 备注(String), 2_91cb406ff6874240af081d9a1ba1aa1a(String), G:\ideal_project_test\datax\target\classes\json\2_91cb406ff6874240af081d9a1ba1aa1a.json(String), {
+ "job":
+ {
+  "content":
+  [
+   {
+    "reader":
+    {
+     "parameter":
+     {
+      "userPassword":"123456",
+      "address":
+      [
+       "mongodb://root123:123456@192.168.1.1:27017",
+       "mongodb://root:abc123@127.0.1.1:27107"
+      ],
+      "dbName":"aabbcc123",
+      "column":
+      [
+       {
+        "name":"0",
+        "type":"string"
+       },
+       {
+        "name":"1",
+        "type":"int"
+       }
+
+      ],
+      "userName":"root123",
+      "collectionName":"array"
+     },
+     "name":"mongodbreader"
+    },
+    "writer":
+    {
+     "parameter":
+     {
+      "path":"/d:/",
+      "fileName":"file123",
+      "compress":"zip",
+      "dateFormat":"yyyy-MM-dd",
+      "header":
+      [
+       "id",
+       "name",
+       "age"
+      ],
+      "writeMode":"truncate",
+      "fieldDelimiter":",
+      ",
+      "encoding":"utf-8"
+     },
+     "name":"txtfilewriter"
+    }
+
+   }
+
+  ],
+  "setting":
+  {
+   "errorLimit":
+   {
+    "percentage":0.02
+   },
+   "speed":
+   {
+    "byte":1048576,
+    "channel":5
+   }
+
+  }
+
+ }
+
+}(String), 50(Integer)
+2020-01-19 17:04:49.165 DEBUG 19396 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.editJbInfoById    : <==    Updates: 1
+2020-01-19 17:04:49.166 DEBUG 19396 --- [http-nio-8004-exec-4] c.c.d.d.J.editJbInfoByIdTxtFile          : ==>  Preparing: UPDATE jb_txtfile_info a SET a.jb_r_txtFile_path = ?, a.jb_r_txtFile_en = ?, a.jb_r_txtFile_column = ?, a.jb_r_txtFile_fgf = ?, a.jb_r_txtFile_ysgs = ?, a.jb_r_txtFile_csv_h = ?, a.jb_w_txtFile_path = ?, a.jb_w_txtFile_filename = ?, a.jb_w_txtfile_ms = ?, a.jb_w_txtfile_fgf = ?, a.jb_w_txtfile_ysgs = ?, a.jb_w_txtfile_en = ?, a.jb_w_txtfile_dateF = ?, a.jb_w_txtfile_fileF = ?, a.jb_w_txtfile_header = ? WHERE a.jb_txtFile_id = ? 
+2020-01-19 17:04:49.166 DEBUG 19396 --- [http-nio-8004-exec-4] c.c.d.d.J.editJbInfoByIdTxtFile          : ==> Parameters: (String), UTF-8(String), (String), ,(String), zip(String), false(Boolean), /d:/(String), file123(String), truncate(String), ,(String), zip(String), utf-8(String), yyyy-MM-dd(String), null, id,name,age(String), 50(String)
+2020-01-19 17:04:49.198 DEBUG 19396 --- [http-nio-8004-exec-4] c.c.d.d.J.editJbInfoByIdTxtFile          : <==    Updates: 1
+2020-01-19 17:04:49.218 DEBUG 19396 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-19 17:04:49.219 DEBUG 19396 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-19 17:04:49.223 DEBUG 19396 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-19 17:04:49.223 DEBUG 19396 --- [http-nio-8004-exec-6] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-19 17:04:49.223 DEBUG 19396 --- [http-nio-8004-exec-6] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-19 17:04:49.224 DEBUG 19396 --- [http-nio-8004-exec-6] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-19 17:04:49.960  INFO 19396 --- [Thread-84] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown initiated...
+2020-01-19 17:04:49.965  INFO 19396 --- [Thread-84] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown completed.
+2020-01-19 17:04:50.816  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:04:50.816  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:04:51.169  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:04:51.231  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:04:51.231  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:04:51.277  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:04:51.315  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Starting...
+2020-01-19 17:04:51.316  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:04:51.319  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Start completed.
+2020-01-19 17:04:51.529  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 0.759 seconds (JVM running for 4471.714)
+2020-01-19 17:04:52.349  INFO 19396 --- [http-nio-8004-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-19 17:04:52.530 DEBUG 19396 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2020-01-19 17:04:52.531 DEBUG 19396 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-19 17:04:52.531 DEBUG 19396 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-19 17:04:52.531 DEBUG 19396 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 50(Integer)
+2020-01-19 17:04:52.532 DEBUG 19396 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2020-01-19 17:04:52.534 DEBUG 19396 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
+2020-01-19 17:04:52.534 DEBUG 19396 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 50(String)
+2020-01-19 17:04:52.535 DEBUG 19396 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
+2020-01-19 17:04:52.536 DEBUG 19396 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
+2020-01-19 17:04:52.536 DEBUG 19396 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 50(String)
+2020-01-19 17:04:52.537 DEBUG 19396 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
+2020-01-19 17:04:52.586 DEBUG 19396 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-19 17:05:20.353  INFO 19396 --- [Thread-89] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown initiated...
+2020-01-19 17:05:20.361  INFO 19396 --- [Thread-89] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown completed.
+2020-01-19 17:05:21.407  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:05:21.407  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:05:22.046  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:05:22.119  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:05:22.120  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:05:22.151  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:05:22.295  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Starting...
+2020-01-19 17:05:22.295  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:05:22.300  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Start completed.
+2020-01-19 17:05:22.586  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.276 seconds (JVM running for 4502.771)
+2020-01-19 17:05:25.257  INFO 19396 --- [Thread-94] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown initiated...
+2020-01-19 17:05:25.268  INFO 19396 --- [Thread-94] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown completed.
+2020-01-19 17:05:26.451  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:05:26.451  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:05:26.949  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:05:27.015  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:05:27.015  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:05:27.430  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:05:27.485  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Starting...
+2020-01-19 17:05:27.485  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:05:27.488  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Start completed.
+2020-01-19 17:05:27.761  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.357 seconds (JVM running for 4507.946)
+2020-01-19 17:05:30.313  INFO 19396 --- [Thread-99] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown initiated...
+2020-01-19 17:05:30.324  INFO 19396 --- [Thread-99] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown completed.
+2020-01-19 17:05:31.155  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:05:31.156  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:05:31.572  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:05:31.657  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:05:31.657  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:05:31.691  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:05:31.745  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Starting...
+2020-01-19 17:05:31.745  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:05:31.748  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Start completed.
+2020-01-19 17:05:32.016  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 0.918 seconds (JVM running for 4512.201)
+2020-01-19 17:05:50.340  INFO 19396 --- [Thread-104] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Shutdown initiated...
+2020-01-19 17:05:50.358  INFO 19396 --- [Thread-104] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Shutdown completed.
+2020-01-19 17:05:51.806  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:05:51.807  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:05:52.231  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:05:52.322  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:05:52.322  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:05:52.440  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:05:52.497  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Starting...
+2020-01-19 17:05:52.497  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:05:52.501  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Start completed.
+2020-01-19 17:05:52.825  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.061 seconds (JVM running for 4533.011)
+2020-01-19 17:05:56.363  INFO 19396 --- [Thread-109] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown initiated...
+2020-01-19 17:05:56.367  INFO 19396 --- [Thread-109] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown completed.
+2020-01-19 17:05:57.376  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:05:57.376  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:05:57.907  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:05:58.137  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:05:58.138  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:05:58.180  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:05:58.266  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Starting...
+2020-01-19 17:05:58.268  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:05:58.273  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Start completed.
+2020-01-19 17:05:58.320  WARN 19396 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jbInfoController': Unsatisfied dependency expressed through field 'jbInfoService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cnct.datax.service.JbInfoService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-01-19 17:05:58.321  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown initiated...
+2020-01-19 17:05:58.321  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown completed.
+2020-01-19 17:05:58.322  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-01-19 17:05:58.701 ERROR 19396 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field jbInfoService in com.cnct.datax.controller.JbInfoController required a bean of type 'com.cnct.datax.service.JbInfoService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cnct.datax.service.JbInfoService' in your configuration.
+
+2020-01-19 17:06:02.343  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:06:02.343  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:06:03.046  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:06:03.136  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:06:03.136  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:06:03.180  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:06:03.242  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Starting...
+2020-01-19 17:06:03.242  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:06:03.245  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Start completed.
+2020-01-19 17:06:03.562  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.272 seconds (JVM running for 4543.747)
+2020-01-19 17:06:27.033  INFO 19396 --- [Thread-114] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Shutdown initiated...
+2020-01-19 17:06:27.040  INFO 19396 --- [Thread-114] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Shutdown completed.
+2020-01-19 17:06:28.252  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:06:28.252  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:06:28.894  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:06:29.134  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:06:29.134  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:06:29.255  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:06:29.336  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Starting...
+2020-01-19 17:06:29.336  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:06:29.345  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Start completed.
+2020-01-19 17:06:29.383  WARN 19396 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jbInfoController': Unsatisfied dependency expressed through field 'jbInfoService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cnct.datax.service.JbInfoService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-01-19 17:06:29.383  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Shutdown initiated...
+2020-01-19 17:06:29.384  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Shutdown completed.
+2020-01-19 17:06:29.384  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-01-19 17:06:29.563 ERROR 19396 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field jbInfoService in com.cnct.datax.controller.JbInfoController required a bean of type 'com.cnct.datax.service.JbInfoService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cnct.datax.service.JbInfoService' in your configuration.
+
+2020-01-19 17:06:34.212  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:06:34.213  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:06:34.836  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:06:34.920  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:06:34.920  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:06:34.992  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:06:35.038  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Starting...
+2020-01-19 17:06:35.038  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:06:35.041  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Start completed.
+2020-01-19 17:06:35.294  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.153 seconds (JVM running for 4575.479)
+2020-01-19 17:06:40.163  INFO 19396 --- [Thread-122] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Shutdown initiated...
+2020-01-19 17:06:40.177  INFO 19396 --- [Thread-122] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Shutdown completed.
+2020-01-19 17:06:41.121  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:06:41.121  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:06:41.622  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:06:41.719  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:06:41.719  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:06:41.747  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:06:41.796  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Starting...
+2020-01-19 17:06:41.796  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:06:41.801  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Start completed.
+2020-01-19 17:06:42.107  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.033 seconds (JVM running for 4582.292)
+2020-01-19 17:06:47.941  INFO 19396 --- [Thread-130] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Shutdown initiated...
+2020-01-19 17:06:47.948  INFO 19396 --- [Thread-130] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Shutdown completed.
+2020-01-19 17:06:48.953  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:06:48.953  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:06:49.966  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:06:50.154  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:06:50.155  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:06:50.189  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:06:50.241  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Starting...
+2020-01-19 17:06:50.241  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:06:50.245  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Start completed.
+2020-01-19 17:06:50.278  WARN 19396 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jbInfoController': Unsatisfied dependency expressed through field 'jbInfoService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cnct.datax.service.JbInfoService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-01-19 17:06:50.278  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Shutdown initiated...
+2020-01-19 17:06:50.279  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Shutdown completed.
+2020-01-19 17:06:50.280  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-01-19 17:06:50.404 ERROR 19396 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field jbInfoService in com.cnct.datax.controller.JbInfoController required a bean of type 'com.cnct.datax.service.JbInfoService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cnct.datax.service.JbInfoService' in your configuration.
+
+2020-01-19 17:06:55.175  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:06:55.176  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:06:55.634  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:06:55.715  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:06:55.715  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:06:55.750  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:06:55.843  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-26 - Starting...
+2020-01-19 17:06:55.844  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:06:55.879  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-26 - Start completed.
+2020-01-19 17:06:56.400  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.267 seconds (JVM running for 4596.586)
+2020-01-19 17:07:04.041  INFO 19396 --- [Thread-135] com.zaxxer.hikari.HikariDataSource       : HikariPool-26 - Shutdown initiated...
+2020-01-19 17:07:04.049  INFO 19396 --- [Thread-135] com.zaxxer.hikari.HikariDataSource       : HikariPool-26 - Shutdown completed.
+2020-01-19 17:07:05.091  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:07:05.091  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:07:05.671  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:07:05.872  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:07:05.872  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:07:05.916  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:07:06.010  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-27 - Starting...
+2020-01-19 17:07:06.010  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:07:06.015  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-27 - Start completed.
+2020-01-19 17:07:06.240  WARN 19396 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jbInfoController': Unsatisfied dependency expressed through field 'jbInfoService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cnct.datax.service.JbInfoService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-01-19 17:07:06.240  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-27 - Shutdown initiated...
+2020-01-19 17:07:06.242  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-27 - Shutdown completed.
+2020-01-19 17:07:06.242  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-01-19 17:07:06.465 ERROR 19396 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field jbInfoService in com.cnct.datax.controller.JbInfoController required a bean of type 'com.cnct.datax.service.JbInfoService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cnct.datax.service.JbInfoService' in your configuration.
+
+2020-01-19 17:07:11.157  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:07:11.157  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:07:11.931  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:07:12.122  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:07:12.122  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:07:12.165  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:07:12.337  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-28 - Starting...
+2020-01-19 17:07:12.337  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:07:12.341  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-28 - Start completed.
+2020-01-19 17:07:12.707  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.597 seconds (JVM running for 4612.892)
+2020-01-19 17:07:19.394  INFO 19396 --- [Thread-143] com.zaxxer.hikari.HikariDataSource       : HikariPool-28 - Shutdown initiated...
+2020-01-19 17:07:19.397  INFO 19396 --- [Thread-143] com.zaxxer.hikari.HikariDataSource       : HikariPool-28 - Shutdown completed.
+2020-01-19 17:07:20.406  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:07:20.406  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:07:20.887  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:07:20.958  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:07:20.958  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:07:20.982  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:07:21.036  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-29 - Starting...
+2020-01-19 17:07:21.037  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:07:21.039  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-29 - Start completed.
+2020-01-19 17:07:21.079  WARN 19396 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jbInfoController': Unsatisfied dependency expressed through field 'jbInfoService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cnct.datax.service.JbInfoService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-01-19 17:07:21.079  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-29 - Shutdown initiated...
+2020-01-19 17:07:21.081  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-29 - Shutdown completed.
+2020-01-19 17:07:21.081  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-01-19 17:07:21.261 ERROR 19396 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field jbInfoService in com.cnct.datax.controller.JbInfoController required a bean of type 'com.cnct.datax.service.JbInfoService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cnct.datax.service.JbInfoService' in your configuration.
+
+2020-01-19 17:07:27.042  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:07:27.042  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:07:27.704  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:07:27.923  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:07:27.923  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:07:27.957  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-5].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:07:28.053  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-30 - Starting...
+2020-01-19 17:07:28.053  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:07:28.057  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-30 - Start completed.
+2020-01-19 17:07:28.541  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.547 seconds (JVM running for 4628.726)
+2020-01-19 17:07:31.121  INFO 19396 --- [Thread-151] com.zaxxer.hikari.HikariDataSource       : HikariPool-30 - Shutdown initiated...
+2020-01-19 17:07:31.126  INFO 19396 --- [Thread-151] com.zaxxer.hikari.HikariDataSource       : HikariPool-30 - Shutdown completed.
+2020-01-19 17:07:32.324  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:07:32.325  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:07:32.808  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:07:32.927  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:07:32.927  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:07:32.951  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-5].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:07:33.011  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-31 - Starting...
+2020-01-19 17:07:33.011  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:07:33.014  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-31 - Start completed.
+2020-01-19 17:07:33.454  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.183 seconds (JVM running for 4633.639)
+2020-01-19 17:07:36.416  INFO 19396 --- [Thread-159] com.zaxxer.hikari.HikariDataSource       : HikariPool-31 - Shutdown initiated...
+2020-01-19 17:07:36.422  INFO 19396 --- [Thread-159] com.zaxxer.hikari.HikariDataSource       : HikariPool-31 - Shutdown completed.
+2020-01-19 17:07:37.391  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:07:37.391  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:07:38.183  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:07:38.410  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:07:38.410  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:07:38.450  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-5].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:07:38.551  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-32 - Starting...
+2020-01-19 17:07:38.551  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:07:38.558  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-32 - Start completed.
+2020-01-19 17:07:38.914  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.591 seconds (JVM running for 4639.099)
+2020-01-19 17:07:50.787  INFO 19396 --- [Thread-164] com.zaxxer.hikari.HikariDataSource       : HikariPool-32 - Shutdown initiated...
+2020-01-19 17:07:50.816  INFO 19396 --- [Thread-164] com.zaxxer.hikari.HikariDataSource       : HikariPool-32 - Shutdown completed.
+2020-01-19 17:07:51.858  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:07:51.859  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:07:52.344  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:07:52.426  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:07:52.426  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:07:52.451  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-5].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:07:52.506  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-33 - Starting...
+2020-01-19 17:07:52.506  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:07:52.509  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-33 - Start completed.
+2020-01-19 17:07:52.840  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.039 seconds (JVM running for 4653.025)
+2020-01-19 17:07:55.568  INFO 19396 --- [Thread-169] com.zaxxer.hikari.HikariDataSource       : HikariPool-33 - Shutdown initiated...
+2020-01-19 17:07:55.575  INFO 19396 --- [Thread-169] com.zaxxer.hikari.HikariDataSource       : HikariPool-33 - Shutdown completed.
+2020-01-19 17:07:56.737  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:07:56.737  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:07:57.290  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:07:57.369  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:07:57.369  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:07:57.400  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-5].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:07:57.498  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-34 - Starting...
+2020-01-19 17:07:57.498  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:07:57.503  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-34 - Start completed.
+2020-01-19 17:07:57.794  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.106 seconds (JVM running for 4657.979)
+2020-01-19 17:08:00.635  INFO 19396 --- [Thread-174] com.zaxxer.hikari.HikariDataSource       : HikariPool-34 - Shutdown initiated...
+2020-01-19 17:08:00.942  INFO 19396 --- [Thread-174] com.zaxxer.hikari.HikariDataSource       : HikariPool-34 - Shutdown completed.
+2020-01-19 17:08:02.210  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:08:02.211  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:08:02.739  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:08:02.974  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:08:02.975  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:08:02.998  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-5].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:08:03.040  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-35 - Starting...
+2020-01-19 17:08:03.040  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:08:03.042  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-35 - Start completed.
+2020-01-19 17:08:03.307  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.15 seconds (JVM running for 4663.492)
+2020-01-19 17:08:07.284  INFO 19396 --- [Thread-179] com.zaxxer.hikari.HikariDataSource       : HikariPool-35 - Shutdown initiated...
+2020-01-19 17:08:07.290  INFO 19396 --- [Thread-179] com.zaxxer.hikari.HikariDataSource       : HikariPool-35 - Shutdown completed.
+2020-01-19 17:08:08.202  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:08:08.202  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:08:08.971  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:08:09.074  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:08:09.074  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:08:09.105  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-5].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:08:09.169  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-36 - Starting...
+2020-01-19 17:08:09.169  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:08:09.173  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-36 - Start completed.
+2020-01-19 17:08:09.515  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.353 seconds (JVM running for 4669.7)
+2020-01-19 17:08:24.955  INFO 19396 --- [Thread-184] com.zaxxer.hikari.HikariDataSource       : HikariPool-36 - Shutdown initiated...
+2020-01-19 17:08:24.959  INFO 19396 --- [Thread-184] com.zaxxer.hikari.HikariDataSource       : HikariPool-36 - Shutdown completed.
+2020-01-19 17:08:25.839  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:08:25.839  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:08:26.632  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:08:26.744  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:08:26.745  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:08:26.774  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-5].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:08:26.833  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-37 - Starting...
+2020-01-19 17:08:26.833  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:08:26.836  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-37 - Start completed.
+2020-01-19 17:08:27.048  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.253 seconds (JVM running for 4687.233)
+2020-01-19 17:08:34.927  INFO 19396 --- [Thread-189] com.zaxxer.hikari.HikariDataSource       : HikariPool-37 - Shutdown initiated...
+2020-01-19 17:08:34.935  INFO 19396 --- [Thread-189] com.zaxxer.hikari.HikariDataSource       : HikariPool-37 - Shutdown completed.
+2020-01-19 17:08:35.880  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:08:35.881  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:08:36.414  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:08:36.487  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:08:36.487  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:08:36.513  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-5].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:08:36.556  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-38 - Starting...
+2020-01-19 17:08:36.557  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:08:36.560  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-38 - Start completed.
+2020-01-19 17:08:36.589  WARN 19396 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jbInfoController': Unsatisfied dependency expressed through field 'jbInfoService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.cnct.datax.service.JbInfoService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-01-19 17:08:36.589  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-38 - Shutdown initiated...
+2020-01-19 17:08:36.590  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-38 - Shutdown completed.
+2020-01-19 17:08:36.590  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-01-19 17:08:36.749 ERROR 19396 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field jbInfoService in com.cnct.datax.controller.JbInfoController required a bean of type 'com.cnct.datax.service.JbInfoService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.cnct.datax.service.JbInfoService' in your configuration.
+
+2020-01-19 17:08:41.472  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:08:41.473  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:08:41.941  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:08:42.138  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:08:42.138  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:08:42.182  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:08:42.247  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-39 - Starting...
+2020-01-19 17:08:42.247  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:08:42.251  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-39 - Start completed.
+2020-01-19 17:08:42.521  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.113 seconds (JVM running for 4702.707)
+2020-01-19 17:08:45.191  INFO 19396 --- [Thread-194] com.zaxxer.hikari.HikariDataSource       : HikariPool-39 - Shutdown initiated...
+2020-01-19 17:08:45.219  INFO 19396 --- [Thread-194] com.zaxxer.hikari.HikariDataSource       : HikariPool-39 - Shutdown completed.
+2020-01-19 17:08:46.529  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:08:46.530  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:08:46.985  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:08:47.087  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:08:47.088  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:08:47.108  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:08:47.175  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-40 - Starting...
+2020-01-19 17:08:47.175  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:08:47.178  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-40 - Start completed.
+2020-01-19 17:08:47.478  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.003 seconds (JVM running for 4707.663)
+2020-01-19 17:08:50.041  INFO 19396 --- [Thread-202] com.zaxxer.hikari.HikariDataSource       : HikariPool-40 - Shutdown initiated...
+2020-01-19 17:08:50.053  INFO 19396 --- [Thread-202] com.zaxxer.hikari.HikariDataSource       : HikariPool-40 - Shutdown completed.
+2020-01-19 17:08:51.064  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:08:51.064  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:08:51.563  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:08:51.658  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:08:51.658  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:08:51.680  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:08:51.730  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-41 - Starting...
+2020-01-19 17:08:51.730  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:08:51.733  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-41 - Start completed.
+2020-01-19 17:08:51.982  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 0.969 seconds (JVM running for 4712.167)
+2020-01-19 17:09:17.843  INFO 19396 --- [Thread-207] com.zaxxer.hikari.HikariDataSource       : HikariPool-41 - Shutdown initiated...
+2020-01-19 17:09:17.863  INFO 19396 --- [Thread-207] com.zaxxer.hikari.HikariDataSource       : HikariPool-41 - Shutdown completed.
+2020-01-19 17:09:19.052  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:09:19.052  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:09:19.529  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:09:19.604  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:09:19.604  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:09:19.655  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:09:19.701  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-42 - Starting...
+2020-01-19 17:09:19.701  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:09:19.707  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-42 - Start completed.
+2020-01-19 17:09:19.996  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 0.986 seconds (JVM running for 4740.181)
+2020-01-19 17:09:24.249  INFO 19396 --- [Thread-212] com.zaxxer.hikari.HikariDataSource       : HikariPool-42 - Shutdown initiated...
+2020-01-19 17:09:24.256  INFO 19396 --- [Thread-212] com.zaxxer.hikari.HikariDataSource       : HikariPool-42 - Shutdown completed.
+2020-01-19 17:09:25.447  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:09:25.447  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:09:26.291  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:09:26.542  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:09:26.542  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:09:26.596  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:09:26.684  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-43 - Starting...
+2020-01-19 17:09:26.684  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:09:26.688  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-43 - Start completed.
+2020-01-19 17:09:27.239  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.86 seconds (JVM running for 4747.424)
+2020-01-19 17:09:28.766  INFO 19396 --- [Thread-217] com.zaxxer.hikari.HikariDataSource       : HikariPool-43 - Shutdown initiated...
+2020-01-19 17:09:28.775  INFO 19396 --- [Thread-217] com.zaxxer.hikari.HikariDataSource       : HikariPool-43 - Shutdown completed.
+2020-01-19 17:09:29.773  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:09:29.783  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:09:30.270  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:09:30.343  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:09:30.343  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:09:30.367  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:09:30.412  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-44 - Starting...
+2020-01-19 17:09:30.412  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:09:30.416  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-44 - Start completed.
+2020-01-19 17:09:30.707  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.004 seconds (JVM running for 4750.892)
+2020-01-19 17:09:34.827  INFO 19396 --- [Thread-222] com.zaxxer.hikari.HikariDataSource       : HikariPool-44 - Shutdown initiated...
+2020-01-19 17:09:34.832  INFO 19396 --- [Thread-222] com.zaxxer.hikari.HikariDataSource       : HikariPool-44 - Shutdown completed.
+2020-01-19 17:09:35.780  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:09:35.780  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:09:36.539  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:09:36.657  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:09:36.657  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:09:36.760  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:09:36.869  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-45 - Starting...
+2020-01-19 17:09:36.870  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:09:36.872  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-45 - Start completed.
+2020-01-19 17:09:37.334  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.614 seconds (JVM running for 4757.519)
+2020-01-19 17:09:38.988  INFO 19396 --- [Thread-227] com.zaxxer.hikari.HikariDataSource       : HikariPool-45 - Shutdown initiated...
+2020-01-19 17:09:39.050  INFO 19396 --- [Thread-227] com.zaxxer.hikari.HikariDataSource       : HikariPool-45 - Shutdown completed.
+2020-01-19 17:09:40.257  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:09:40.257  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:09:40.715  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:09:40.860  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:09:40.860  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:09:40.967  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:09:41.057  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-46 - Starting...
+2020-01-19 17:09:41.057  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:09:41.059  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-46 - Start completed.
+2020-01-19 17:09:41.319  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.116 seconds (JVM running for 4761.505)
+2020-01-19 17:09:44.884  INFO 19396 --- [Thread-232] com.zaxxer.hikari.HikariDataSource       : HikariPool-46 - Shutdown initiated...
+2020-01-19 17:09:44.887  INFO 19396 --- [Thread-232] com.zaxxer.hikari.HikariDataSource       : HikariPool-46 - Shutdown completed.
+2020-01-19 17:09:45.983  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:09:45.983  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:09:46.465  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:09:46.541  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:09:46.541  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:09:46.611  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:09:46.661  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-47 - Starting...
+2020-01-19 17:09:46.661  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:09:46.665  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-47 - Start completed.
+2020-01-19 17:09:46.919  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.118 seconds (JVM running for 4767.104)
+2020-01-19 17:09:52.632  INFO 19396 --- [Thread-237] com.zaxxer.hikari.HikariDataSource       : HikariPool-47 - Shutdown initiated...
+2020-01-19 17:09:52.654  INFO 19396 --- [Thread-237] com.zaxxer.hikari.HikariDataSource       : HikariPool-47 - Shutdown completed.
+2020-01-19 17:09:54.427  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:09:54.428  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:09:54.975  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:09:55.055  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:09:55.055  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:09:55.077  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:09:55.123  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-48 - Starting...
+2020-01-19 17:09:55.123  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:09:55.128  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-48 - Start completed.
+2020-01-19 17:09:55.576  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.196 seconds (JVM running for 4775.762)
+2020-01-19 17:09:59.361  INFO 19396 --- [Thread-242] com.zaxxer.hikari.HikariDataSource       : HikariPool-48 - Shutdown initiated...
+2020-01-19 17:09:59.368  INFO 19396 --- [Thread-242] com.zaxxer.hikari.HikariDataSource       : HikariPool-48 - Shutdown completed.
+2020-01-19 17:10:00.497  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:10:00.497  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:10:00.953  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:10:01.035  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:10:01.035  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:10:01.062  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:10:01.110  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-49 - Starting...
+2020-01-19 17:10:01.110  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:10:01.112  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-49 - Start completed.
+2020-01-19 17:10:01.439  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.005 seconds (JVM running for 4781.623)
+2020-01-19 17:10:03.947  INFO 19396 --- [Thread-247] com.zaxxer.hikari.HikariDataSource       : HikariPool-49 - Shutdown initiated...
+2020-01-19 17:10:03.952  INFO 19396 --- [Thread-247] com.zaxxer.hikari.HikariDataSource       : HikariPool-49 - Shutdown completed.
+2020-01-19 17:10:04.895  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:10:04.895  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:10:05.307  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:10:05.377  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:10:05.377  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:10:05.401  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:10:05.453  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-50 - Starting...
+2020-01-19 17:10:05.453  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:10:05.456  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-50 - Start completed.
+2020-01-19 17:10:05.742  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 0.885 seconds (JVM running for 4785.927)
+2020-01-19 17:10:36.584  INFO 19396 --- [Thread-252] com.zaxxer.hikari.HikariDataSource       : HikariPool-50 - Shutdown initiated...
+2020-01-19 17:10:36.592  INFO 19396 --- [Thread-252] com.zaxxer.hikari.HikariDataSource       : HikariPool-50 - Shutdown completed.
+2020-01-19 17:10:37.512  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:10:37.512  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:10:38.247  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:10:38.385  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:10:38.385  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:10:38.421  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:10:38.485  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-51 - Starting...
+2020-01-19 17:10:38.485  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:10:38.489  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-51 - Start completed.
+2020-01-19 17:10:38.925  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.443 seconds (JVM running for 4819.11)
+2020-01-19 17:10:42.619  INFO 19396 --- [Thread-257] com.zaxxer.hikari.HikariDataSource       : HikariPool-51 - Shutdown initiated...
+2020-01-19 17:10:42.625  INFO 19396 --- [Thread-257] com.zaxxer.hikari.HikariDataSource       : HikariPool-51 - Shutdown completed.
+2020-01-19 17:10:44.011  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:10:44.011  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:10:44.520  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:10:44.656  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:10:44.656  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:10:44.683  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:10:44.757  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-52 - Starting...
+2020-01-19 17:10:44.758  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:10:44.761  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-52 - Start completed.
+2020-01-19 17:10:45.054  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 1.121 seconds (JVM running for 4825.24)
+2020-01-19 17:10:47.612  INFO 19396 --- [Thread-262] com.zaxxer.hikari.HikariDataSource       : HikariPool-52 - Shutdown initiated...
+2020-01-19 17:10:47.654  INFO 19396 --- [Thread-262] com.zaxxer.hikari.HikariDataSource       : HikariPool-52 - Shutdown completed.
+2020-01-19 17:10:48.846  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:10:48.847  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:10:49.377  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:10:49.461  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:10:49.461  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:10:49.485  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:10:49.532  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-53 - Starting...
+2020-01-19 17:10:49.532  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:10:49.536  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-53 - Start completed.
+2020-01-19 17:10:49.775  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 0.979 seconds (JVM running for 4829.96)
+2020-01-19 17:11:50.085  INFO 19396 --- [Thread-267] com.zaxxer.hikari.HikariDataSource       : HikariPool-53 - Shutdown initiated...
+2020-01-19 17:11:50.093  INFO 19396 --- [Thread-267] com.zaxxer.hikari.HikariDataSource       : HikariPool-53 - Shutdown completed.
+2020-01-19 17:11:51.155  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19396 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:11:51.155  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:11:51.619  WARN 19396 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:11:51.708  INFO 19396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:11:51.709  INFO 19396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:11:51.736  INFO 19396 --- [restartedMain] o.a.c.c.C.[Tomcat-6].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:11:51.779  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-54 - Starting...
+2020-01-19 17:11:51.779  WARN 19396 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:11:51.782  INFO 19396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-54 - Start completed.
+2020-01-19 17:11:52.033  INFO 19396 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 0.935 seconds (JVM running for 4892.218)
+2020-01-19 17:11:55.656  INFO 19396 --- [Thread-272] com.zaxxer.hikari.HikariDataSource       : HikariPool-54 - Shutdown initiated...
+2020-01-19 17:11:55.660  INFO 19396 --- [Thread-272] com.zaxxer.hikari.HikariDataSource       : HikariPool-54 - Shutdown completed.
+2020-01-19 17:12:05.811  INFO 10464 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 10464 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:12:05.815  INFO 10464 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:12:07.739  INFO 10464 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:12:07.739  INFO 10464 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:12:07.890  INFO 10464 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:12:08.123  INFO 10464 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-01-19 17:12:08.125  WARN 10464 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:12:08.818  INFO 10464 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-01-19 17:12:10.075  INFO 10464 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 5.92 seconds (JVM running for 8.178)
+2020-01-19 17:14:35.165  INFO 10464 --- [http-nio-8004-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-19 17:14:36.481 DEBUG 10464 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-19 17:14:36.481 DEBUG 10464 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-19 17:14:36.514 DEBUG 10464 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-19 17:14:36.515 DEBUG 10464 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-19 17:14:36.518 DEBUG 10464 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-19 17:14:36.520 DEBUG 10464 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-19 17:14:36.552 DEBUG 10464 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-19 17:14:36.551 DEBUG 10464 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-19 17:14:36.567 DEBUG 10464 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-19 17:14:36.567 DEBUG 10464 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-19 17:14:36.568 DEBUG 10464 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-19 17:14:36.571 DEBUG 10464 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-19 17:14:38.807 DEBUG 10464 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2020-01-19 17:14:38.807 DEBUG 10464 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-19 17:14:38.808 DEBUG 10464 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 50(Integer)
+2020-01-19 17:14:38.808 DEBUG 10464 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-19 17:14:38.810 DEBUG 10464 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-19 17:14:38.811 DEBUG 10464 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2020-01-19 17:14:38.926 DEBUG 10464 --- [http-nio-8004-exec-18] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
+2020-01-19 17:14:38.927 DEBUG 10464 --- [http-nio-8004-exec-18] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 50(String)
+2020-01-19 17:14:38.928 DEBUG 10464 --- [http-nio-8004-exec-18] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
+2020-01-19 17:14:38.929 DEBUG 10464 --- [http-nio-8004-exec-18] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
+2020-01-19 17:14:38.929 DEBUG 10464 --- [http-nio-8004-exec-18] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 50(String)
+2020-01-19 17:14:38.932 DEBUG 10464 --- [http-nio-8004-exec-18] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
+2020-01-19 17:14:52.342 DEBUG 10464 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.editJbInfoById    : ==>  Preparing: UPDATE jb_info a SET a.jb_channel = ?, a.jb_byte = ?, a.jb_record = ?, a.jb_percentage = ?, a.jb_group_id = ?, a.jb_name = ?, a.r_jb_column = ?, a.r_jb_table = ?, a.r_jb_url = ?, a.r_jb_splitPk = ?, a.r_jb_sql = ?, a.r_where = ?, a.w_jb_mode = ?, a.w_jb_column = ?, a.w_jb_session = ?, a.w_jb_presql = ?, a.w_jb_postsql = ?, a.w_jb_url = ?, a.w_jb_table = ?, a.jb_bz = ?, a.jb_xgsj = NOW(), a.jb_json_file_name = ?, a.jb_json_fullPath = ?, a.jb_json_info = ? WHERE a.id = ? AND a.jb_yxbz = 'Y' 
+2020-01-19 17:14:52.343 DEBUG 10464 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.editJbInfoById    : ==> Parameters: 5(Integer), 1048576(Integer), 0(Integer), 0.02(Double), 2(String), M_TO_TXT_3(String), (String), (String), (String), (String), (String), (String), insert(String), (String), (String), (String), (String), (String), (String), 备注(String), 2_8856547026734a31a9cf16055aa07191(String), G:\ideal_project_test\datax\target\classes\json\2_8856547026734a31a9cf16055aa07191.json(String), {
+ "job":
+ {
+  "content":
+  [
+   {
+    "reader":
+    {
+     "parameter":
+     {
+      "userPassword":"123456",
+      "address":
+      [
+       "mongodb://root123:123456@192.168.1.1:27017",
+       "mongodb://root:abc123@127.0.1.1:27107"
+      ],
+      "dbName":"aabbcc123",
+      "column":
+      [
+       {
+        "name":"0",
+        "type":"string"
+       },
+       {
+        "name":"1",
+        "type":"int"
+       }
+
+      ],
+      "userName":"root123",
+      "collectionName":"array"
+     },
+     "name":"mongodbreader"
+    },
+    "writer":
+    {
+     "parameter":
+     {
+      "path":"/d:/",
+      "fileName":"file456",
+      "compress":"zip",
+      "dateFormat":"yyyy-MM-dd",
+      "header":
+      [
+       "id",
+       "name",
+       "age"
+      ],
+      "writeMode":"truncate",
+      "fieldDelimiter":",
+      ",
+      "encoding":"utf-8"
+     },
+     "name":"txtfilewriter"
+    }
+
+   }
+
+  ],
+  "setting":
+  {
+   "errorLimit":
+   {
+    "percentage":0.02
+   },
+   "speed":
+   {
+    "byte":1048576,
+    "channel":5
+   }
+
+  }
+
+ }
+
+}(String), 50(Integer)
+2020-01-19 17:14:52.420 DEBUG 10464 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.editJbInfoById    : <==    Updates: 1
+2020-01-19 17:14:52.422 DEBUG 10464 --- [http-nio-8004-exec-20] c.c.d.d.J.editJbInfoByIdMongoDB          : ==>  Preparing: UPDATE jb_mongodb_info a SET a.jb_mongodb_address_r = ?, a.jb_mongodb_username_r = ?, a.jb_mongodb_userpasw_r = ?, a.jb_mongodb_dbname_r = ?, a.jb_mongodb_collname_r = ?, a.jb_mongodb_column_r = ?, a.jb_mongodb_address_w = ?, a.jb_mongodb_username_w = ?, a.jb_mongodb_userpasw_w = ?, a.jb_mongodb_dbname_w = ?, a.jb_mongodb_collname_w = ?, a.jb_mongodb_column_w = ?, a.jb_mongodb_isupsert_w = ?, a.jb_mongodb_upsertKey_w = ? WHERE a.jb_mongodb_id = ? 
+2020-01-19 17:14:52.424 DEBUG 10464 --- [http-nio-8004-exec-20] c.c.d.d.J.editJbInfoByIdMongoDB          : ==> Parameters: mongodb://root123:123456@192.168.1.1:27017,mongodb://root:abc123@127.0.1.1:27107(String), root123(String), 123456(String), aabbcc123(String), array(String), {"name":"0","type":"string"}&{"name":"1","type":"int"}(String), (String), (String), (String), (String), (String), (String), true(Boolean), (String), 50(String)
+2020-01-19 17:14:52.454 DEBUG 10464 --- [http-nio-8004-exec-20] c.c.d.d.J.editJbInfoByIdMongoDB          : <==    Updates: 1
+2020-01-19 17:14:52.455 DEBUG 10464 --- [http-nio-8004-exec-20] c.c.d.d.J.editJbInfoByIdTxtFile          : ==>  Preparing: UPDATE jb_txtfile_info a SET a.jb_r_txtFile_path = ?, a.jb_r_txtFile_en = ?, a.jb_r_txtFile_column = ?, a.jb_r_txtFile_fgf = ?, a.jb_r_txtFile_ysgs = ?, a.jb_r_txtFile_csv_h = ?, a.jb_w_txtFile_path = ?, a.jb_w_txtFile_filename = ?, a.jb_w_txtfile_ms = ?, a.jb_w_txtfile_fgf = ?, a.jb_w_txtfile_ysgs = ?, a.jb_w_txtfile_en = ?, a.jb_w_txtfile_dateF = ?, a.jb_w_txtfile_fileF = ?, a.jb_w_txtfile_header = ? WHERE a.jb_txtFile_id = ? 
+2020-01-19 17:14:52.457 DEBUG 10464 --- [http-nio-8004-exec-20] c.c.d.d.J.editJbInfoByIdTxtFile          : ==> Parameters: (String), UTF-8(String), (String), ,(String), zip(String), false(Boolean), /d:/(String), file456(String), truncate(String), ,(String), zip(String), utf-8(String), yyyy-MM-dd(String), null, id,name,age(String), 50(String)
+2020-01-19 17:14:52.487 DEBUG 10464 --- [http-nio-8004-exec-20] c.c.d.d.J.editJbInfoByIdTxtFile          : <==    Updates: 1
+2020-01-19 17:14:52.513 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-19 17:14:52.514 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-19 17:14:52.533 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-19 17:14:52.533 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-19 17:14:52.533 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-19 17:14:52.537 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-19 17:14:53.426  INFO 10464 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-01-19 17:14:53.436  INFO 10464 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-01-19 17:14:54.289  INFO 10464 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 10464 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-19 17:14:54.289  INFO 10464 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-19 17:14:54.769  WARN 10464 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-01-19 17:14:54.836  INFO 10464 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:14:54.837  INFO 10464 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:14:54.878  INFO 10464 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:14:54.929  INFO 10464 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-01-19 17:14:54.929  WARN 10464 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-19 17:14:54.933  INFO 10464 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-01-19 17:14:55.210  INFO 10464 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 0.967 seconds (JVM running for 173.313)
+2020-01-19 17:14:55.385  INFO 10464 --- [http-nio-8004-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-19 17:14:55.541 DEBUG 10464 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2020-01-19 17:14:55.541 DEBUG 10464 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 50(Integer)
+2020-01-19 17:14:55.543 DEBUG 10464 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2020-01-19 17:14:55.544 DEBUG 10464 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
+2020-01-19 17:14:55.545 DEBUG 10464 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 50(String)
+2020-01-19 17:14:55.547 DEBUG 10464 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
+2020-01-19 17:14:55.547 DEBUG 10464 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
+2020-01-19 17:14:55.548 DEBUG 10464 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 50(String)
+2020-01-19 17:14:55.550 DEBUG 10464 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
+2020-01-19 17:15:04.199 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
+2020-01-19 17:15:04.201 DEBUG 10464 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-19 17:15:04.201 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 50(Integer)
+2020-01-19 17:15:04.201 DEBUG 10464 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-19 17:15:04.202 DEBUG 10464 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-19 17:15:04.203 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
+2020-01-19 17:15:04.204 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
+2020-01-19 17:15:04.205 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 50(String)
+2020-01-19 17:15:04.207 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
+2020-01-19 17:15:04.209 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
+2020-01-19 17:15:04.209 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 50(String)
+2020-01-19 17:15:04.212 DEBUG 10464 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1

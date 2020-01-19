@@ -129,33 +129,69 @@ public class JbInfoServiceImpl implements JbInfoService{
      */
     @Override
     public void editJbInfoById(JbInfo jbInfo) {
-        if("3".equals(jbInfo.getR_db_type()) || "3".equals(jbInfo.getW_db_type())){
+        jbInfoMapper.editJbInfoById(jbInfo);
+        if("3".equals(jbInfo.getR_db_type()) && !"3".equals(jbInfo.getW_db_type())){
             TxtFileInfo txtFileInfo = jbInfo.getTxtFileInfo();
             txtFileInfo.setJb_txtFile_id(String.valueOf(jbInfo.getId()));
-            jbInfoMapper.editJbInfoById(jbInfo);
             jbInfoMapper.editJbInfoByIdTxtFile(txtFileInfo);
-        }else if("5".equals(jbInfo.getR_db_type()) || "5".equals(jbInfo.getW_db_type())){
+        }else if("5".equals(jbInfo.getR_db_type()) && !"5".equals(jbInfo.getW_db_type())){
             FtpInfo ftpInfo = jbInfo.getFtpInfo();
             ftpInfo.setJb_ftp_id(String.valueOf(jbInfo.getId()));
-            jbInfoMapper.editJbInfoById(jbInfo);
             jbInfoMapper.editJbInfoByIdFtP(ftpInfo);
-        }else if("6".equals(jbInfo.getR_db_type()) || "6".equals(jbInfo.getW_db_type())){
+        }else if("6".equals(jbInfo.getR_db_type()) && !"6".equals(jbInfo.getW_db_type())){
             MongodbInfo mongodbInfo = jbInfo.getMongodbInfo();
             mongodbInfo.setJb_mongodb_id(String.valueOf(jbInfo.getId()));
-            jbInfoMapper.editJbInfoById(jbInfo);
             jbInfoMapper.editJbInfoByIdMongoDB(mongodbInfo);
-        }else if("7".equals(jbInfo.getR_db_type()) || "7".equals(jbInfo.getW_db_type())){
+        }else if("7".equals(jbInfo.getR_db_type()) && !"7".equals(jbInfo.getW_db_type())){
             CassandraInfo cassandraInfo = jbInfo.getCassandraInfo();
             cassandraInfo.setJb_cassandra_id(String.valueOf(jbInfo.getId()));
-            jbInfoMapper.editJbInfoById(jbInfo);
             jbInfoMapper.editJbInfoByIdCassandra(cassandraInfo);
-        }else if("8".equals(jbInfo.getR_db_type()) || "8".equals(jbInfo.getW_db_type())){
+        }else if("8".equals(jbInfo.getR_db_type()) && !"8".equals(jbInfo.getW_db_type())){
             DrdsInfo drdsInfo = jbInfo.getDrdsInfo();
             drdsInfo.setJb_drds_id(String.valueOf(jbInfo.getId()));
-            jbInfoMapper.editJbInfoById(jbInfo);
             jbInfoMapper.editJbInfoByIdDrds(drdsInfo);
-        }else {
-            jbInfoMapper.editJbInfoById(jbInfo);
+        }
+        if("3".equals(jbInfo.getW_db_type()) && !"3".equals(jbInfo.getR_db_type())){
+            TxtFileInfo txtFileInfo = jbInfo.getTxtFileInfo();
+            txtFileInfo.setJb_txtFile_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoByIdTxtFile(txtFileInfo);
+        }else if("5".equals(jbInfo.getW_db_type()) && !"5".equals(jbInfo.getR_db_type())){
+            FtpInfo ftpInfo = jbInfo.getFtpInfo();
+            ftpInfo.setJb_ftp_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoByIdFtP(ftpInfo);
+        }else if("6".equals(jbInfo.getW_db_type()) && !"6".equals(jbInfo.getR_db_type())){
+            MongodbInfo mongodbInfo = jbInfo.getMongodbInfo();
+            mongodbInfo.setJb_mongodb_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoByIdMongoDB(mongodbInfo);
+        }else if("7".equals(jbInfo.getW_db_type()) && !"7".equals(jbInfo.getR_db_type())){
+            CassandraInfo cassandraInfo = jbInfo.getCassandraInfo();
+            cassandraInfo.setJb_cassandra_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoByIdCassandra(cassandraInfo);
+        }else if("8".equals(jbInfo.getW_db_type()) && !"8".equals(jbInfo.getR_db_type())){
+            DrdsInfo drdsInfo = jbInfo.getDrdsInfo();
+            drdsInfo.setJb_drds_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoByIdDrds(drdsInfo);
+        }
+        if("3".equals(jbInfo.getR_db_type()) && "3".equals(jbInfo.getW_db_type())){
+            TxtFileInfo txtFileInfo = jbInfo.getTxtFileInfo();
+            txtFileInfo.setJb_txtFile_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoByIdTxtFile(txtFileInfo);
+        }else if("5".equals(jbInfo.getR_db_type()) && "5".equals(jbInfo.getW_db_type())){
+            FtpInfo ftpInfo = jbInfo.getFtpInfo();
+            ftpInfo.setJb_ftp_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoByIdFtP(ftpInfo);
+        }else if("6".equals(jbInfo.getR_db_type()) && "6".equals(jbInfo.getW_db_type())){
+            MongodbInfo mongodbInfo = jbInfo.getMongodbInfo();
+            mongodbInfo.setJb_mongodb_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoByIdMongoDB(mongodbInfo);
+        }else if("7".equals(jbInfo.getR_db_type()) && "7".equals(jbInfo.getW_db_type())){
+            CassandraInfo cassandraInfo = jbInfo.getCassandraInfo();
+            cassandraInfo.setJb_cassandra_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoByIdCassandra(cassandraInfo);
+        }else if("8".equals(jbInfo.getR_db_type()) && "8".equals(jbInfo.getW_db_type())){
+            DrdsInfo drdsInfo = jbInfo.getDrdsInfo();
+            drdsInfo.setJb_drds_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoByIdDrds(drdsInfo);
         }
     }
     /**
