@@ -2,9 +2,7 @@ package com.cnct.datax.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.cnct.datax.entity.JbInfo;
-import com.cnct.datax.entity.PageUtil;
-import com.cnct.datax.entity.TxtFileInfo;
+import com.cnct.datax.entity.*;
 import com.cnct.datax.service.JbInfoService;
 import com.cnct.datax.util.*;
 import com.cnct.datax.util.reader.*;
@@ -64,7 +62,6 @@ public class JbInfoController {
         String jsonString = "";
         JSONObject reader = null;
         JSONObject writer = null;
-
         try {
             //新增数据之前需要把前台传递过来column、table、jdbcUrl、querySql字符串处理成数组
             jbInfo.setR_jb_column_arr(jbInfo.getR_jb_column().split(","));
@@ -238,26 +235,49 @@ public class JbInfoController {
             JbInfo jbInfo = new JbInfo();
             jbInfo.setId(id);
             JbInfo jbInfo_obj = new JbInfo();
-            if("3".equals(r_db_type) || "3".equals(w_db_type)){
-                jbInfo_obj = jbInfoService.queryJbInfoByIdTxtFile(jbInfo);
-            }else if("5".equals(r_db_type) || "5".equals(w_db_type)){
-                jbInfo_obj = jbInfoService.queryJbInfoByIdFtp(jbInfo);
-            }else if("6".equals(r_db_type) || "6".equals(w_db_type)){
-                jbInfo_obj = jbInfoService.queryJbInfoByIdMongoDB(jbInfo);
-            }else if("7".equals(r_db_type) || "7".equals(w_db_type)){
-                jbInfo_obj = jbInfoService.queryJbInfoByIdCassandra(jbInfo);
-            }else if("8".equals(r_db_type) || "8".equals(w_db_type)){
-                jbInfo_obj = jbInfoService.queryJbInfoByIdDrds(jbInfo);
+            jbInfo_obj = jbInfoService.queryJbInfoById(jbInfo);
+            if("3".equals(r_db_type)){
+                TxtFileInfo txtFileInfo = jbInfoService.queryJbInfoByIdTxtFile(jbInfo);
+                jbInfo_obj.setTxtFileInfo(txtFileInfo);
+            }else if("5".equals(r_db_type)){
+                FtpInfo ftpInfo = jbInfoService.queryJbInfoByIdFtp(jbInfo);
+                jbInfo_obj.setFtpInfo(ftpInfo);
+            }else if("6".equals(r_db_type)){
+                MongodbInfo mongodbInfo = jbInfoService.queryJbInfoByIdMongoDB(jbInfo);
+                jbInfo_obj.setMongodbInfo(mongodbInfo);
+            }else if("7".equals(r_db_type)){
+                CassandraInfo cassandraInfo = jbInfoService.queryJbInfoByIdCassandra(jbInfo);
+                jbInfo_obj.setCassandraInfo(cassandraInfo);
+            }else if("8".equals(r_db_type)){
+                DrdsInfo drdsInfo = jbInfoService.queryJbInfoByIdDrds(jbInfo);
+                jbInfo_obj.setDrdsInfo(drdsInfo);
             }else {
-                jbInfo_obj = jbInfoService.queryJbInfoById(jbInfo);
-                /*这里获取的reader的username和password默认取的是r_db_id的第一个*/
+                //*这里获取的reader的username和password默认取的是r_db_id的第一个*//*
                 String[] r_db_id_arr = jbInfo_obj.getR_db_id().split(",");
                 jbInfo_obj.setR_db_username(jbInfoService.queryDbInfoById(r_db_id_arr[0]).getDb_username());
                 jbInfo_obj.setR_db_password(jbInfoService.queryDbInfoById(r_db_id_arr[0]).getDb_password());
+                jbInfo_obj.setR_db_url(jbInfo_obj.getR_jb_url());
+            }
+
+            if("3".equals(w_db_type)){
+                TxtFileInfo txtFileInfo = jbInfoService.queryJbInfoByIdTxtFile(jbInfo);
+                jbInfo_obj.setTxtFileInfo(txtFileInfo);
+            }else if("5".equals(w_db_type)){
+                FtpInfo ftpInfo = jbInfoService.queryJbInfoByIdFtp(jbInfo);
+                jbInfo_obj.setFtpInfo(ftpInfo);
+            }else if("6".equals(w_db_type)){
+                MongodbInfo mongodbInfo = jbInfoService.queryJbInfoByIdMongoDB(jbInfo);
+                jbInfo_obj.setMongodbInfo(mongodbInfo);
+            }else if("7".equals(w_db_type)){
+                CassandraInfo cassandraInfo = jbInfoService.queryJbInfoByIdCassandra(jbInfo);
+                jbInfo_obj.setCassandraInfo(cassandraInfo);
+            }else if("8".equals(w_db_type)){
+                DrdsInfo drdsInfo = jbInfoService.queryJbInfoByIdDrds(jbInfo);
+                jbInfo_obj.setDrdsInfo(drdsInfo);
+            }else {
+                //*这里获取的reader的username和password默认取的是r_db_id的第一个*//*
                 jbInfo_obj.setW_db_username(jbInfoService.queryDbInfoById(jbInfo_obj.getW_db_id()).getDb_username());
                 jbInfo_obj.setW_db_password(jbInfoService.queryDbInfoById(jbInfo_obj.getW_db_id()).getDb_password());
-
-                jbInfo_obj.setR_db_url(jbInfo_obj.getR_jb_url());
                 jbInfo_obj.setW_db_url(jbInfo_obj.getW_jb_url());
             }
             map.put("code",0);

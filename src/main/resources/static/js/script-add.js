@@ -114,7 +114,6 @@ $(function () {
                     $('#w_add_mongodb_pasw').val(data_w[0].db_password);
                 }
                 if(data_w[0].db_type == 7){
-                    $('.w_cassandra').removeClass('layui-hide');
                     var w_db_host = '';
                     var w_db_host_arr = [];
                     if(data_w.length > 0){
@@ -123,7 +122,7 @@ $(function () {
                         });
                     }
                     w_db_host = w_db_host_arr.join(',');
-                    $('.cassandra').removeClass('layui-hide');
+                    $('.w_cassandra').removeClass('layui-hide');
                     $('#w_add_cassandra_host').val(w_db_host);
                     $('#w_add_cassandra_port').val(data_w[0].db_port);
                     $('#w_add_cassandra_username').val(data_w[0].db_username);
@@ -173,6 +172,7 @@ $(function () {
         }else if(db_type_arr_1.indexOf(getSearchString('r_db_type'))>-1){//表示reader区域是mysql或者oracle
             $('.mysqlAndOracle').removeClass('layui-hide');
             $('.txtFile').addClass('layui-hide');
+
             if(getSearchString('jb_tbgs') == 1){
                 $('#sc-add-sql').addClass('layui-hide');
                 $('#sc-add-col').removeClass('layui-hide');

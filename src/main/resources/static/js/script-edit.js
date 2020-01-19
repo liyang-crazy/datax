@@ -78,10 +78,6 @@ $(function () {
                     if(res.code == 0){
                         jb_group_arr = res.data;
                     }
-                    /*$.each(res.data, function (index, item) {
-                        $('#edit_jb_group').append(new Option(item.jb_group_name, item.jb_group_id));
-                    });*/
-                    //layui.form.render("select");//重新渲染 固定写法
                 }
             });
         };

@@ -39,33 +39,72 @@ public class JbInfoServiceImpl implements JbInfoService{
      */
     @Override
     public void addJbInfo(JbInfo jbInfo) {
-        if("3".equals(jbInfo.getR_db_type()) || "3".equals(jbInfo.getW_db_type())){
+        jbInfoMapper.addJbInfo(jbInfo);
+        if("3".equals(jbInfo.getR_db_type()) && !"3".equals(jbInfo.getW_db_type())){
             /*txtfile文件添加*/
-            jbInfoMapper.addJbInfo(jbInfo);
             jbInfo.getTxtFileInfo().setJb_txtFile_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.addTxtfileJbInfo(jbInfo);
-        }else if("5".equals(jbInfo.getR_db_type()) || "5".equals(jbInfo.getW_db_type())){
+        }else if("5".equals(jbInfo.getR_db_type()) && !"5".equals(jbInfo.getW_db_type())){
             /*ftp文件添加*/
-            jbInfoMapper.addJbInfo(jbInfo);
             jbInfo.getFtpInfo().setJb_ftp_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.addFtpJbInfo(jbInfo);
-        }else if("6".equals(jbInfo.getR_db_type()) || "6".equals(jbInfo.getW_db_type())){
+        }else if("6".equals(jbInfo.getR_db_type()) && !"6".equals(jbInfo.getW_db_type())){
             /*mongodb文件添加*/
-            jbInfoMapper.addJbInfo(jbInfo);
             jbInfo.getMongodbInfo().setJb_mongodb_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.addMongodbJbInfo(jbInfo);
-        }else if("7".equals(jbInfo.getR_db_type()) || "7".equals(jbInfo.getW_db_type())){
+        }else if("7".equals(jbInfo.getR_db_type()) && !"7".equals(jbInfo.getW_db_type())){
             /*cassandra文件添加*/
-            jbInfoMapper.addJbInfo(jbInfo);
             jbInfo.getCassandraInfo().setJb_cassandra_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.addCassandraJbInfo(jbInfo);
-        }else if("8".equals(jbInfo.getR_db_type()) || "8".equals(jbInfo.getW_db_type())){
+        }else if("8".equals(jbInfo.getR_db_type()) && !"8".equals(jbInfo.getW_db_type())){
             /*drds文件添加*/
-            jbInfoMapper.addJbInfo(jbInfo);
             jbInfo.getDrdsInfo().setJb_drds_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.addDrdsJbInfo(jbInfo);
-        }else {
-            jbInfoMapper.addJbInfo(jbInfo);
+        }
+
+
+        if("3".equals(jbInfo.getW_db_type()) && !"3".equals(jbInfo.getR_db_type())){
+            /*txtfile文件添加*/
+            jbInfo.getTxtFileInfo().setJb_txtFile_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addTxtfileJbInfo(jbInfo);
+        }else if("5".equals(jbInfo.getW_db_type()) && !"5".equals(jbInfo.getR_db_type())){
+            /*ftp文件添加*/
+            jbInfo.getFtpInfo().setJb_ftp_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addFtpJbInfo(jbInfo);
+        }else if("6".equals(jbInfo.getW_db_type()) && !"6".equals(jbInfo.getR_db_type())){
+            /*mongodb文件添加*/
+            jbInfo.getMongodbInfo().setJb_mongodb_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addMongodbJbInfo(jbInfo);
+        }else if("7".equals(jbInfo.getW_db_type()) && !"7".equals(jbInfo.getR_db_type())){
+            /*cassandra文件添加*/
+            jbInfo.getCassandraInfo().setJb_cassandra_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addCassandraJbInfo(jbInfo);
+        }else if("8".equals(jbInfo.getW_db_type()) && !"8".equals(jbInfo.getR_db_type())){
+            /*drds文件添加*/
+            jbInfo.getDrdsInfo().setJb_drds_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addDrdsJbInfo(jbInfo);
+        }
+
+        if("3".equals(jbInfo.getR_db_type()) && "3".equals(jbInfo.getW_db_type())){
+            /*txtfile文件添加*/
+            jbInfo.getTxtFileInfo().setJb_txtFile_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addTxtfileJbInfo(jbInfo);
+        }else if("5".equals(jbInfo.getR_db_type()) && "5".equals(jbInfo.getW_db_type())){
+            /*ftp文件添加*/
+            jbInfo.getFtpInfo().setJb_ftp_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addFtpJbInfo(jbInfo);
+        }else if("6".equals(jbInfo.getR_db_type()) && "6".equals(jbInfo.getW_db_type())){
+            /*mongodb文件添加*/
+            jbInfo.getMongodbInfo().setJb_mongodb_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addMongodbJbInfo(jbInfo);
+        }else if("7".equals(jbInfo.getR_db_type()) && "7".equals(jbInfo.getW_db_type())){
+            /*cassandra文件添加*/
+            jbInfo.getCassandraInfo().setJb_cassandra_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addCassandraJbInfo(jbInfo);
+        }else if("8".equals(jbInfo.getR_db_type()) && "8".equals(jbInfo.getW_db_type())){
+            /*drds文件添加*/
+            jbInfo.getDrdsInfo().setJb_drds_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addDrdsJbInfo(jbInfo);
         }
     }
     /**
@@ -168,71 +207,51 @@ public class JbInfoServiceImpl implements JbInfoService{
     根据id查询脚本信息-查询的是txtfile的
      */
     @Override
-    public JbInfo queryJbInfoByIdTxtFile(JbInfo jbInfo) {
+    public TxtFileInfo queryJbInfoByIdTxtFile(JbInfo jbInfo) {
         TxtFileInfo txtFileInfo = new TxtFileInfo();
         txtFileInfo.setJb_txtFile_id(String.valueOf(jbInfo.getId()));
-        JbInfo jbInfo_obj = new JbInfo();
-        jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
-        jbInfo_obj.setJb_json_info_obj(JSONObject.parseObject(jbInfo_obj.getJb_json_info()));
         txtFileInfo = jbInfoMapper.queryJbInfoByIdTxtFile(txtFileInfo);
-        jbInfo_obj.setTxtFileInfo(txtFileInfo);
-        return jbInfo_obj;
+        return txtFileInfo;
     }
 
     /**
      * 根据id查询脚本信息-查询的是ftp的
      */
     @Override
-    public JbInfo queryJbInfoByIdFtp(JbInfo jbInfo) {
+    public FtpInfo queryJbInfoByIdFtp(JbInfo jbInfo) {
         FtpInfo ftpInfo = new FtpInfo();
         ftpInfo.setJb_ftp_id(String.valueOf(jbInfo.getId()));
-        JbInfo jbInfo_obj = new JbInfo();
-        jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
-        jbInfo_obj.setJb_json_info_obj(JSONObject.parseObject(jbInfo_obj.getJb_json_info()));
         ftpInfo = jbInfoMapper.queryJbInfoByIdFtp(ftpInfo);
-        jbInfo_obj.setFtpInfo(ftpInfo);
-        return jbInfo_obj;
+        return ftpInfo;
     }
     /**
      * 根据id查询脚本信息-查询的是mongodb的
      */
     @Override
-    public JbInfo queryJbInfoByIdMongoDB(JbInfo jbInfo) {
+    public MongodbInfo queryJbInfoByIdMongoDB(JbInfo jbInfo) {
         MongodbInfo mongodbInfo = new MongodbInfo();
         mongodbInfo.setJb_mongodb_id(String.valueOf(jbInfo.getId()));
-        JbInfo jbInfo_obj = new JbInfo();
-        jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
-        jbInfo_obj.setJb_json_info_obj(JSONObject.parseObject(jbInfo_obj.getJb_json_info()));
         mongodbInfo = jbInfoMapper.queryJbInfoByIdMongoDB(mongodbInfo);
-        jbInfo_obj.setMongodbInfo(mongodbInfo);
-        return jbInfo_obj;
+        return mongodbInfo;
     }
     /**
      * 根据id查询脚本信息-查询的是cassandra的
      */
     @Override
-    public JbInfo queryJbInfoByIdCassandra(JbInfo jbInfo) {
+    public CassandraInfo queryJbInfoByIdCassandra(JbInfo jbInfo) {
         CassandraInfo cassandraInfo = new CassandraInfo();
         cassandraInfo.setJb_cassandra_id(String.valueOf(jbInfo.getId()));
-        JbInfo jbInfo_obj = new JbInfo();
-        jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
-        jbInfo_obj.setJb_json_info_obj(JSONObject.parseObject(jbInfo_obj.getJb_json_info()));
         cassandraInfo = jbInfoMapper.queryJbInfoByIdCassandra(cassandraInfo);
-        jbInfo_obj.setCassandraInfo(cassandraInfo);
-        return jbInfo_obj;
+        return cassandraInfo;
     }
     /**
      * 根据id查询脚本信息-查询的是drds的
      */
     @Override
-    public JbInfo queryJbInfoByIdDrds(JbInfo jbInfo) {
+    public DrdsInfo queryJbInfoByIdDrds(JbInfo jbInfo) {
         DrdsInfo drdsInfo = new DrdsInfo();
         drdsInfo.setJb_drds_id(String.valueOf(jbInfo.getId()));
-        JbInfo jbInfo_obj = new JbInfo();
-        jbInfo_obj = jbInfoMapper.queryJbInfoById(jbInfo);
-        jbInfo_obj.setJb_json_info_obj(JSONObject.parseObject(jbInfo_obj.getJb_json_info()));
         drdsInfo = jbInfoMapper.queryJbInfoByIdDrds(drdsInfo);
-        jbInfo_obj.setDrdsInfo(drdsInfo);
-        return jbInfo_obj;
+        return drdsInfo;
     }
 }

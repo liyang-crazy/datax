@@ -1,6 +1,6 @@
 package com.cnct.datax.service;
 
-import com.cnct.datax.entity.JbInfo;
+import com.cnct.datax.entity.*;
 
 import java.util.List;
 
@@ -59,22 +59,22 @@ public interface JbInfoService {
     /*
     根据id查询脚本信息-查询的是txtfile的
      */
-    public JbInfo queryJbInfoByIdTxtFile(JbInfo jbInfo);
+    public TxtFileInfo queryJbInfoByIdTxtFile(JbInfo jbInfo);
     /**
      * 根据id查询脚本信息-查询的是ftp的
      */
-    public JbInfo queryJbInfoByIdFtp(JbInfo jbInfo);
+    public FtpInfo queryJbInfoByIdFtp(JbInfo jbInfo);
     /**
      * 根据id查询脚本信息-查询的是mongodb的
      */
-    public JbInfo queryJbInfoByIdMongoDB(JbInfo jbInfo);
+    public MongodbInfo queryJbInfoByIdMongoDB(JbInfo jbInfo);
     /**
      * 根据id查询脚本信息-查询的是cassandra的
      */
-    public JbInfo queryJbInfoByIdCassandra(JbInfo jbInfo);
+    public CassandraInfo queryJbInfoByIdCassandra(JbInfo jbInfo);
     /**
      * 根据id查询脚本信息-查询的是drds的
      */
-    public JbInfo queryJbInfoByIdDrds(JbInfo jbInfo);
+    public DrdsInfo queryJbInfoByIdDrds(JbInfo jbInfo);
 
 }
