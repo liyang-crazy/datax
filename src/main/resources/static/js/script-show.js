@@ -50,12 +50,13 @@ $(function () {
         /*获取父页面传递过来的脚本id*/
         jb_info_byID(getSearchString('id'),getSearchString('r_db_type'),getSearchString('w_db_type'));
         //处理json数据，采用正则过滤出不同类型参数
-      /*  var syntaxHighlight = function(json) {
+        var JsonFormat = function(json_info) {
+            var json = json_info;
             if (typeof json != 'string') {
                 json = JSON.stringify(json, undefined, 2);
             }
             json = json.replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>');
-            return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function(match) {
+            return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
                 var cls = 'number';
                 if (/^"/.test(match)) {
                     if (/:$/.test(match)) {
@@ -70,14 +71,15 @@ $(function () {
                 }
                 return '<span class="' + cls + '">' + match + '</span>';
             });
-        };*/
-
+        };
+        var showGeoJsonTxt = function (json_info) {
+            $('#geoJsonTxt').html(JsonFormat(json_info));
+        };
+      
         /*回填数据的方法*/
         var back_data_fun = function (data) {
             if(data.jb_json_info_obj != null){
-                var json_str = JSON.stringify(data.jb_json_info_obj);
-                var result = JSON.stringify(JSON.parse(json_str), null, 2);
-                document.getElementById('out_pre').innerText= result;
+                showGeoJsonTxt(data.jb_json_info_obj);
             }else {
                 layer.msg('对不起，暂无对应的json文件！')
             }
