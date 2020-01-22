@@ -124,4 +124,8 @@ public interface JbInfoMapper {
      * 向hdfs表中添加脚本信息
      */
     public int addHdfsJbInfo(JbInfo jbInfo);
+    /**
+     * 根据id查询脚本信息-查询的是hdfs的
+     */
+    public HdfsInfo queryJbInfoByIdHdfs(HdfsInfo hdfsInfo);
 }

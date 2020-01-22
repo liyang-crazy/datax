@@ -273,6 +273,9 @@ public class JbInfoController {
             }else if("8".equals(r_db_type)){
                 DrdsInfo drdsInfo = jbInfoService.queryJbInfoByIdDrds(jbInfo);
                 jbInfo_obj.setDrdsInfo(drdsInfo);
+            }else if("9".equals(r_db_type)){
+                HdfsInfo hdfsInfo = jbInfoService.queryJbInfoByIdHdfs(jbInfo);
+                jbInfo_obj.setHdfsInfo(hdfsInfo);
             }else {
                 //*这里获取的reader的username和password默认取的是r_db_id的第一个*//*
                 String[] r_db_id_arr = jbInfo_obj.getR_db_id().split(",");
@@ -296,6 +299,9 @@ public class JbInfoController {
             }else if("8".equals(w_db_type)){
                 DrdsInfo drdsInfo = jbInfoService.queryJbInfoByIdDrds(jbInfo);
                 jbInfo_obj.setDrdsInfo(drdsInfo);
+            }else if("9".equals(w_db_type)){
+                HdfsInfo hdfsInfo = jbInfoService.queryJbInfoByIdHdfs(jbInfo);
+                jbInfo_obj.setHdfsInfo(hdfsInfo);
             }else {
                 //*这里获取的reader的username和password默认取的是r_db_id的第一个*//*
                 jbInfo_obj.setW_db_username(jbInfoService.queryDbInfoById(jbInfo_obj.getW_db_id()).getDb_username());

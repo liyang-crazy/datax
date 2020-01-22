@@ -76,5 +76,9 @@ public interface JbInfoService {
      * 根据id查询脚本信息-查询的是drds的
      */
     public DrdsInfo queryJbInfoByIdDrds(JbInfo jbInfo);
+    /**
+     * 根据id查询脚本信息-查询的是hdfs的
+     */
+    public HdfsInfo queryJbInfoByIdHdfs(JbInfo jbInfo);
 
 }

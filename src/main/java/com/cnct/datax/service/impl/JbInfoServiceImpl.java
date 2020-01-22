@@ -302,4 +302,14 @@ public class JbInfoServiceImpl implements JbInfoService{
         drdsInfo = jbInfoMapper.queryJbInfoByIdDrds(drdsInfo);
         return drdsInfo;
     }
+    /**
+     * 根据id查询脚本信息-查询的是hdfs的
+     */
+    @Override
+    public HdfsInfo queryJbInfoByIdHdfs(JbInfo jbInfo) {
+        HdfsInfo hdfsInfo = new HdfsInfo();
+        hdfsInfo.setJb_hdfs_id(String.valueOf(jbInfo.getId()));
+        hdfsInfo = jbInfoMapper.queryJbInfoByIdHdfs(hdfsInfo);
+        return hdfsInfo;
+    }
 }

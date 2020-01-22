@@ -63,6 +63,10 @@
     <select id="queryJbInfoByIdDrds" parameterType="com.cnct.datax.entity.DrdsInfo" resultType="com.cnct.datax.entity.DrdsInfo">
         SELECT * FROM jb_drds_info WHERE jb_drds_id = #{jb_drds_id}
     </select>
+    <!--根据id查询脚本信息-查询的是hdfs的-->
+    <select id="queryJbInfoByIdHdfs" parameterType="com.cnct.datax.entity.HdfsInfo" resultType="com.cnct.datax.entity.HdfsInfo">
+        SELECT * FROM jb_hdfs_info WHERE jb_hdfs_id = #{jb_hdfs_id}
+    </select>
     <!--根据数据库连接信息的id查询对应的数据库信息-->
     <select id="queryDbInfoById" resultType="com.cnct.datax.entity.JbInfo" parameterType="com.cnct.datax.entity.JbInfo">
         SELECT
