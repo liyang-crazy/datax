@@ -612,6 +612,136 @@
                     </div>
                 </div>
             </div>
+            <!--hdfs区域-->
+            <div class="hdfs layui-hide">
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">文件路径<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_hdfs_path" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">节点地址<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_hdfs_defaultFS" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">读取列<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_hdfs_column" type="text" value="">
+                        <div class="add_hdfs_col_txt layui-hide">
+                            <form class="layui-form" style="margin-top: 0.5em;">
+                                <div class="layui-inline" style="margin-bottom: 1em;">
+                                    <label class="layui-form-label" style="margin-left: -4em;">key:</label>
+                                    <div class="layui-input-inline" style="width:7em;">
+                                        <select name="" id="add_hdfs_column1"  lay-filter="add_hdfs_column1_filter" lay-search="">
+                                            <option value="index" selected>index</option>
+                                            <option value="type">type</option>
+                                        </select>
+                                    </div>
+                                    <label class="layui-form-label" style="margin-left: -4em;">value:</label>
+                                    <div class="layui-input-block m-left-9">
+                                        <input  class="layui-input" id="add_hdfs_column2" type="text" value="0" style="margin: 0 0 0 7em;position: absolute;height: 30px;">
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="layui-form" style="margin-top: -0.9em;">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label" style="margin-left: -4em;">key:</label>
+                                    <div class="layui-input-inline" style="width:7em;">
+                                        <select name="" id="add_hdfs_column3"  lay-filter="" lay-search="">
+                                            <option value="type" selected>type</option>
+                                            <option value="value">value</option>
+                                        </select>
+                                    </div>
+                                    <label class="layui-form-label" style="margin-left: -4em;">value:</label>
+                                    <div class="layui-input-block m-left-9">
+                                        <input  class="layui-input" id="add_hdfs_column4" type="text" value="long" style="margin: 0 0 0 7em;position: absolute;height: 30px;">
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="layui-inline mar-2-1">
+                                <button type="button" class="layui-btn layui-btn-xs" id="add_hdfs_column_sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="add_hdfs_column_cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">文件类型<span class="col-red">(必填)</span></label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="add_hdfs_fileType"  lay-filter="hdfs_fileType_filter" lay-search="">
+                                <option value="text">text</option>
+                                <option value="orc" selected>orc</option>
+                                <option value="rc">rc</option>
+                                <option value="seq">seq</option>
+                                <option value="csv">csv</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">编码</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_hdfs_en" type="text" value="UTF-8">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">字段分隔符</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_hdfs_fieldD" type="text" value=",">
+                    </div>
+                </div>
+                <!--<div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">nullFormat</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="add_hdfs_nullF" type="text" value="\N">
+                    </div>
+                </div>-->
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">是否有Kerberos认证</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="add_hdfs_haveK"  lay-filter="hdfs_haveK_filter" lay-search="">
+                                <option value="false" selected>false</option>
+                                <option value="true">true</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-hide" id="kerberos_all">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">keytab文件路径</label>
+                        <div class="layui-input-block m-left-9">
+                            <input  class="layui-input input-a" id="add_hdfs_kerberosK" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">Principal名</label>
+                        <div class="layui-input-block m-left-9">
+                            <input  class="layui-input input-a" id="add_hdfs_kerberosP" type="text" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <form class="layui-form" style="" id="compress_all">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">压缩格式</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="add_hdfs_compress"  lay-filter="hdfs_compress_filter" lay-search="">
+                                <option value="gzip" selected>gzip</option>
+                                <option value="bz2">bz2</option>
+                                <option value="zip">zip</option>
+                                <option value="lzo">lzo</option>
+                                <option value="lzo_deflate">lzo_deflate</option>
+                                <option value="hadoop-snappy">hadoop-snappy</option>
+                                <option value="framing-snappy">framing-snappy</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
         <!--writer区域-->
         <fieldset class="layui-elem-field layui-field-title">
@@ -1197,7 +1327,144 @@
                     </div>
                 </div>
             </div>
-
+            <!--hdfs区域-->
+            <div class="w_hdfs layui-hide">
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">节点地址<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_hdfs_defaultFS" type="text" placeholder="">
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">文件类型<span class="col-red">(必填)</span></label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="w_add_hdfs_fileType"  lay-filter="w_hdfs_fileType_filter" lay-search="">
+                                <option value="text">text</option>
+                                <option value="orc" selected>orc</option>
+                                <option value="rc">rc</option>
+                                <option value="seq">seq</option>
+                                <option value="csv">csv</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">文件路径<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_hdfs_path" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">文件名称<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_hdfs_fileName" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">数据写入字段<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_hdfs_column" type="text" value="">
+                        <div class="w_add_hdfs_col_txt layui-hide">
+                            <form class="layui-form" style="margin-top: 0.5em;">
+                                <div class="layui-inline" style="margin-bottom: 1em;">
+                                    <label class="layui-form-label" style="margin-left: -4em;">key:</label>
+                                    <div class="layui-input-inline" style="width:7em;">
+                                        <select name="" id="w_add_hdfs_column1"  lay-filter="" lay-search="">
+                                            <option value="name" selected>name</option>
+                                        </select>
+                                    </div>
+                                    <label class="layui-form-label" style="margin-left: -4em;">value:</label>
+                                    <div class="layui-input-block m-left-9">
+                                        <input  class="layui-input" id="w_add_hdfs_column2" type="text" value="col1" style="margin: 0 0 0 7em;position: absolute;height: 30px;">
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="layui-form" style="margin-top: -0.9em;">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label" style="margin-left: -4em;">key:</label>
+                                    <div class="layui-input-inline" style="width:7em;">
+                                        <select name="" id="w_add_hdfs_column3"  lay-filter="" lay-search="">
+                                            <option value="type" selected>type</option>
+                                        </select>
+                                    </div>
+                                    <label class="layui-form-label" style="margin-left: -4em;">value:</label>
+                                    <div class="layui-input-block m-left-9">
+                                        <input  class="layui-input" id="w_add_hdfs_column4" type="text" value="TINYINT" style="margin: 0 0 0 7em;position: absolute;height: 30px;">
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="layui-inline mar-2-1">
+                                <button type="button" class="layui-btn layui-btn-xs" id="w_add_hdfs_column_sure">确定</button>
+                                <button type="button" class="layui-btn layui-btn-xs layui-btn-warm" id="w_add_hdfs_column_cancle">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">清理模式<span class="col-red">(必填)</span></label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="w_add_hdfs_writeMode"  lay-filter="w_hdfs_writeMode_filter" lay-search="">
+                                <option value="" selected></option>
+                                <option value="append">append</option>
+                                <option value="nonConflict">nonConflict</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">字段分隔符<span class="col-red">(必填)</span></label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_hdfs_fieldD" type="text" value="">
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">文件压缩类型</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="w_add_hdfs_compress"  lay-filter="w_hdfs_compress_filter" lay-search="">
+                                <option value="" selected></option>
+                                <option value="gzip">gzip</option>
+                                <option value="bzip2">bzip2</option>
+                                <option value="NONE">NONE</option>
+                                <option value="SNAPPY">SNAPPY</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-form-item width-25">
+                    <label class="layui-form-label label-1 label-a">编码</label>
+                    <div class="layui-input-block m-left-9">
+                        <input  class="layui-input input-a" id="w_add_hdfs_en" type="text" value="utf-8">
+                    </div>
+                </div>
+                <form class="layui-form" style="">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">是否有Kerberos认证</label>
+                        <div class="layui-input-inline" style="width:35em;">
+                            <select name="" id="w_add_hdfs_haveK"  lay-filter="w_hdfs_haveK_filter" lay-search="">
+                                <option value="false" selected>false</option>
+                                <option value="true">true</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-hide" id="w_kerberos_all">
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">keytab文件路径</label>
+                        <div class="layui-input-block m-left-9">
+                            <input  class="layui-input input-a" id="w_add_hdfs_kerberosK" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="layui-form-item width-25">
+                        <label class="layui-form-label label-1 label-a">Principal名</label>
+                        <div class="layui-input-block m-left-9">
+                            <input  class="layui-input input-a" id="w_add_hdfs_kerberosP" type="text" placeholder="">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="layui-form-item width-25">
             <label class="layui-form-label label-1 label-a">脚本说明</label>

@@ -219,7 +219,7 @@ $(function () {
         };
         //联动
         form.on('select(r_db_typeFilter)', function(data){
-            if(data.value == 3 || data.value == 5){
+            if(data.value == 3 || data.value == 5 || data.value == 9){
                 $('.r_db_name').addClass('layui-hide');
                 $('.to_local').addClass('layui-hide');
             }else if(data.value == 6){
@@ -238,7 +238,7 @@ $(function () {
 
         });
         form.on('select(w_db_typeFilter)', function(data){
-            if(data.value == 3 || data.value == 5){
+            if(data.value == 3 || data.value == 5 || data.value == 9){
                 $('.w_db_name').addClass('layui-hide');
             }else if(data.value == 6){//写这个的目的是因为：writer是mongodb的时候存在多选
                 getDb_nameByDb_type(data.value,'w');
@@ -347,13 +347,13 @@ $(function () {
             dbContionInfo.r_db_type = $('#r_db_type_id').val();
             dbContionInfo.w_db_type = $('#w_db_type_id').val();
             dbContionInfo.r_jb_tbgs = $('#to_local').val();
-            if(dbContionInfo.r_db_type == 3 || dbContionInfo.r_db_type == 5){
+            if(dbContionInfo.r_db_type == 3 || dbContionInfo.r_db_type == 5 || dbContionInfo.r_db_type == 9){
                 dbContionInfo.readerId = '';
                 dbContionInfo.r_jb_tbgs = '';
             }else {
                 dbContionInfo.readerId = reader_db_name.getValue('value').toString();
             }
-            if(dbContionInfo.w_db_type == 3 || dbContionInfo.w_db_type == 5){
+            if(dbContionInfo.w_db_type == 3 || dbContionInfo.w_db_type == 5 || dbContionInfo.w_db_type == 9){
                 dbContionInfo.writerId = '';
             }else if(dbContionInfo.w_db_type == 6){//写这个的目的是因为：writer是mongodb的时候存在多选
                 dbContionInfo.writerId = writer_db_name.getValue('value').toString();

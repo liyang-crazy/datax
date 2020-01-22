@@ -1,531 +1,355 @@
-2020-01-20 10:24:27.378  INFO 14404 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 14404 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
-2020-01-20 10:24:27.427  INFO 14404 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
-2020-01-20 10:24:34.586  INFO 14404 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-01-20 10:24:34.587  INFO 14404 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2020-01-20 10:24:34.854  INFO 14404 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-01-20 10:24:35.391  INFO 14404 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-01-20 10:24:35.394  WARN 14404 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-01-20 10:24:36.097  INFO 14404 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-01-20 10:24:38.915  INFO 14404 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 13.896 seconds (JVM running for 23.076)
-2020-01-20 10:24:55.775  INFO 14404 --- [http-nio-8004-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-01-20 10:24:58.586 DEBUG 14404 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 10:24:58.586 DEBUG 14404 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 10:24:58.634 DEBUG 14404 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 10:24:58.634 DEBUG 14404 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 10:24:58.698 DEBUG 14404 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 10:24:58.698 DEBUG 14404 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 10:24:58.709 DEBUG 14404 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 10:24:58.710 DEBUG 14404 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 10:24:58.719 DEBUG 14404 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 10:24:58.720 DEBUG 14404 --- [http-nio-8004-exec-2] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 10:24:58.720 DEBUG 14404 --- [http-nio-8004-exec-2] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 10:24:58.737 DEBUG 14404 --- [http-nio-8004-exec-2] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 10:25:03.541 DEBUG 14404 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 10:25:03.541 DEBUG 14404 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 10:25:03.544 DEBUG 14404 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 10:25:03.709 DEBUG 14404 --- [http-nio-8004-exec-18] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 10:25:03.710 DEBUG 14404 --- [http-nio-8004-exec-18] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 10:25:03.711 DEBUG 14404 --- [http-nio-8004-exec-18] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 10:25:03.712 DEBUG 14404 --- [http-nio-8004-exec-18] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 10:25:03.712 DEBUG 14404 --- [http-nio-8004-exec-18] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 10:25:03.714 DEBUG 14404 --- [http-nio-8004-exec-18] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 10:25:11.810 DEBUG 14404 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 10:25:11.810 DEBUG 14404 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 50(Integer)
-2020-01-20 10:25:11.813 DEBUG 14404 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 10:25:11.814 DEBUG 14404 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 10:25:11.814 DEBUG 14404 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 50(String)
-2020-01-20 10:25:11.816 DEBUG 14404 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 10:25:11.817 DEBUG 14404 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 10:25:11.817 DEBUG 14404 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 50(String)
-2020-01-20 10:25:11.820 DEBUG 14404 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 10:25:18.445 DEBUG 14404 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 10:25:18.446 DEBUG 14404 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 48(Integer)
-2020-01-20 10:25:18.449 DEBUG 14404 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 10:25:18.451 DEBUG 14404 --- [http-nio-8004-exec-13] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 10:25:18.451 DEBUG 14404 --- [http-nio-8004-exec-13] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 48(String)
-2020-01-20 10:25:18.452 DEBUG 14404 --- [http-nio-8004-exec-13] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 0
-2020-01-20 10:25:18.454 DEBUG 14404 --- [http-nio-8004-exec-13] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 10:25:18.454 DEBUG 14404 --- [http-nio-8004-exec-13] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 48(String)
-2020-01-20 10:25:18.456 DEBUG 14404 --- [http-nio-8004-exec-13] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 14:37:33.229 DEBUG 14404 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 14:37:33.234 DEBUG 14404 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 50(Integer)
-2020-01-20 14:37:33.240 DEBUG 14404 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 14:37:33.243 DEBUG 14404 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 14:37:33.243 DEBUG 14404 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 50(String)
-2020-01-20 14:37:33.245 DEBUG 14404 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 14:37:33.259 DEBUG 14404 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 14:37:33.260 DEBUG 14404 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 50(String)
-2020-01-20 14:37:33.262 DEBUG 14404 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:31:26.637  INFO 8804 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 8804 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
-2020-01-20 15:31:26.642  INFO 8804 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
-2020-01-20 15:31:28.765  INFO 8804 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-01-20 15:31:28.765  INFO 8804 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2020-01-20 15:31:28.915  INFO 8804 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-01-20 15:31:29.159  INFO 8804 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-01-20 15:31:29.162  WARN 8804 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-01-20 15:31:29.323  INFO 8804 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-01-20 15:31:30.598  INFO 8804 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 5.647 seconds (JVM running for 7.924)
-2020-01-20 15:31:56.480  INFO 8804 --- [http-nio-8004-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-01-20 15:31:57.563 DEBUG 8804 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:31:57.563 DEBUG 8804 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:31:57.563 DEBUG 8804 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:31:57.590 DEBUG 8804 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:31:57.590 DEBUG 8804 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:31:57.590 DEBUG 8804 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:31:57.624 DEBUG 8804 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:31:57.627 DEBUG 8804 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:31:57.638 DEBUG 8804 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:31:57.639 DEBUG 8804 --- [http-nio-8004-exec-3] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:31:57.640 DEBUG 8804 --- [http-nio-8004-exec-3] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:31:57.643 DEBUG 8804 --- [http-nio-8004-exec-3] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:31:58.920 DEBUG 8804 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:31:58.920 DEBUG 8804 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:31:58.924 DEBUG 8804 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:31:58.997 DEBUG 8804 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:31:58.998 DEBUG 8804 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:31:59.000 DEBUG 8804 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:31:59.001 DEBUG 8804 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:31:59.001 DEBUG 8804 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:31:59.004 DEBUG 8804 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:45:35.342 DEBUG 8804 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:45:35.342 DEBUG 8804 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:45:35.343 DEBUG 8804 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:45:35.343 DEBUG 8804 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:45:35.352 DEBUG 8804 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:45:35.354 DEBUG 8804 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:45:35.373 DEBUG 8804 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:45:35.374 DEBUG 8804 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:45:35.389 DEBUG 8804 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:45:35.390 DEBUG 8804 --- [http-nio-8004-exec-29] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:45:35.390 DEBUG 8804 --- [http-nio-8004-exec-29] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:45:35.391 DEBUG 8804 --- [http-nio-8004-exec-29] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:45:38.401 DEBUG 8804 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:45:38.401 DEBUG 8804 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:45:38.403 DEBUG 8804 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:45:38.405 DEBUG 8804 --- [http-nio-8004-exec-10] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:45:38.405 DEBUG 8804 --- [http-nio-8004-exec-10] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:45:38.407 DEBUG 8804 --- [http-nio-8004-exec-10] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:45:38.408 DEBUG 8804 --- [http-nio-8004-exec-10] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:45:38.409 DEBUG 8804 --- [http-nio-8004-exec-10] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:45:38.411 DEBUG 8804 --- [http-nio-8004-exec-10] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:45:47.360 DEBUG 8804 --- [http-nio-8004-exec-26] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:45:47.361 DEBUG 8804 --- [http-nio-8004-exec-26] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:45:47.362 DEBUG 8804 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:45:47.363 DEBUG 8804 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:45:47.363 DEBUG 8804 --- [http-nio-8004-exec-26] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:45:47.364 DEBUG 8804 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:45:47.397 DEBUG 8804 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:45:47.398 DEBUG 8804 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:45:47.402 DEBUG 8804 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:45:47.403 DEBUG 8804 --- [http-nio-8004-exec-30] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:45:47.403 DEBUG 8804 --- [http-nio-8004-exec-30] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:45:47.404 DEBUG 8804 --- [http-nio-8004-exec-30] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:45:48.565 DEBUG 8804 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:45:48.566 DEBUG 8804 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:45:48.569 DEBUG 8804 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:45:48.570 DEBUG 8804 --- [http-nio-8004-exec-12] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:45:48.571 DEBUG 8804 --- [http-nio-8004-exec-12] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:45:48.572 DEBUG 8804 --- [http-nio-8004-exec-12] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:45:48.574 DEBUG 8804 --- [http-nio-8004-exec-12] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:45:48.574 DEBUG 8804 --- [http-nio-8004-exec-12] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:45:48.576 DEBUG 8804 --- [http-nio-8004-exec-12] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:46:35.938  INFO 19820 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 19820 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
-2020-01-20 15:46:35.942  INFO 19820 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
-2020-01-20 15:46:37.744  INFO 19820 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-01-20 15:46:37.745  INFO 19820 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2020-01-20 15:46:37.977  INFO 19820 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-01-20 15:46:38.216  INFO 19820 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-01-20 15:46:38.220  WARN 19820 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2020-01-20 15:46:38.474  INFO 19820 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-01-20 15:46:39.674  INFO 19820 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 5.448 seconds (JVM running for 7.231)
-2020-01-20 15:46:46.985  INFO 19820 --- [http-nio-8004-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-01-20 15:47:02.314 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:47:02.314 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:47:02.343 DEBUG 19820 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:47:02.354 DEBUG 19820 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:47:02.354 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:47:02.354 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:47:02.395 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:47:02.397 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:47:02.411 DEBUG 19820 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:47:02.412 DEBUG 19820 --- [http-nio-8004-exec-7] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:47:02.414 DEBUG 19820 --- [http-nio-8004-exec-7] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:47:02.417 DEBUG 19820 --- [http-nio-8004-exec-7] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:47:03.441 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:47:03.442 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:47:03.445 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:47:03.511 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:47:03.512 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:47:03.514 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:47:03.515 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:47:03.516 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:47:03.517 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:47:25.534 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:47:25.535 DEBUG 19820 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:47:25.535 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:47:25.535 DEBUG 19820 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:47:25.538 DEBUG 19820 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:47:25.539 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:47:25.581 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:47:25.582 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:47:25.599 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:47:25.599 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:47:25.600 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:47:25.601 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:47:27.040 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:47:27.041 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:47:27.044 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:47:27.045 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:47:27.046 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:47:27.048 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:47:27.049 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:47:27.049 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:47:27.051 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:47:39.256 DEBUG 19820 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:47:39.256 DEBUG 19820 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:47:39.256 DEBUG 19820 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:47:39.257 DEBUG 19820 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:47:39.258 DEBUG 19820 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:47:39.258 DEBUG 19820 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:47:39.316 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:47:39.317 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:47:39.324 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:47:39.325 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:47:39.325 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:47:39.327 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:47:40.517 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:47:40.517 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:47:40.520 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:47:40.521 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:47:40.522 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:47:40.523 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:47:40.525 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:47:40.525 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:47:40.527 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:48:50.281 DEBUG 19820 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:48:50.281 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:48:50.281 DEBUG 19820 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:48:50.282 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:48:50.283 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:48:50.283 DEBUG 19820 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:48:50.317 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:48:50.318 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:48:50.322 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:48:50.322 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:48:50.323 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:48:50.324 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:48:52.864 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:48:52.864 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:48:52.867 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:48:52.868 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:48:52.868 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:48:52.869 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:48:52.870 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:48:52.870 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:48:52.872 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:51:02.698 DEBUG 19820 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:51:02.699 DEBUG 19820 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:51:02.699 DEBUG 19820 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:51:02.699 DEBUG 19820 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:51:02.700 DEBUG 19820 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:51:02.700 DEBUG 19820 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:51:02.740 DEBUG 19820 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:51:02.740 DEBUG 19820 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:51:02.744 DEBUG 19820 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:51:02.744 DEBUG 19820 --- [http-nio-8004-exec-18] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:51:02.744 DEBUG 19820 --- [http-nio-8004-exec-18] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:51:02.745 DEBUG 19820 --- [http-nio-8004-exec-18] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:51:04.531 DEBUG 19820 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:51:04.532 DEBUG 19820 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:51:04.534 DEBUG 19820 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:51:04.535 DEBUG 19820 --- [http-nio-8004-exec-2] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:51:04.536 DEBUG 19820 --- [http-nio-8004-exec-2] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:51:04.538 DEBUG 19820 --- [http-nio-8004-exec-2] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:51:04.539 DEBUG 19820 --- [http-nio-8004-exec-2] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:51:04.539 DEBUG 19820 --- [http-nio-8004-exec-2] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:51:04.541 DEBUG 19820 --- [http-nio-8004-exec-2] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:52:10.782 DEBUG 19820 --- [http-nio-8004-exec-29] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:52:10.782 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:52:10.782 DEBUG 19820 --- [http-nio-8004-exec-29] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:52:10.782 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:52:10.783 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:52:10.784 DEBUG 19820 --- [http-nio-8004-exec-29] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:52:10.810 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:52:10.811 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:52:10.816 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:52:10.816 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:52:10.816 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:52:10.817 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:52:11.821 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:52:11.822 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:52:11.824 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:52:11.825 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:52:11.826 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:52:11.827 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:52:11.829 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:52:11.830 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:52:11.832 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:53:12.689 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:53:12.689 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 48(Integer)
-2020-01-20 15:53:12.691 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:53:12.693 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:53:12.693 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 48(String)
-2020-01-20 15:53:12.694 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 0
-2020-01-20 15:53:12.695 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:53:12.695 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 48(String)
-2020-01-20 15:53:12.697 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:53:54.133 DEBUG 19820 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:53:54.133 DEBUG 19820 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:53:54.134 DEBUG 19820 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:53:54.135 DEBUG 19820 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:53:54.136 DEBUG 19820 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:53:54.137 DEBUG 19820 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:53:54.159 DEBUG 19820 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:53:54.160 DEBUG 19820 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:53:54.164 DEBUG 19820 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:53:54.164 DEBUG 19820 --- [http-nio-8004-exec-15] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:53:54.165 DEBUG 19820 --- [http-nio-8004-exec-15] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:53:54.166 DEBUG 19820 --- [http-nio-8004-exec-15] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:53:55.254 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:53:55.255 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:53:55.256 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:53:55.257 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:53:55.259 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:53:55.260 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:53:55.260 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:53:55.261 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:53:55.263 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:55:38.291 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:55:38.291 DEBUG 19820 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:55:38.291 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:55:38.292 DEBUG 19820 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:55:38.292 DEBUG 19820 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:55:38.293 DEBUG 19820 --- [http-nio-8004-exec-25] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:55:38.314 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:55:38.316 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:55:38.319 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:55:38.320 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:55:38.320 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:55:38.321 DEBUG 19820 --- [http-nio-8004-exec-1] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:55:39.435 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:55:39.436 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:55:39.437 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:55:39.438 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:55:39.439 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:55:39.440 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:55:39.441 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:55:39.441 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:55:39.443 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:56:01.006 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:56:01.006 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:56:01.008 DEBUG 19820 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:56:01.013 DEBUG 19820 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:56:01.013 DEBUG 19820 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:56:01.014 DEBUG 19820 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:56:01.085 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:56:01.086 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:56:01.089 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:56:01.090 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:56:01.091 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:56:01.092 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:56:02.058 DEBUG 19820 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:56:02.059 DEBUG 19820 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:56:02.061 DEBUG 19820 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:56:02.062 DEBUG 19820 --- [http-nio-8004-exec-28] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:56:02.062 DEBUG 19820 --- [http-nio-8004-exec-28] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:56:02.063 DEBUG 19820 --- [http-nio-8004-exec-28] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:56:02.064 DEBUG 19820 --- [http-nio-8004-exec-28] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:56:02.065 DEBUG 19820 --- [http-nio-8004-exec-28] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:56:02.066 DEBUG 19820 --- [http-nio-8004-exec-28] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:56:28.654 DEBUG 19820 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:56:28.654 DEBUG 19820 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:56:28.655 DEBUG 19820 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:56:28.655 DEBUG 19820 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:56:28.655 DEBUG 19820 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:56:28.656 DEBUG 19820 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:56:28.699 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:56:28.699 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:56:28.702 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:56:28.703 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:56:28.703 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:56:28.704 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:56:29.628 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:56:29.629 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:56:29.630 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:56:29.631 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:56:29.632 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:56:29.633 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:56:29.634 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:56:29.635 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:56:29.636 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:57:09.981 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:57:09.981 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:57:09.981 DEBUG 19820 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:57:09.982 DEBUG 19820 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:57:09.982 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:57:09.983 DEBUG 19820 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:57:10.007 DEBUG 19820 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:57:10.007 DEBUG 19820 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:57:10.010 DEBUG 19820 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:57:10.010 DEBUG 19820 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:57:10.010 DEBUG 19820 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:57:10.011 DEBUG 19820 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:57:11.121 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:57:11.122 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 50(Integer)
-2020-01-20 15:57:11.123 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:57:11.124 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:57:11.124 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 50(String)
-2020-01-20 15:57:11.126 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:57:11.126 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:57:11.127 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 50(String)
-2020-01-20 15:57:11.128 DEBUG 19820 --- [http-nio-8004-exec-17] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:57:29.914 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:57:29.915 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 45(Integer)
-2020-01-20 15:57:29.918 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:57:29.933 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
-2020-01-20 15:57:29.934 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
-2020-01-20 15:57:29.935 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
-2020-01-20 15:57:29.935 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
-2020-01-20 15:57:29.935 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
-2020-01-20 15:57:29.936 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
-2020-01-20 15:57:29.937 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:57:29.937 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 45(String)
-2020-01-20 15:57:29.937 DEBUG 19820 --- [http-nio-8004-exec-26] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 0
-2020-01-20 15:57:52.429 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:57:52.429 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:57:52.430 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:57:52.433 DEBUG 19820 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:57:52.434 DEBUG 19820 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:57:52.435 DEBUG 19820 --- [http-nio-8004-exec-19] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:57:52.458 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:57:52.458 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:57:52.461 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:57:52.462 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:57:52.462 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:57:52.463 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:57:53.439 DEBUG 19820 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:57:53.440 DEBUG 19820 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:57:53.441 DEBUG 19820 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:57:53.442 DEBUG 19820 --- [http-nio-8004-exec-14] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:57:53.443 DEBUG 19820 --- [http-nio-8004-exec-14] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:57:53.444 DEBUG 19820 --- [http-nio-8004-exec-14] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:57:53.444 DEBUG 19820 --- [http-nio-8004-exec-14] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:57:53.445 DEBUG 19820 --- [http-nio-8004-exec-14] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:57:53.446 DEBUG 19820 --- [http-nio-8004-exec-14] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:58:00.473 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:58:00.473 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 44(Integer)
-2020-01-20 15:58:00.475 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:58:00.475 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
-2020-01-20 15:58:00.476 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
-2020-01-20 15:58:00.477 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
-2020-01-20 15:58:00.477 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
-2020-01-20 15:58:00.477 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
-2020-01-20 15:58:00.478 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
-2020-01-20 15:58:00.479 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:58:00.479 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 44(String)
-2020-01-20 15:58:00.480 DEBUG 19820 --- [http-nio-8004-exec-16] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 0
-2020-01-20 15:58:30.200 DEBUG 19820 --- [http-nio-8004-exec-19] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:58:30.200 DEBUG 19820 --- [http-nio-8004-exec-19] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:58:30.201 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:58:30.201 DEBUG 19820 --- [http-nio-8004-exec-19] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:58:30.201 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:58:30.202 DEBUG 19820 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:58:30.223 DEBUG 19820 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:58:30.224 DEBUG 19820 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:58:30.227 DEBUG 19820 --- [http-nio-8004-exec-22] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:58:30.227 DEBUG 19820 --- [http-nio-8004-exec-22] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:58:30.228 DEBUG 19820 --- [http-nio-8004-exec-22] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:58:30.228 DEBUG 19820 --- [http-nio-8004-exec-22] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:58:31.379 DEBUG 19820 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:58:31.379 DEBUG 19820 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:58:31.381 DEBUG 19820 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:58:31.382 DEBUG 19820 --- [http-nio-8004-exec-6] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:58:31.383 DEBUG 19820 --- [http-nio-8004-exec-6] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:58:31.384 DEBUG 19820 --- [http-nio-8004-exec-6] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:58:31.385 DEBUG 19820 --- [http-nio-8004-exec-6] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:58:31.386 DEBUG 19820 --- [http-nio-8004-exec-6] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:58:31.387 DEBUG 19820 --- [http-nio-8004-exec-6] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:59:21.987 DEBUG 19820 --- [http-nio-8004-exec-13] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
-2020-01-20 15:59:21.987 DEBUG 19820 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 15:59:21.987 DEBUG 19820 --- [http-nio-8004-exec-13] c.c.d.d.D.queryAllType                   : ==> Parameters: 
-2020-01-20 15:59:21.987 DEBUG 19820 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 15:59:21.988 DEBUG 19820 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 15:59:21.988 DEBUG 19820 --- [http-nio-8004-exec-13] c.c.d.d.D.queryAllType                   : <==      Total: 9
-2020-01-20 15:59:22.007 DEBUG 19820 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
-2020-01-20 15:59:22.008 DEBUG 19820 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
-2020-01-20 15:59:22.009 DEBUG 19820 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
-2020-01-20 15:59:22.010 DEBUG 19820 --- [http-nio-8004-exec-3] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
-2020-01-20 15:59:22.010 DEBUG 19820 --- [http-nio-8004-exec-3] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
-2020-01-20 15:59:22.011 DEBUG 19820 --- [http-nio-8004-exec-3] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
-2020-01-20 15:59:26.716 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:59:26.716 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 15:59:26.718 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:59:26.719 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 15:59:26.719 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 15:59:26.720 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 15:59:26.721 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:59:26.721 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 15:59:26.723 DEBUG 19820 --- [http-nio-8004-exec-23] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 15:59:45.587 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:59:45.587 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 45(Integer)
-2020-01-20 15:59:45.590 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:59:45.590 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
-2020-01-20 15:59:45.590 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
-2020-01-20 15:59:45.590 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
-2020-01-20 15:59:45.591 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
-2020-01-20 15:59:45.591 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
-2020-01-20 15:59:45.592 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
-2020-01-20 15:59:45.592 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 15:59:45.592 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 45(String)
-2020-01-20 15:59:45.593 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 0
-2020-01-20 15:59:47.671 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 15:59:47.671 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 47(Integer)
-2020-01-20 15:59:47.673 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 15:59:47.674 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
-2020-01-20 15:59:47.674 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
-2020-01-20 15:59:47.675 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
-2020-01-20 15:59:47.676 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==>  Preparing: SELECT db_username, db_password FROM db_contion_info WHERE id = ? AND yxbz = 'Y' 
-2020-01-20 15:59:47.676 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryDbInfoById   : ==> Parameters: 1(String)
-2020-01-20 15:59:47.677 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryDbInfoById   : <==      Total: 1
-2020-01-20 15:59:47.677 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.d.J.queryJbInfoByIdDrds            : ==>  Preparing: SELECT * FROM jb_drds_info WHERE jb_drds_id = ? 
-2020-01-20 15:59:47.678 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.d.J.queryJbInfoByIdDrds            : ==> Parameters: 47(String)
-2020-01-20 15:59:47.679 DEBUG 19820 --- [http-nio-8004-exec-12] c.c.d.d.J.queryJbInfoByIdDrds            : <==      Total: 1
-2020-01-20 16:00:19.806 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 16:00:19.807 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 16:00:19.808 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 16:00:19.809 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 16:00:19.810 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 16:00:19.811 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 16:00:19.811 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 16:00:19.812 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 16:00:19.819 DEBUG 19820 --- [http-nio-8004-exec-20] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 16:00:23.816 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 16:00:23.816 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 50(Integer)
-2020-01-20 16:00:23.817 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 16:00:23.818 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 16:00:23.818 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 50(String)
-2020-01-20 16:00:23.825 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 16:00:23.825 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 16:00:23.826 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 50(String)
-2020-01-20 16:00:23.827 DEBUG 19820 --- [http-nio-8004-exec-5] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 16:00:27.426 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 16:00:27.427 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 16:00:27.427 DEBUG 19820 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
-2020-01-20 16:00:27.427 DEBUG 19820 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
-2020-01-20 16:00:27.428 DEBUG 19820 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
-2020-01-20 16:00:27.428 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 16:00:27.428 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 16:00:27.429 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 16:00:27.431 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 16:00:27.432 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 16:00:27.432 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 16:00:27.434 DEBUG 19820 --- [http-nio-8004-exec-21] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
-2020-01-20 16:00:32.223 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==>  Preparing: SELECT b.jb_group_name, a.* FROM jb_info a, jb_group b WHERE a.jb_group_id = b.jb_group_id AND a.id = ? AND jb_yxbz = 'Y' 
-2020-01-20 16:00:32.223 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryJbInfoById   : ==> Parameters: 51(Integer)
-2020-01-20 16:00:32.224 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryJbInfoById   : <==      Total: 1
-2020-01-20 16:00:32.225 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==>  Preparing: SELECT * FROM jb_mongodb_info WHERE jb_mongodb_id = ? 
-2020-01-20 16:00:32.225 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdMongoDB         : ==> Parameters: 51(String)
-2020-01-20 16:00:32.226 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdMongoDB         : <==      Total: 1
-2020-01-20 16:00:32.227 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==>  Preparing: SELECT c.* FROM jb_txtfile_info c WHERE c.jb_txtFile_id = ? 
-2020-01-20 16:00:32.227 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdTxtFile         : ==> Parameters: 51(String)
-2020-01-20 16:00:32.229 DEBUG 19820 --- [http-nio-8004-exec-30] c.c.d.d.J.queryJbInfoByIdTxtFile         : <==      Total: 1
+2020-01-22 09:55:48.529  INFO 20652 --- [restartedMain] com.cnct.datax.DataxApplication          : Starting DataxApplication on LAPTOP-7U45E99N with PID 20652 (G:\ideal_project_test\datax\target\classes started by liyang in G:\ideal_project_test\datax)
+2020-01-22 09:55:48.579  INFO 20652 --- [restartedMain] com.cnct.datax.DataxApplication          : The following profiles are active: dev
+2020-01-22 09:55:54.772  INFO 20652 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-22 09:55:54.773  INFO 20652 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-22 09:55:55.157  INFO 20652 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-22 09:55:56.099  INFO 20652 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-01-22 09:55:56.102  WARN 20652 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-01-22 09:55:57.645  INFO 20652 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-01-22 09:56:01.278  INFO 20652 --- [restartedMain] com.cnct.datax.DataxApplication          : Started DataxApplication in 15.083 seconds (JVM running for 25.617)
+2020-01-22 09:56:28.248  INFO 20652 --- [http-nio-8004-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-22 09:56:46.910 DEBUG 20652 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 09:56:46.910 DEBUG 20652 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 09:56:46.910 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 09:56:47.007 DEBUG 20652 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 09:56:47.007 DEBUG 20652 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 09:56:47.007 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 09:56:47.057 DEBUG 20652 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 09:56:47.058 DEBUG 20652 --- [http-nio-8004-exec-8] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 09:56:47.068 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 09:56:47.069 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 09:56:47.069 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 09:56:47.087 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 10:29:49.481 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 10:29:49.482 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 10:29:49.483 DEBUG 20652 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:29:49.483 DEBUG 20652 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:29:49.494 DEBUG 20652 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:29:49.505 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 10:29:49.530 DEBUG 20652 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 10:29:49.531 DEBUG 20652 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 10:29:49.546 DEBUG 20652 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 10:29:49.547 DEBUG 20652 --- [http-nio-8004-exec-15] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 10:29:49.547 DEBUG 20652 --- [http-nio-8004-exec-15] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 10:29:49.548 DEBUG 20652 --- [http-nio-8004-exec-15] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 10:29:53.756 DEBUG 20652 --- [http-nio-8004-exec-17] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-22 10:29:53.757 DEBUG 20652 --- [http-nio-8004-exec-17] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 9(String)
+2020-01-22 10:29:53.780 DEBUG 20652 --- [http-nio-8004-exec-17] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 0
+2020-01-22 10:31:14.593 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 10:31:14.593 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 10:31:14.595 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 10:31:14.596 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:31:14.598 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:31:14.599 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:31:14.628 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 10:31:14.629 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 10:31:14.650 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 10:31:14.650 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 10:31:14.651 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 10:31:14.652 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 10:31:22.221 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:31:22.221 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:31:22.223 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:32:57.462 DEBUG 20652 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 10:32:57.462 DEBUG 20652 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 10:32:57.464 DEBUG 20652 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 10:32:57.473 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:32:57.474 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:32:57.476 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:32:57.498 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 10:32:57.499 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 10:32:57.504 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 10:32:57.504 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 10:32:57.505 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 10:32:57.507 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 10:33:04.331 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:33:04.332 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:33:04.333 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:34:54.716 DEBUG 20652 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:34:54.716 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 10:34:54.716 DEBUG 20652 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:34:54.716 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 10:34:54.718 DEBUG 20652 --- [http-nio-8004-exec-13] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:34:54.719 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 10:34:54.746 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 10:34:54.747 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 10:34:54.751 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 10:34:54.752 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 10:34:54.752 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 10:34:54.753 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 10:35:09.555 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:35:09.555 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:35:09.556 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:36:43.062 DEBUG 20652 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 10:36:43.063 DEBUG 20652 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 10:36:43.063 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:36:43.064 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:36:43.064 DEBUG 20652 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 10:36:43.065 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:36:43.124 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 10:36:43.124 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 10:36:43.128 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 10:36:43.128 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 10:36:43.129 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 10:36:43.130 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 10:36:52.198 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:36:52.199 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:36:52.200 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:37:43.511 DEBUG 20652 --- [http-nio-8004-exec-17] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 10:37:43.512 DEBUG 20652 --- [http-nio-8004-exec-17] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 10:37:43.513 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:37:43.513 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:37:43.514 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:37:43.514 DEBUG 20652 --- [http-nio-8004-exec-17] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 10:37:43.564 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 10:37:43.564 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 10:37:43.568 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 10:37:43.568 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 10:37:43.569 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 10:37:43.570 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 10:37:50.494 DEBUG 20652 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:37:50.495 DEBUG 20652 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:37:50.496 DEBUG 20652 --- [http-nio-8004-exec-1] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:38:27.886 DEBUG 20652 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 10:38:27.887 DEBUG 20652 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 10:38:27.887 DEBUG 20652 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:38:27.888 DEBUG 20652 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:38:27.888 DEBUG 20652 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 10:38:27.889 DEBUG 20652 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:38:27.923 DEBUG 20652 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 10:38:27.931 DEBUG 20652 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 10:38:27.935 DEBUG 20652 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 10:38:27.936 DEBUG 20652 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 10:38:27.937 DEBUG 20652 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 10:38:27.938 DEBUG 20652 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 10:38:48.961 DEBUG 20652 --- [http-nio-8004-exec-6] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 10:38:48.962 DEBUG 20652 --- [http-nio-8004-exec-6] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 10:38:48.963 DEBUG 20652 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:38:48.963 DEBUG 20652 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:38:48.963 DEBUG 20652 --- [http-nio-8004-exec-6] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 10:38:48.964 DEBUG 20652 --- [http-nio-8004-exec-29] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:38:49.035 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 10:38:49.035 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 10:38:49.038 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 10:38:49.039 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 10:38:49.039 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 10:38:49.040 DEBUG 20652 --- [http-nio-8004-exec-4] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 10:38:59.207 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:38:59.207 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:38:59.208 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:39:21.927 DEBUG 20652 --- [http-nio-8004-exec-19] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 10:39:21.927 DEBUG 20652 --- [http-nio-8004-exec-19] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 10:39:21.928 DEBUG 20652 --- [http-nio-8004-exec-19] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 10:39:21.940 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:39:21.940 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:39:21.941 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:39:21.968 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 10:39:21.969 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 10:39:21.973 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 10:39:21.973 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 10:39:21.974 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 10:39:21.975 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 10:39:27.903 DEBUG 20652 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:39:27.903 DEBUG 20652 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:39:27.904 DEBUG 20652 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:40:57.356 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 10:40:57.357 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 10:40:57.357 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:40:57.357 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:40:57.358 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:40:57.358 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 10:40:57.380 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 10:40:57.380 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 10:40:57.383 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 10:40:57.384 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 10:40:57.384 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 10:40:57.385 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 10:41:03.030 DEBUG 20652 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:41:03.031 DEBUG 20652 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:41:03.032 DEBUG 20652 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:49:05.587 DEBUG 20652 --- [http-nio-8004-exec-13] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 10:49:05.588 DEBUG 20652 --- [http-nio-8004-exec-13] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 10:49:05.589 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:49:05.589 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:49:05.589 DEBUG 20652 --- [http-nio-8004-exec-13] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 10:49:05.590 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:49:05.610 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 10:49:05.610 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 10:49:05.613 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 10:49:05.613 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 10:49:05.614 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 10:49:05.614 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 10:49:11.555 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:49:11.555 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:49:11.556 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:56:28.521 DEBUG 20652 --- [http-nio-8004-exec-19] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 10:56:28.523 DEBUG 20652 --- [http-nio-8004-exec-19] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 10:56:28.524 DEBUG 20652 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:56:28.524 DEBUG 20652 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:56:28.525 DEBUG 20652 --- [http-nio-8004-exec-19] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 10:56:28.525 DEBUG 20652 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:56:28.569 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 10:56:28.570 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 10:56:28.573 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 10:56:28.573 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 10:56:28.574 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 10:56:28.575 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 10:56:34.724 DEBUG 20652 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-22 10:56:34.725 DEBUG 20652 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 8(String)
+2020-01-22 10:56:34.726 DEBUG 20652 --- [http-nio-8004-exec-11] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 2
+2020-01-22 10:56:39.996 DEBUG 20652 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:56:39.996 DEBUG 20652 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:56:39.997 DEBUG 20652 --- [http-nio-8004-exec-14] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:58:05.955 DEBUG 20652 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 10:58:05.956 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:58:05.957 DEBUG 20652 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 10:58:05.957 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:58:05.958 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 10:58:05.958 DEBUG 20652 --- [http-nio-8004-exec-3] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 10:58:06.004 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 10:58:06.005 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 10:58:06.008 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 10:58:06.008 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 10:58:06.008 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 10:58:06.009 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 10:58:11.557 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllContionNameByTypeId    : ==>  Preparing: SELECT A.id, A.db_type, B.db_type_name, A.db_name FROM db_contion_info A, db_info B WHERE A.db_type = B.db_type AND A.yxbz = 'Y' AND A.db_type = ? 
+2020-01-22 10:58:11.557 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllContionNameByTypeId    : ==> Parameters: 8(String)
+2020-01-22 10:58:11.558 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.d.D.queryAllContionNameByTypeId    : <==      Total: 2
+2020-01-22 10:58:15.025 DEBUG 20652 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 10:58:15.025 DEBUG 20652 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 10:58:15.026 DEBUG 20652 --- [http-nio-8004-exec-6] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:00:32.893 DEBUG 20652 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 11:00:32.893 DEBUG 20652 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 11:00:32.894 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:00:32.894 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:00:32.894 DEBUG 20652 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 11:00:32.895 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:00:32.941 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 11:00:32.942 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 11:00:32.945 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 11:00:32.946 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 11:00:32.946 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 11:00:32.947 DEBUG 20652 --- [http-nio-8004-exec-28] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 11:00:39.630 DEBUG 20652 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:00:39.631 DEBUG 20652 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:00:39.631 DEBUG 20652 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:01:01.504 DEBUG 20652 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:01:01.505 DEBUG 20652 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:01:01.506 DEBUG 20652 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:01:01.513 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 11:01:01.514 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 11:01:01.515 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 11:01:01.551 DEBUG 20652 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 11:01:01.552 DEBUG 20652 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 11:01:01.555 DEBUG 20652 --- [http-nio-8004-exec-27] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 11:01:01.556 DEBUG 20652 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 11:01:01.556 DEBUG 20652 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 11:01:01.557 DEBUG 20652 --- [http-nio-8004-exec-27] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 11:01:09.692 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:01:09.692 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:01:09.693 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:03:37.328 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 11:03:37.328 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 11:03:37.330 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 11:03:37.330 DEBUG 20652 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:03:37.330 DEBUG 20652 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:03:37.331 DEBUG 20652 --- [http-nio-8004-exec-17] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:03:37.387 DEBUG 20652 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 11:03:37.387 DEBUG 20652 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 11:03:37.389 DEBUG 20652 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 11:03:37.390 DEBUG 20652 --- [http-nio-8004-exec-25] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 11:03:37.390 DEBUG 20652 --- [http-nio-8004-exec-25] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 11:03:37.391 DEBUG 20652 --- [http-nio-8004-exec-25] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 11:03:44.635 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:03:44.635 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:03:44.636 DEBUG 20652 --- [http-nio-8004-exec-24] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:05:04.046 DEBUG 20652 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 11:05:04.046 DEBUG 20652 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 11:05:04.047 DEBUG 20652 --- [http-nio-8004-exec-10] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 11:05:04.048 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:05:04.049 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:05:04.049 DEBUG 20652 --- [http-nio-8004-exec-16] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:05:04.100 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 11:05:04.101 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 11:05:04.103 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 11:05:04.103 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 11:05:04.104 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 11:05:04.105 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 11:05:13.694 DEBUG 20652 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:05:13.695 DEBUG 20652 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:05:13.696 DEBUG 20652 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:08:25.393 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 11:08:25.394 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 11:08:25.394 DEBUG 20652 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:08:25.395 DEBUG 20652 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:08:25.395 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 11:08:25.396 DEBUG 20652 --- [http-nio-8004-exec-8] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:08:25.444 DEBUG 20652 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 11:08:25.444 DEBUG 20652 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 11:08:25.447 DEBUG 20652 --- [http-nio-8004-exec-12] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 11:08:25.447 DEBUG 20652 --- [http-nio-8004-exec-12] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 11:08:25.447 DEBUG 20652 --- [http-nio-8004-exec-12] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 11:08:25.448 DEBUG 20652 --- [http-nio-8004-exec-12] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 11:08:33.149 DEBUG 20652 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:08:33.149 DEBUG 20652 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:08:33.150 DEBUG 20652 --- [http-nio-8004-exec-23] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:09:11.766 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 11:09:11.766 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 11:09:11.767 DEBUG 20652 --- [http-nio-8004-exec-7] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 11:09:11.767 DEBUG 20652 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:09:11.767 DEBUG 20652 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:09:11.768 DEBUG 20652 --- [http-nio-8004-exec-18] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:09:11.822 DEBUG 20652 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 11:09:11.822 DEBUG 20652 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 11:09:11.825 DEBUG 20652 --- [http-nio-8004-exec-15] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 11:09:11.825 DEBUG 20652 --- [http-nio-8004-exec-15] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 11:09:11.825 DEBUG 20652 --- [http-nio-8004-exec-15] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 11:09:11.826 DEBUG 20652 --- [http-nio-8004-exec-15] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 11:09:19.941 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:09:19.941 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:09:19.942 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:10:19.377 DEBUG 20652 --- [http-nio-8004-exec-1] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 11:10:19.377 DEBUG 20652 --- [http-nio-8004-exec-1] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 11:10:19.377 DEBUG 20652 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:10:19.378 DEBUG 20652 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:10:19.378 DEBUG 20652 --- [http-nio-8004-exec-25] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:10:19.378 DEBUG 20652 --- [http-nio-8004-exec-1] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 11:10:19.414 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 11:10:19.415 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 11:10:19.417 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 11:10:19.418 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 11:10:19.418 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 11:10:19.419 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 11:10:28.172 DEBUG 20652 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:10:28.172 DEBUG 20652 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:10:28.173 DEBUG 20652 --- [http-nio-8004-exec-3] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:11:32.275 DEBUG 20652 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 11:11:32.275 DEBUG 20652 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 11:11:32.276 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:11:32.276 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:11:32.276 DEBUG 20652 --- [http-nio-8004-exec-22] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 11:11:32.277 DEBUG 20652 --- [http-nio-8004-exec-20] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:11:32.326 DEBUG 20652 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 11:11:32.327 DEBUG 20652 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 11:11:32.329 DEBUG 20652 --- [http-nio-8004-exec-10] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 11:11:32.330 DEBUG 20652 --- [http-nio-8004-exec-10] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 11:11:32.330 DEBUG 20652 --- [http-nio-8004-exec-10] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 11:11:32.331 DEBUG 20652 --- [http-nio-8004-exec-10] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 11:11:40.328 DEBUG 20652 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:11:40.328 DEBUG 20652 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:11:40.329 DEBUG 20652 --- [http-nio-8004-exec-21] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:14:25.427 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllType                   : ==>  Preparing: SELECT * FROM db_info 
+2020-01-22 11:14:25.427 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllType                   : ==> Parameters: 
+2020-01-22 11:14:25.428 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:14:25.428 DEBUG 20652 --- [http-nio-8004-exec-30] c.c.d.d.D.queryAllType                   : <==      Total: 9
+2020-01-22 11:14:25.428 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:14:25.429 DEBUG 20652 --- [http-nio-8004-exec-26] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3
+2020-01-22 11:14:25.484 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==>  Preparing: SELECT a.* FROM jb_info a WHERE a.jb_yxbz = 'Y' ORDER BY a.id DESC LIMIT ?,? 
+2020-01-22 11:14:25.484 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : ==> Parameters: 0(Integer), 10(Integer)
+2020-01-22 11:14:25.487 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.dao.JbInfoMapper.queryAllJbInfo    : <==      Total: 10
+2020-01-22 11:14:25.488 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.d.J.queryAllJbInfoCount            : ==>  Preparing: SELECT COUNT(*) FROM jb_info WHERE jb_yxbz = 'Y' 
+2020-01-22 11:14:25.488 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.d.J.queryAllJbInfoCount            : ==> Parameters: 
+2020-01-22 11:14:25.489 DEBUG 20652 --- [http-nio-8004-exec-9] c.c.d.d.J.queryAllJbInfoCount            : <==      Total: 1
+2020-01-22 11:14:32.860 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==>  Preparing: SELECT jb_group_id,jb_group_name FROM jb_group 
+2020-01-22 11:14:32.860 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : ==> Parameters: 
+2020-01-22 11:14:32.861 DEBUG 20652 --- [http-nio-8004-exec-2] c.c.d.dao.JbInfoMapper.queryAllJbGroup   : <==      Total: 3

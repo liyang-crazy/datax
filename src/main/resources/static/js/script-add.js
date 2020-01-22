@@ -8,7 +8,7 @@ $(function () {
         var laytpl = layui.laytpl;
         var form = layui.form;
 
-        var db_type_arr = ['3','5'];
+        var db_type_arr = ['3','5','9'];
         var db_type_arr_1 = ['1','2','4'];
         /*接收从父页面传递过来的三个参数*/
         function getSearchString(key) {
@@ -168,6 +168,17 @@ $(function () {
                         $('#add_ftp_cp_all').addClass('layui-hide');
                     }
                 });
+            }else if(getSearchString('r_db_type') == 9){//表示reader区域是hdfs
+                $('.mysqlAndOracle').addClass('layui-hide');
+                $('.hdfs').removeClass('layui-hide');
+                /*用于监听是否有Kerberos认证*/
+                form.on('select(hdfs_haveK_filter)', function(data){
+                    if(data.value == 'true'){
+                        $('#kerberos_all').removeClass('layui-hide');
+                    }else if(data.value == 'false'){
+                        $('#kerberos_all').addClass('layui-hide');
+                    }
+                });
             }
         }else if(db_type_arr_1.indexOf(getSearchString('r_db_type'))>-1){//表示reader区域是mysql或者oracle
             $('.mysqlAndOracle').removeClass('layui-hide');
@@ -201,6 +212,17 @@ $(function () {
                     }else if(data.value == 'sftp'){
                         $('#w_add_ftp_port').val('22');
                         $('#w_add_ftp_cp_all').addClass('layui-hide');
+                    }
+                });
+            }else if(getSearchString('w_db_type') == 9){
+                $('.w_mysqlAndOracle').addClass('layui-hide');
+                $('.w_hdfs').removeClass('layui-hide');
+                /*用于监听是否有Kerberos认证*/
+                form.on('select(w_hdfs_haveK_filter)', function(data){
+                    if(data.value == 'true'){
+                        $('#w_kerberos_all').removeClass('layui-hide');
+                    }else if(data.value == 'false'){
+                        $('#w_kerberos_all').addClass('layui-hide');
                     }
                 });
             }
@@ -585,6 +607,85 @@ $(function () {
         });
         $('#w_add_drds_postSql_cancle').on('click',function () {
             $('.w_add_drds_postSql_textarea').addClass('layui-hide');
+        });
+        /*监听hdfs：column-读*/
+        $('#add_hdfs_column').on('focus',function () {
+            $('.add_hdfs_col_txt').removeClass('layui-hide');
+            form.on('select(add_hdfs_column1_filter)', function(data){
+               if(data.value == 'index'){
+                   $("#add_hdfs_column3 option[value='type']").prop("selected",true);
+                   form.render("select");
+                   $('#add_hdfs_column2').val(0);
+                   $('#add_hdfs_column4').val('long');
+               }else if(data.value == 'type'){
+                   $("#add_hdfs_column3 option[value='value']").prop("selected",true);
+                   form.render("select");
+                   $('#add_hdfs_column2').val('string');
+                   $('#add_hdfs_column4').val('hello');
+               }
+            });
+
+        });
+        $('#add_hdfs_column_sure').on('click',function () {
+            $('.add_hdfs_col_txt').addClass('layui-hide');
+            /*将获取的数据封装成json对象的形式添加到input框中*/
+            var key1 = "";
+            var key2 = "";
+            var value1 = "";
+            var value2 = "";
+            var obj = {};
+            key1 = $('#add_hdfs_column').val();
+            if(key1 == "index"){
+                key1 = $('#add_hdfs_column1').val();
+                value1 = parseInt($('#add_hdfs_column2').val());
+            }else {
+                key1 = $('#add_hdfs_column1').val();
+                value1 = $('#add_hdfs_column2').val();
+            }
+            key2 = $('#add_hdfs_column3').val();
+            value2 = $('#add_hdfs_column4').val();
+            obj[key1] = value1;
+            obj[key2] = value2;
+            var add_cloumn_txt_inpt = $('#add_hdfs_column').val();
+            if(add_cloumn_txt_inpt == ""){
+                add_cloumn_txt_inpt = JSON.stringify(obj);
+            }else {
+                add_cloumn_txt_inpt += '&'+JSON.stringify(obj);
+            }
+            $('#add_hdfs_column').val(add_cloumn_txt_inpt);
+        });
+        $('#add_hdfs_column_cancle').on('click',function () {
+            $('.add_hdfs_col_txt').addClass('layui-hide');
+        });
+
+        /*监听hdfs：column-写*/
+        $('#w_add_hdfs_column').on('focus',function () {
+            $('.w_add_hdfs_col_txt').removeClass('layui-hide');
+        });
+        $('#w_add_hdfs_column_sure').on('click',function () {
+            $('.w_add_hdfs_col_txt').addClass('layui-hide');
+            /*将获取的数据封装成json对象的形式添加到input框中*/
+            var key1 = "";
+            var key2 = "";
+            var value1 = "";
+            var value2 = "";
+            var obj = {};
+            key1 = $('#w_add_hdfs_column1').val();
+            value1 = $('#w_add_hdfs_column2').val();
+            key2 = $('#w_add_hdfs_column3').val();
+            value2 = $('#w_add_hdfs_column4').val();
+            obj[key1] = value1;
+            obj[key2] = value2;
+            var add_cloumn_txt_inpt = $('#w_add_hdfs_column').val();
+            if(add_cloumn_txt_inpt == ""){
+                add_cloumn_txt_inpt = JSON.stringify(obj);
+            }else {
+                add_cloumn_txt_inpt += '&'+JSON.stringify(obj);
+            }
+            $('#w_add_hdfs_column').val(add_cloumn_txt_inpt);
+        });
+        $('#w_add_hdfs_column_cancle').on('click',function () {
+            $('.w_add_hdfs_col_txt').addClass('layui-hide');
         });
 
 
