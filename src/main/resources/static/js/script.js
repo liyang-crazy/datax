@@ -67,6 +67,7 @@ $(function () {
         var mongodb_jb = {};//定义一个mongodb的脚本信息对象
         var cassandra_jb = {};//定义一个cassandra的脚本信息对象
         var drds_jb = {};//定义一个drds的脚本信息对象
+        var hdfs_jb= {};//定义一个hdfs的脚本信息对象
         var data_reader_db_arr = [];
         var data_reader_db = {
             name:'',
@@ -343,6 +344,7 @@ $(function () {
             mongodb_jb = {};
             cassandra_jb = {};
             drds_jb = {};
+            hdfs_jb = {};
             //dbContionInfo.readerId = $('#r_db_name_id').val();
             dbContionInfo.r_db_type = $('#r_db_type_id').val();
             dbContionInfo.w_db_type = $('#w_db_type_id').val();
@@ -525,6 +527,31 @@ $(function () {
                     drds_jb.jb_drds_table_w = layero.find('iframe').contents().find('[id="w_add_drds_table"]').val();
                     drds_jb.jb_drds_batchSize_w = layero.find('iframe').contents().find('[id="w_add_drds_batchSize"]').val();
                     dbConJson.drdsInfo = drds_jb;
+                    /*获取hdfs的脚本信息*/
+                    hdfs_jb.jb_hdfs_path_r = layero.find('iframe').contents().find('[id="add_hdfs_path"]').val();
+                    hdfs_jb.jb_hdfs_defaultFS_r = layero.find('iframe').contents().find('[id="add_hdfs_defaultFS"]').val();
+                    hdfs_jb.jb_hdfs_column_r = layero.find('iframe').contents().find('[id="add_hdfs_column"]').val();
+                    hdfs_jb.jb_hdfs_fileType_r = layero.find('iframe').contents().find('[id="add_hdfs_fileType"]').val();
+                    hdfs_jb.jb_hdfs_en_r = layero.find('iframe').contents().find('[id="add_hdfs_en"]').val();
+                    hdfs_jb.jb_hdfs_fieldD_r = layero.find('iframe').contents().find('[id="add_hdfs_fieldD"]').val();
+                   //hdfs_jb.jb_hdfs_nullF_r = layero.find('iframe').contents().find('[id="add_hdfs_nullF"]').val();
+                    hdfs_jb.jb_hdfs_haveK_r = layero.find('iframe').contents().find('[id="add_hdfs_haveK"]').val();
+                    hdfs_jb.jb_hdfs_kerberosK_r = layero.find('iframe').contents().find('[id="add_hdfs_kerberosK"]').val();
+                    hdfs_jb.jb_hdfs_kerberosP_r = layero.find('iframe').contents().find('[id="add_hdfs_kerberosP"]').val();
+                    hdfs_jb.jb_hdfs_compress_r = layero.find('iframe').contents().find('[id="add_hdfs_compress"]').val();
+                    hdfs_jb.jb_hdfs_defaultFS_w = layero.find('iframe').contents().find('[id="w_add_hdfs_defaultFS"]').val();
+                    hdfs_jb.jb_hdfs_fileType_w = layero.find('iframe').contents().find('[id="w_add_hdfs_fileType"]').val();
+                    hdfs_jb.jb_hdfs_path_w = layero.find('iframe').contents().find('[id="w_add_hdfs_path"]').val();
+                    hdfs_jb.jb_hdfs_fileName_w = layero.find('iframe').contents().find('[id="w_add_hdfs_fileName"]').val();
+                    hdfs_jb.jb_hdfs_column_w = layero.find('iframe').contents().find('[id="w_add_hdfs_column"]').val();
+                    hdfs_jb.jb_hdfs_writeM_w = layero.find('iframe').contents().find('[id="w_add_hdfs_writeMode"]').val();
+                    hdfs_jb.jb_hdfs_fieldD_w = layero.find('iframe').contents().find('[id="w_add_hdfs_fieldD"]').val();
+                    hdfs_jb.jb_hdfs_compress_w = layero.find('iframe').contents().find('[id="w_add_hdfs_compress"]').val();
+                    hdfs_jb.jb_hdfs_en_w = layero.find('iframe').contents().find('[id="w_add_hdfs_en"]').val();
+                    hdfs_jb.jb_hdfs_haveK_w = layero.find('iframe').contents().find('[id="w_add_hdfs_haveK"]').val();
+                    hdfs_jb.jb_hdfs_kerberosK_w = layero.find('iframe').contents().find('[id="w_add_hdfs_kerberosK"]').val();
+                    hdfs_jb.jb_hdfs_kerberosP_w = layero.find('iframe').contents().find('[id="w_add_hdfs_kerberosP"]').val();
+                    dbConJson.hdfsInfo = hdfs_jb;
                     add_info_fun(dbConJson);
                     layer.closeAll();
                 },

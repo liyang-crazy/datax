@@ -34,8 +34,8 @@ public class HdfsReader {
         parameter.put("hadoopConfig",hadoopConfig);
         JSONObject csvReaderConfig = new JSONObject();
         csvReaderConfig.put("safetySwitch",false);
-        csvReaderConfig.put("safetySwitch",false);
-        csvReaderConfig.put("safetySwitch",false);
+        csvReaderConfig.put("skipEmptyRecords",false);
+        csvReaderConfig.put("useTextQualifier",false);
         parameter.put("csvReaderConfig",csvReaderConfig);
         reader.put("parameter",parameter);
         return reader;

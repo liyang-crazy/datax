@@ -120,4 +120,8 @@ public interface JbInfoMapper {
      * 根据脚本id修改对应脚本信息-drds
      */
     public void editJbInfoByIdDrds(DrdsInfo drdsInfo);
+    /**
+     * 向hdfs表中添加脚本信息
+     */
+    public int addHdfsJbInfo(JbInfo jbInfo);
 }

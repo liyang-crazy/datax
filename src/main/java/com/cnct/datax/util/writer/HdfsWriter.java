@@ -21,11 +21,11 @@ public class HdfsWriter {
         parameter.put("fieldDelimiter",jbInfo.getHdfsInfo().getJb_hdfs_fieldD_w());
         parameter.put("compress",jbInfo.getHdfsInfo().getJb_hdfs_compress_w());
         JSONObject hadoopConfig = new JSONObject();
-        hadoopConfig.put("hadoopConfig",jbInfo.getHdfsInfo().getJb_hdfs_hadoopCfg_a_w());
-        hadoopConfig.put("hadoopConfig",jbInfo.getHdfsInfo().getJb_hdfs_hadoopCfg_b_w());
-        hadoopConfig.put("hadoopConfig",jbInfo.getHdfsInfo().getJb_hdfs_hadoopCfg_c_w());
-        hadoopConfig.put("hadoopConfig",jbInfo.getHdfsInfo().getJb_hdfs_hadoopCfg_d_w());
-        hadoopConfig.put("hadoopConfig",jbInfo.getHdfsInfo().getJb_hdfs_hadoopCfg_e_w());
+        hadoopConfig.put("dfs.nameservices",jbInfo.getHdfsInfo().getJb_hdfs_hadoopCfg_a_w());
+        hadoopConfig.put("dfs.ha.namenodes.testDfs",jbInfo.getHdfsInfo().getJb_hdfs_hadoopCfg_b_w());
+        hadoopConfig.put("dfs.namenode.rpc-address.aliDfs.namenode1",jbInfo.getHdfsInfo().getJb_hdfs_hadoopCfg_c_w());
+        hadoopConfig.put("dfs.namenode.rpc-address.aliDfs.namenode2",jbInfo.getHdfsInfo().getJb_hdfs_hadoopCfg_d_w());
+        hadoopConfig.put("dfs.client.failover.proxy.provider.testDfs",jbInfo.getHdfsInfo().getJb_hdfs_hadoopCfg_e_w());
         parameter.put("hadoopConfig",hadoopConfig);
         parameter.put("encoding",jbInfo.getHdfsInfo().getJb_hdfs_en_w());
         parameter.put("haveKerberos",jbInfo.getHdfsInfo().getJb_hdfs_haveK_w());

@@ -60,6 +60,10 @@ public class JbInfoServiceImpl implements JbInfoService{
             /*drds文件添加*/
             jbInfo.getDrdsInfo().setJb_drds_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.addDrdsJbInfo(jbInfo);
+        }else if("9".equals(jbInfo.getR_db_type()) && !"9".equals(jbInfo.getW_db_type())){
+            /*hdfs文件添加*/
+            jbInfo.getHdfsInfo().setJb_hdfs_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addHdfsJbInfo(jbInfo);
         }
 
 
@@ -83,6 +87,10 @@ public class JbInfoServiceImpl implements JbInfoService{
             /*drds文件添加*/
             jbInfo.getDrdsInfo().setJb_drds_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.addDrdsJbInfo(jbInfo);
+        }else if("9".equals(jbInfo.getW_db_type()) && !"9".equals(jbInfo.getR_db_type())){
+            /*hdfs文件添加*/
+            jbInfo.getHdfsInfo().setJb_hdfs_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addHdfsJbInfo(jbInfo);
         }
 
         if("3".equals(jbInfo.getR_db_type()) && "3".equals(jbInfo.getW_db_type())){
@@ -105,6 +113,10 @@ public class JbInfoServiceImpl implements JbInfoService{
             /*drds文件添加*/
             jbInfo.getDrdsInfo().setJb_drds_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.addDrdsJbInfo(jbInfo);
+        }else if("9".equals(jbInfo.getR_db_type()) && "9".equals(jbInfo.getW_db_type())){
+            /*hdfs文件添加*/
+            jbInfo.getHdfsInfo().setJb_hdfs_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.addHdfsJbInfo(jbInfo);
         }
     }
     /**

@@ -484,5 +484,50 @@
           DEFAULT
         )
     </insert>
+    <!--向hdfs表中添加脚本信息-->
+    <insert id="addHdfsJbInfo" parameterType="com.cnct.datax.entity.JbInfo">
+        INSERT INTO jb_hdfs_info VALUES
+        (
+          DEFAULT,
+          #{hdfsInfo.jb_hdfs_id},
+          #{hdfsInfo.jb_hdfs_path_r},
+          #{hdfsInfo.jb_hdfs_defaultFS_r},
+          #{hdfsInfo.jb_hdfs_column_r},
+          #{hdfsInfo.jb_hdfs_fileType_r},
+          #{hdfsInfo.jb_hdfs_en_r},
+          #{hdfsInfo.jb_hdfs_fieldD_r},
+          #{hdfsInfo.jb_hdfs_nullF_r},
+          #{hdfsInfo.jb_hdfs_haveK_r},
+          #{hdfsInfo.jb_hdfs_kerberosK_r},
+          #{hdfsInfo.jb_hdfs_kerberosP_r},
+          #{hdfsInfo.jb_hdfs_compress_r},
+          #{hdfsInfo.jb_hdfs_hadoopCfg_a_r},
+          #{hdfsInfo.jb_hdfs_hadoopCfg_b_r},
+          #{hdfsInfo.jb_hdfs_hadoopCfg_c_r},
+          #{hdfsInfo.jb_hdfs_hadoopCfg_d_r},
+          #{hdfsInfo.jb_hdfs_hadoopCfg_e_r},
+          #{hdfsInfo.jb_hdfs_csvReaderCfg_a_r},
+          #{hdfsInfo.jb_hdfs_csvReaderCfg_b_r},
+          #{hdfsInfo.jb_hdfs_csvReaderCfg_c_r},
+          #{hdfsInfo.jb_hdfs_defaultFS_w},
+          #{hdfsInfo.jb_hdfs_fileType_w},
+          #{hdfsInfo.jb_hdfs_path_w},
+          #{hdfsInfo.jb_hdfs_fileName_w},
+          #{hdfsInfo.jb_hdfs_column_w},
+          #{hdfsInfo.jb_hdfs_writeM_w},
+          #{hdfsInfo.jb_hdfs_fieldD_w},
+          #{hdfsInfo.jb_hdfs_compress_w},
+          #{hdfsInfo.jb_hdfs_hadoopCfg_a_w},
+          #{hdfsInfo.jb_hdfs_hadoopCfg_b_w},
+          #{hdfsInfo.jb_hdfs_hadoopCfg_c_w},
+          #{hdfsInfo.jb_hdfs_hadoopCfg_d_w},
+          #{hdfsInfo.jb_hdfs_hadoopCfg_e_w},
+          #{hdfsInfo.jb_hdfs_en_w},
+          #{hdfsInfo.jb_hdfs_haveK_w},
+          #{hdfsInfo.jb_hdfs_kerberosK_w},
+          #{hdfsInfo.jb_hdfs_kerberosP_w},
+          DEFAULT
+        )
+    </insert>
 
 </mapper>
