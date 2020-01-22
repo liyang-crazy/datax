@@ -24,6 +24,10 @@ $(function () {
         var jb_ftp_ysgs_arr = ["zip","gzip","bzip2"];
         var jb_w_ftp_ms_arr = ["truncate","append","nonConflict"];
         var jb_cassandra_conL_arr = ["LOCAL_QUORUM","QUORUM","EACH_QUORUM","ALL","ANY","ONE","TWO","THREE","LOCAL_ONE"];
+        var jb_hdfs_fileType_arr = ["text","orc","rc","seq","csv"];
+        var jb_hdfs_compress_arr = ["gzip","bz2","zip","lzo","lzo_deflate","hadoop-snappy","framing-snappy"];
+        var jb_hdfs_writeMode_arr = ["","append","nonConflict"];
+        var jb_hdfs_compress_2_arr = ["","gzip","bzip2","NONE","SNAPPY"];
         var flg = true;
         var flg_r= true;
         var flg_w = true;
@@ -110,6 +114,9 @@ $(function () {
                     $('#edit_drds_table_all').addClass('layui-hide');
                     $('#edit_drds_querySql_all').removeClass('layui-hide');
                 }
+            }else if(data.r_db_type == 9){
+                $('.mysqlAndOracle').addClass('layui-hide');
+                $('.hdfs').removeClass('layui-hide');
             }else {
                 $('.mysqlAndOracle').removeClass('layui-hide');
                 $('.txtFile').addClass('layui-hide');
@@ -141,6 +148,9 @@ $(function () {
             }else if(data.w_db_type == 8){
                 $('.w_mysqlAndOracle').addClass('layui-hide');
                 $('.w_drds').removeClass('layui-hide');
+            }else if(data.w_db_type == 9){
+                $('.w_mysqlAndOracle').addClass('layui-hide');
+                $('.w_hdfs').removeClass('layui-hide');
             }else {
                 $('.w_mysqlAndOracle').removeClass('layui-hide');
                 $('.w_txtFile').addClass('layui-hide');
@@ -508,6 +518,110 @@ $(function () {
                 $('#w_edit_drds_jdbcUrl').val(data.drdsInfo.jb_drds_jdbcUrl_w);
                 $('#w_edit_drds_table').val(data.drdsInfo.jb_drds_table_w);
                 $('#w_edit_drds_batchSize').val(data.drdsInfo.jb_drds_batchSize_w);
+            }
+            /*给hdfs表单赋值*/
+            if(data.hdfsInfo != null){
+                $('#edit_hdfs_path').val(data.hdfsInfo.jb_hdfs_path_r);
+                $('#edit_hdfs_defaultFS').val(data.hdfsInfo.jb_hdfs_defaultFS_r);
+                $('#edit_hdfs_column').val(data.hdfsInfo.jb_hdfs_column_r);
+                $.each(jb_hdfs_fileType_arr,function (index,item) {
+                    if(data.hdfsInfo.jb_hdfs_fileType_r == item){
+                        $("#edit_hdfs_fileType").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        $("#edit_hdfs_fileType").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#edit_hdfs_en').val(data.hdfsInfo.jb_hdfs_en_r);
+                $('#edit_hdfs_fieldD').val(data.hdfsInfo.jb_hdfs_fieldD_r);
+                $.each(jb_r_txtFile_csv_h_arr,function (index,item) {
+                    if(data.hdfsInfo.jb_hdfs_haveK_r == 1){
+                        $('#kerberos_all').removeClass('layui-hide');
+                    }else {
+                        $('#kerberos_all').addClass('layui-hide');
+                    }
+                    if(data.hdfsInfo.jb_hdfs_haveK_r == item){
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#edit_hdfs_haveK").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#edit_hdfs_haveK").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#edit_hdfs_kerberosK').val(data.hdfsInfo.jb_hdfs_kerberosK_r);
+                $('#edit_hdfs_kerberosP').val(data.hdfsInfo.jb_hdfs_kerberosP_r);
+                $.each(jb_hdfs_compress_arr,function (index,item) {
+                    if(data.hdfsInfo.jb_hdfs_compress_r == item){
+                        $("#edit_hdfs_compress").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        $("#edit_hdfs_compress").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#w_edit_hdfs_defaultFS').val(data.hdfsInfo.jb_hdfs_defaultFS_w);
+                $.each(jb_hdfs_fileType_arr,function (index,item) {
+                    if(data.hdfsInfo.jb_hdfs_fileType_w == item){
+                        $("#w_edit_hdfs_fileType").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        $("#w_edit_hdfs_fileType").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#w_edit_hdfs_path').val(data.hdfsInfo.jb_hdfs_path_w);
+                $('#w_edit_hdfs_fileName').val(data.hdfsInfo.jb_hdfs_fileName_w);
+                $('#w_edit_hdfs_column').val(data.hdfsInfo.jb_hdfs_column_w);
+                $.each(jb_hdfs_writeMode_arr,function (index,item) {
+                    if(data.hdfsInfo.jb_hdfs_writeM_w == item){
+                        $("#w_edit_hdfs_writeMode").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        $("#w_edit_hdfs_writeMode").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#w_edit_hdfs_fieldD').val(data.hdfsInfo.jb_hdfs_fieldD_w);
+                $.each(jb_hdfs_compress_2_arr,function (index,item) {
+                    if(data.hdfsInfo.jb_hdfs_compress_w == item){
+                        $("#w_edit_hdfs_compress").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        $("#w_edit_hdfs_compress").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#w_edit_hdfs_en').val(data.hdfsInfo.jb_hdfs_en_w);
+                $.each(jb_r_txtFile_csv_h_arr,function (index,item) {
+                    if(data.hdfsInfo.jb_hdfs_haveK_w == 1){
+                        $('#w_kerberos_all').removeClass('layui-hide');
+                    }else {
+                        $('#w_kerberos_all').addClass('layui-hide');
+                    }
+                    if(data.hdfsInfo.jb_hdfs_haveK_w == item){
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#w_edit_hdfs_haveK").append("<option value="+item+" selected>"+item+"</option>");
+                    }else {
+                        if(item == 0){
+                            item = false;
+                        }else {
+                            item = true;
+                        }
+                        $("#w_edit_hdfs_haveK").append("<option value="+item+">"+item+"</option>");
+                    }
+                });
+                layui.form.render("select");
+                $('#w_edit_hdfs_kerberosK').val(data.hdfsInfo.jb_hdfs_kerberosK_w);
+                $('#w_edit_hdfs_kerberosP').val(data.hdfsInfo.jb_hdfs_kerberosP_w);
             }
         };
 
@@ -882,6 +996,105 @@ $(function () {
         $('#w_edit_drds_postSql_cancle').on('click',function () {
             $('.w_edit_drds_postSql_textarea').addClass('layui-hide');
         });
+
+        /*监听hdfs:是否有Kerberos认证-读*/
+        form.on('select(hdfs_haveK_filter)', function(data){
+            if(data.value == 'true'){
+                $('#kerberos_all').removeClass('layui-hide');
+            }else if(data.value == 'false'){
+                $('#kerberos_all').addClass('layui-hide');
+            }
+        });
+        /*监听hdfs:是否有Kerberos认证-写*/
+        form.on('select(w_hdfs_haveK_filter)', function(data){
+            if(data.value == 'true'){
+                $('#w_kerberos_all').removeClass('layui-hide');
+            }else if(data.value == 'false'){
+                $('#w_kerberos_all').addClass('layui-hide');
+            }
+        });
+        /*监听hdfs:cloumn-读*/
+        $('#edit_hdfs_column').on('focus',function () {
+            $('.edit_hdfs_col_txt').removeClass('layui-hide');
+            form.on('select(edit_hdfs_column1_filter)', function(data){
+                if(data.value == 'index'){
+                    $("#edit_hdfs_column3 option[value='type']").prop("selected",true);
+                    form.render("select");
+                    $('#edit_hdfs_column2').val(0);
+                    $('#edit_hdfs_column4').val('long');
+                }else if(data.value == 'type'){
+                    $("#edit_hdfs_column3 option[value='value']").prop("selected",true);
+                    form.render("select");
+                    $('#edit_hdfs_column2').val('string');
+                    $('#edit_hdfs_column4').val('hello');
+                }
+            });
+        });
+        $('#edit_hdfs_column_sure').on('click',function () {
+            if(flg_r){
+                $('#edit_hdfs_column').val('');
+                flg_r = !flg_r;
+            }
+            $('.edit_hdfs_col_txt').addClass('layui-hide');
+            /*将获取的数据封装成json对象的形式添加到input框中*/
+            var key1 = "";
+            var key2 = "";
+            var value1 = "";
+            var value2 = "";
+            var obj = {};
+            key1 = $('#edit_hdfs_column1').val();
+            value1 = $('#edit_hdfs_column2').val();
+            key2 = $('#edit_hdfs_column3').val();
+            value2 = $('#edit_hdfs_column4').val();
+            obj[key1] = value1;
+            obj[key2] = value2;
+            var add_cloumn_txt_inpt = $('#edit_hdfs_column').val();
+            if(add_cloumn_txt_inpt == ""){
+                add_cloumn_txt_inpt = JSON.stringify(obj);
+            }else {
+                add_cloumn_txt_inpt += '&'+JSON.stringify(obj);
+            }
+            $('#edit_hdfs_column').val(add_cloumn_txt_inpt);
+        });
+        $('#edit_hdfs_column_cancle').on('click',function () {
+            $('.edit_hdfs_col_txt').addClass('layui-hide');
+        });
+
+        /*监听hdfs:cloumn-写*/
+        $('#w_edit_hdfs_column').on('focus',function () {
+            $('.w_edit_hdfs_col_txt').removeClass('layui-hide');
+        });
+        $('#w_edit_hdfs_column_sure').on('click',function () {
+            if(flg_w){
+                $('#w_edit_hdfs_column').val('');
+                flg_w = !flg_w;
+            }
+            $('.w_edit_hdfs_col_txt').addClass('layui-hide');
+            /*将获取的数据封装成json对象的形式添加到input框中*/
+            var key1 = "";
+            var key2 = "";
+            var value1 = "";
+            var value2 = "";
+            var obj = {};
+            key1 = $('#w_edit_hdfs_column1').val();
+            value1 = $('#w_edit_hdfs_column2').val();
+            key2 = $('#w_edit_hdfs_column3').val();
+            value2 = $('#w_edit_hdfs_column4').val();
+            obj[key1] = value1;
+            obj[key2] = value2;
+            var add_cloumn_txt_inpt = $('#w_edit_hdfs_column').val();
+            if(add_cloumn_txt_inpt == ""){
+                add_cloumn_txt_inpt = JSON.stringify(obj);
+            }else {
+                add_cloumn_txt_inpt += '&'+JSON.stringify(obj);
+            }
+            $('#w_edit_hdfs_column').val(add_cloumn_txt_inpt);
+        });
+        $('#w_edit_hdfs_column_cancle').on('click',function () {
+            $('.w_edit_hdfs_col_txt').addClass('layui-hide');
+        });
+
+
 
     })
 });
