@@ -422,6 +422,22 @@ public class JbInfoController {
                jbInfo.getDrdsInfo().setJb_drds_postSql_arr_w(jbInfo.getDrdsInfo().getJb_drds_postSql_w().split("&"));
                jbInfo.getDrdsInfo().setJb_drds_table_arr_w(jbInfo.getDrdsInfo().getJb_drds_table_w().split(","));
            }
+           if("9".equals(jbInfo.getR_db_type()) || "9".equals(jbInfo.getW_db_type())){
+               String[]  r_column = jbInfo.getHdfsInfo().getJb_hdfs_column_r().split("&");
+               ArrayList<Object> r_column_arr = new ArrayList<>();
+               for(String r_column_one : r_column){
+                   JSONObject jsonObject = JSON.parseObject(r_column_one);
+                   r_column_arr.add(jsonObject);
+               }
+               jbInfo.getHdfsInfo().setJb_hdfs_column_arr_r(r_column_arr);
+               String[] w_column = jbInfo.getHdfsInfo().getJb_hdfs_column_w().split("&");
+               ArrayList<Object> w_column_arr = new ArrayList<>();
+               for(String w_column_one : w_column){
+                   JSONObject jsonObject = JSON.parseObject(w_column_one);
+                   w_column_arr.add(jsonObject);
+               }
+               jbInfo.getHdfsInfo().setJb_hdfs_column_arr_w(w_column_arr);
+           }
             switch (jbInfo.getR_db_type()){
                 case "1":
                    reader = MysqlReader.mysqlReader(jbInfo);
@@ -446,6 +462,9 @@ public class JbInfoController {
                     break;
                 case "8":
                     reader = DrdsReader.drdsReader(jbInfo);
+                    break;
+                case "9":
+                    reader = HdfsReader.hdfsReader(jbInfo);
                     break;
             }
             switch (jbInfo.getW_db_type()){
@@ -472,6 +491,9 @@ public class JbInfoController {
                     break;
                 case "8":
                     writer = DrdsWriter.drdsWriter(jbInfo);
+                    break;
+                case "9":
+                    writer = HdfsWriter.hdfsWriter(jbInfo);
                     break;
             }
             jsonString = Merge.mergeAll(jbInfo,reader,writer);

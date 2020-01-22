@@ -128,4 +128,8 @@ public interface JbInfoMapper {
      * 根据id查询脚本信息-查询的是hdfs的
      */
     public HdfsInfo queryJbInfoByIdHdfs(HdfsInfo hdfsInfo);
+    /**
+     * 根据脚本id修改对应脚本信息-hdfs
+     */
+    public void editJbInfoByIdHdfs(HdfsInfo hdfsInfo);
 }

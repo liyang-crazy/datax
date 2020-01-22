@@ -292,6 +292,37 @@
         WHERE
             a.jb_drds_id = #{jb_drds_id}
     </update>
+    <!--根据脚本id修改对应脚本信息-hdfs-->
+    <update id="editJbInfoByIdHdfs" parameterType="com.cnct.datax.entity.HdfsInfo">
+        UPDATE
+            jb_hdfs_info a
+        SET
+            a.jb_hdfs_path_r = #{jb_hdfs_path_r},
+            a.jb_hdfs_defaultFS_r = #{jb_hdfs_defaultFS_r},
+            a.jb_hdfs_column_r = #{jb_hdfs_column_r},
+            a.jb_hdfs_fileType_r = #{jb_hdfs_fileType_r},
+            a.jb_hdfs_en_r = #{jb_hdfs_en_r},
+            a.jb_hdfs_fieldD_r = #{jb_hdfs_fieldD_r},
+            a.jb_hdfs_nullF_r = #{jb_hdfs_nullF_r},
+            a.jb_hdfs_haveK_r = #{jb_hdfs_haveK_r},
+            a.jb_hdfs_kerberosK_r = #{jb_hdfs_kerberosK_r},
+            a.jb_hdfs_kerberosP_r = #{jb_hdfs_kerberosP_r},
+            a.jb_hdfs_compress_r = #{jb_hdfs_compress_r},
+            a.jb_hdfs_defaultFS_w = #{jb_hdfs_defaultFS_w},
+            a.jb_hdfs_fileType_w = #{jb_hdfs_fileType_w},
+            a.jb_hdfs_path_w = #{jb_hdfs_path_w},
+            a.jb_hdfs_fileName_w = #{jb_hdfs_fileName_w},
+            a.jb_hdfs_column_w = #{jb_hdfs_column_w},
+            a.jb_hdfs_writeM_w = #{jb_hdfs_writeM_w},
+            a.jb_hdfs_fieldD_w = #{jb_hdfs_fieldD_w},
+            a.jb_hdfs_compress_w = #{jb_hdfs_compress_w},
+            a.jb_hdfs_en_w = #{jb_hdfs_en_w},
+            a.jb_hdfs_haveK_w = #{jb_hdfs_haveK_w},
+            a.jb_hdfs_kerberosK_w = #{jb_hdfs_kerberosK_w},
+            a.jb_hdfs_kerberosP_w = #{jb_hdfs_kerberosP_w}
+        WHERE
+            a.jb_hdfs_id = #{jb_hdfs_id}
+    </update>
 
     <!--根据id删除对应脚本的信息-->
     <update id="delJbInfoById" parameterType="com.cnct.datax.entity.JbInfo">

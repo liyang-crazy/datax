@@ -162,7 +162,12 @@ public class JbInfoServiceImpl implements JbInfoService{
             DrdsInfo drdsInfo = jbInfo.getDrdsInfo();
             drdsInfo.setJb_drds_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.editJbInfoByIdDrds(drdsInfo);
+        }else if("9".equals(jbInfo.getR_db_type()) && !"9".equals(jbInfo.getW_db_type())){
+            HdfsInfo hdfsInfo = jbInfo.getHdfsInfo();
+            hdfsInfo.setJb_hdfs_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoByIdHdfs(hdfsInfo);
         }
+
         if("3".equals(jbInfo.getW_db_type()) && !"3".equals(jbInfo.getR_db_type())){
             TxtFileInfo txtFileInfo = jbInfo.getTxtFileInfo();
             txtFileInfo.setJb_txtFile_id(String.valueOf(jbInfo.getId()));
@@ -183,7 +188,12 @@ public class JbInfoServiceImpl implements JbInfoService{
             DrdsInfo drdsInfo = jbInfo.getDrdsInfo();
             drdsInfo.setJb_drds_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.editJbInfoByIdDrds(drdsInfo);
+        }else if("9".equals(jbInfo.getW_db_type()) && !"9".equals(jbInfo.getR_db_type())){
+            HdfsInfo hdfsInfo = jbInfo.getHdfsInfo();
+            hdfsInfo.setJb_hdfs_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoByIdHdfs(hdfsInfo);
         }
+
         if("3".equals(jbInfo.getR_db_type()) && "3".equals(jbInfo.getW_db_type())){
             TxtFileInfo txtFileInfo = jbInfo.getTxtFileInfo();
             txtFileInfo.setJb_txtFile_id(String.valueOf(jbInfo.getId()));
@@ -204,6 +214,10 @@ public class JbInfoServiceImpl implements JbInfoService{
             DrdsInfo drdsInfo = jbInfo.getDrdsInfo();
             drdsInfo.setJb_drds_id(String.valueOf(jbInfo.getId()));
             jbInfoMapper.editJbInfoByIdDrds(drdsInfo);
+        }else if("9".equals(jbInfo.getR_db_type()) && "9".equals(jbInfo.getW_db_type())){
+            HdfsInfo hdfsInfo = jbInfo.getHdfsInfo();
+            hdfsInfo.setJb_hdfs_id(String.valueOf(jbInfo.getId()));
+            jbInfoMapper.editJbInfoByIdHdfs(hdfsInfo);
         }
     }
     /**
